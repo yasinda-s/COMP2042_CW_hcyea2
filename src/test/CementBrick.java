@@ -4,10 +4,9 @@ import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 
-
 public class CementBrick extends Brick {
 
-
+    //properties of cement brick shown below - has cracks before it breaks
     private static final String NAME = "Cement Brick";
     private static final Color DEF_INNER = new Color(147, 147, 147);
     private static final Color DEF_BORDER = new Color(217, 199, 175);
@@ -16,9 +15,8 @@ public class CementBrick extends Brick {
     private Crack crack;
     private Shape brickFace;
 
-
     public CementBrick(Point point, Dimension size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,CEMENT_STRENGTH);
+        super(NAME,point,size,DEF_BORDER,DEF_INNER,CEMENT_STRENGTH); //set all the super constructor variables
         crack = new Crack(DEF_CRACK_DEPTH,DEF_STEPS);
         brickFace = super.brickFace;
     }
@@ -26,10 +24,10 @@ public class CementBrick extends Brick {
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
-    }
+    } //make a brick face instantly with the pos and dimension of brick passed
 
     @Override
-    public boolean setImpact(Point2D point, int dir) {
+    public boolean setImpact(Point2D point, int dir) { //when ball makes impact with cement brick - crack or broken?
         if(super.isBroken())
             return false;
         super.impact();

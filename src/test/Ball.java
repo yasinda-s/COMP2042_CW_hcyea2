@@ -4,10 +4,6 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
 
-/**
- * Created by filippo on 04/09/16.
- *
- */
 abstract public class Ball {
 
     private Shape ballFace;
@@ -25,21 +21,24 @@ abstract public class Ball {
     private int speedX;
     private int speedY;
 
-    public Ball(Point2D center,int radiusA,int radiusB,Color inner,Color border){
+    public Ball(Point2D center,int radiusA,int radiusB,Color inner,Color border){ //coordinate, radius and color of ball for constructor
+        //both radiusA and radiusB appear to be the same
         this.center = center;
 
+        //declare variables for edges of ball
         up = new Point2D.Double();
         down = new Point2D.Double();
         left = new Point2D.Double();
         right = new Point2D.Double();
 
+        //set locations to edges of ball
         up.setLocation(center.getX(),center.getY()-(radiusB / 2));
         down.setLocation(center.getX(),center.getY()+(radiusB / 2));
 
         left.setLocation(center.getX()-(radiusA /2),center.getY());
         right.setLocation(center.getX()+(radiusA /2),center.getY());
 
-
+        //make the appearance of ball
         ballFace = makeBall(center,radiusA,radiusB);
         this.border = border;
         this.inner  = inner;
@@ -52,18 +51,17 @@ abstract public class Ball {
     public void move(){
         RectangularShape tmp = (RectangularShape) ballFace;
         center.setLocation((center.getX() + speedX),(center.getY() + speedY));
-        double w = tmp.getWidth();
-        double h = tmp.getHeight();
+        double w = tmp.getWidth(); //get width of rectangle
+        double h = tmp.getHeight(); //get height
 
-        tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h);
-        setPoints(w,h);
-
+        tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h); //to set frame of square (rect)
+        setPoints(w,h); //use this to get the coordinates of the ball with found width and height
 
         ballFace = tmp;
     }
 
-    public void setSpeed(int x,int y){
-        speedX = x;
+    public void setSpeed(int x,int y){ //set speed of ball
+        speedX = x; //the rate at which you move pixels (pos - is for top left)
         speedY = y;
     }
 
@@ -100,17 +98,17 @@ abstract public class Ball {
     }
 
     public void moveTo(Point p){
-        center.setLocation(p);
+        center.setLocation(p); //this is when you lose ball to spawn center again
 
         RectangularShape tmp = (RectangularShape) ballFace;
         double w = tmp.getWidth();
         double h = tmp.getHeight();
 
-        tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h);
+        tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h); //set frame around rectangle in ball spawn point again
         ballFace = tmp;
     }
 
-    private void setPoints(double width,double height){
+    private void setPoints(double width,double height){  //use this to get the coordinates of the ball with found width and height
         up.setLocation(center.getX(),center.getY()-(height / 2));
         down.setLocation(center.getX(),center.getY()+(height / 2));
 

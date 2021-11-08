@@ -4,22 +4,13 @@ import java.awt.*;
 import java.awt.Point;
 import java.awt.geom.Point2D;
 
-
-/**
- * Created by filippo on 04/09/16.
- *
- */
 public class ClayBrick extends Brick {
 
+    //properties of cement brick shown below - the default brick type
     private static final String NAME = "Clay Brick";
     private static final Color DEF_INNER = new Color(178, 34, 34).darker();
     private static final Color DEF_BORDER = Color.GRAY;
-    private static final int CLAY_STRENGTH = 1;
-
-
-
-
-
+    private static final int CLAY_STRENGTH = 1; //breaks in one impact with the ball
 
     public ClayBrick(Point point, Dimension size){
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CLAY_STRENGTH);
@@ -34,6 +25,5 @@ public class ClayBrick extends Brick {
     public Shape getBrick() {
         return super.brickFace;
     }
-
 
 }

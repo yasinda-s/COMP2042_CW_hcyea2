@@ -23,22 +23,20 @@ import java.awt.geom.Point2D;
 
 public class RubberBall extends Ball {
 
-
+    //properties of rubber ball shown below - the default ball type
     private static final int DEF_RADIUS = 10;
     private static final Color DEF_INNER_COLOR = new Color(255, 219, 88);
     private static final Color DEF_BORDER_COLOR = DEF_INNER_COLOR.darker().darker();
-
 
     public RubberBall(Point2D center){
         super(center,DEF_RADIUS,DEF_RADIUS,DEF_INNER_COLOR,DEF_BORDER_COLOR);
     }
 
-
     @Override
     protected Shape makeBall(Point2D center, int radiusA, int radiusB) {
 
-        double x = center.getX() - (radiusA / 2);
-        double y = center.getY() - (radiusB / 2);
+        double x = center.getX() - (radiusA / 2); //x coordinate of top left circle (rectangle)
+        double y = center.getY() - (radiusB / 2); //y coordinate of top left circle (rectangle)
 
         return new Ellipse2D.Double(x,y,radiusA,radiusB);
     }

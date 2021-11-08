@@ -1,20 +1,3 @@
-/*
- *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package test;
 
 import javax.swing.*;
@@ -22,34 +5,31 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+public class DebugPanel extends JPanel { //Jpanel is used to organize components, layouts
 
+    private static final Color DEF_BKG = Color.WHITE; //color of background
 
-public class DebugPanel extends JPanel {
+    private JButton skipLevel; //labeled button to skip Level when pushed
+    private JButton resetBalls; //labeled button to reset balls when pushed
 
-    private static final Color DEF_BKG = Color.WHITE;
+    private JSlider ballXSpeed; //let us graphically select x ball speed by sliding a knob
+    private JSlider ballYSpeed; //let us graphically select y ball speed by sliding a knob
 
+    private Wall wall; //create wall object
 
-    private JButton skipLevel;
-    private JButton resetBalls;
+    public DebugPanel(Wall wall){ //pass in wall object
 
-    private JSlider ballXSpeed;
-    private JSlider ballYSpeed;
-
-    private Wall wall;
-
-    public DebugPanel(Wall wall){
-
-        this.wall = wall;
+        this.wall = wall; //assign specific wall to this.wall
 
         initialize();
 
-        skipLevel = makeButton("Skip Level",e -> wall.nextLevel());
-        resetBalls = makeButton("Reset Balls",e -> wall.resetBallCount());
+        skipLevel = makeButton("Skip Level",e -> wall.nextLevel()); //button to skip level
+        resetBalls = makeButton("Reset Balls",e -> wall.resetBallCount()); //button to reset balls
 
-        ballXSpeed = makeSlider(-4,4,e -> wall.setBallXSpeed(ballXSpeed.getValue()));
-        ballYSpeed = makeSlider(-4,4,e -> wall.setBallYSpeed(ballYSpeed.getValue()));
+        ballXSpeed = makeSlider(-4,4,e -> wall.setBallXSpeed(ballXSpeed.getValue())); //slider to adjust x speed of ball
+        ballYSpeed = makeSlider(-4,4,e -> wall.setBallYSpeed(ballYSpeed.getValue())); //slider to adjust y speed of ball
 
-        this.add(skipLevel);
+        this.add(skipLevel); //add features mentioned above
         this.add(resetBalls);
 
         this.add(ballXSpeed);
@@ -58,17 +38,19 @@ public class DebugPanel extends JPanel {
     }
 
     private void initialize(){
-        this.setBackground(DEF_BKG);
-        this.setLayout(new GridLayout(2,2));
+        this.setBackground(DEF_BKG); //set background to white
+        this.setLayout(new GridLayout(2,2)); //?
     }
 
     private JButton makeButton(String title, ActionListener e){
-        JButton out = new JButton(title);
-        out.addActionListener(e);
-        return  out;
+        //return a jbutton type
+        JButton out = new JButton(title); //make name of button (title))
+        out.addActionListener(e); //what is the action that needs to occur when clicked goes here
+        return out;
     }
 
     private JSlider makeSlider(int min, int max, ChangeListener e){
+        //return Jslider type
         JSlider out = new JSlider(min,max);
         out.setMajorTickSpacing(1);
         out.setSnapToTicks(true);
@@ -81,5 +63,4 @@ public class DebugPanel extends JPanel {
         ballXSpeed.setValue(x);
         ballYSpeed.setValue(y);
     }
-
 }

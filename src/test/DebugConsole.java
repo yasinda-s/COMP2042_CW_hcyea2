@@ -22,19 +22,19 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+//use alt+shift+f1 to open debugpanel console
+
 public class DebugConsole extends JDialog implements WindowListener{
+    //window listener to be notified when we change the window state - windowed/focus/fullscreen
 
     private static final String TITLE = "Debug Console";
 
-
-    private JFrame owner;
+    private JFrame owner; //works like a main window where components you put together like labels, buttons, fields to make a GUI
     private DebugPanel debugPanel;
     private GameBoard gameBoard;
     private Wall wall;
 
-
-    public DebugConsole(JFrame owner,Wall wall,GameBoard gameBoard){
-
+    public DebugConsole(JFrame owner,Wall wall,GameBoard gameBoard){ //constructor for this takes main window, wall, gameboard
         this.wall = wall;
         this.owner = owner;
         this.gameBoard = gameBoard;
@@ -43,30 +43,27 @@ public class DebugConsole extends JDialog implements WindowListener{
         debugPanel = new DebugPanel(wall);
         this.add(debugPanel,BorderLayout.CENTER);
 
-
         this.pack();
     }
 
     private void initialize(){
-        this.setModal(true);
-        this.setTitle(TITLE);
+        this.setModal(true); //jdialog method to see if dialog is modal or not
+        this.setTitle(TITLE); //set a name to the dialog box
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setLayout(new BorderLayout());
         this.addWindowListener(this);
         this.setFocusable(true);
     }
 
-
-    private void setLocation(){
+    private void setLocation(){ //to set the frame of the debug console
+        //owner refers to whole frame and this refers to console frame
         int x = ((owner.getWidth() - this.getWidth()) / 2) + owner.getX();
         int y = ((owner.getHeight() - this.getHeight()) / 2) + owner.getY();
         this.setLocation(x,y);
     }
 
-
     @Override
     public void windowOpened(WindowEvent windowEvent) {
-
     }
 
     @Override
@@ -76,17 +73,14 @@ public class DebugConsole extends JDialog implements WindowListener{
 
     @Override
     public void windowClosed(WindowEvent windowEvent) {
-
     }
 
     @Override
     public void windowIconified(WindowEvent windowEvent) {
-
     }
 
     @Override
     public void windowDeiconified(WindowEvent windowEvent) {
-
     }
 
     @Override
@@ -98,6 +92,5 @@ public class DebugConsole extends JDialog implements WindowListener{
 
     @Override
     public void windowDeactivated(WindowEvent windowEvent) {
-
     }
 }
