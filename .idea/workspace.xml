@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a221ebbd-3883-47fb-9d28-b9e261748d5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Ball.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Brick$Crack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Brick$Crack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Brick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Brick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/CementBrick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/CementBrick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/ClayBrick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/ClayBrick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GraphicsMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GraphicsMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/HomeMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/HomeMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/RubberBall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/RubberBall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/SteelBrick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/SteelBrick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Wall.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Brick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/CementBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CementBrick.java" afterDir="false" />
@@ -37,6 +51,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="D:/2SWM_CW_Versions/First (Pre-Github Edits)/Commented Code/Brick_Destroy-master" />
   </component>
   <component name="RunManager">
     <configuration name="GraphicsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -72,25 +87,33 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1636364767919">
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1636608662764">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636364767919" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1636364767919">
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636608662764" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1636608597338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636364767919" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1636364767918">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636608597338" />
+    <state width="1493" height="93" key="GridCell.Tab.0.bottom" timestamp="1636608704107">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636364767918" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1636364767919">
+    <state width="1493" height="93" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636608704107" />
+    <state width="1493" height="93" key="GridCell.Tab.0.center" timestamp="1636608704107">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636364767919" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1636362761469">
+    <state width="1493" height="93" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636608704107" />
+    <state width="1493" height="93" key="GridCell.Tab.0.left" timestamp="1636608704107">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636362761469" />
+    <state width="1493" height="93" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636608704107" />
+    <state width="1493" height="93" key="GridCell.Tab.0.right" timestamp="1636608704107">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="93" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636608704107" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1636608577649">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636608577649" />
   </component>
 </project>

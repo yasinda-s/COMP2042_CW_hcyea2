@@ -4,7 +4,9 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
-
+/**
+ * This class represents the Player's bar (Rectangle) which he/she controls.
+ */
 public class Player { //refers to the player brick
 
     public static final Color BORDER_COLOR = Color.GREEN.darker().darker(); //outer border
@@ -19,6 +21,13 @@ public class Player { //refers to the player brick
     private int max;
 
 
+    /**
+     * This is the constructor for the Player object which refers to the bar he/she controls in-game.
+     * @param ballPoint Refers to the position of the ball.
+     * @param width Refers to the width of the player ball.
+     * @param height Refers to the height of the player ball.
+     * @param container Refers to the whole screen used for the game.
+     */
     public Player(Point ballPoint,int width,int height,Rectangle container) {
         //container refers to the whole box used for the game
         this.ballPoint = ballPoint; //random point object for now, later initial pos of ball
@@ -33,16 +42,30 @@ public class Player { //refers to the player brick
 
     }
 
+    /**
+     * This method makes the rectangle of the player bar.
+     * @param width The width of the rectangle.
+     * @param height The height of the rectangle.
+     * @return Returns the Rectangle object of the player bar.
+     */
     private Rectangle makeRectangle(int width,int height){
         Point p = new Point((int)(ballPoint.getX() - (width / 2)),(int)ballPoint.getY());
         return new Rectangle(p,new Dimension(width,height)); //return top left coordinate of point P with w and h passed.
     }
 
+    /**
+     * Method to see if Ball made impact with the Player bar.
+     * @param b The object of the ball to see if it made impact with the player bar.
+     * @return Returns a boolean value if the player bar is touching the bottom of the ball.
+     */
     public boolean impact(Ball b){
         return playerFace.contains(b.getPosition()) && playerFace.contains(b.down) ;
     }
     //if condition true then impact is true
 
+    /**
+     * This method is used to move the player bar around in game when we press the keys.
+     */
     public void move(){ //to move the player brick
         double x = ballPoint.getX() + moveAmount; //getX just to get center of player + move amount
         if(x < min || x > max)
@@ -53,22 +76,39 @@ public class Player { //refers to the player brick
         //top left of player brick
     }
 
+    /**
+     * This method is used to invert the DEF_MOVE_AMOUNT in order to make the player bar move left.
+     */
     public void moveLeft(){
         moveAmount = -DEF_MOVE_AMOUNT;
     }
 
+    /**
+     * This method is used to invert the DEF_MOVE_AMOUNT in order to make the player bar move left.
+     */
     public void movRight(){
         moveAmount = DEF_MOVE_AMOUNT;
     }
 
+    /**
+     * This method is used to stop the movement of the player bar.
+     */
     public void stop(){
         moveAmount = 0;
     }
 
+    /**
+     * Getter for the player bar's Face.
+     * @return Returns shape of the playerFace.
+     */
     public Shape getPlayerFace(){
         return  playerFace;
     }
 
+    /**
+     * This method is used to move the player bar to a particular location.
+     * @param p The location we want the player bar to be spawned.
+     */
     public void moveTo(Point p){
         ballPoint.setLocation(p);
         playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);

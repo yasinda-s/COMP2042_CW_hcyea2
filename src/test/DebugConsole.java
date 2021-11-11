@@ -24,6 +24,9 @@ import java.awt.event.WindowListener;
 
 //use alt+shift+f1 to open debugpanel console
 
+/**
+ * This class is used to XXXX.
+ */
 public class DebugConsole extends JDialog implements WindowListener{
     //window listener to be notified when we change the window state - windowed/focus/fullscreen
 
@@ -33,6 +36,13 @@ public class DebugConsole extends JDialog implements WindowListener{
     private DebugPanel debugPanel;
     private GameBoard gameBoard;
     private Wall wall;
+
+    /**
+     * This is the constructor for DebugConsole Class. XXXX
+     * @param owner
+     * @param wall
+     * @param gameBoard
+     */
 
     public DebugConsole(JFrame owner,Wall wall,GameBoard gameBoard){ //constructor for this takes main window, wall, gameboard
         this.wall = wall;
@@ -46,6 +56,9 @@ public class DebugConsole extends JDialog implements WindowListener{
         this.pack();
     }
 
+    /**
+     *
+     */
     private void initialize(){
         this.setModal(true); //jdialog method to see if dialog is modal or not
         this.setTitle(TITLE); //set a name to the dialog box
@@ -55,6 +68,9 @@ public class DebugConsole extends JDialog implements WindowListener{
         this.setFocusable(true);
     }
 
+    /**
+     * This method is used to set the frame of the debug panel in the provided location.
+     */
     private void setLocation(){ //to set the frame of the debug console
         //owner refers to whole frame and this refers to console frame
         int x = ((owner.getWidth() - this.getWidth()) / 2) + owner.getX();
@@ -66,6 +82,10 @@ public class DebugConsole extends JDialog implements WindowListener{
     public void windowOpened(WindowEvent windowEvent) {
     }
 
+    /**
+     * This method is used to repaint the content on the Game Board when the Window has changed its status.
+     * @param windowEvent The status of the window.
+     */
     @Override
     public void windowClosing(WindowEvent windowEvent) {
         gameBoard.repaint();
@@ -83,6 +103,10 @@ public class DebugConsole extends JDialog implements WindowListener{
     public void windowDeiconified(WindowEvent windowEvent) {
     }
 
+    /**
+     * XXXX
+     * @param windowEvent The status of the window.
+     */
     @Override
     public void windowActivated(WindowEvent windowEvent) {
         setLocation();

@@ -8,6 +8,9 @@ import java.awt.event.MouseMotionListener;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
+/**
+ * HomeMenu class is used to design the Home Screen we see when we first load the game.
+ */
 public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener {
 
     private static final String GREETINGS = "Welcome to:";
@@ -43,6 +46,11 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     private boolean menuClicked;
 
 
+    /**
+     * This is the constructor for the HomeMenu.
+     * @param owner This is the game frame window where the components will be set up.
+     * @param area This is the dimension of the game frame (width and height).
+     */
     public HomeMenu(GameFrame owner,Dimension area){
 
         this.setFocusable(true);
@@ -72,12 +80,18 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     }
 
-
+    /**
+     * XXXX
+     * @param g
+     */
     public void paint(Graphics g){
         drawMenu((Graphics2D)g); //type cast graphics object to 2d and pass to drawMenu
     }
 
-
+    /**
+     * This method is used to draw the components in the Menu Screen.
+     * @param g2d Graphics2D type frame to allow more control over coloring and drawing on the screen.
+     */
     public void drawMenu(Graphics2D g2d){
 
         drawContainer(g2d);
@@ -105,6 +119,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.setColor(prevColor);
     }
 
+    /**
+     * This method is used to draw the background and border (container) of the Home Menu.
+     * @param g2d Graphics2D type frame to allow more control over coloring and drawing.
+     */
     private void drawContainer(Graphics2D g2d){ //drawing the background of container
         Color prev = g2d.getColor();
 
@@ -126,6 +144,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.setColor(prev);
     }
 
+    /**
+     * This method is used to draw the Text we show in the Menu Screen.
+     * @param g2d Graphics2D type frame to allow more control over coloring and drawing the text.
+     */
     private void drawText(Graphics2D g2d){
         g2d.setColor(TEXT_COLOR); //assign text color in home screen
 
@@ -160,6 +182,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.drawString(CREDITS,sX,sY);
     }
 
+    /**
+     * This method is used to add the text and buttons for the Start and Exit on the Home Menu.
+     * @param g2d Graphics2D to draw the 2d components.
+     */
     private void drawButton(Graphics2D g2d){
 
         FontRenderContext frc = g2d.getFontRenderContext();
@@ -227,6 +253,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     }
 
+    /**
+     * This method either starts the game when user presses START or exits the game when user presses EXIT.
+     * @param mouseEvent MouseEvent object used to see if the button is being clicked.
+     */
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
@@ -240,6 +270,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         }
     }
 
+    /**
+     * This method repaints the buttons when they are clicked.
+     * @param mouseEvent MouseEvent object used to see if the button is being pressed.
+     */
     @Override
     public void mousePressed(MouseEvent mouseEvent) { //other for when start/exit is clicked
         Point p = mouseEvent.getPoint();
@@ -254,6 +288,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         }
     }
 
+    /**
+     * This method repaints the buttons when they are released.
+     * @param mouseEvent MouseEvent object used to see if the button is being released.
+     */
     @Override
     public void mouseReleased(MouseEvent mouseEvent) {
         if(startClicked ){
@@ -282,6 +320,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     }
 
+    /**
+     * This method identifies if the user is hovering any buttons on the Menu Screen to change the cursor symbol.
+     * @param mouseEvent MouseEvent button to see if a button is being hovered over.
+     */
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();

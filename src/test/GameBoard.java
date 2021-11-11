@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 
+/**
+ * XXXX
+ */
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
     //Keylistener can focus on 3 things - keyPressed, keyReleased and keyTyped
     //MouseListener also has methods based on mouse interactions
@@ -39,6 +42,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private DebugConsole debugConsole;
 
+    /**
+     * This is the constructor for the GameBoard.
+     * @param owner XXXX
+     */
     public GameBoard(JFrame owner){ //Jframe is a container which works like a window where you have components like labels, buttons, text
         //constructor
         super();
@@ -91,6 +98,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     }
 
+    /**
+     * This method is used to initialize the dimensions of the Game Board and Listeners so the system responds to user's actions.
+     */
     private void initialize(){ //set dimension, focus, and listeners from Component
         this.setPreferredSize(new Dimension(DEF_WIDTH,DEF_HEIGHT)); //set size of game screen to whats mentioned above 600x450
         this.setFocusable(true);
@@ -100,6 +110,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         this.addMouseMotionListener(this);
     }
 
+    /**
+     * This method is used to draw the game layout (Ball, Wall, PLayer Bar, Pause Menu) onto the Game Board.
+     * @param g The Graphics frame in which we want to draw the game components.
+     */
     public void paint(Graphics g){
 
         Graphics2D g2d = (Graphics2D) g; //get more control over geometry, coordinate transformations, color management, and text
@@ -123,6 +137,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         Toolkit.getDefaultToolkit().sync();
     }
 
+    /**
+     * This method is used to XXXX.
+     * @param g2d
+     */
     private void clear(Graphics2D g2d){
         Color tmp = g2d.getColor();
         g2d.setColor(BG_COLOR);
@@ -130,6 +148,11 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(tmp);
     }
 
+    /**
+     * This method is used to draw a singular brick on the game board.
+     * @param brick Takes in type Brick based on what brick we want to draw.
+     * @param g2d Graphics2D frame type to allow more control over coloring the and drawing the brick.
+     */
     private void drawBrick(Brick brick,Graphics2D g2d){
         //draw and color the brick
         Color tmp = g2d.getColor();
@@ -143,6 +166,11 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(tmp);
     }
 
+    /**
+     * This method is used to draw the ball on the game board.
+     * @param ball The ball object to be drawn.
+     * @param g2d Graphics2D frame type to allow more control over coloring the and drawing the ball.
+     */
     private void drawBall(Ball ball,Graphics2D g2d){
         Color tmp = g2d.getColor(); //set tmp color to color in g2d
 
@@ -157,6 +185,11 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(tmp); //set to tmp color
     }
 
+    /**
+     * This method is used to draw the PLayer bar on the game board.
+     * @param p The player object to be drawn.
+     * @param g2d  Graphics2D frame type to allow more control over coloring the and drawing the ball.
+     */
     private void drawPlayer(Player p,Graphics2D g2d){
         //to draw player bar
         Color tmp = g2d.getColor();
@@ -171,11 +204,19 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(tmp);
     }
 
+    /**
+     * This method is used to draw the Screen when the user presses Esc.
+     * @param g2d Graphics2D type frame where the menu will be drawn.
+     */
     private void drawMenu(Graphics2D g2d){ //pass in g2d frame
         obscureGameBoard(g2d);
         drawPauseMenu(g2d);
     }
 
+    /**
+     * This method refers to the drawing of the dark screen we see when we press Esc to open the Pause Menu.
+     * @param g2d Graphics2D type frame to allow more control over coloring, setting opacity and drawing the screen.
+     */
     private void obscureGameBoard(Graphics2D g2d){
 
         Composite tmp = g2d.getComposite();
@@ -192,6 +233,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(tmpColor);
     }
 
+    /**
+     * This method is used to draw the Pause Menu content we see when we press Esc.
+     * @param g2d Graphics2D type frame to allow more control over coloring, drawing the button's Text.
+     */
     private void drawPauseMenu(Graphics2D g2d){
         Font tmpFont = g2d.getFont(); //get font saved in g2d
         Color tmpColor = g2d.getColor(); //get color save in g2d
@@ -249,6 +294,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     public void keyTyped(KeyEvent keyEvent) {
     }
 
+    /**
+     * This method identifies the keys the user presses into order to cause a reaction.
+     * @param keyEvent KeyEvent object used to get KeyCode of pressed Key.
+     */
     @Override
     public void keyPressed(KeyEvent keyEvent) { //in charge of reacting to user keybinds
         switch(keyEvent.getKeyCode()){
@@ -278,11 +327,19 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
     }
 
+    /**
+     * XXXX
+     * @param keyEvent
+     */
     @Override
     public void keyReleased(KeyEvent keyEvent) {
         wall.player.stop();
     }
 
+    /**
+     * This method identifies certain button's the user clicks in order to perform some actions.
+     * @param mouseEvent MouseEvent object used to get Point to see if it is on any of the buttons.
+     */
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {  //in charge of reacting to mouse commands
         Point p = mouseEvent.getPoint();
@@ -330,6 +387,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     }
 
+    /**
+     * This method identifies if the user is hovering any buttons on the Pause Screen to change the cursor symbol.
+     * @param mouseEvent MouseEvent button to see if a button is being hovered over.
+     */
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
@@ -344,6 +405,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
     }
 
+    /**
+     * Method to repaint the components of the gameboard incase the game loses its focus.
+     */
     public void onLostFocus(){
         gameTimer.stop();
         message = "Focus Lost";
