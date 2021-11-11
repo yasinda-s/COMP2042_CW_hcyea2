@@ -30,14 +30,20 @@ abstract public class Ball {
      * The 4 coordinates of the edges of the ball are assigned here (up, down, left and right).
      * The face of the ball is set here.
      * The color (inner and border) of the ball is set here.
+     *
+     * Refactoring -
+     *
+     * The original code consisted of passing in two radii (radiusA and radiusB), however this is redundant and makes the
+     * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs
+     * the same functionality as the the ball will be having one radius only.
+     *
      * @param center Point2D type, center holds the x and y coordinate of the ball's center.
-     * @param radiusA Integer type, radiusA holds the radius of the ball.
-     * @param radiusB Integer type, radiusB holds the radius of the ball.
+     * @param radius Integer type, radiusA holds the radius of the ball.
      * @param inner Color type, inner holds the ball's inside color.
      * @param border Color type, border holds the ball's outside color.
      */
 
-    public Ball(Point2D center,int radiusA,int radiusB,Color inner,Color border){
+    public Ball(Point2D center,int radius, Color inner,Color border){
         this.center = center;
 
         //declare variables for edges of ball
@@ -47,14 +53,14 @@ abstract public class Ball {
         right = new Point2D.Double();
 
         //set locations to edges of ball - using center of ball
-        up.setLocation(center.getX(),center.getY()-(radiusB / 2));
-        down.setLocation(center.getX(),center.getY()+(radiusB / 2));
+        up.setLocation(center.getX(),center.getY()-(radius / 2));
+        down.setLocation(center.getX(),center.getY()+(radius / 2));
 
-        left.setLocation(center.getX()-(radiusA /2),center.getY());
-        right.setLocation(center.getX()+(radiusA /2),center.getY());
+        left.setLocation(center.getX()-(radius /2),center.getY());
+        right.setLocation(center.getX()+(radius /2),center.getY());
 
         //set the appearance and speed of ball
-        ballFace = makeBall(center,radiusA,radiusB);
+        ballFace = makeBall(center,radius);
         this.border = border;
         this.inner  = inner;
         speedX = 0;
@@ -62,13 +68,19 @@ abstract public class Ball {
     }
 
     /**
-     * Abstract class to make the Shape of the ball (Circle). XXXX
+     * Abstract class to make the Shape of the ball (Circle).
+     *
+     * Refactoring -
+     *
+     * The original code consisted of passing in two radii (radiusA and radiusB), however this is redundant and makes the
+     * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs
+     * the same functionality as the the ball will be having one radius only.
+     *
      * @param center Point2D type, consists of the x, y coordinate of the center of the ball.
-     * @param radiusA Int type, radius of ball.
-     * @param radiusB Int type, radius of ball.
-     * @return
+     * @param radius Int type, radius of ball.
+     * @return Returns type Shape of of a ball.
      */
-    protected abstract Shape makeBall(Point2D center,int radiusA,int radiusB);
+    protected abstract Shape makeBall(Point2D center,int radius);
 
     /**
      * This method is focused on having the ball move freely as the game begins.
@@ -88,7 +100,7 @@ abstract public class Ball {
     /**
      * This method is used to set the speed of the ball along both axes.
      * @param x The speed at which the ball moves along the x-axis.
-     * @param y The speed at which the bakk moves along the y-axis.
+     * @param y The speed at which the ball moves along the y-axis.
      */
     public void setSpeed(int x,int y){ //set speed of ball
         speedX = x; //the rate at which you move pixels (pos - is for top left)

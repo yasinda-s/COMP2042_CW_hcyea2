@@ -8,11 +8,16 @@ import java.util.Random;
 
 /**
  * The Brick Class refers to a singular brick we see above the game.
+ *
+ * Refactoring -
+ *
+ * The Brick Class consisted of an unused variable called MIN_CRACK, this has been removed to increase understanding and readability
+ * of the code.
+ *
  */
 
 abstract public class Brick  { //this represents all the bricks we see above
 
-    public static final int MIN_CRACK = 1;
     public static final int DEF_CRACK_DEPTH = 1;
     public static final int DEF_STEPS = 35;
 
@@ -23,11 +28,16 @@ abstract public class Brick  { //this represents all the bricks we see above
 
     /**
      *  The Crack Class focuses on the cracks that are placed on the bricks (Cement)
+     *
+     *  Refactoring -
+     *
+     *  Removed inMiddle() and jumps() method. Both these methods do not contribute significantly towards
+     *  the path or design of the crack and it makes the understanding of the crack pattern much more confusing.
+     *  By removing these two methods and the variables CRACK_SECTIONS and JUMP_PROBABILITY (which were used by the deleted methods) the
+     *  class is now more concise and holds the similar functionality that is easier to understand.
      */
-    public class Crack{ //**class inside abstract class
 
-        private static final int CRACK_SECTIONS = 3;
-        private static final double JUMP_PROBABILITY = 0.7;
+    public class Crack{ //**class inside abstract class
 
         public static final int LEFT = 10;
         public static final int RIGHT = 20;
@@ -42,10 +52,9 @@ abstract public class Brick  { //this represents all the bricks we see above
 
         /**
          * This is a constructor that represents a singular crack we see in a brick after the ball hits it.
-         * @param crackDepth
+         * @param crackDepth XXXX
          * @param steps This refers to the number of steps that are formed in a singular crack on a brick.
          */
-
         public Crack(int crackDepth, int steps){ //constructor of Crack class
             crack = new GeneralPath(); //crack assigned generalpath object
             this.crackDepth = crackDepth;
@@ -81,7 +90,7 @@ abstract public class Brick  { //this represents all the bricks we see above
 
             switch(direction){ //where the ball hits brick
                 case LEFT:
-                    start.setLocation(bounds.x + bounds.width, bounds.y); //to blank object you assign top left x and y.
+                    start.setLocation(bounds.x + bounds.width, bounds.y); //to blank point object you assign top right x and y.
                     end.setLocation(bounds.x + bounds.width, bounds.y + bounds.height);
                     Point tmp = makeRandomPoint(start,end,VERTICAL); //tmp is the random point
                     makeCrack(impact,tmp); //actual point of impact
@@ -111,7 +120,7 @@ abstract public class Brick  { //this represents all the bricks we see above
         }
 
         /**
-         * Used to generate the design of the crack in the brick and height of steps after calling randomInBounds().
+         * Used to generate the design (randomly generated path) of the crack in the brick from start to end. It also allocates height of steps after calling randomInBounds().
          * @param start Refers to the Point of actual impact.
          * @param end Refers to the Point that was found randomly.
          */
@@ -125,7 +134,6 @@ abstract public class Brick  { //this represents all the bricks we see above
             double h = (end.y - start.y) / (double)steps;
 
             int bound = crackDepth;
-            int jump  = bound * 5;
 
             double x,y;
 
@@ -133,9 +141,6 @@ abstract public class Brick  { //this represents all the bricks we see above
 
                 x = (i * w) + start.x;
                 y = (i * h) + start.y + randomInBounds(bound);
-
-                if(inMiddle(i,CRACK_SECTIONS,steps)) //no use
-                    y += jumps(jump,JUMP_PROBABILITY);
 
                 path.lineTo(x,y);
             }
@@ -147,38 +152,11 @@ abstract public class Brick  { //this represents all the bricks we see above
         /**
          * Used to randomize the height of the steps in the crack.
          * @param bound Int type, to get affected by randomness.
-         * @return Randomized Int.
+         * @return Randomized Int subtracted by bound.
          */
         private int randomInBounds(int bound){
             int n = (bound * 2) + 1;
             return rnd.nextInt(n) - bound;
-        }
-
-        /**
-         * XXXX
-         * @param i
-         * @param steps
-         * @param divisions
-         * @return
-         */
-        private boolean inMiddle(int i,int steps,int divisions){
-            int low = (steps / divisions); //3 / 35 == 0
-            int up = low * (divisions - 1); //0
-
-            return  (i > low) && (i < up); //always false?
-        }
-
-        /**
-         * XXXX
-         * @param bound
-         * @param probability
-         * @return
-         */
-        private int jumps(int bound,double probability){
-
-            if(rnd.nextDouble() > probability)
-                return randomInBounds(bound);
-            return  0;
         }
 
         /**
@@ -265,7 +243,6 @@ abstract public class Brick  { //this represents all the bricks we see above
      * Getter for a singular brick.
      * @return Returns the Shape of the brick.
      */
-
     public abstract Shape getBrick();
 
     /**
