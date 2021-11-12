@@ -5,7 +5,7 @@ import java.awt.Point;
 import java.awt.geom.Point2D;
 
 /**
- * The Claybrick class refers to the default brick we see in game. It is inheriting from the Brick class directly.
+ * The ClayBrick class refers to the default brick we see in game. It is inheriting from the Brick class directly.
  */
 public class ClayBrick extends Brick {
 

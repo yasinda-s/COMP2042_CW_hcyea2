@@ -43,7 +43,6 @@ public class DebugConsole extends JDialog implements WindowListener{
      * @param wall
      * @param gameBoard
      */
-
     public DebugConsole(JFrame owner,Wall wall,GameBoard gameBoard){ //constructor for this takes main window, wall, gameboard
         this.wall = wall;
         this.owner = owner;

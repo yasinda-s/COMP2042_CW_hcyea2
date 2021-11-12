@@ -10,6 +10,11 @@ import java.awt.geom.Rectangle2D;
 
 /**
  * HomeMenu class is used to design the Home Screen we see when we first load the game.
+ *
+ * Refactoring -
+ *
+ * Changed the variable name from MENU_TEXT to EXIT_TEXT because it represents the String we place on the EXIT button in the Menu Screen.
+ * Changed the variable name from "menubutton" to "exitbutton" as it refers to the Exit button on the screen.
  */
 public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener {
 
@@ -17,7 +22,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     private static final String GAME_TITLE = "Brick Destroy";
     private static final String CREDITS = "Version 0.1";
     private static final String START_TEXT = "Start";
-    private static final String MENU_TEXT = "Exit";
+    private static final String EXIT_TEXT = "Exit";
 
     private static final Color BG_COLOR = Color.GREEN.darker();
     private static final Color BORDER_COLOR = new Color(200,8,21); //Venetian Red
@@ -30,7 +35,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     private Rectangle menuFace;
     private Rectangle startButton;
-    private Rectangle menuButton;
+    private Rectangle exitButton;
 
     private BasicStroke borderStoke;
     private BasicStroke borderStoke_noDashes;
@@ -44,8 +49,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     private boolean startClicked;
     private boolean menuClicked;
-
-
+    
     /**
      * This is the constructor for the HomeMenu.
      * @param owner This is the game frame window where the components will be set up.
@@ -66,7 +70,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
         Dimension btnDim = new Dimension(area.width / 3, area.height / 12); //default dimension for buttons
         startButton = new Rectangle(btnDim); //make rectangle for start
-        menuButton = new Rectangle(btnDim); //make rectangle for exit button
+        exitButton = new Rectangle(btnDim); //make rectangle for exit button
 
         //for the border deco
         borderStoke = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND,0,DASHES,0);
@@ -77,7 +81,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         gameTitleFont = new Font("Noto Mono",Font.BOLD,40);
         creditsFont = new Font("Monospaced",Font.PLAIN,10);
         buttonFont = new Font("Monospaced",Font.PLAIN,startButton.height-2);
-
     }
 
     /**
@@ -192,7 +195,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
         //make rectangles for start and exit texts
         Rectangle2D txtRect = buttonFont.getStringBounds(START_TEXT,frc);
-        Rectangle2D mTxtRect = buttonFont.getStringBounds(MENU_TEXT,frc);
+        Rectangle2D mTxtRect = buttonFont.getStringBounds(EXIT_TEXT,frc);
 
         g2d.setFont(buttonFont); //set font
 
@@ -228,29 +231,28 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
         y *= 1.2;
 
-        menuButton.setLocation(x,y); //use these coordinates to set coordinates for menu button
+        exitButton.setLocation(x,y); //use these coordinates to set coordinates for menu button
 
-        x = (int)(menuButton.getWidth() - mTxtRect.getWidth()) / 2;
-        y = (int)(menuButton.getHeight() - mTxtRect.getHeight()) / 2;
+        x = (int)(exitButton.getWidth() - mTxtRect.getWidth()) / 2;
+        y = (int)(exitButton.getHeight() - mTxtRect.getHeight()) / 2;
 
-        x += menuButton.x;
-        y += menuButton.y + (startButton.height * 0.9);
+        x += exitButton.x;
+        y += exitButton.y + (startButton.height * 0.9);
 
         //same as before to set the menu text in the right coordinates with what was found above
         if(menuClicked){
             Color tmp = g2d.getColor();
 
             g2d.setColor(CLICKED_BUTTON_COLOR);
-            g2d.draw(menuButton);
+            g2d.draw(exitButton);
             g2d.setColor(CLICKED_TEXT);
-            g2d.drawString(MENU_TEXT,x,y);
+            g2d.drawString(EXIT_TEXT,x,y);
             g2d.setColor(tmp);
         }
         else{
-            g2d.draw(menuButton);
-            g2d.drawString(MENU_TEXT,x,y);
+            g2d.draw(exitButton);
+            g2d.drawString(EXIT_TEXT,x,y);
         }
-
     }
 
     /**
@@ -264,7 +266,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
             owner.enableGameBoard();
 
         }
-        else if(menuButton.contains(p)){ //if in exit button, then exit the game
+        else if(exitButton.contains(p)){ //if in exit button, then exit the game
             System.out.println("Goodbye " + System.getProperty("user.name"));
             System.exit(0);
         }
@@ -282,9 +284,9 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
             repaint(startButton.x,startButton.y,startButton.width+1,startButton.height+1);
 
         }
-        else if(menuButton.contains(p)){
+        else if(exitButton.contains(p)){
             menuClicked = true;
-            repaint(menuButton.x,menuButton.y,menuButton.width+1,menuButton.height+1);
+            repaint(exitButton.x,exitButton.y,exitButton.width+1,exitButton.height+1);
         }
     }
 
@@ -300,24 +302,20 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         }
         else if(menuClicked){
             menuClicked = false;
-            repaint(menuButton.x,menuButton.y,menuButton.width+1,menuButton.height+1);
+            repaint(exitButton.x,exitButton.y,exitButton.width+1,exitButton.height+1);
         }
     }
 
     @Override
     public void mouseEntered(MouseEvent mouseEvent) {
-
     }
 
     @Override
     public void mouseExited(MouseEvent mouseEvent) {
-
     }
-
 
     @Override
     public void mouseDragged(MouseEvent mouseEvent) {
-
     }
 
     /**
@@ -327,10 +325,9 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
-        if(startButton.contains(p) || menuButton.contains(p)) //if user hovering any button, then change to hand cursor, else default
+        if(startButton.contains(p) || exitButton.contains(p)) //if user hovering any button, then change to hand cursor, else default
             this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         else
             this.setCursor(Cursor.getDefaultCursor());
-
     }
 }

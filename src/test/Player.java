@@ -20,7 +20,6 @@ public class Player { //refers to the player brick
     private int min;
     private int max;
 
-
     /**
      * This is the constructor for the Player object which refers to the bar he/she controls in-game.
      * @param ballPoint Refers to the position of the ball.
@@ -39,7 +38,6 @@ public class Player { //refers to the player brick
         //container.x refers to the top left of the whole box
         max = min + container.width - width;
         //not sure what these refer to yet
-
     }
 
     /**
