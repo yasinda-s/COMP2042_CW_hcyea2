@@ -3,6 +3,7 @@ package test;
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
+import java.util.Random;
 
 /**
  * This is the class used to represent the ball object in the Brick Game.
@@ -37,6 +38,9 @@ abstract public class Ball {
      * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs
      * the same functionality as the the ball will be having one radius only.
      *
+     * A new method "getSpeedsXY" has been added so that this method can be called whenever the ball speed has to re-allocated randomly in any Class
+     * rather than repeating the same lines of code as we saw in the original.
+     *
      * @param center Point2D type, center holds the x and y coordinate of the ball's center.
      * @param radius Integer type, radiusA holds the radius of the ball.
      * @param inner Color type, inner holds the ball's inside color.
@@ -63,8 +67,15 @@ abstract public class Ball {
         ballFace = makeBall(center,radius);
         this.border = border;
         this.inner  = inner;
+
         speedX = 0;
         speedY = 0;
+
+        //Set speed of the ball for the initial time
+        int[] speedsXY =  getSpeedsXY();
+
+        speedX = speedsXY[0];
+        speedY = speedsXY[1];
     }
 
     /**
@@ -208,5 +219,20 @@ abstract public class Ball {
         return speedY;
     }
 
+    /**
+     * This method is used to generate two speeds for X and Y axes respectively.
+     * @return Returns an Int array where the zeroth index refers to speedX and first index refers to speedY.
+     */
+    public int[] getSpeedsXY(){
+        Random rnd = new Random();
 
+        do{
+            this.speedX = rnd.nextInt(5) -2;
+        } while (this.speedX == 0);
+        do{
+            this.speedY = -rnd.nextInt(3);
+        } while (this.speedY == 0);
+
+        return new int[] {this.speedX, this.speedY};
+    }
 }

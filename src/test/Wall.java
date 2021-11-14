@@ -2,15 +2,25 @@ package test;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.util.Random;
 
 /**
  * This class is responsible for the impacts between game components and how they affect certain scores.
+ *
+ * Refactoring -
+ *
+ * The methods that formed the formation of bricks for each level has been removed from this class and created in LevelSetup Class.
+ * To set up the wall formation will be the single responsibility of LevelSetUp.
+ *
+ * Instead of setting the speed of the ball (for both axes) in the Wall constructor, it has been moved to the Ball class's constructor so
+ * that the initial speed is randomly assigned from the parent class.
+ *
+ * In addition, the original code had the same lines of code repeating when the ball was to be reset in the "ballReset" method, I have refactored
+ * the code by replacing those lines with one method call "getSpeedsXY" which reassigned the x, y speed of the ball randomly.
+ *
+ * rnd variable has been removed as the speed of the ball is randomized within the Ball class itself.
  */
 
 public class Wall {
-
-    private Random rnd;
     private Rectangle area;
 
     Brick[] bricks; //array of bricks
@@ -40,26 +50,12 @@ public class Wall {
         //returns a brick[][] object which can be indexed to get one of the 4 levels
 
         levels = levelsetup.levelsMade;
-
         level = 0; //original level is 0
 
         ballCount = 3; //we get 3 lives
         ballLost = false; //originally no balls are lost
 
-        rnd = new Random(); //create an object of random
-
         makeBall(ballPos); //take in the initial ball coordinates and make rubber ball object
-
-        int speedX,speedY;
-
-        do{ //set speedX and speedY to random speeds
-            speedX = rnd.nextInt(5) - 2;
-        } while(speedX == 0);
-        do{
-            speedY = -rnd.nextInt(3);
-        } while(speedY == 0);
-
-        ball.setSpeed(speedX,speedY); //set speed of ball
 
         player = new Player((Point) ballPos.clone(),150,10, drawArea);
         //make the player bar by referring to the ball position (center)
@@ -174,15 +170,9 @@ public class Wall {
     public void ballReset(){ //what happens when ball is lost
         player.moveTo(startPoint);
         ball.moveTo(startPoint);
-        int speedX,speedY;
-        do{
-            speedX = rnd.nextInt(5) - 2;
-        }while(speedX == 0);
-        do{
-            speedY = -rnd.nextInt(3);
-        }while(speedY == 0);
-
-        ball.setSpeed(speedX,speedY);
+        //same function called from ball, not efficient to rewrite the same LOC, so we recall the method in Ball class.
+        int[] speedsXY = ball.getSpeedsXY();
+        ball.setSpeed(speedsXY[0],speedsXY[1]);
         ballLost = false;
     }
 
