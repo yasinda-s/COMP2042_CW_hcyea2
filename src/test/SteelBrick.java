@@ -34,7 +34,7 @@ public class SteelBrick extends Brick {
      * Method to make the Cement Brick's Face (Rectangle Shape)
      * @param pos The top left position (coordinates) of the brick.
      * @param size The width and height of the brick (Dimension).
-     * @return
+     * @return Returns a Rectangular Shape of the brick face.
      */
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
@@ -51,16 +51,16 @@ public class SteelBrick extends Brick {
     }
 
     /**
-     * XXXX
+     * This method is used to set the impact based on point of impact and direction of hit.
      * @param point Refers to the edge of the ball making contact with the brick.
      * @param dir Refers to the direction (edge) of the brick that is making contact with the ball.
-     * @return
+     * @return Returns true if the brick is broken.
      */
-    public  boolean setImpact(Point2D point , int dir){
+    public boolean setImpact(Point2D point , int dir){
         if(super.isBroken())
             return false;
         impact();
-        return  super.isBroken();
+        return super.isBroken();
     }
 
     /**

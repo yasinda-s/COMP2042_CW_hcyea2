@@ -44,11 +44,10 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
 
         this.add(ballXSpeed);
         this.add(ballYSpeed);
-
     }
 
     /**
-     * This method is used to set the background color of the Panel and to set its Grid Layout. XXXX
+     * This method is used to set the background color of the Panel and to set its Grid Layout.
      */
     private void initialize(){
         this.setBackground(DEF_BKG); //set background to white

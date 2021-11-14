@@ -37,7 +37,7 @@ public class DebugConsole extends JDialog implements WindowListener{
     }
 
     /**
-     * XXXX
+     * This method sets up the Debug Console Frame with a fixed set of parameters.
      */
     private void initialize(){
         this.setModal(true); //jdialog method to see if dialog is modal or not
@@ -84,7 +84,7 @@ public class DebugConsole extends JDialog implements WindowListener{
     }
 
     /**
-     * XXXX
+     * This method is used to set the location of the frame and to set the slider to the current speed of the ball.
      * @param windowEvent The status of the window.
      */
     @Override

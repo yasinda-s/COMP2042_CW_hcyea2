@@ -31,7 +31,7 @@ public class Crack {
 
     /**
      * This is a constructor that represents a singular crack we see in a brick after the ball hits it.
-     * @param crackDepth XXXX
+     * @param crackDepth This refers to the thickness of a crack on cement.
      * @param steps This refers to the number of steps that are formed in a singular crack on a brick.
      */
     public Crack(Brick brick, int crackDepth, int steps){

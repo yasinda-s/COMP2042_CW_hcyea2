@@ -66,7 +66,7 @@ public class Player { //refers to the player brick
      */
     public void move(){ //to move the player brick
         double x = ballPoint.getX() + moveAmount; //getX just to get center of player + move amount
-        if(x < min || x > max)
+        if(x < min || x > max) //make sure player within container region
             return;
         ballPoint.setLocation(x,ballPoint.getY()); //when brick is moved, change ball to new x coordinate and same Y coordinate
         //ballPoint refers to top mid

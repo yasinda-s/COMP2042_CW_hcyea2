@@ -137,8 +137,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     }
 
     /**
-     * This method is used to XXXX.
-     * @param g2d
+     * This method is used to clear the gameboard.
+     * @param g2d Graphics2D frame type to allow more control over coloring and drawing over 2d components.
      */
     private void clear(Graphics2D g2d){
         Color tmp = g2d.getColor();
@@ -150,7 +150,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     /**
      * This method is used to draw a singular brick on the game board.
      * @param brick Takes in type Brick based on what brick we want to draw.
-     * @param g2d Graphics2D frame type to allow more control over coloring the and drawing the brick.
+     * @param g2d Graphics2D frame type to allow more control over coloring and drawing over 2d components.
      */
     private void drawBrick(Brick brick,Graphics2D g2d){
         //draw and color the brick
@@ -205,7 +205,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     /**
      * This method is used to draw the Screen when the user presses Esc.
-     * @param g2d Graphics2D type frame where the menu will be drawn.
+     * @param g2d Graphics2D frame type to allow more control over coloring and drawing over 2d components.
      */
     private void drawMenu(Graphics2D g2d){ //pass in g2d frame
         obscureGameBoard(g2d);
@@ -214,7 +214,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     /**
      * This method refers to the drawing of the dark screen we see when we press Esc to open the Pause Menu.
-     * @param g2d Graphics2D type frame to allow more control over coloring, setting opacity and drawing the screen.
+     * @param g2d Graphics2D frame type to allow more control over coloring and drawing over 2d components.
      */
     private void obscureGameBoard(Graphics2D g2d){
 
@@ -234,7 +234,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     /**
      * This method is used to draw the Pause Menu content we see when we press Esc.
-     * @param g2d Graphics2D type frame to allow more control over coloring, drawing the button's Text.
+     * @param g2d Graphics2D frame type to allow more control over coloring and drawing over 2d components.
      */
     private void drawPauseMenu(Graphics2D g2d){
         Font tmpFont = g2d.getFont(); //get font saved in g2d
@@ -327,8 +327,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     }
 
     /**
-     * XXXX
-     * @param keyEvent
+     * This method is used to make sure the player does not move when no key is pressed.
+     * @param keyEvent KeyEvent object, when a key is released.
      */
     @Override
     public void keyReleased(KeyEvent keyEvent) {

@@ -27,7 +27,7 @@ public class RubberBall extends Ball {
      * Used to make the shape of the Rubber Ball.
      * @param center Point2D type, consists of the x, y coordinate of the center of the ball.
      * @param radius Int type, radius of ball.
-     * @return
+     * @return Shape object of a circle which represents the face of a circle.
      */
     @Override
     protected Shape makeBall(Point2D center, int radius) {

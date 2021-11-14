@@ -26,7 +26,7 @@ public class Wall {
     private boolean ballLost;
 
     /**
-     * This is the constructor for the Wall class. XXXX
+     * This is the constructor for the Wall class.
      * @param drawArea drawArea is the Rectangle in which the whole game is being setup.
      * @param brickCount this represents the total number of bricks on the brick wall.
      * @param lineCount this represents the number of brick lines on the wall.

@@ -18,7 +18,7 @@ import java.util.Random;
  */
 abstract public class Brick  { //this represents all the bricks we see above on the Wall
 
-    public static final int DEF_CRACK_DEPTH = 1;
+    public static final int DEF_CRACK_DEPTH = 1; //the thickness of the crack on the cement
     public static final int DEF_STEPS = 35;
 
     public static final int UP_IMPACT = 100;
@@ -62,7 +62,7 @@ abstract public class Brick  { //this represents all the bricks we see above on 
      * This method is used to make the face of the brick (Rectangle).
      * @param pos The top left position (coordinates) of the brick.
      * @param size The width and height of the brick (Dimension).
-     * @return
+     * @return Returns Rectangular Shape of the brick face.
      */
     protected abstract Shape makeBrickFace(Point pos,Dimension size);
 

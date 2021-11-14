@@ -28,7 +28,7 @@ public class ClayBrick extends Brick {
      * Method to make the Clay Brick's Face (Rectangle Shape)
      * @param pos The top left position (coordinates) of the brick.
      * @param size The width and height of the brick (Dimension).
-     * @return
+     * @return Returns a rectangular Shape representing shape of a brick.
      */
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {

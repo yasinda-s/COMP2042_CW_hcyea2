@@ -5,7 +5,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
 
 /**
- * This is the class for Ball - ADD DETAILS XXXX
+ * This is the class used to represent the ball object in the Brick Game.
  */
 
 abstract public class Ball {
@@ -33,7 +33,7 @@ abstract public class Ball {
      *
      * Refactoring -
      *
-     * The original code consisted of passing in two radii (radiusA and radiusB), however this is redundant and makes the
+     * The original code consisted of passing in two radii (radiusA and radiusB) for the makeBall method, however this is redundant and makes the
      * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs
      * the same functionality as the the ball will be having one radius only.
      *
@@ -69,12 +69,6 @@ abstract public class Ball {
 
     /**
      * Abstract class to make the Shape of the ball (Circle).
-     *
-     * Refactoring -
-     *
-     * The original code consisted of passing in two radii (radiusA and radiusB), however this is redundant and makes the
-     * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs
-     * the same functionality as the the ball will be having one radius only.
      *
      * @param center Point2D type, consists of the x, y coordinate of the center of the ball.
      * @param radius Int type, radius of ball.
@@ -124,14 +118,14 @@ abstract public class Ball {
     }
 
     /**
-     * Reverses the direction of the ball along the x-axis. XXXX
+     * Reverses the direction of the ball along the x-axis.
      */
     public void reverseX(){
         speedX *= -1;
     }
 
     /**
-     * Reverses the direction of the ball along the y-axis. XXXX
+     * Reverses the direction of the ball along the y-axis.
      */
     public void reverseY(){
         speedY *= -1;
