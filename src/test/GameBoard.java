@@ -6,7 +6,7 @@ import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 
 /**
- * XXXX
+ * This class draws all of the 2d Components required to load the home screen and to play the game.
  */
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
     //Keylistener can focus on 3 things - keyPressed, keyReleased and keyTyped
@@ -44,10 +44,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     /**
      * This is the constructor for the GameBoard.
-     * @param owner XXXX
+     * @param owner JFrame type container which works like a window where you have 2d components set up.
      */
-    public GameBoard(JFrame owner){ //Jframe is a container which works like a window where you have components like labels, buttons, text
-        //constructor
+    public GameBoard(JFrame owner){
         super();
 
         strLen = 0;
@@ -111,7 +110,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     }
 
     /**
-     * This method is used to draw the game layout (Ball, Wall, PLayer Bar, Pause Menu) onto the Game Board.
+     * Overriding method to paint the 2d Components onto the screen. We use this to draw the ball, wall and player.
      * @param g The Graphics frame in which we want to draw the game components.
      */
     public void paint(Graphics g){

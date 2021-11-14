@@ -11,6 +11,7 @@ import java.util.Random;
  * Refactoring -
  *
  * The Class Crack that was nested into the Brick Class has been refactored to a singular Class outside of Brick so that its purpose is more clear.
+ * Added a getter method for the rnd variable (in order to build on encapsulation) so that it can be accessed from the Crack class.
  * The Brick Class consisted of an unused variable called MIN_CRACK, this has been removed to increase understanding and readability
  * of the code.
  *
@@ -146,7 +147,7 @@ abstract public class Brick  { //this represents all the bricks we see above on 
     }
 
     /**
-     * Method used to get the value of rnd for other classes like Crack.java
+     * Method used to get the value of rnd for other classes like Crack
      * @return Returns the Random object rnd.
      */
     public static Random getRnd() {

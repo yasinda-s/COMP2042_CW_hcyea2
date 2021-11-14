@@ -53,7 +53,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     /**
      * This is the constructor for the HomeMenu.
      * @param owner This is the game frame window where the components will be set up.
-     * @param area This is the dimension of the game frame (width and height).
+     * @param area This is the dimension of the game frame/home menu (width and height).
      */
     public HomeMenu(GameFrame owner,Dimension area){
 
@@ -84,15 +84,15 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     }
 
     /**
-     * XXXX
-     * @param g
+     * Overriding method to paint the 2d Components onto the screen.
+     * @param g The Graphics frame in which we want to draw the game components.
      */
     public void paint(Graphics g){
         drawMenu((Graphics2D)g); //type cast graphics object to 2d and pass to drawMenu
     }
 
     /**
-     * This method is used to draw the components in the Menu Screen.
+     * This method is used to call the methods that draw the components in the Menu Screen.
      * @param g2d Graphics2D type frame to allow more control over coloring and drawing on the screen.
      */
     public void drawMenu(Graphics2D g2d){

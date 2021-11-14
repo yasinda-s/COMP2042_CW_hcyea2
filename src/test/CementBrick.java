@@ -33,7 +33,7 @@ public class CementBrick extends Brick {
      * Method to make the Clay Brick's Face (Rectangle Shape)
      * @param pos The top left position (coordinates) of the brick.
      * @param size The width and height of the brick (Dimension).
-     * @return
+     * @return Returns Rectangular Shape of brick.
      */
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {

@@ -12,7 +12,7 @@ import java.awt.event.WindowListener;
  */
 public class GameFrame extends JFrame implements WindowFocusListener {
 
-    private static final String DEF_TITLE = "Brick Destroy"; //title screen text
+    private static final String DEF_TITLE = "Brick Destroy"; //name on the game frame header
 
     private GameBoard gameBoard;
     private HomeMenu homeMenu;
@@ -39,14 +39,14 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     }
 
     /**
-     *
+     * This method is used to set up the Game Frame which will hold "Brick Destroy"
      */
     public void initialize(){
-        this.setTitle(DEF_TITLE);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setTitle(DEF_TITLE); //title on top of game frame
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE); //close when cross button pressed on game frame
         this.pack();
-        this.autoLocate();
-        this.setVisible(true);
+        this.autoLocate(); //load gameframe to center of screen
+        this.setVisible(true); //make the loaded gameframe visible to the screen
     }
 
     /**
@@ -63,7 +63,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     }
 
     /**
-     * This method is used to locate the coordinates of the screen and set the location to those coordinates.
+     * This method is used to load the game Frame on the center of the monitor screen.
      */
     private void autoLocate(){ //get x,y coordinate of the screen and set the location to that
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
@@ -73,8 +73,8 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     }
 
     /**
-     *
-     * @param windowEvent
+     * This method is used when the window is in focused mode (receiving keyboard events), sets gaming to true.
+     * @param windowEvent pass in the WindowEvent object.
      */
     @Override
     public void windowGainedFocus(WindowEvent windowEvent) {
@@ -90,8 +90,8 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     }
 
     /**
-     *
-     * @param windowEvent
+     * Method to repaint the game if the focus was lost after gaming had begun.
+     * @param windowEvent The windowEvent object to be passed.
      */
     @Override
     public void windowLostFocus(WindowEvent windowEvent) {

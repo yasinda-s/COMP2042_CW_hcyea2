@@ -111,4 +111,5 @@ public class Player { //refers to the player brick
         ballPoint.setLocation(p);
         playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
     }
+
 }

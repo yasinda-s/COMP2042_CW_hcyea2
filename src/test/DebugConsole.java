@@ -1,20 +1,3 @@
-/*
- *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package test;
 
 import javax.swing.*;
@@ -22,10 +5,8 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-//use alt+shift+f1 to open debugpanel console
-
 /**
- * This class is used to XXXX.
+ * This class is used to setup the DebugConsole as a frame. Open by using Alt + Shift + F1.
  */
 public class DebugConsole extends JDialog implements WindowListener{
     //window listener to be notified when we change the window state - windowed/focus/fullscreen
@@ -38,10 +19,10 @@ public class DebugConsole extends JDialog implements WindowListener{
     private Wall wall;
 
     /**
-     * This is the constructor for DebugConsole Class. XXXX
-     * @param owner
-     * @param wall
-     * @param gameBoard
+     * This is the constructor for DebugConsole Class.
+     * @param owner Consists of the JFrame where the components will be set up.
+     * @param wall Wall object.
+     * @param gameBoard GameBoard object where all the gaming components are drawn.
      */
     public DebugConsole(JFrame owner,Wall wall,GameBoard gameBoard){ //constructor for this takes main window, wall, gameboard
         this.wall = wall;
@@ -56,7 +37,7 @@ public class DebugConsole extends JDialog implements WindowListener{
     }
 
     /**
-     *
+     * XXXX
      */
     private void initialize(){
         this.setModal(true); //jdialog method to see if dialog is modal or not
