@@ -27,7 +27,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private Timer gameTimer;
 
-    private Wall wall;
+    private GamePlay gamePlay;
 
     private String message;
 
@@ -57,34 +57,34 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         this.initialize(); //set dimension, focus, and listeners from Component
         message = "";
-        wall = new Wall(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point(300,430));
-        //wall sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
+        gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point(300,430));
+        //gamePlay sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
 
-        debugConsole = new DebugConsole(owner,wall,this); //setup debug console
+        debugConsole = new DebugConsole(owner, gamePlay,this); //setup debug console
 
         //initialize the first level
-        wall.nextLevel();
+        gamePlay.nextLevel();
 
         gameTimer = new Timer(10,e ->{
-            wall.move(); //moving of player and ball from Wall
-            wall.findImpacts(); //look for impacts from Wall
-            message = String.format("Bricks: %d Balls %d",wall.getBrickCount(),wall.getBallCount());
-            if(wall.isBallLost()){
-                if(wall.ballEnd()){
-                    wall.wallReset();
+            gamePlay.move(); //moving of player and ball from GamePlay
+            gamePlay.findImpacts(); //look for impacts from GamePlay
+            message = String.format("Bricks: %d Balls %d", gamePlay.getBrickCount(), gamePlay.getBallCount());
+            if(gamePlay.isBallLost()){
+                if(gamePlay.ballEnd()){
+                    gamePlay.wallReset();
                     message = "Game over"; //if all balls lost
                 }
-                wall.ballReset(); //if user hasnt used all 3 balls
+                gamePlay.ballReset(); //if user hasnt used all 3 balls
                 gameTimer.stop();
             }
-            else if(wall.isDone()){ //if all bricks broken
-                if(wall.hasLevel()){ //if user has more levels left
+            else if(gamePlay.isDone()){ //if all bricks broken
+                if(gamePlay.hasLevel()){ //if user has more levels left
                     message = "Go to Next Level";
                     gameTimer.stop();
                     //reset everything
-                    wall.ballReset();
-                    wall.wallReset();
-                    wall.nextLevel();
+                    gamePlay.ballReset();
+                    gamePlay.wallReset();
+                    gamePlay.nextLevel();
                 }
                 else{ //if no more levels
                     message = "ALL WALLS DESTROYED";
@@ -122,13 +122,13 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(Color.BLUE);
         g2d.drawString(message,250,225); //whenever we print something on screen, we use this with the color we set earlier
 
-        drawBall(wall.ball,g2d); //draws the ball using 2dgraphics
+        drawBall(gamePlay.ball,g2d); //draws the ball using 2dgraphics
 
-        for(Brick b : wall.bricks) //draws the bricks using 2dgraphics
+        for(Brick b : gamePlay.bricks) //draws the bricks using 2dgraphics
             if(!b.isBroken())
                 drawBrick(b,g2d);
 
-        drawPlayer(wall.player,g2d); //draws the player bar using 2dgraphics
+        drawPlayer(gamePlay.player,g2d); //draws the player bar using 2dgraphics
 
         if(showPauseMenu) //if user presses esc
             drawMenu(g2d); //draw the menu screen
@@ -301,10 +301,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     public void keyPressed(KeyEvent keyEvent) { //in charge of reacting to user keybinds
         switch(keyEvent.getKeyCode()){
             case KeyEvent.VK_A:
-                wall.player.moveLeft();
+                gamePlay.player.moveLeft();
                 break;
             case KeyEvent.VK_D:
-                wall.player.movRight();
+                gamePlay.player.movRight();
                 break;
             case KeyEvent.VK_ESCAPE:
                 showPauseMenu = !showPauseMenu; //originally set to False
@@ -322,7 +322,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 if(keyEvent.isAltDown() && keyEvent.isShiftDown())
                     debugConsole.setVisible(true);
             default:
-                wall.player.stop();
+                gamePlay.player.stop();
         }
     }
 
@@ -332,7 +332,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
      */
     @Override
     public void keyReleased(KeyEvent keyEvent) {
-        wall.player.stop();
+        gamePlay.player.stop();
     }
 
     /**
@@ -350,8 +350,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
         else if(restartButtonRect.contains(p)){
             message = "Restarting Game...";
-            wall.ballReset();
-            wall.wallReset();
+            gamePlay.ballReset();
+            gamePlay.wallReset();
             showPauseMenu = false;
             repaint();
         }

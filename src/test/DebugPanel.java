@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  *
  * Refactoring -
  *
- * Wall which is a public class is already being passed into the Constructor as a parameter so we do not need to create an instance of it prior
+ * GamePlay which is a public class is already being passed into the Constructor as a parameter so we do not need to create an instance of it prior
  * to the constructor, hence it has been removed.
  *
  * The private Jbuttons for skipLevel and resetBalls are also refactored to be created in the constructor itself.
@@ -25,19 +25,19 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
 
     /**
      * This is the constructor for the DebugPanel.
-     * @param wall Takes in Wall object.
+     * @param gamePlay Takes in GamePlay object.
      */
-    public DebugPanel(Wall wall){ //pass in wall object
+    public DebugPanel(GamePlay gamePlay){ //pass in gamePlay object
 
         initialize();
 
         //labeled button to skip Level when pushed
-        JButton skipLevel = makeButton("Skip Level", e -> wall.nextLevel()); //button to skip level
+        JButton skipLevel = makeButton("Skip Level", e -> gamePlay.nextLevel()); //button to skip level
         //labeled button to reset balls when pushed
-        JButton resetBalls = makeButton("Reset Balls", e -> wall.resetBallCount()); //button to reset balls
+        JButton resetBalls = makeButton("Reset Balls", e -> gamePlay.resetBallCount()); //button to reset balls
 
-        ballXSpeed = makeSlider(-4,4,e -> wall.setBallXSpeed(ballXSpeed.getValue())); //slider to adjust x speed of ball
-        ballYSpeed = makeSlider(-4,4,e -> wall.setBallYSpeed(ballYSpeed.getValue())); //slider to adjust y speed of ball
+        ballXSpeed = makeSlider(-4,4,e -> gamePlay.setBallXSpeed(ballXSpeed.getValue())); //slider to adjust x speed of ball
+        ballYSpeed = makeSlider(-4,4,e -> gamePlay.setBallYSpeed(ballYSpeed.getValue())); //slider to adjust y speed of ball
 
         this.add(skipLevel); //add features mentioned above
         this.add(resetBalls);

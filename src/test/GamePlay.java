@@ -4,14 +4,14 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 /**
- * This class is responsible for the impacts between game components and how they affect certain scores.
+ * This class is responsible for the general game play of the Brick Game (interactions between components and it keeps track of in game scores).
  *
  * Refactoring -
  *
  * The methods that formed the formation of bricks for each level has been removed from this class and created in LevelSetup Class.
- * To set up the wall formation will be the single responsibility of LevelSetUp.
+ * To set up the wall formation will be the single responsibility of WallSetup.
  *
- * Instead of setting the speed of the ball (for both axes) in the Wall constructor, it has been moved to the Ball class's constructor so
+ * Instead of setting the speed of the ball (for both axes) in the GamePlay constructor, it has been moved to the Ball class's constructor so
  * that the initial speed is randomly assigned from the parent class.
  *
  * In addition, the original code had the same lines of code repeating when the ball was to be reset in the "ballReset" method, I have refactored
@@ -20,7 +20,7 @@ import java.awt.geom.Point2D;
  * rnd variable has been removed as the speed of the ball is randomized within the Ball class itself.
  */
 
-public class Wall {
+public class GamePlay {
     private Rectangle area;
 
     Brick[] bricks; //array of bricks
@@ -36,20 +36,20 @@ public class Wall {
     private boolean ballLost;
 
     /**
-     * This is the constructor for the Wall class.
+     * This is the constructor for the GamePlay class.
      * @param drawArea drawArea is the Rectangle in which the whole game is being setup.
      * @param brickCount this represents the total number of bricks on the brick wall.
      * @param lineCount this represents the number of brick lines on the wall.
      * @param brickDimensionRatio this represents the height to width ratio of a singular brick.
      * @param ballPos this represents the position of the ball.
      */
-    public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos){
+    public GamePlay(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos){
         this.startPoint = new Point(ballPos); //takes in the position of the ball to begin with (the player bar is based on this too)
 
-        LevelSetUp levelsetup = new LevelSetUp(drawArea,brickCount,lineCount,brickDimensionRatio);
+        WallSetup wallsetup = new WallSetup(drawArea,brickCount,lineCount,brickDimensionRatio);
         //returns a brick[][] object which can be indexed to get one of the 4 levels
 
-        levels = levelsetup.levelsMade;
+        levels = wallsetup.levelsMade;
         level = 0; //original level is 0
 
         ballCount = 3; //we get 3 lives
@@ -80,7 +80,7 @@ public class Wall {
     }
 
     /**
-     * This method is used to identify where the ball makes an impact (The player bar, Wall, Frame Borders) and how the ball's movement is affected.
+     * This method is used to identify where the ball makes an impact (The player bar, wall, Frame Borders) and how the ball's movement is affected.
      */
     public void findImpacts(){
         if(player.impact(ball)){
@@ -141,8 +141,8 @@ public class Wall {
     }
 
     /**
-     * Getter for the number of bricks available on the Wall.
-     * @return Returns the number of bricks available on the Wall.
+     * Getter for the number of bricks available on the Wall above.
+     * @return Returns the number of bricks available on the wall above.
      */
     public int getBrickCount(){
         return brickCount;

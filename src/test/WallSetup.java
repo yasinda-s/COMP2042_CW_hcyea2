@@ -3,10 +3,10 @@ package test;
 import java.awt.*;
 
 /**
- * This class is responsible for setting up the different wall formations for each Level in the game.
+ * This class is responsible for setting up the different brick formations (Wall setup) and types of bricks for each Level in the game.
  */
 
-public class LevelSetUp {
+public class WallSetup {
 
     private static final int LEVELS_COUNT = 4; //number of levels in the game
 
@@ -16,12 +16,12 @@ public class LevelSetUp {
 
     Brick[][] levelsMade;
 
-    public LevelSetUp(Rectangle drawArea,int brickCount,int lineCount,double brickDimensionRatio){
+    public WallSetup(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio){
         levelsMade = makeLevels(drawArea, brickCount, lineCount, brickDimensionRatio); //returns Brick[][]
     }
 
     /**
-     * This method is used to form the Brick Wall for a particular level where only one type of Brick is used.
+     * This method is used to form the Brick GamePlay for a particular level where only one type of Brick is used.
      * @param drawArea drawArea is the Rectangle in which the level is being setup.
      * @param brickCnt this represents the total number of bricks on the brick wall.
      * @param lineCnt this represents the number of brick lines on the wall.
@@ -84,7 +84,7 @@ public class LevelSetUp {
      * @param brickSizeRatio this represents the height to width ratio of a singular brick.
      * @param typeA this represents the first type of Brick being used.
      * @param typeB this represents the second type of Brick being used.
-     * @return Returns an array of Bricks with the different types of bricks to be set up as the Wall.
+     * @return Returns an array of Bricks with the different types of bricks to be set up as the Wall above.
      */
     private Brick[] makeChessboardLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
         //return Brick[] type

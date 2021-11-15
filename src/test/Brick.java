@@ -16,7 +16,7 @@ import java.util.Random;
  * of the code.
  *
  */
-abstract public class Brick  { //this represents all the bricks we see above on the Wall
+abstract public class Brick  { //this represents one of the bricks we see on top of the wall in the game
 
     public static final int DEF_CRACK_DEPTH = 1; //the thickness of the crack on the cement
     public static final int DEF_STEPS = 35;

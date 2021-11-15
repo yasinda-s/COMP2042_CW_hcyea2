@@ -44,16 +44,28 @@
       <change beforePath="$PROJECT_DIR$/Javadocs/test/GameFrame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/GameFrame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/test/GraphicsMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/GraphicsMain.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/test/HomeMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/HomeMenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/LevelSetUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/LevelSetUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/test/LevelSetUp.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/test/Player.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/Player.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/test/RubberBall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/RubberBall.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/test/SteelBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/SteelBrick.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Wall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/Wall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/test/Wall.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/test/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/package-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/test/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Wall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/ClayBrick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/ClayBrick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/LevelSetUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Wall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Brick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ClayBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ClayBrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/DebugConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/DebugConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/DebugPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/DebugPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/LevelSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/WallSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/GamePlay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,42 +140,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="841" y="243" key="#com.intellij.refactoring.move.moveInner.MoveInnerDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636695616505" />
-    <state x="183" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1636697031228">
+    <state x="183" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1636957451932">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="183" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636697031228" />
+    <state x="183" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636957451932" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1636878995298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636878995298" />
-    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1636895614547">
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1636971712922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636895614547" />
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971712922" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1636608597338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636608597338" />
-    <state width="1493" height="102" key="GridCell.Tab.0.bottom" timestamp="1636895681770">
+    <state width="1493" height="102" key="GridCell.Tab.0.bottom" timestamp="1636971733809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="102" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636895681770" />
-    <state width="1493" height="102" key="GridCell.Tab.0.center" timestamp="1636895681770">
+    <state width="1493" height="102" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971733809" />
+    <state width="1493" height="102" key="GridCell.Tab.0.center" timestamp="1636971733808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="102" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636895681770" />
-    <state width="1493" height="102" key="GridCell.Tab.0.left" timestamp="1636895681770">
+    <state width="1493" height="102" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971733808" />
+    <state width="1493" height="102" key="GridCell.Tab.0.left" timestamp="1636971733808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="102" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636895681770" />
-    <state width="1493" height="102" key="GridCell.Tab.0.right" timestamp="1636895681770">
+    <state width="1493" height="102" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971733808" />
+    <state width="1493" height="102" key="GridCell.Tab.0.right" timestamp="1636971733809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="102" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636895681770" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1636890523637">
+    <state width="1493" height="102" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971733809" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1636968517954">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636890523637" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636968517954" />
+    <state x="361" y="71" key="scopes" timestamp="1636957417544">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="scopes/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636957417544" />
     <state x="431" y="145" key="search.everywhere.popup" timestamp="1636868344184">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

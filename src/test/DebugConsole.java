@@ -16,21 +16,21 @@ public class DebugConsole extends JDialog implements WindowListener{
     private JFrame owner; //works like a main window where components you put together like labels, buttons, fields to make a GUI
     private DebugPanel debugPanel;
     private GameBoard gameBoard;
-    private Wall wall;
+    private GamePlay gamePlay;
 
     /**
      * This is the constructor for DebugConsole Class.
      * @param owner Consists of the JFrame where the components will be set up.
-     * @param wall Wall object.
+     * @param gamePlay GamePlay object.
      * @param gameBoard GameBoard object where all the gaming components are drawn.
      */
-    public DebugConsole(JFrame owner,Wall wall,GameBoard gameBoard){ //constructor for this takes main window, wall, gameboard
-        this.wall = wall;
+    public DebugConsole(JFrame owner, GamePlay gamePlay, GameBoard gameBoard){ //constructor for this takes main window, gamePlay, gameboard
+        this.gamePlay = gamePlay;
         this.owner = owner;
         this.gameBoard = gameBoard;
         initialize();
 
-        debugPanel = new DebugPanel(wall);
+        debugPanel = new DebugPanel(gamePlay);
         this.add(debugPanel,BorderLayout.CENTER);
 
         this.pack();
@@ -90,7 +90,7 @@ public class DebugConsole extends JDialog implements WindowListener{
     @Override
     public void windowActivated(WindowEvent windowEvent) {
         setLocation();
-        Ball b = wall.ball;
+        Ball b = gamePlay.ball;
         debugPanel.setValues(b.getSpeedX(),b.getSpeedY());
     }
 
