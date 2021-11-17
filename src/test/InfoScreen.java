@@ -10,6 +10,9 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
 
     private static final String INFO_TEXT = "How to Play";
     private static final String MENU_TEXT = "Return to Menu";
+    private static final String HOW_TO_PLAY1 = "Use A to move to the Left.";
+    private static final String HOW_TO_PLAY2 = "Press D to move to the Right.";
+    private static final String HOW_TO_PLAY3 = "Press Esc to Pause the Game.";
 
     private GameFrame owner;
     private Rectangle infoFace;
@@ -18,6 +21,8 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
 
     private Font headFont;
     private Font menuFont;
+
+    private Image backGroundImage;
 
     private boolean infoMenuClicked;
 
@@ -41,6 +46,8 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
 
+        backGroundImage = new ImageIcon("src/test/backgroundImage.jpg").getImage();
+
         this.owner = owner;
 
         infoFace = new Rectangle(new Point(0,0), area);
@@ -54,7 +61,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         infoMenuButton = new Rectangle(btnDim);
 
         headFont = new Font("Noto Mono",Font.BOLD,40);
-        menuFont = new Font("Noto Mono",Font.BOLD,20);
+        menuFont = new Font("Noto Mono",Font.PLAIN,20);
     }
 
     /**
@@ -106,6 +113,8 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         g2d.setColor(BG_COLOR); //set bg color
         g2d.fill(infoFace); //draw interior of passed in rectangle (menu frame)
 
+        g2d.drawImage(backGroundImage, 0, 0, null);
+
         Stroke tmp = g2d.getStroke();
 
         g2d.setStroke(borderStoke_noDashes); //set border of of whole container
@@ -137,11 +146,24 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         int sX,sY;
 
         sX = (int)(infoFace.getWidth() - headingRect.getWidth()) / 2; //x coordinate of where we want the box to be in
-        sY = (int)(infoFace.getHeight() / 4); //y coordinate of where we want the box to be in
+        sY = (int)(infoFace.getHeight() / 6); //y coordinate of where we want the box to be in
 
         g2d.setFont(headFont); //set the font
         g2d.drawString(INFO_TEXT,sX,sY); //draw the greetings font (string) in the coordinates we found
 
+        Rectangle2D textBodyRect = menuFont.getStringBounds(HOW_TO_PLAY1,frc);
+
+        sX = (int)(infoFace.getWidth() - textBodyRect.getWidth()) / 2; //x coordinate of where we want the box to be in
+        sY = (int)(infoFace.getHeight() / 3); //y coordinate of where we want the box to be in
+
+        g2d.setFont(menuFont);
+        g2d.drawString(HOW_TO_PLAY1, sX, sY);
+
+        g2d.setFont(menuFont);
+        g2d.drawString(HOW_TO_PLAY2, sX-12, sY+50);
+
+        g2d.setFont(menuFont);
+        g2d.drawString(HOW_TO_PLAY3, sX-14, sY+100);
     }
 
     /**

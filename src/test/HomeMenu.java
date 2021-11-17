@@ -52,7 +52,9 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     private boolean startClicked;
     private boolean exitClicked;
     private boolean infoClicked;
-    
+
+    private Image backGroundImage;
+
     /**
      * This is the constructor for the HomeMenu.
      * @param owner This is the game frame window where the components will be set up.
@@ -79,6 +81,8 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         //for the border deco
         borderStoke = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND,0,DASHES,0);
         borderStoke_noDashes = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND);
+
+        backGroundImage = new ImageIcon("src/test/backgroundImage.jpg").getImage();
 
         //assigning fonts for greetings, font, credits and buttons
         greetingsFont = new Font("Noto Mono",Font.PLAIN,25);
@@ -136,6 +140,8 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.fill(menuFace); //draw interior of passed in rectangle (menu frame)
 
         Stroke tmp = g2d.getStroke();
+
+        g2d.drawImage(backGroundImage, 0, 0, null);
 
         g2d.setStroke(borderStoke_noDashes); //set border of of whole container
         g2d.setColor(DASH_BORDER_COLOR); //set color '' (yellow) - dashed
