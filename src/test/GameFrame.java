@@ -2,10 +2,9 @@ package test;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.datatransfer.StringSelection;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
-import java.awt.event.WindowListener;
+
 
 /**
  * This class is what holds the whole frame of the Game to be displayed.
@@ -16,6 +15,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     private GameBoard gameBoard;
     private HomeMenu homeMenu;
+    private InfoScreen infoScreen;
 
     private boolean gaming;
 
@@ -32,6 +32,8 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         gameBoard = new GameBoard(this);
 
         homeMenu = new HomeMenu(this,new Dimension(450,300));
+
+        infoScreen = new InfoScreen(this, new Dimension(450,300));
 
         this.add(homeMenu,BorderLayout.CENTER);
 
@@ -59,6 +61,24 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.setUndecorated(false);
         initialize();
         /*to avoid problems with graphics focus controller is added here*/
+        this.addWindowFocusListener(this);
+    }
+
+    public void enableInfoScreen(){
+        this.dispose();
+        this.remove(homeMenu);
+        this.add(infoScreen, BorderLayout.CENTER);
+        this.setUndecorated(false);
+        initialize();
+        this.addWindowFocusListener(this);
+    }
+
+    public void enableHomeScreen(){
+        this.dispose();
+        this.remove(infoScreen);
+        this.add(homeMenu, BorderLayout.CENTER);
+        this.setUndecorated(false);
+        initialize();
         this.addWindowFocusListener(this);
     }
 

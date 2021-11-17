@@ -97,7 +97,7 @@ abstract public class Ball {
         double h = tmp.getHeight(); //get height
 
         tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h); //to set frame of square (rect)
-        setPoints(w,h); //use this to get the coordinates of the ball with found width and height
+        setPoints(w,h); //use this to set the coordinates of the ball with found width and height
 
         ballFace = tmp;
     }
@@ -194,7 +194,7 @@ abstract public class Ball {
      * @param width The width of the rectangle frame of the ball.
      * @param height The height of the rectangle frame of the ball.
      */
-    private void setPoints(double width,double height){  //use this to get the coordinates of the ball with found width and height
+    private void setPoints(double width,double height){  //use this to set the coordinates of the ball with found width and height
         //width and height are the same
         up.setLocation(center.getX(),center.getY()-(height / 2));
         down.setLocation(center.getX(),center.getY()+(height / 2));

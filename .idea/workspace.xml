@@ -3,69 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a221ebbd-3883-47fb-9d28-b9e261748d5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-19.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-20.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-21.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/Ball.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Brick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/Brick.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/CementBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/CementBrick.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/ClayBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/ClayBrick.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Crack.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/Crack.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/DebugConsole.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/DebugConsole.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/DebugPanel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/DebugPanel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/GameBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/GameBoard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/GameFrame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/GameFrame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/GraphicsMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/GraphicsMain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/HomeMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/HomeMenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/LevelSetUp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Player.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/Player.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/RubberBall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/RubberBall.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/SteelBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/SteelBrick.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Wall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/test/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/ClayBrick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/ClayBrick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/DebugPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/LevelSetUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/Wall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Brick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/ClayBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ClayBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/DebugConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/DebugConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/DebugPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/DebugPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/GameFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Destroy/test/HomeMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Destroy/test/HomeMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/LevelSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/WallSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/GamePlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/HomeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/HomeMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,10 +75,11 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser" timestamp="1636878747682">
+    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser" timestamp="1637137011904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636878747682" />
+    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637036632815" />
+    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637137011904" />
     <state x="841" y="243" key="#com.intellij.refactoring.move.moveInner.MoveInnerDialog" timestamp="1636695616505">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -144,38 +88,51 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="183" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636957451932" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1636878995298">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1637056158367">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636878995298" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056158367" />
     <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1636971712922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971712922" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1636608597338">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1637057117370">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636608597338" />
-    <state width="1493" height="102" key="GridCell.Tab.0.bottom" timestamp="1636971733809">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057117370" />
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom" timestamp="1637145228555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="102" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971733809" />
-    <state width="1493" height="102" key="GridCell.Tab.0.center" timestamp="1636971733808">
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637145228555" />
+    <state width="1493" height="111" key="GridCell.Tab.0.center" timestamp="1637145228555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="102" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971733808" />
-    <state width="1493" height="102" key="GridCell.Tab.0.left" timestamp="1636971733808">
+    <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
+    <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
+    <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637145228555" />
+    <state width="1493" height="111" key="GridCell.Tab.0.left" timestamp="1637145228554">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="102" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971733808" />
-    <state width="1493" height="102" key="GridCell.Tab.0.right" timestamp="1636971733809">
+    <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
+    <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
+    <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637145228554" />
+    <state width="1493" height="111" key="GridCell.Tab.0.right" timestamp="1637145228555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="102" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971733809" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1636968517954">
+    <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
+    <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
+    <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637145228555" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1637141492473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636968517954" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057083233" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637141492473" />
+    <state x="209" y="32" key="new project wizard" timestamp="1637057126804">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="32" key="new project wizard/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057126804" />
     <state x="361" y="71" key="scopes" timestamp="1636957417544">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
