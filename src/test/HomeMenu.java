@@ -16,7 +16,7 @@ import java.awt.geom.Rectangle2D;
  * Changed the variable name from MENU_TEXT to EXIT_TEXT because it represents the String we place on the EXIT button in the Menu Screen.
  * Changed the variable name from "menubutton" to "exitbutton" as it refers to the Exit button on the screen.
  */
-public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener {
+public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener { //need to add javadocs
 
     private static final String GREETINGS = "Welcome to:";
     private static final String GAME_TITLE = "Brick Destroy";

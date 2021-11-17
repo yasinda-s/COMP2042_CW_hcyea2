@@ -9,7 +9,7 @@ import java.awt.event.WindowFocusListener;
 /**
  * This class is what holds the whole frame of the Game to be displayed.
  */
-public class GameFrame extends JFrame implements WindowFocusListener {
+public class GameFrame extends JFrame implements WindowFocusListener { //need to add javadocs
 
     private static final String DEF_TITLE = "Brick Destroy"; //name on the game frame header
 

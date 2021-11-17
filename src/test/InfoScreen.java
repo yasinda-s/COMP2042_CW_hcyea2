@@ -6,7 +6,7 @@ import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
-public class InfoScreen extends JComponent implements MouseListener, MouseMotionListener{
+public class InfoScreen extends JComponent implements MouseListener, MouseMotionListener{ //need to add javadocs
 
     private static final String INFO_TEXT = "How to Play";
     private static final String MENU_TEXT = "Return to Menu";
