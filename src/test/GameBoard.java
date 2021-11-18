@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 
+
 /**
  * This class draws all of the 2d Components required to load the home screen and to play the game.
  */
@@ -31,9 +32,13 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private String message;
 
+    private String scoreMessage;
+
     private boolean showPauseMenu;
 
     private Font menuFont;
+
+    private int score;
 
     private Rectangle continueButtonRect;
     private Rectangle exitButtonRect;
@@ -57,21 +62,27 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         this.initialize(); //set dimension, focus, and listeners from Component
         message = "";
+        scoreMessage = "";
         gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point(300,430));
         //gamePlay sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
+        score = 0;
 
         debugConsole = new DebugConsole(owner, gamePlay,this); //setup debug console
 
         //initialize the first level
         gamePlay.nextLevel();
+        gamePlay.setTimePlayed(0);
 
         gameTimer = new Timer(10,e ->{
             gamePlay.move(); //moving of player and ball from GamePlay
             gamePlay.findImpacts(); //look for impacts from GamePlay
-            message = String.format("Bricks: %d Balls %d", gamePlay.getBrickCount(), gamePlay.getBallCount());
+            gamePlay.incrementTime();
+            //message = String.format("Bricks: %d Balls: %d Time Played: %d", gamePlay.getBrickCount(), gamePlay.getBallCount(), gamePlay.getTimePlayed());
+            scoreMessage = String.format("Bricks: %d Balls: %d Time Played: %d", gamePlay.getBrickCount(), gamePlay.getBallCount(), gamePlay.getTimePlayed());
             if(gamePlay.isBallLost()){
                 if(gamePlay.ballEnd()){
                     gamePlay.wallReset();
+                    //score += 1000/gamePlay.getTimePlayed(); //make function for this
                     message = "Game over"; //if all balls lost
                 }
                 gamePlay.ballReset(); //if user hasnt used all 3 balls
@@ -87,6 +98,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     gamePlay.nextLevel();
                 }
                 else{ //if no more levels
+                    //score += 1000/gamePlay.getTimePlayed(); //make function for this
                     message = "ALL WALLS DESTROYED";
                     gameTimer.stop();
                 }
@@ -121,6 +133,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         g2d.setColor(Color.BLUE);
         g2d.drawString(message,250,225); //whenever we print something on screen, we use this with the color we set earlier
+        g2d.drawString(scoreMessage,210,200); //for score things
 
         drawBall(gamePlay.ball,g2d); //draws the ball using 2dgraphics
 
@@ -349,6 +362,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             repaint();
         }
         else if(restartButtonRect.contains(p)){
+            gamePlay.setTimePlayed(0);
             message = "Restarting Game...";
             gamePlay.ballReset();
             gamePlay.wallReset();

@@ -8,6 +8,8 @@ import java.awt.event.MouseMotionListener;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
+//add background image and links to info screen
+
 /**
  * HomeMenu class is used to design the Home Screen we see when we first load the game.
  *
@@ -82,7 +84,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         borderStoke = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND,0,DASHES,0);
         borderStoke_noDashes = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND);
 
-        backGroundImage = new ImageIcon("src/test/backgroundImage.jpg").getImage();
+        backGroundImage = new ImageIcon("src/test/backgroundImg.jpg").getImage();
 
         //assigning fonts for greetings, font, credits and buttons
         greetingsFont = new Font("Noto Mono",Font.PLAIN,25);

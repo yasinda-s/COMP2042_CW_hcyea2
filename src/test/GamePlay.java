@@ -35,6 +35,8 @@ public class GamePlay {
     private int ballCount;
     private boolean ballLost;
 
+    private int timePlayed;
+
     /**
      * This is the constructor for the GamePlay class.
      * @param drawArea drawArea is the Rectangle in which the whole game is being setup.
@@ -239,5 +241,18 @@ public class GamePlay {
      */
     public void resetBallCount(){
         ballCount = 3;
+    }
+
+    public void incrementTime(){
+        timePlayed++;
+    }
+
+    public int getTimePlayed() {
+        int seconds = timePlayed/100;
+        return seconds;
+    }
+
+    public void setTimePlayed(int timePlayed) {
+        this.timePlayed = timePlayed;
     }
 }

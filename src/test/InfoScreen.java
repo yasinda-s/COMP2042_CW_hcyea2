@@ -6,6 +6,8 @@ import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
+//javadocs for this - handles the info screen when accessed Info from menu
+
 public class InfoScreen extends JComponent implements MouseListener, MouseMotionListener{ //need to add javadocs
 
     private static final String INFO_TEXT = "How to Play";
