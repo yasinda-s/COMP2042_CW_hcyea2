@@ -35,6 +35,8 @@ public class GamePlay {
     private int ballCount;
     private boolean ballLost;
 
+    private int score;
+
     private int timePlayed;
 
     /**
@@ -53,6 +55,8 @@ public class GamePlay {
 
         levels = wallsetup.levelsMade;
         level = 0; //original level is 0
+
+        score = 0;
 
         ballCount = 3; //we get 3 lives
         ballLost = false; //originally no balls are lost
@@ -93,6 +97,7 @@ public class GamePlay {
              * because for every brick program checks for horizontal and vertical impacts
              */
             brickCount--;
+            calculateScore(level);
         }
         else if(impactBorder()) { //if the ball hits the corner walls (left and right)
             ball.reverseX();
@@ -103,6 +108,23 @@ public class GamePlay {
         else if(ball.getPosition().getY() > area.getY() + area.getHeight()){ //if ball goes out (below)
             ballCount--;
             ballLost = true;
+        }
+    }
+
+    public void calculateScore(int level){
+        switch (level){
+            case 1:
+                score+=100;
+                break;
+            case 2:
+                score+=200;
+                break;
+            case 3:
+                score+=300;
+                break;
+            case 4:
+                score+=400;
+                break;
         }
     }
 
@@ -254,5 +276,13 @@ public class GamePlay {
 
     public void setTimePlayed(int timePlayed) {
         this.timePlayed = timePlayed;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 }

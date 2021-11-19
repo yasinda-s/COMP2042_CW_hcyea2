@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
+import java.io.IOException;
 
 
 /**
@@ -22,7 +23,7 @@ public class GameFrame extends JFrame implements WindowFocusListener { //need to
     /**
      * This is the constructor for the GameFrame class. It uses gameBoard and homeMenu to get the layout setup.
      */
-    public GameFrame(){ //constructor
+    public GameFrame() throws IOException { //constructor
         super(); //JFrame
 
         gaming = false; //originally set to false
