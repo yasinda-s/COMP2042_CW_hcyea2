@@ -58,7 +58,7 @@ public class GamePlay {
 
         score = 0;
 
-        ballCount = 3; //we get 3 lives
+        ballCount = 1; //we get 3 lives
         ballLost = false; //originally no balls are lost
 
         makeBall(ballPos); //take in the initial ball coordinates and make rubber ball object

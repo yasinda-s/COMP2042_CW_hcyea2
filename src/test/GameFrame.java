@@ -75,7 +75,7 @@ public class GameFrame extends JFrame implements WindowFocusListener { //need to
     }
 
     public void enableHomeScreen(){
-        
+
         this.dispose();
         this.remove(infoScreen);
         this.add(homeMenu, BorderLayout.CENTER);

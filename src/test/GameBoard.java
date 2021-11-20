@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.FontRenderContext;
+import java.awt.geom.Rectangle2D;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,6 +24,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private static final String RESTART = "Restart";
     private static final String EXIT = "Exit";
     private static final String PAUSE = "Pause Menu";
+    private static final String HIGH_SCORE_TEXT = "High Score Board";
+    private static final String SCORE_EXIT_TEXT = "Exit Game";
     private static final int TEXT_SIZE = 30;
     private static final Color MENU_COLOR = new Color(0,255,0);
 
@@ -30,6 +33,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private static final int DEF_HEIGHT = 450;
 
     private static final Color BG_COLOR = Color.WHITE;
+
+    private boolean scoreExitClicked;
 
     private Timer gameTimer;
 
@@ -46,11 +51,15 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private Rectangle continueButtonRect;
     private Rectangle exitButtonRect;
     private Rectangle restartButtonRect;
+    private Rectangle scoreExitButtonRect;
+
     private int strLen;
 
     private DebugConsole debugConsole;
 
     Writer writer;
+
+    private boolean gameOver;
 
     /**
      * This is the constructor for the GameBoard.
@@ -61,6 +70,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         strLen = 0;
         showPauseMenu = false;
+
+        gameOver = false;
 
         menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
         //type Font for Menu screen that has font mentioned and font size mentioned above
@@ -74,6 +85,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         writer = new BufferedWriter(new FileWriter("src/test/highscore.txt", true));
 
         debugConsole = new DebugConsole(owner, gamePlay,this); //setup debug console
+
+        Dimension btnDim = new Dimension(this.getWidth()/3, this.getHeight()/12);
+        scoreExitButtonRect = new Rectangle(btnDim); //button draws when it is inside method
 
         //initialize the first level
         gamePlay.nextLevel();
@@ -94,6 +108,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
+                    gameOver = true;
                 }
                 gamePlay.ballReset(); //if user hasnt used all 3 balls
                 gameTimer.stop();
@@ -155,7 +170,60 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         if(showPauseMenu) //if user presses esc
             drawMenu(g2d); //draw the menu screen
 
+        if(gameOver){
+            clear(g2d);
+            drawHighScoreScreen(g2d);
+        }
+
         Toolkit.getDefaultToolkit().sync();
+    }
+
+    private void drawHighScoreScreen(Graphics2D g2d) {
+        //high score title
+        g2d.setColor(MENU_COLOR); //assign text color in home screen
+        FontRenderContext frc = g2d.getFontRenderContext();
+
+        Rectangle2D headingRect = menuFont.getStringBounds(HIGH_SCORE_TEXT,frc);
+
+        int sX,sY;
+
+        sX = (int)(this.getWidth() - headingRect.getWidth()) / 2; //x coordinate of where we want the box to be in
+        sY = (int)(this.getHeight() / 6); //y coordinate of where we want the box to be in
+
+        g2d.setFont(menuFont); //set the font
+        g2d.drawString(HIGH_SCORE_TEXT,sX,sY); //draw the greetings font (string) in the coordinates we found
+
+        Rectangle2D menuTxtRect = menuFont.getStringBounds(SCORE_EXIT_TEXT,frc);
+
+        Dimension btnDim = new Dimension(this.getWidth()/3, this.getHeight()/12);
+        scoreExitButtonRect = new Rectangle(btnDim); //button draws when it is inside method
+
+        //coordinates for exit button
+        int x = (this.getWidth() - scoreExitButtonRect.width) / 2;
+        int y =(int) ((this.getHeight() - scoreExitButtonRect.height) * 0.8);
+
+        scoreExitButtonRect.setLocation(x, y);
+
+        //get the location of the string for start button
+        x = (int)(scoreExitButtonRect.getWidth() - menuTxtRect.getWidth()) / 2;
+        y = (int)(scoreExitButtonRect.getHeight() - menuTxtRect.getHeight() - 40) / 2;
+
+        x += scoreExitButtonRect.x;
+        y += scoreExitButtonRect.y + (scoreExitButtonRect.height * 0.9);
+
+        if(scoreExitClicked){ //change color, redraw button and more...
+            Color tmp = g2d.getColor();
+            g2d.setColor(Color.WHITE);
+            g2d.draw(scoreExitButtonRect);
+            g2d.setColor(Color.BLACK);
+            g2d.drawString(SCORE_EXIT_TEXT,x,y+20);
+            g2d.setColor(tmp);
+            System.exit(0);
+        }
+        else{
+            g2d.draw(scoreExitButtonRect); //leave as it is
+            g2d.drawString(SCORE_EXIT_TEXT,x,y+20); //with normal coordinate found above
+        }
     }
 
     /**
@@ -372,26 +440,32 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
         else if(restartButtonRect.contains(p)){
             gamePlay.setTimePlayed(0);
-            message = "Restarting Game...";
+            //message = "Restarting Game...";
             gamePlay.ballReset();
             gamePlay.wallReset();
             showPauseMenu = false;
             repaint();
         }
-        else if(exitButtonRect.contains(p)){
+        else if(exitButtonRect.contains(p)) {
             System.exit(0);
         }
-
     }
 
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
-
+        Point p = mouseEvent.getPoint();
+        if (scoreExitButtonRect.contains(p)){
+            scoreExitClicked = true;
+            repaint(scoreExitButtonRect.x,scoreExitButtonRect.y,scoreExitButtonRect.width+1,scoreExitButtonRect.height+1);
+        }
     }
 
     @Override
-    public void mouseReleased(MouseEvent mouseEvent) {
-
+    public void mouseReleased(MouseEvent e) {
+        if(scoreExitClicked){
+            scoreExitClicked = false;
+            repaint(scoreExitButtonRect.x,scoreExitButtonRect.y,scoreExitButtonRect.width+1,scoreExitButtonRect.height+1);
+        }
     }
 
     @Override
@@ -421,6 +495,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); //make cursor hand cursor if hovering over buttons
             else
                 this.setCursor(Cursor.getDefaultCursor()); //else leave normal cursor
+        }else if(scoreExitButtonRect.contains(p)){
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); //make cursor hand cursor if hovering over buttons
         }
         else{
             this.setCursor(Cursor.getDefaultCursor()); //else leave normal cursor
@@ -432,7 +508,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
      */
     public void onLostFocus(){
         gameTimer.stop();
-        message = "Focus Lost";
+        //message = "Focus Lost";
         repaint();
     }
 }
