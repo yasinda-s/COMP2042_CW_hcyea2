@@ -5,10 +5,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 //XXXX added score
 //XXXX need to remove messages staying on screen
@@ -43,6 +43,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private String message;
 
     private String detailMessage;
+
+    private ArrayList<Integer> scoresFromFile;
 
     private boolean showPauseMenu;
 
@@ -84,6 +86,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         writer = new BufferedWriter(new FileWriter("src/test/highscore.txt", true));
 
+        scoresFromFile = new ArrayList<Integer>();
+
         debugConsole = new DebugConsole(owner, gamePlay,this); //setup debug console
 
         Dimension btnDim = new Dimension(this.getWidth()/3, this.getHeight()/12);
@@ -103,7 +107,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     gamePlay.wallReset();
                     message = "Game over, your final score is " + gamePlay.getScore(); //if all balls lost
                     try {
-                        writer.write(gamePlay.getScore()+" ");
+                        if(writer==null){
+                            assert false;
+                            writer.write(gamePlay.getScore() + " ");
+                        }else{
+                            writer.write(" " + gamePlay.getScore() + " ");
+                        }
                         writer.close();
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -127,7 +136,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     gameTimer.stop();
                 }
             }
-
             repaint();
         });
 
@@ -172,10 +180,28 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         if(gameOver){
             clear(g2d);
+
+            try {
+                findHighScore();
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            }
+
             drawHighScoreScreen(g2d);
         }
 
         Toolkit.getDefaultToolkit().sync();
+    }
+
+    private void findHighScore() throws FileNotFoundException { //read values, save on array/list and then sort, then print
+        Scanner inputScore = new Scanner(new File("src/test/highscore.txt"));
+
+        while(inputScore.hasNext()){
+            //inputScore.next(); //causes error based on odd or even
+            scoresFromFile.add(Integer.parseInt(inputScore.next()));
+        }
+
+        Collections.sort(scoresFromFile, Collections.reverseOrder());
     }
 
     private void drawHighScoreScreen(Graphics2D g2d) {
@@ -193,6 +219,19 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setFont(menuFont); //set the font
         g2d.drawString(HIGH_SCORE_TEXT,sX,sY); //draw the greetings font (string) in the coordinates we found
 
+        //displaying high scores
+        int score_x, score_y;
+
+        score_x = sX + 110;
+        score_y = sY + 50;
+
+        for(int i=0;i<5;i++){ //make for length in file XXXX
+            String scoreString = String.valueOf(scoresFromFile.get(i));
+            g2d.drawString(scoreString,score_x,score_y);
+            score_y += 30;
+        }
+
+        //exit button
         Rectangle2D menuTxtRect = menuFont.getStringBounds(SCORE_EXIT_TEXT,frc);
 
         Dimension btnDim = new Dimension(this.getWidth()/3, this.getHeight()/12);
