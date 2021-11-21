@@ -10,10 +10,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-//XXXX added score
-//XXXX need to remove messages staying on screen
 /**
  * This class draws all of the 2d Components required to load the home screen and to play the game.
+ *
+ * Additions -
+ *
+ * This class is responsible for opening up the text file and reading in the previous high scores by the user. It then refers to this text file
+ * and updates it when the user has achieved a new high score! The txt file is then referred to display a leader board when the game is completed.
+ * It shows the top 5 permanent high scores in descending order.
+ *
+ * Added a method that draws the permanent leaderboard of the high scores when the game is ended.
  */
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
     //Keylistener can focus on 3 things - keyPressed, keyReleased and keyTyped
@@ -33,20 +39,20 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private static final int DEF_HEIGHT = 450;
 
     private static final Color BG_COLOR = Color.WHITE;
-
-    private boolean scoreExitClicked;
+    private static final int TOP_SCORES = 5;
 
     private Timer gameTimer;
 
     private GamePlay gamePlay;
 
     private String message;
-
     private String detailMessage;
 
-    private ArrayList<Integer> scoresFromFile;
+    private java.util.List<Integer> scoresFromFile;
 
     private boolean showPauseMenu;
+    private boolean scoreExitClicked;
+    private boolean gameOver;
 
     private Font menuFont;
 
@@ -59,9 +65,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private DebugConsole debugConsole;
 
-    Writer writer;
-
-    private boolean gameOver;
+    Writer writer; //XXXX
 
     /**
      * This is the constructor for the GameBoard.
@@ -69,16 +73,16 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
      */
     public GameBoard(JFrame owner) throws IOException {
         super();
-
         strLen = 0;
-        showPauseMenu = false;
 
+        showPauseMenu = false;
         gameOver = false;
 
         menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
         //type Font for Menu screen that has font mentioned and font size mentioned above
 
         this.initialize(); //set dimension, focus, and listeners from Component
+
         message = "";
         detailMessage = "";
         gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point(300,430));
@@ -90,7 +94,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         debugConsole = new DebugConsole(owner, gamePlay,this); //setup debug console
 
-        Dimension btnDim = new Dimension(this.getWidth()/3, this.getHeight()/12);
+        Dimension btnDim = new Dimension(this.getWidth()/3, this.getHeight()/12); //XXXX
         scoreExitButtonRect = new Rectangle(btnDim); //button draws when it is inside method
 
         //initialize the first level
@@ -105,8 +109,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             if(gamePlay.isBallLost()){
                 if(gamePlay.ballEnd()){
                     gamePlay.wallReset();
-                    message = "Game over, your final score is " + gamePlay.getScore(); //if all balls lost
-                    try {
+                    message = "Game over, your final score is " + gamePlay.getScore(); //if all balls lost XXXX add this to the high score screen
+                    try { //XXXX repeats when user wins - add a function to remove recurrence
                         if(writer==null){
                             assert false;
                             writer.write(gamePlay.getScore() + " ");
@@ -133,14 +137,24 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 }
                 else{ //if no more levels
                     message = "ALL WALLS DESTROYED";
+                    try {
+                        if(writer==null){
+                            assert false;
+                            writer.write(gamePlay.getScore() + " ");
+                        }else{
+                            writer.write(" " + gamePlay.getScore() + " ");
+                        }
+                        writer.close();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                     gameTimer.stop();
+                    gameOver = true;
                 }
             }
             repaint();
         });
-
     }
-
     /**
      * This method is used to initialize the dimensions of the Game Board and Listeners so the system responds to user's actions.
      */
@@ -152,7 +166,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
     }
-
     /**
      * Overriding method to paint the 2d Components onto the screen. We use this to draw the ball, wall and player.
      * @param g The Graphics frame in which we want to draw the game components.
@@ -160,9 +173,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     public void paint(Graphics g){
 
         Graphics2D g2d = (Graphics2D) g; //get more control over geometry, coordinate transformations, color management, and text
-
         clear(g2d);
-
         g2d.setColor(Color.BLUE);
         g2d.drawString(message,250,225); //whenever we print something on screen, we use this with the color we set earlier
         g2d.drawString(detailMessage,180,200); //for score things
@@ -180,44 +191,51 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         if(gameOver){
             clear(g2d);
-
             try {
                 findHighScore();
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
             }
-
             drawHighScoreScreen(g2d);
         }
-
         Toolkit.getDefaultToolkit().sync();
     }
 
+    /**
+     * This method is used to find the top 5 permanent high scores in the game.
+     * @throws FileNotFoundException This is incase the method is unable to access the file highscore.txt which records the scores.
+     */
     private void findHighScore() throws FileNotFoundException { //read values, save on array/list and then sort, then print
         Scanner inputScore = new Scanner(new File("src/test/highscore.txt"));
 
         while(inputScore.hasNext()){
-            //inputScore.next(); //causes error based on odd or even
             scoresFromFile.add(Integer.parseInt(inputScore.next()));
         }
 
-        Collections.sort(scoresFromFile, Collections.reverseOrder());
+        scoresFromFile.sort(Collections.reverseOrder());
+
+        if(scoresFromFile.size()>TOP_SCORES){
+            scoresFromFile = scoresFromFile.subList(0,6);
+        }
     }
 
-    private void drawHighScoreScreen(Graphics2D g2d) {
+    /**
+     * This method is responsible for drawing the High Score Screen that is shown when the user either completes or loses the game.
+     * @param g2d The Graphics 2d frame in which we want to draw the game components.
+     */
+    private void drawHighScoreScreen(Graphics2D g2d) { //XXXX - try to break from class
         //high score title
         g2d.setColor(MENU_COLOR); //assign text color in home screen
         FontRenderContext frc = g2d.getFontRenderContext();
+        g2d.setFont(menuFont); //set the font
 
         Rectangle2D headingRect = menuFont.getStringBounds(HIGH_SCORE_TEXT,frc);
 
         int sX,sY;
-
         sX = (int)(this.getWidth() - headingRect.getWidth()) / 2; //x coordinate of where we want the box to be in
-        sY = (int)(this.getHeight() / 6); //y coordinate of where we want the box to be in
+        sY = this.getHeight() / 6; //y coordinate of where we want the box to be in
 
-        g2d.setFont(menuFont); //set the font
-        g2d.drawString(HIGH_SCORE_TEXT,sX,sY); //draw the greetings font (string) in the coordinates we found
+        g2d.drawString(HIGH_SCORE_TEXT,sX,sY); //draw the string "High Score"
 
         //displaying high scores
         int score_x, score_y;
@@ -225,10 +243,18 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         score_x = sX + 110;
         score_y = sY + 50;
 
-        for(int i=0;i<5;i++){ //make for length in file XXXX
-            String scoreString = String.valueOf(scoresFromFile.get(i));
-            g2d.drawString(scoreString,score_x,score_y);
-            score_y += 30;
+        if (scoresFromFile.size()>TOP_SCORES){
+            for(int i=0;i<TOP_SCORES;i++){
+                String scoreString = String.valueOf(scoresFromFile.get(i));
+                g2d.drawString(scoreString, score_x, score_y);
+                score_y += 30;
+            }
+        } else{
+            for (Integer integer : scoresFromFile) {
+                String scoreString = String.valueOf(integer);
+                g2d.drawString(scoreString, score_x, score_y);
+                score_y += 30;
+            }
         }
 
         //exit button
@@ -386,7 +412,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         x = this.getWidth() / 8;
         y = this.getHeight() / 4;
 
-
         if(continueButtonRect == null){
             FontRenderContext frc = g2d.getFontRenderContext();
             continueButtonRect = menuFont.getStringBounds(CONTINUE,frc).getBounds(); //set the string bounds to continueButtonRectangle
@@ -413,7 +438,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
 
         g2d.drawString(EXIT,x,y); //draw exit button
-
         g2d.setFont(tmpFont);
         g2d.setColor(tmpColor);
     }
@@ -479,7 +503,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
         else if(restartButtonRect.contains(p)){
             gamePlay.setTimePlayed(0);
-            //message = "Restarting Game...";
             gamePlay.ballReset();
             gamePlay.wallReset();
             showPauseMenu = false;
@@ -547,7 +570,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
      */
     public void onLostFocus(){
         gameTimer.stop();
-        //message = "Focus Lost";
         repaint();
     }
 }

@@ -1,8 +1,6 @@
 package test;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 
 /**
  * This class represents the Player's bar (Rectangle) which he/she controls.

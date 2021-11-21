@@ -6,7 +6,14 @@ import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
-//javadocs for this - handles the info screen when accessed Info from menu XXXX
+/**
+ * This Class is responsible for displaying the How to Play screen when user clicks on Info in Main Menu.
+ *
+ * Additions -
+ *
+ * Added an Info button to the home screen so that the user can see the controls of the game. This screen also has a button to return back to main
+ * menu so that the user can start the game.
+ */
 
 public class InfoScreen extends JComponent implements MouseListener, MouseMotionListener{
 
@@ -115,7 +122,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         g2d.setColor(BG_COLOR); //set bg color
         g2d.fill(infoFace); //draw interior of passed in rectangle (menu frame)
 
-        g2d.drawImage(backGroundImage, 0, 0, null);
+        g2d.drawImage(backGroundImage, 0, 0, null); //XXXX fix bug where background does not load
 
         Stroke tmp = g2d.getStroke();
 
@@ -214,7 +221,6 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         if(infoMenuButton.contains(p)){ //if user clicks menu... call back menu screen
             owner.enableHomeScreen();
         }
-
     }
 
     @Override
@@ -224,7 +230,6 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
             infoMenuClicked = true;
             repaint(infoMenuButton.x,infoMenuButton.y,infoMenuButton.width+1,infoMenuButton.height+1);
         }
-
     }
 
     @Override
@@ -236,22 +241,14 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
+    public void mouseEntered(MouseEvent e) { }
 
     @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
+    public void mouseExited(MouseEvent e) { }
 
     @Override
-    public void mouseDragged(MouseEvent e) {
-
-    }
+    public void mouseDragged(MouseEvent e) { }
 
     @Override
-    public void mouseMoved(MouseEvent e) {
-
-    }
+    public void mouseMoved(MouseEvent e) { }
 }

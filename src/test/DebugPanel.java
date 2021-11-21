@@ -19,7 +19,6 @@ import java.awt.event.ActionListener;
 public class DebugPanel extends JPanel { //Jpanel is used to organize components, layouts
 
     private static final Color DEF_BKG = Color.WHITE; //color of background
-
     private JSlider ballXSpeed; //let us graphically select x ball speed by sliding a knob
     private JSlider ballYSpeed; //let us graphically select y ball speed by sliding a knob
 
@@ -61,7 +60,6 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
      * @return Returns the created Button.
      */
     private JButton makeButton(String title, ActionListener e){
-        //return a jbutton type
         JButton out = new JButton(title); //make name of button (title))
         out.addActionListener(e); //what is the action that needs to occur when clicked goes here
         return out;
@@ -75,7 +73,6 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
      * @return Returns the created Slider to affect Speed of ball.
      */
     private JSlider makeSlider(int min, int max, ChangeListener e){
-        //return Jslider type
         JSlider out = new JSlider(min,max);
         out.setMajorTickSpacing(1);
         out.setSnapToTicks(true);

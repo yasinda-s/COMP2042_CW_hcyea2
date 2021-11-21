@@ -9,10 +9,7 @@ import java.awt.event.WindowListener;
  * This class is used to setup the DebugConsole as a frame. Open by using Alt + Shift + F1.
  */
 public class DebugConsole extends JDialog implements WindowListener{
-    //window listener to be notified when we change the window state - windowed/focus/fullscreen
-
     private static final String TITLE = "Debug Console";
-
     private JFrame owner; //works like a main window where components you put together like labels, buttons, fields to make a GUI
     private DebugPanel debugPanel;
     private GameBoard gameBoard;
@@ -35,7 +32,6 @@ public class DebugConsole extends JDialog implements WindowListener{
 
         this.pack();
     }
-
     /**
      * This method sets up the Debug Console Frame with a fixed set of parameters.
      */
@@ -51,9 +47,8 @@ public class DebugConsole extends JDialog implements WindowListener{
     /**
      * This method is used to set the frame of the debug panel in the provided location.
      */
-    private void setLocation(){ //to set the frame of the debug console
-        //owner refers to whole frame and this refers to console frame
-        int x = ((owner.getWidth() - this.getWidth()) / 2) + owner.getX();
+    private void setLocation(){ //to set the frame of the debug console -
+        int x = ((owner.getWidth() - this.getWidth()) / 2) + owner.getX(); //owner refers to whole frame and this refers to console frame
         int y = ((owner.getHeight() - this.getHeight()) / 2) + owner.getY();
         this.setLocation(x,y);
     }

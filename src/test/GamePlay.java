@@ -6,6 +6,10 @@ import java.awt.geom.Point2D;
 /**
  * This class is responsible for the general game play of the Brick Game (interactions between components and it keeps track of in game scores).
  *
+ * Addition -
+ *
+ * Added methods and variables which are used to calculate the user's score for the ongoing game. Higher levels give more points for each brick that is broken.
+ *
  * Refactoring -
  *
  * The methods that formed the formation of bricks for each level has been removed from this class and created in LevelSetup Class.
@@ -36,7 +40,6 @@ public class GamePlay {
     private boolean ballLost;
 
     private int score;
-
     private int timePlayed;
 
     /**
@@ -57,7 +60,6 @@ public class GamePlay {
         level = 0; //original level is 0
 
         score = 0;
-
         ballCount = 1; //we get 3 lives
         ballLost = false; //originally no balls are lost
 
@@ -111,6 +113,10 @@ public class GamePlay {
         }
     }
 
+    /**
+     * This method is used to calculate the ongoing score of the player for one game.
+     * @param level Takes in the level which the users is playing currently.
+     */
     public void calculateScore(int level){
         switch (level){
             case 1:
@@ -265,24 +271,35 @@ public class GamePlay {
         ballCount = 3;
     }
 
+    /**
+     * This method is used to increment the time the user had played the game.
+     */
     public void incrementTime(){
         timePlayed++;
     }
 
+    /**
+     * This method is used to access the user's time played from any class.
+     * @return
+     */
     public int getTimePlayed() {
         int seconds = timePlayed/100;
         return seconds;
     }
 
+    /**
+     * This method is used as a setter to set the time the user had played the game.
+     * @param timePlayed The time the user had played the game.
+     */
     public void setTimePlayed(int timePlayed) {
         this.timePlayed = timePlayed;
     }
 
+    /**
+     * This method is used to get the user's current score.
+     * @return Int type score of user.
+     */
     public int getScore() {
         return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
     }
 }

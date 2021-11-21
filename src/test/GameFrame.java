@@ -65,6 +65,9 @@ public class GameFrame extends JFrame implements WindowFocusListener { //need to
         this.addWindowFocusListener(this);
     }
 
+    /**
+     * This method is responsible in setting up the How to Play screen when Info button is clicked.
+     */
     public void enableInfoScreen(){
         this.dispose();
         this.remove(homeMenu);
@@ -74,8 +77,10 @@ public class GameFrame extends JFrame implements WindowFocusListener { //need to
         this.addWindowFocusListener(this);
     }
 
+    /**
+     * This method is responsible in setting up the Main menu when Menu button is clicked.
+     */
     public void enableHomeScreen(){
-
         this.dispose();
         this.remove(infoScreen);
         this.add(homeMenu, BorderLayout.CENTER);

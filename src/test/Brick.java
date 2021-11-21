@@ -51,7 +51,7 @@ abstract public class Brick  { //this represents one of the bricks we see on top
     public Brick(String name, Point pos,Dimension size,Color border,Color inner,int strength){
         rnd = new Random();
         broken = false;
-        this.name = name;
+        this.name = name; //XXXX
         brickFace = makeBrickFace(pos,size);
         this.border = border;
         this.inner = inner;

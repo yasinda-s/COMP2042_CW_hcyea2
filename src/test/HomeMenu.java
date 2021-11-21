@@ -8,10 +8,12 @@ import java.awt.event.MouseMotionListener;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
-//add background image and links to info screen
-
 /**
  * HomeMenu class is used to design the Home Screen we see when we first load the game.
+ *
+ * Additions -
+ *
+ * Added a background image to the home screen to make it look more pleasant to the eye.
  *
  * Refactoring -
  *
