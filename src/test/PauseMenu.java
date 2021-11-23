@@ -112,14 +112,24 @@ public class PauseMenu{
 
     }
 
+    /**
+     * Getter for the continue button in the pause menu.
+     * @return Returns the rectangle for the button.
+     */
     public Rectangle getContinueButtonRect() {
         return continueButtonRect;
     }
-
+    /**
+     * Getter for the exit button in the pause menu.
+     * @return Returns the rectangle for the button.
+     */
     public Rectangle getExitButtonRect() {
         return exitButtonRect;
     }
-
+    /**
+     * Getter for the restart button in the pause menu.
+     * @return Returns the rectangle for the button.
+     */
     public Rectangle getRestartButtonRect() {
         return restartButtonRect;
     }

@@ -118,7 +118,6 @@ public class HighScore {
         while(inputScore.hasNext()){
             scoresFromFile.add(Integer.parseInt(inputScore.next()));
         }
-
         scoresFromFile.sort(Collections.reverseOrder());
 
         if(scoresFromFile.size()>TOP_SCORES){

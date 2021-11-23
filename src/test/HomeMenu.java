@@ -12,11 +12,9 @@ import java.awt.geom.Rectangle2D;
  * HomeMenu class is used to design the Home Screen we see when we first load the game.
  *
  * Additions -
- *
  * Added a background image to the home screen to make it look more pleasant to the eye.
  *
  * Refactoring -
- *
  * Changed the variable name from MENU_TEXT to EXIT_TEXT because it represents the String we place on the EXIT button in the Menu Screen.
  * Changed the variable name from "menubutton" to "exitbutton" as it refers to the Exit button on the screen.
  */
@@ -110,11 +108,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     public void drawMenu(Graphics2D g2d){
         drawContainer(g2d);
 
-        /*
-        all the following method calls need a relative
-        painting directly into the HomeMenu rectangle,
-        so the translation is made here so the other methods do not do that.
-         */
         Color prevColor = g2d.getColor();
         Font prevFont = g2d.getFont();
 
@@ -123,10 +116,8 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
         g2d.translate(x,y);
 
-        //methods calls
         drawText(g2d);
         drawButton(g2d);
-        //end of methods calls
 
         g2d.translate(-x,-y);
         g2d.setFont(prevFont);
@@ -168,7 +159,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
         FontRenderContext frc = g2d.getFontRenderContext();
 
-        //set fonts to the 2d rectangles used for the text
         Rectangle2D greetingsRect = greetingsFont.getStringBounds(GREETINGS,frc);
         Rectangle2D gameTitleRect = gameTitleFont.getStringBounds(GAME_TITLE,frc);
         Rectangle2D creditsRect = creditsFont.getStringBounds(CREDITS,frc);
@@ -188,12 +178,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.setFont(gameTitleFont);
         g2d.drawString(GAME_TITLE,sX,sY); //draw the title string
 
-        //same for credits - version
-        sX = (int)(menuFace.getWidth() - creditsRect.getWidth()) / 2;
+        sX = (int)(menuFace.getWidth() - creditsRect.getWidth()) / 2;  //same for credits - version
         sY += (int) creditsRect.getHeight() * 1.1;
 
-        //draw the string for version
-        g2d.setFont(creditsFont);
+        g2d.setFont(creditsFont);  //draw the string for version
         g2d.drawString(CREDITS,sX,sY);
     }
 

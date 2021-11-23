@@ -8,12 +8,14 @@ import java.io.*;
  * This class draws all of the 2d Components required to load the home screen and to play the game.
  *
  * Additions -
- *
  * This class is responsible for opening up the text file and reading in the previous high scores by the user. It then refers to this text file
  * and updates it when the user has achieved a new high score! The txt file is then referred to display a leader board when the game is completed.
  * It shows the top 5 permanent high scores in descending order.
+ * Added a method that draws the permanent leader board of the high scores when the game is ended.
  *
- * Added a method that draws the permanent leaderboard of the high scores when the game is ended.
+ * Refactoring -
+ * Removed the methods that painted the Screen for the Pause Menu when Esc is pressed and gave it a new Class called PauseMenu.
+ * Removed the methods that painted the High Score Screen when the game is done (either game over or completed) and moved it to a new class called HighScore.
  */
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
     private static final int DEF_WIDTH = 600;
@@ -29,7 +31,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private String message;
     private String detailMessage;
 
-    Writer writer; //XXXX
+    Writer writer;
 
     private boolean showPauseMenu;
     private boolean scoreExitClicked;
@@ -312,6 +314,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
     }
 
+    /**
+     * This method repaints the buttons when they are clicked.
+     * @param mouseEvent MouseEvent object used to see if the button is being pressed.
+     */
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
@@ -322,6 +328,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
     }
 
+    /**
+     * This method repaints the buttons when they are released.
+     * @param e MouseEvent object used to see if the button is being released.
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
         if(scoreExitClicked){
@@ -341,6 +351,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     /**
      * This method identifies if the user is hovering any buttons on the Pause Screen to change the cursor symbol.
+     * It also checks if the exit button is clicked in the high score screen.
      * @param mouseEvent MouseEvent button to see if a button is being hovered over.
      */
     @Override
@@ -368,6 +379,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         repaint();
     }
 
+    /**
+     * This method is used to checked if the exit button pressed from other classes.
+     * @return Returns the current boolean value if the button is pressed.
+     */
     public boolean isScoreExitClicked() {
         return scoreExitClicked;
     }
