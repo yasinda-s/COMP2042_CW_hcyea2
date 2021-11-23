@@ -280,7 +280,7 @@ public class GamePlay {
 
     /**
      * This method is used to access the user's time played from any class.
-     * @return
+     * @return Returns the time in seconds.
      */
     public int getTimePlayed() {
         int seconds = timePlayed/100;
@@ -301,5 +301,13 @@ public class GamePlay {
      */
     public int getScore() {
         return score;
+    }
+
+    /**
+     * This method is used to set the user's score.
+     * @param score New score to set score to.
+     */
+    public void setScore(int score) {
+        this.score = score;
     }
 }

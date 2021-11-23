@@ -202,7 +202,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
      * @param g2d Graphics2D to draw the 2d components.
      */
     private void drawButton(Graphics2D g2d){
-
         FontRenderContext frc = g2d.getFontRenderContext();
 
         //make rectangles for start and exit texts
@@ -376,7 +375,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
-        if(startButton.contains(p) || exitButton.contains(p)) //if user hovering any button, then change to hand cursor, else default
+        if(startButton.contains(p) || exitButton.contains(p) || infoButton.contains(p)) //if user hovering any button, then change to hand cursor, else default
             this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         else
             this.setCursor(Cursor.getDefaultCursor());
