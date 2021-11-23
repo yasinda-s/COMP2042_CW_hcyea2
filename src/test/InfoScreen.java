@@ -17,7 +17,7 @@ import java.awt.geom.Rectangle2D;
 
 public class InfoScreen extends JComponent implements MouseListener, MouseMotionListener{
 
-    private static final String INFO_TEXT = "How to Play";
+    private static final String INFO_TEXT = "HOW TO PLAY";
     private static final String MENU_TEXT = "Return to Menu";
     private static final String HOW_TO_PLAY1 = "Use A to move to the Left.";
     private static final String HOW_TO_PLAY2 = "Press D to move to the Right.";
@@ -36,15 +36,12 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
     private boolean infoMenuClicked;
 
     private static final Color BG_COLOR = Color.GREEN.darker();
-    private static final Color BORDER_COLOR = new Color(200,8,21); //Venetian Red
-    private static final Color DASH_BORDER_COLOR = new  Color(255, 216, 0);//school bus yellow
-    private static final Color TEXT_COLOR = new Color(16, 52, 166);//egyptian blue
+    private static final Color BORDER_COLOR = new Color(141, 50, 5); //brown color - for border
+    private static final Color TEXT_COLOR = new Color(141, 50, 5);//brown color - for text
     private static final int BORDER_SIZE = 5;
     private static final Color CLICKED_BUTTON_COLOR = BG_COLOR.brighter();
     private static final Color CLICKED_TEXT = Color.WHITE;
-    private static final float[] DASHES = {12,6};
 
-    private BasicStroke borderStoke;
     private BasicStroke borderStoke_noDashes;
 
     public InfoScreen(GameFrame owner, Dimension area){
@@ -63,7 +60,6 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         this.setPreferredSize(area);
 
         //for the border deco
-        borderStoke = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND,0,DASHES,0);
         borderStoke_noDashes = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND);
 
         Dimension btnDim = new Dimension(area.width/3, area.height/12);
@@ -122,20 +118,17 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         g2d.setColor(BG_COLOR); //set bg color
         g2d.fill(infoFace); //draw interior of passed in rectangle (menu frame)
 
-        g2d.drawImage(backGroundImage, 0, 0, null); //XXXX fix bug where background does not load
+        g2d.drawImage(backGroundImage, 0, 0, null);
 
         Stroke tmp = g2d.getStroke();
 
         g2d.setStroke(borderStoke_noDashes); //set border of of whole container
-        g2d.setColor(DASH_BORDER_COLOR); //set color '' (yellow) - dashed
         g2d.draw(infoFace); //draw outline of passed rectangle (menu frame)
 
-        g2d.setStroke(borderStoke); //set other border with no dashes (red)
         g2d.setColor(BORDER_COLOR); //set red
         g2d.draw(infoFace); //rerun to apply 2nd border
 
         g2d.setStroke(tmp);
-
         g2d.setColor(prev);
     }
 
@@ -144,7 +137,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
      * @param g2d Graphics2D type frame to allow more control over coloring and drawing the text.
      */
     private void drawText(Graphics2D g2d){
-        g2d.setColor(TEXT_COLOR); //assign text color in home screen
+        g2d.setColor(Color.BLACK); //assign text color in home screen
 
         FontRenderContext frc = g2d.getFontRenderContext();
 
@@ -160,6 +153,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         g2d.setFont(headFont); //set the font
         g2d.drawString(INFO_TEXT,sX,sY); //draw the greetings font (string) in the coordinates we found
 
+        g2d.setColor(TEXT_COLOR);
         Rectangle2D textBodyRect = menuFont.getStringBounds(HOW_TO_PLAY1,frc);
 
         sX = (int)(infoFace.getWidth() - textBodyRect.getWidth()) / 2; //x coordinate of where we want the box to be in
@@ -182,6 +176,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
     private void drawButton(Graphics2D g2d){
 
         FontRenderContext frc = g2d.getFontRenderContext();
+        g2d.setColor(Color.BLACK);
 
         //make rectangles for menu text
         Rectangle2D menuTxtRect = menuFont.getStringBounds(MENU_TEXT,frc);

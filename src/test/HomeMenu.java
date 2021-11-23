@@ -20,28 +20,25 @@ import java.awt.geom.Rectangle2D;
  */
 public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener { //need to add javadocs
 
-    private static final String GREETINGS = "Welcome to:";
-    private static final String GAME_TITLE = "Brick Destroy";
+    private static final String GREETINGS = "Welcome to";
+    private static final String GAME_TITLE = "BRICK DESTROY";
     private static final String CREDITS = "Version 0.1";
-    private static final String START_TEXT = "Start";
-    private static final String EXIT_TEXT = "Exit";
-    private static final String INFO_TEXT = "Info";
+    private static final String START_TEXT = "START";
+    private static final String EXIT_TEXT = "EXIT";
+    private static final String INFO_TEXT = "HOW TO PLAY";
 
     private static final Color BG_COLOR = Color.GREEN.darker();
-    private static final Color BORDER_COLOR = new Color(200,8,21); //Venetian Red
-    private static final Color DASH_BORDER_COLOR = new  Color(255, 216, 0);//school bus yellow
-    private static final Color TEXT_COLOR = new Color(16, 52, 166);//egyptian blue
+    private static final Color BORDER_COLOR = new Color(141, 50, 5); //brown color - for border
+    private static final Color GREETINGS_COLOR = new Color(141, 50, 5); //brown color - for welcome to
     private static final Color CLICKED_BUTTON_COLOR = BG_COLOR.brighter();
-    private static final Color CLICKED_TEXT = Color.WHITE;
+    private static final Color CLICKED_TEXT = Color.BLACK;
     private static final int BORDER_SIZE = 5;
-    private static final float[] DASHES = {12,6};
 
     private Rectangle menuFace;
     private Rectangle startButton;
     private Rectangle exitButton;
     private Rectangle infoButton;
 
-    private BasicStroke borderStoke;
     private BasicStroke borderStoke_noDashes;
 
     private Font greetingsFont;
@@ -63,7 +60,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
      * @param area This is the dimension of the game frame/home menu (width and height).
      */
     public HomeMenu(GameFrame owner,Dimension area){
-
         this.setFocusable(true);
         this.requestFocusInWindow();
 
@@ -81,16 +77,15 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         infoButton = new Rectangle(btnDim); //make rectangle for the into button
 
         //for the border deco
-        borderStoke = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND,0,DASHES,0);
         borderStoke_noDashes = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND);
 
-        backGroundImage = new ImageIcon("src/test/backgroundImg.jpg").getImage();
+        backGroundImage = new ImageIcon("src/test/backGroundImage.jpg").getImage();
 
         //assigning fonts for greetings, font, credits and buttons
-        greetingsFont = new Font("Noto Mono",Font.PLAIN,25);
-        gameTitleFont = new Font("Noto Mono",Font.BOLD,40);
+        greetingsFont = new Font("Noto Mono",Font.PLAIN,35);
+        gameTitleFont = new Font("Noto Mono",Font.BOLD,50);
         creditsFont = new Font("Monospaced",Font.PLAIN,10);
-        buttonFont = new Font("Monospaced",Font.PLAIN,startButton.height-2);
+        buttonFont = new Font("Monospaced",Font.BOLD,startButton.height-2);
     }
 
     /**
@@ -139,10 +134,8 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.drawImage(backGroundImage, 0, 0, null);
 
         g2d.setStroke(borderStoke_noDashes); //set border of of whole container
-        g2d.setColor(DASH_BORDER_COLOR); //set color '' (yellow) - dashed
         g2d.draw(menuFace); //draw outline of passed rectangle (menu frame)
 
-        g2d.setStroke(borderStoke); //set other border with no dashes (red)
         g2d.setColor(BORDER_COLOR); //set red
         g2d.draw(menuFace); //rerun to apply 2nd border
 
@@ -155,8 +148,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
      * @param g2d Graphics2D type frame to allow more control over coloring and drawing the text.
      */
     private void drawText(Graphics2D g2d){
-        g2d.setColor(TEXT_COLOR); //assign text color in home screen
-
+        g2d.setColor(GREETINGS_COLOR); //everything below becomes brown
         FontRenderContext frc = g2d.getFontRenderContext();
 
         Rectangle2D greetingsRect = greetingsFont.getStringBounds(GREETINGS,frc);
@@ -175,6 +167,8 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         sX = (int)(menuFace.getWidth() - gameTitleRect.getWidth()) / 2;
         sY += (int) gameTitleRect.getHeight() * 1.1;//add 10% of String height between the two strings
 
+        Color TITLE_COLOR = new Color(0,0,0);
+        g2d.setColor(TITLE_COLOR); //make everything below greetings black
         g2d.setFont(gameTitleFont);
         g2d.drawString(GAME_TITLE,sX,sY); //draw the title string
 
@@ -191,6 +185,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
      */
     private void drawButton(Graphics2D g2d){
         FontRenderContext frc = g2d.getFontRenderContext();
+        g2d.setColor(GREETINGS_COLOR);
 
         //make rectangles for start and exit texts
         Rectangle2D txtRect = buttonFont.getStringBounds(START_TEXT,frc);
@@ -226,7 +221,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         }
 
         //set button for INFO
-        //button things
         x = (menuFace.width - startButton.width) / 2;
         y =(int) ((menuFace.height - startButton.height) * 0.65);
 
