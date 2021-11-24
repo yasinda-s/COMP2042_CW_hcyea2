@@ -339,16 +339,13 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     }
 
     @Override
-    public void mouseEntered(MouseEvent mouseEvent) {
-    }
+    public void mouseEntered(MouseEvent mouseEvent) {}
 
     @Override
-    public void mouseExited(MouseEvent mouseEvent) {
-    }
+    public void mouseExited(MouseEvent mouseEvent) {}
 
     @Override
-    public void mouseDragged(MouseEvent mouseEvent) {
-    }
+    public void mouseDragged(MouseEvent mouseEvent) {}
 
     /**
      * This method identifies if the user is hovering any buttons on the Menu Screen to change the cursor symbol.

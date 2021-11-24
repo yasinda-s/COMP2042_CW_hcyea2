@@ -16,6 +16,7 @@ import java.io.*;
  * Refactoring -
  * Removed the methods that painted the Screen for the Pause Menu when Esc is pressed and gave it a new Class called PauseMenu.
  * Removed the methods that painted the High Score Screen when the game is done (either game over or completed) and moved it to a new class called HighScore.
+ * Removed the draw() methods - drawBall(), drawPlayer() and drawBrick() from this class and created a factory design to generate these components when needed.
  */
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
     private static final int DEF_WIDTH = 600;
@@ -27,6 +28,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private DebugConsole debugConsole;
     private PauseMenu pauseMenu;
     private HighScore highScore;
+    private DrawBall drawBall;
+    private DrawBrick drawBrick;
+    private DrawPlayer drawPlayer;
 
     private String message;
     private String detailMessage;
@@ -52,13 +56,17 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         showPauseMenu = false;
         gameOver = false;
 
-        //type Font for Menu screen that has font mentioned and font size mentioned above
         this.initialize(); //set dimension, focus, and listeners from Component
 
         message = "";
         detailMessage = "";
         gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point(300,430));
         //gamePlay sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
+
+        DrawFactory drawFactory = new DrawFactory();
+        drawBall = (DrawBall) drawFactory.getDraw(gamePlay.ball); //must be new ball
+        drawBrick = (DrawBrick) drawFactory.getDraw();
+        drawPlayer = (DrawPlayer) drawFactory.getDraw(gamePlay.player);
 
         writer = new BufferedWriter(new FileWriter("src/test/highscore.txt", true));
 
@@ -149,13 +157,13 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.drawString(message,250,225); //whenever we print something on screen, we use this with the color we set earlier
         g2d.drawString(detailMessage,180,200); //for score things
 
-        drawBall(gamePlay.ball,g2d); //draws the ball using 2dgraphics
+        drawBall.draw(g2d);
 
         for(Brick b : gamePlay.bricks) //draws the bricks using 2dgraphics
             if(!b.isBroken())
-                drawBrick(b,g2d);
+                drawBrick.draw(b,g2d);
 
-        drawPlayer(gamePlay.player,g2d); //draws the player bar using 2dgraphics
+        drawPlayer.draw(g2d); //draws the player bar using 2dgraphics
 
         if(showPauseMenu) { //if user presses esc
             pauseMenu.drawMenu(g2d);
@@ -184,62 +192,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         Color tmp = g2d.getColor();
         g2d.setColor(BG_COLOR);
         g2d.fillRect(0,0,getWidth(),getHeight());
-        g2d.setColor(tmp);
-    }
-
-    /**
-     * This method is used to draw a singular brick on the game board.
-     * @param brick Takes in type Brick based on what brick we want to draw.
-     * @param g2d Graphics2D frame type to allow more control over coloring and drawing over 2d components.
-     */
-    private void drawBrick(Brick brick,Graphics2D g2d){
-        //draw and color the brick
-        Color tmp = g2d.getColor();
-
-        g2d.setColor(brick.getInnerColor()); //set color based on what we assigned before
-        g2d.fill(brick.getBrick());  //fill the brick based on color we set
-
-        g2d.setColor(brick.getBorderColor()); //set outline color based on what we assigned before
-        g2d.draw(brick.getBrick()); //outline the brick based on color we set
-
-        g2d.setColor(tmp);
-    }
-
-    /**
-     * This method is used to draw the ball on the game board.
-     * @param ball The ball object to be drawn.
-     * @param g2d Graphics2D frame type to allow more control over coloring the and drawing the ball.
-     */
-    private void drawBall(Ball ball,Graphics2D g2d){
-        Color tmp = g2d.getColor(); //set tmp color to color in g2d
-
-        Shape s = ball.getBallFace(); //set face of ball as shape
-
-        g2d.setColor(ball.getInnerColor()); //set color of g2d as ball color (inner)
-        g2d.fill(s); //use this color and fill shape of ball face
-
-        g2d.setColor(ball.getBorderColor()); //set outline color based on what we assigned before
-        g2d.draw(s); //draw only does the outline of a shape
-
-        g2d.setColor(tmp); //set to tmp color
-    }
-
-    /**
-     * This method is used to draw the PLayer bar on the game board.
-     * @param p The player object to be drawn.
-     * @param g2d  Graphics2D frame type to allow more control over coloring the and drawing the ball.
-     */
-    private void drawPlayer(Player p,Graphics2D g2d){
-        //to draw player bar
-        Color tmp = g2d.getColor();
-
-        Shape s = p.getPlayerFace();
-        g2d.setColor(Player.INNER_COLOR); //set inner color of bar
-        g2d.fill(s); //fill color using that color
-
-        g2d.setColor(Player.BORDER_COLOR); //set outer color of bar
-        g2d.draw(s); //fill outline using that color
-
         g2d.setColor(tmp);
     }
 
