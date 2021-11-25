@@ -59,7 +59,7 @@ public class GamePlay {
         level = 0; //original level is 0
 
         score = 0;
-        ballCount = 2; //we get 3 lives
+        ballCount = 1; //we get 3 lives
         ballLost = false; //originally no balls are lost
 
         area = drawArea;

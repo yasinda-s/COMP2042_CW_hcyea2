@@ -13,7 +13,9 @@ public class HighScore {
 
     private static final Color MENU_COLOR = new Color(0,255,0);
     private Font menuFont;
-    private static final String HIGH_SCORE_TEXT = "High Score Board";
+    private Font headFont;
+    private Font buttonFont;
+    private static final String HIGH_SCORE_TEXT = "HIGH SCORE BOARD";
     private static final String SCORE_EXIT_TEXT = "Exit Game";
     private static final int TEXT_SIZE = 30;
 
@@ -22,14 +24,12 @@ public class HighScore {
     private java.util.List<Integer> scoresFromFile;
     private GameBoard gameBoard;
 
-    public Rectangle getScoreExitButtonRect() {
-        return scoreExitButtonRect;
-    }
-
     private Rectangle scoreExitButtonRect;
 
     public HighScore(GameBoard gameBoard){
+        headFont = new Font("Noto Mono", Font.BOLD, 40);
         menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
+        buttonFont = new Font("Noto Mono", Font.BOLD, 20);
         scoresFromFile = new ArrayList<Integer>();
         this.gameBoard = gameBoard;
         Dimension btnDim = new Dimension(gameBoard.getWidth()/3, gameBoard.getHeight()/12); //XXXX
@@ -40,11 +40,11 @@ public class HighScore {
      * This method is responsible for drawing the High Score Screen that is shown when the user either completes or loses the game.
      * @param g2d The Graphics 2d frame in which we want to draw the game components.
      */
-    public void drawHighScoreScreen(Graphics2D g2d) { //XXXX - try to break from class
+    public void drawHighScoreScreen(Graphics2D g2d) {
         //high score title
-        g2d.setColor(MENU_COLOR); //assign text color in home screen
+        g2d.setColor(Color.BLACK);
         FontRenderContext frc = g2d.getFontRenderContext();
-        g2d.setFont(menuFont); //set the font
+        g2d.setFont(headFont); //set the font
 
         Rectangle2D headingRect = menuFont.getStringBounds(HIGH_SCORE_TEXT,frc);
 
@@ -52,19 +52,22 @@ public class HighScore {
         sX = (int)(gameBoard.getWidth() - headingRect.getWidth()) / 2; //x coordinate of where we want the box to be in
         sY = gameBoard.getHeight() / 6; //y coordinate of where we want the box to be in
 
-        g2d.drawString(HIGH_SCORE_TEXT,sX,sY); //draw the string "High Score"
+        g2d.drawString(HIGH_SCORE_TEXT,sX-50,sY); //draw the string "High Score"
 
         //displaying high scores
         int score_x, score_y;
 
         score_x = sX + 110;
-        score_y = sY + 50;
+        score_y = sY + 70;
+
+        g2d.setColor(new Color(141, 50, 5));
+        g2d.setFont(menuFont);
 
         if (scoresFromFile.size()>TOP_SCORES){
             for(int i=0;i<TOP_SCORES;i++){
                 String scoreString = String.valueOf(scoresFromFile.get(i));
                 g2d.drawString(scoreString, score_x, score_y);
-                score_y += 30;
+                score_y += 50;
             }
         } else{
             for (Integer integer : scoresFromFile) {
@@ -75,7 +78,10 @@ public class HighScore {
         }
 
         //exit button
-        Rectangle2D menuTxtRect = menuFont.getStringBounds(SCORE_EXIT_TEXT,frc);
+        g2d.setColor(Color.BLACK);
+        g2d.setFont(buttonFont); //set the font
+
+        Rectangle2D menuTxtRect = headFont.getStringBounds(SCORE_EXIT_TEXT,frc);
 
         Dimension btnDim = new Dimension(gameBoard.getWidth()/3, gameBoard.getHeight()/12);
         scoreExitButtonRect = new Rectangle(btnDim); //button draws when it is inside method
@@ -84,7 +90,7 @@ public class HighScore {
         int x = (gameBoard.getWidth() - scoreExitButtonRect.width) / 2;
         int y =(int) ((gameBoard.getHeight() - scoreExitButtonRect.height) * 0.8);
 
-        scoreExitButtonRect.setLocation(x, y);
+        scoreExitButtonRect.setLocation(x, y + 40);
 
         //get the location of the string for start button
         x = (int)(scoreExitButtonRect.getWidth() - menuTxtRect.getWidth()) / 2;
@@ -93,18 +99,12 @@ public class HighScore {
         x += scoreExitButtonRect.x;
         y += scoreExitButtonRect.y + (scoreExitButtonRect.height * 0.9);
 
+        g2d.draw(scoreExitButtonRect); //leave as it is
+        g2d.drawString(SCORE_EXIT_TEXT,x+53,y+20); //with normal coordinate found above
+
         if(gameBoard.isScoreExitClicked()){ //change color, redraw button and more...
-            Color tmp = g2d.getColor();
-            g2d.setColor(Color.WHITE);
-            g2d.draw(scoreExitButtonRect);
-            g2d.setColor(Color.BLACK);
-            g2d.drawString(SCORE_EXIT_TEXT,x,y+20);
-            g2d.setColor(tmp);
+            System.out.println("Thank you for playing Brick Game!");
             System.exit(0);
-        }
-        else{
-            g2d.draw(scoreExitButtonRect); //leave as it is
-            g2d.drawString(SCORE_EXIT_TEXT,x,y+20); //with normal coordinate found above
         }
     }
 
@@ -125,4 +125,7 @@ public class HighScore {
         }
     }
 
+    public Rectangle getScoreExitButtonRect() {
+        return scoreExitButtonRect;
+    }
 }
