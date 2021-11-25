@@ -9,7 +9,7 @@ import java.util.Random;
  * This is the class used to represent the ball object in the Brick Game.
  */
 
-abstract public class Ball {
+abstract public class Ball implements BallInterface {
 
     private Shape ballFace;
 
@@ -78,14 +78,14 @@ abstract public class Ball {
         speedY = speedsXY[1];
     }
 
-    /**
+    /** XXXX
      * Abstract class to make the Shape of the ball (Circle).
      *
      * @param center Point2D type, consists of the x, y coordinate of the center of the ball.
      * @param radius Int type, radius of ball.
      * @return Returns type Shape of of a ball.
      */
-    protected abstract Shape makeBall(Point2D center,int radius);
+
 
     /**
      * This method is focused on having the ball move freely as the game begins.

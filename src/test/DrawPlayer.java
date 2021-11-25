@@ -19,10 +19,10 @@ public class DrawPlayer implements Drawable {
 
     /**
      * Overridden method in which the Player bar will be drawn in the g2d Frame.
-     * @param g2d Graphics 2d Frame where the player bar will be drawn.
+     * @param g2d Graphics 2d Frame where the player bar will be drawn. XXXX
      */
     @Override
-    public void draw(Graphics2D g2d) {
+    public void draw(Graphics2D g2d, int level) {
         //to draw player bar
         Color tmp = g2d.getColor();
 

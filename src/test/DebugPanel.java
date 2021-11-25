@@ -12,8 +12,8 @@ import java.awt.event.ActionListener;
  *
  * GamePlay which is a public class is already being passed into the Constructor as a parameter so we do not need to create an instance of it prior
  * to the constructor, hence it has been removed.
- *
  * The private Jbuttons for skipLevel and resetBalls are also refactored to be created in the constructor itself.
+ * Refactored the panel so that the skip level will cause the player score, time played, ball position and player position to reset.
  */
 
 public class DebugPanel extends JPanel { //Jpanel is used to organize components, layouts
@@ -26,12 +26,12 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
      * This is the constructor for the DebugPanel.
      * @param gamePlay Takes in GamePlay object.
      */
-    public DebugPanel(GamePlay gamePlay){ //pass in gamePlay object
+    public DebugPanel(GamePlay gamePlay, GameBoard gameBoard){ //pass in gamePlay object
 
         initialize();
 
         //labeled button to skip Level when pushed
-        JButton skipLevel = makeButton("Skip Level", e -> gamePlay.nextLevel()); //button to skip level
+        JButton skipLevel = makeButton("Skip Level", e ->  skipLevel(gamePlay)); //button to skip level
         //labeled button to reset balls when pushed
         JButton resetBalls = makeButton("Reset Balls", e -> gamePlay.resetBallCount()); //button to reset balls
 
@@ -43,6 +43,10 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
 
         this.add(ballXSpeed);
         this.add(ballYSpeed);
+    }
+
+    private void skipLevel(GamePlay gamePlay){
+        gamePlay.skipLevel();
     }
 
     /**

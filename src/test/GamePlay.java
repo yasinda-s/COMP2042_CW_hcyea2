@@ -26,6 +26,7 @@ import java.awt.geom.Point2D;
 
 public class GamePlay {
     private Rectangle area;
+    private Point ballPos;
 
     Brick[] bricks; //array of bricks
     Ball ball;
@@ -48,10 +49,8 @@ public class GamePlay {
      * @param brickCount this represents the total number of bricks on the brick wall.
      * @param lineCount this represents the number of brick lines on the wall.
      * @param brickDimensionRatio this represents the height to width ratio of a singular brick.
-     * @param ballPos this represents the position of the ball.
      */
-    public GamePlay(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos){
-        this.startPoint = new Point(ballPos); //takes in the position of the ball to begin with (the player bar is based on this too)
+    public GamePlay(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio){
 
         WallSetup wallsetup = new WallSetup(drawArea,brickCount,lineCount,brickDimensionRatio);
         //returns a brick[][] object which can be indexed to get one of the 4 levels
@@ -60,14 +59,9 @@ public class GamePlay {
         level = 0; //original level is 0
 
         score = 0;
-        ballCount = 1; //we get 3 lives
+        ballCount = 2; //we get 3 lives
         ballLost = false; //originally no balls are lost
 
-        makeBall(ballPos); //take in the initial ball coordinates and make rubber ball object
-
-        player = new Player((Point) ballPos.clone(),150,10, drawArea);
-        //make the player bar by referring to the ball position (center)
-        //drawArea refers to the whole screen where the game is being played
         area = drawArea;
     }
 
@@ -75,8 +69,16 @@ public class GamePlay {
      * This method is used to make the rubber ball object.
      * @param ballPos Represents the Point2D position of the ball.
      */
-    private void makeBall(Point2D ballPos){
-        ball = new RubberBall(ballPos); //use the position of the ball to make a rubber ball object
+    public void makeComponents(Point2D ballPos){
+        this.startPoint = new Point((Point) ballPos); //takes in the position of the ball to begin with (the player bar is based on this too)
+        this.ballPos = (Point) ballPos;
+        if(level==5){
+            player = new SmallPlayer((Point) ballPos.clone(), area); //to be used for higher levels
+            ball = new BigBall(ballPos); //call when level is beyond 3 (level 1 is the first)
+        }else{
+            player = new Player((Point) ballPos.clone(),150,10, area);
+            ball = new RubberBall(ballPos); //use the position of the ball to make a rubber ball object
+        }
     }
 
     /**
@@ -130,6 +132,9 @@ public class GamePlay {
                 break;
             case 4:
                 score+=400;
+                break;
+            case 5:
+                score+=500;
                 break;
         }
     }
@@ -309,5 +314,18 @@ public class GamePlay {
      */
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public void skipLevel(){
+        ballReset();
+        wallReset();
+        nextLevel();
+        ballReset();
+        setScore(0);
+        System.out.println("Current Level - " + level);
+    }
+
+    public int getLevel() {
+        return level;
     }
 }

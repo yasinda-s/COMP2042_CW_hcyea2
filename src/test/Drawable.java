@@ -10,7 +10,7 @@ interface Drawable{
      * This draw method takes in one parameter (Graphics2d) which will later be used to draw the Ball and Player objects.
      * @param g2d Graphics2d frame where the ball or Player will be drawn.
      */
-    void draw(Graphics2D g2d);
+    void draw(Graphics2D g2d, int level);
 
     /**
      * This draw method takes in two parameters (Brick, Graphics2d) which will later be used to draw the Brick object.

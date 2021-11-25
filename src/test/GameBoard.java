@@ -3,6 +3,7 @@ package test;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.Point2D;
 import java.io.*;
 /**
  * This class draws all of the 2d Components required to load the home screen and to play the game.
@@ -60,13 +61,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         message = "";
         detailMessage = "";
-        gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point(300,430));
-        //gamePlay sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
-
-        DrawFactory drawFactory = new DrawFactory();
-        drawBall = (DrawBall) drawFactory.getDraw(gamePlay.ball); //must be new ball
-        drawBrick = (DrawBrick) drawFactory.getDraw();
-        drawPlayer = (DrawPlayer) drawFactory.getDraw(gamePlay.player);
+        gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2);
+        gamePlay.makeComponents(new Point(300,430)); //gamePlay sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
 
         writer = new BufferedWriter(new FileWriter("src/test/highscore.txt", true));
 
@@ -151,19 +147,27 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
      * @param g The Graphics frame in which we want to draw the game components.
      */
     public void paint(Graphics g){
+        int level = gamePlay.getLevel();
+        Point2D p = gamePlay.ball.getPosition();
+
+        DrawFactory drawFactory = new DrawFactory();
+        drawBall = (DrawBall) drawFactory.getDraw(gamePlay.ball, level, p); //must be new ball
+        drawBrick = (DrawBrick) drawFactory.getDraw();
+        drawPlayer = (DrawPlayer) drawFactory.getDraw(gamePlay.player);
+
         Graphics2D g2d = (Graphics2D) g; //get more control over geometry, coordinate transformations, color management, and text
         clear(g2d);
         g2d.setColor(Color.BLUE);
         g2d.drawString(message,250,225); //whenever we print something on screen, we use this with the color we set earlier
         g2d.drawString(detailMessage,180,200); //for score things
 
-        drawBall.draw(g2d);
+        drawBall.draw(g2d,level);
 
         for(Brick b : gamePlay.bricks) //draws the bricks using 2dgraphics
             if(!b.isBroken())
                 drawBrick.draw(b,g2d);
 
-        drawPlayer.draw(g2d); //draws the player bar using 2dgraphics
+        drawPlayer.draw(g2d, level); //draws the player bar using 2dgraphics
 
         if(showPauseMenu) { //if user presses esc
             pauseMenu.drawMenu(g2d);
@@ -188,7 +192,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
      * This method is used to clear the gameboard.
      * @param g2d Graphics2D frame type to allow more control over coloring and drawing over 2d components.
      */
-    private void clear(Graphics2D g2d){
+    public void clear(Graphics2D g2d){
         Color tmp = g2d.getColor();
         g2d.setColor(BG_COLOR);
         g2d.fillRect(0,0,getWidth(),getHeight());

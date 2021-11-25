@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class WallSetup {
 
-    private static final int LEVELS_COUNT = 4; //number of levels in the game
+    private static final int LEVELS_COUNT = 5; //number of levels in the game
 
     private static final int CLAY = 1;
     private static final int STEEL = 2;
@@ -157,6 +157,7 @@ public class WallSetup {
         tmp[1] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,CEMENT);
         tmp[2] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
         tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
+        tmp[4] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio,CLAY);
         return tmp;
     }
 
@@ -180,7 +181,7 @@ public class WallSetup {
                 out = new CementBrick(point, size);
                 break;
             default:
-                throw  new IllegalArgumentException(String.format("Unknown Type:%d\n",type));
+                throw new IllegalArgumentException(String.format("Unknown Type:%d\n",type));
         }
         return  out;
     }

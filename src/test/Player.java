@@ -25,7 +25,7 @@ public class Player { //refers to the player brick
      * @param height Refers to the height of the player ball.
      * @param container Refers to the whole screen used for the game.
      */
-    public Player(Point ballPoint,int width,int height,Rectangle container) {
+    public Player(Point ballPoint,int width,int height,Rectangle container){
         //container refers to the whole box used for the game
         this.ballPoint = ballPoint; //random point object for now, later initial pos of ball
         moveAmount = 0;
@@ -35,7 +35,6 @@ public class Player { //refers to the player brick
         min = container.x + (width / 2);
         //container.x refers to the top left of the whole box
         max = min + container.width - width;
-        //not sure what these refer to yet
     }
 
     /**
@@ -57,7 +56,6 @@ public class Player { //refers to the player brick
     public boolean impact(Ball b){
         return playerFace.contains(b.getPosition()) && playerFace.contains(b.down) ;
     }
-    //if condition true then impact is true
 
     /**
      * This method is used to move the player bar around in game when we press the keys.
@@ -109,5 +107,4 @@ public class Player { //refers to the player brick
         ballPoint.setLocation(p);
         playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
     }
-
 }

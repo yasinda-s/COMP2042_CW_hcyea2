@@ -8,7 +8,6 @@ import java.util.Random;
  * The Steel Brick refers to bricks that are grey in color and break on probability. It inherits from the Brick Class directly.
  */
 public class SteelBrick extends Brick {
-
     //properties of steel brick shown below - has probability in breaking
     private static final String NAME = "Steel Brick";
     private static final Color DEF_INNER = new Color(203, 203, 201);
@@ -71,5 +70,4 @@ public class SteelBrick extends Brick {
             super.impact();
         }
     }
-
 }

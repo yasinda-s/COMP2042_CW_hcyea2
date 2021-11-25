@@ -1,5 +1,7 @@
 package test;
 
+import java.awt.geom.Point2D;
+
 /**
  * Factory method design used to generate an in-game object to draw onto the screen.
  */
@@ -9,8 +11,8 @@ public class DrawFactory {
      * @param ball Ball object
      * @return returns a new DrawBall(ball) object which implements the Drawable interface to draw the ball.
      */
-    public Drawable getDraw(Ball ball){
-        return new DrawBall(ball);
+    public Drawable getDraw(Ball ball, int level, Point2D center){
+        return new DrawBall(ball, level, center);
     }
 
     /**

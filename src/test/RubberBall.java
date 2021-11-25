@@ -9,7 +9,6 @@ import java.awt.geom.Point2D;
  */
 
 public class RubberBall extends Ball {
-
     //properties of rubber ball shown below - the default ball type
     private static final int DEF_RADIUS = 10;
     private static final Color DEF_INNER_COLOR = new Color(255, 219, 88);
@@ -30,7 +29,7 @@ public class RubberBall extends Ball {
      * @return Shape object of a circle which represents the face of a circle.
      */
     @Override
-    protected Shape makeBall(Point2D center, int radius) {
+    public Shape makeBall(Point2D center, int radius) {
 
         double x = center.getX() - (radius / 2); //x coordinate of top left circle (rectangle)
         double y = center.getY() - (radius / 2); //y coordinate of top left circle (rectangle)

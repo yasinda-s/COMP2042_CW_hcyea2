@@ -8,7 +8,7 @@ import java.awt.*;
 public class DrawBrick implements Drawable{
 
     @Override
-    public void draw(Graphics2D g2d) {
+    public void draw(Graphics2D g2d, int level) {
     }
 
     /**
