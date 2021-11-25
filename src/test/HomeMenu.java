@@ -71,7 +71,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         menuFace = new Rectangle(new Point(0,0),area); //make Rectangle object for home screen
         this.setPreferredSize(area);
 
-        Dimension btnDim = new Dimension(area.width / 3, area.height / 12); //default dimension for buttons
+        Dimension btnDim = new Dimension(300, area.height / 12); //default dimension for buttons
         startButton = new Rectangle(btnDim); //make rectangle for start
         exitButton = new Rectangle(btnDim); //make rectangle for exit button
         infoButton = new Rectangle(btnDim); //make rectangle for the into button

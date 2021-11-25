@@ -18,7 +18,7 @@ import java.awt.geom.Rectangle2D;
 public class InfoScreen extends JComponent implements MouseListener, MouseMotionListener{
 
     private static final String INFO_TEXT = "HOW TO PLAY";
-    private static final String MENU_TEXT = "Return to Menu";
+    private static final String MENU_TEXT = "RETURN TO MENU";
     private static final String HOW_TO_PLAY1 = "Use A to move to the Left.";
     private static final String HOW_TO_PLAY2 = "Press D to move to the Right.";
     private static final String HOW_TO_PLAY3 = "Press Esc to Pause the Game.";
@@ -66,7 +66,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         infoMenuButton = new Rectangle(btnDim);
 
         headFont = new Font("Noto Mono",Font.BOLD,40);
-        menuFont = new Font("Noto Mono",Font.PLAIN,20);
+        menuFont = new Font("Noto Mono",Font.BOLD,20);
     }
 
     /**
@@ -201,12 +201,12 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
             g2d.setColor(CLICKED_BUTTON_COLOR);
             g2d.draw(infoMenuButton);
             g2d.setColor(CLICKED_TEXT);
-            g2d.drawString(MENU_TEXT,x,y+20);
+            g2d.drawString(MENU_TEXT,x,y+5);
             g2d.setColor(tmp);
         }
         else{
             g2d.draw(infoMenuButton); //leave as it is
-            g2d.drawString(MENU_TEXT,x,y+20); //with normal coordinate found above
+            g2d.drawString(MENU_TEXT,x,y+5);
         }
     }
 
