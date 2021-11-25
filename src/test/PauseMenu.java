@@ -5,19 +5,18 @@ import java.awt.font.FontRenderContext;
 
 public class PauseMenu{
 
-    private static final String CONTINUE = "Continue";
-    private static final String RESTART = "Restart";
-    private static final String EXIT = "Exit";
-    private static final String PAUSE = "Pause Menu";
-    private static final Color MENU_COLOR = new Color(0,255,0);
+    private static final String CONTINUE = "CONTINUE";
+    private static final String RESTART = "RESTART";
+    private static final String EXIT = "EXIT";
+    private static final String PAUSE = "PAUSE MENU";
     private static final int TEXT_SIZE = 30;
 
-    private Font menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
+    private Font pauseHeading = new Font("Noto Mono",Font.BOLD,TEXT_SIZE);
+    private Font buttonFont = new Font("Monospaced",Font.BOLD,24);
 
     private Rectangle continueButtonRect;
     private Rectangle exitButtonRect;
     private Rectangle restartButtonRect;
-
     private int strLen;
 
     private GameBoard gameBoard;
@@ -61,15 +60,13 @@ public class PauseMenu{
      * @param g2d Graphics2D frame type to allow more control over coloring and drawing over 2d components.
      */
     private void drawPauseMenu(Graphics2D g2d){
-        Font tmpFont = g2d.getFont(); //get font saved in g2d
-        Color tmpColor = g2d.getColor(); //get color save in g2d
 
-        g2d.setFont(menuFont); //set font to menuFont
-        g2d.setColor(MENU_COLOR); //set g2d color to MENU_COLOR
+        g2d.setFont(pauseHeading); //set font to menuFont
+        g2d.setColor(new Color(255, 255, 255)); //set g2d color to MENU_COLOR
 
         if(strLen == 0){
             FontRenderContext frc = g2d.getFontRenderContext();
-            strLen = menuFont.getStringBounds(PAUSE,frc).getBounds().width; //get width of the PAUSE and assign to strLen
+            strLen = pauseHeading.getStringBounds(PAUSE,frc).getBounds().width; //get width of the PAUSE and assign to strLen
         }
 
         int x = (gameBoard.getWidth() - strLen) / 2; //x-coordinate of where PAUSE will be
@@ -77,39 +74,37 @@ public class PauseMenu{
 
         g2d.drawString(PAUSE,x,y); //draw PAUSE string on frame
 
-        //change x and y coordinates
-        x = gameBoard.getWidth() / 8;
-        y = gameBoard.getHeight() / 4;
+        FontRenderContext frc = g2d.getFontRenderContext();
+        g2d.setColor(new Color(141, 50, 5));
 
-        if(continueButtonRect == null){
-            FontRenderContext frc = g2d.getFontRenderContext();
-            continueButtonRect = menuFont.getStringBounds(CONTINUE,frc).getBounds(); //set the string bounds to continueButtonRectangle
-            continueButtonRect.setLocation(x,y-continueButtonRect.height); //set its location to whats mentioned above
-        }
+        //make rectangles for continue, restart and exit texts
+        continueButtonRect = pauseHeading.getStringBounds(CONTINUE,frc).getBounds();
+        restartButtonRect = continueButtonRect.getBounds();
+        exitButtonRect = continueButtonRect.getBounds();
 
-        g2d.drawString(CONTINUE,x,y); //draw CONTINUE string on frame
+        g2d.setFont(buttonFont);
 
-        //change y coordinate
-        y *= 2;
+        //coordinates for continue button
+        x = (int) (gameBoard.getWidth() - continueButtonRect.getWidth()) / 2;
+        y = gameBoard.getHeight() / 3;
+        continueButtonRect.setLocation(x,y);
 
-        if(restartButtonRect == null){
-            restartButtonRect = (Rectangle) continueButtonRect.clone(); //clone continue button rect
-            restartButtonRect.setLocation(x,y-restartButtonRect.height); //change its location
-        }
+        g2d.draw(continueButtonRect); //leave as it is
+        g2d.drawString(CONTINUE, (float) (x + continueButtonRect.getWidth()/7), y+continueButtonRect.height-10);
 
-        g2d.drawString(RESTART,x,y); //draw it on screen
+        //coordinates for restart button
+        y += 100;
+        restartButtonRect.setLocation(x, y);
 
-        y *= 3.0/2; //change y again
+        g2d.draw(restartButtonRect); //leave as it is
+        g2d.drawString(RESTART, (float) (x + restartButtonRect.getWidth()/6), y+restartButtonRect.height-10);
 
-        if(exitButtonRect == null){ //make for exit button
-            exitButtonRect = (Rectangle) continueButtonRect.clone();
-            exitButtonRect.setLocation(x,y-exitButtonRect.height);
-        }
+        //coordinates for exit button
+        y += 100; //change y again
+        exitButtonRect.setLocation(x, y);
 
-        g2d.drawString(EXIT,x,y); //draw exit button
-        g2d.setFont(tmpFont);
-        g2d.setColor(tmpColor);
-
+        g2d.draw(exitButtonRect); //leave as it is
+        g2d.drawString(EXIT, (float) (x + exitButtonRect.getWidth()/3.25), y+exitButtonRect.height-10);
     }
 
     /**

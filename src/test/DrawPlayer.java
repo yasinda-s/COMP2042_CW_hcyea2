@@ -8,7 +8,6 @@ import java.awt.*;
 public class DrawPlayer implements Drawable {
 
     private Player player;
-
     /**
      * This is the constructor for DrawPlayer class.
      * @param player We pass in Player object to assign to player.

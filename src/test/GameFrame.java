@@ -27,8 +27,8 @@ public class GameFrame extends JFrame implements WindowFocusListener { //need to
         gaming = false; //originally set to false
         this.setLayout(new BorderLayout());
         gameBoard = new GameBoard(this);
-        homeMenu = new HomeMenu(this,new Dimension(450,300));
-        infoScreen = new InfoScreen(this, new Dimension(450,300));
+        homeMenu = new HomeMenu(this,new Dimension(600,450));
+        infoScreen = new InfoScreen(this, new Dimension(600,450));
         this.add(homeMenu,BorderLayout.CENTER);
         this.setUndecorated(true);
     }
