@@ -41,6 +41,11 @@ public class GamePlay {
     private boolean ballLost;
 
     private int score;
+    private int scoreLvlOne;
+    private int scoreLvlTwo;
+    private int scoreLvlThree;
+    private int scoreLvlFour;
+    private int scoreLvlFive;
     private int timePlayed;
 
     /**
@@ -59,6 +64,12 @@ public class GamePlay {
         level = 0; //original level is 0
 
         score = 0;
+        scoreLvlOne = 0;
+        scoreLvlTwo = 0;
+        scoreLvlThree = 0;
+        scoreLvlFour = 0;
+        scoreLvlFive = 0;
+
         ballCount = 1; //we get 3 lives
         ballLost = false; //originally no balls are lost
 
@@ -122,18 +133,23 @@ public class GamePlay {
     public void calculateScore(int level){
         switch (level){
             case 1:
+                scoreLvlOne += 100;
                 score+=100;
                 break;
             case 2:
+                scoreLvlTwo += 200;
                 score+=200;
                 break;
             case 3:
+                scoreLvlThree += 300;
                 score+=300;
                 break;
             case 4:
+                scoreLvlFour += 400;
                 score+=400;
                 break;
             case 5:
+                scoreLvlFive += 500;
                 score+=500;
                 break;
         }
