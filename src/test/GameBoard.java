@@ -114,17 +114,17 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     gamePlay.wallReset();
                     message = "Game over, your final score is " + gamePlay.getScore(); //if all balls lost XXXX add this to the high score screen
                     try {
-                        saveLevelScores();
-                        saveTotalScore();
+                        saveLevelScores(); //save final score for that level only
+                        saveTotalScore(); //save total final score
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
                     try {
-                        popUpLevelScore();
+                        popUpLevelScore(); //trigger pop up score for that level only
                     } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }
-                    gameOver = true;
+                    gameOver = true; //this will trigger final high score screen
                 }
                 gamePlay.ballReset(); //if user hasnt used all 3 balls
                 gameTimer.stop();
@@ -133,6 +133,16 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 if(gamePlay.hasLevel()){ //if user has more levels left
                     message = "Go to Next Level";
                     gameTimer.stop();
+                    try {
+                        saveLevelScores(); //save score for that level as its completed
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                    try {
+                        popUpLevelScore(); //trigger pop up score for that level only
+                    } catch (FileNotFoundException ex) {
+                        ex.printStackTrace();
+                    }
                     gamePlay.ballReset();
                     gamePlay.wallReset();
                     gamePlay.nextLevel();
@@ -140,8 +150,14 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 else{ //if no more levels
                     message = "ALL WALLS DESTROYED";
                     try {
-                        saveTotalScore();
+                        saveTotalScore();  //save total final score
+                        saveLevelScores(); //save score for that level as its completed
                     } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                    try {
+                        popUpLevelScore(); //trigger pop up score for that level only
+                    } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }
                     gameTimer.stop();
@@ -152,136 +168,55 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         });
     }
 
+    private void getLevelScoreFromFile(String filePath, java.util.List<Integer> lvlScoresFromFile) throws FileNotFoundException{
+        Scanner inputLevelScore = new Scanner(new File(filePath));
+        while(inputLevelScore.hasNext()){
+            lvlScoresFromFile.add(Integer.parseInt(inputLevelScore.next()));
+        }
+        lvlScoresFromFile.sort(Collections.reverseOrder());
+
+        if(lvlScoresFromFile.size()>5){
+            lvlScoresFromFile = lvlScoresFromFile.subList(0,6);
+        }
+    }
+
+    private void createScoreMessagePopUp(java.util.List<Integer> lvlScoresFromFile){
+        StringBuilder displayScore = new StringBuilder("<html>");
+        if(lvlScoresFromFile.size()>5){
+            for(int i=0;i<5;i++){
+                String scoreString = String.valueOf(lvlScoresFromFile.get(i));
+                displayScore.append(" ").append(scoreString).append("<br>");
+            }
+        }else{
+            for (Integer integer : lvlScoresFromFile){
+                displayScore.append(" ").append(integer).append("<br>");
+            }
+        }
+        JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
+    }
+
     private void popUpLevelScore() throws FileNotFoundException { //make function for this
+        String pathOne = "src/test/levelOneScore.txt";
+        String pathTwo = "src/test/levelTwoScore.txt";
+        String pathThree = "src/test/levelThreeScore.txt";
+        String pathFour = "src/test/levelFourScore.txt";
+        String pathFive = "src/test/levelFiveScore.txt";
+
         if(gamePlay.getLevel()==1){
-            Scanner inputLevelScore = new Scanner(new File("src/test/levelOneScore.txt"));
-
-            while(inputLevelScore.hasNext()){
-                lvlOneScoresFromFile.add(Integer.parseInt(inputLevelScore.next()));
-            }
-            lvlOneScoresFromFile.sort(Collections.reverseOrder());
-
-            if(lvlOneScoresFromFile.size()>5){
-                lvlOneScoresFromFile = lvlOneScoresFromFile.subList(0,6);
-            }
-
-            StringBuilder displayScore = new StringBuilder("<html>");
-
-            if(lvlOneScoresFromFile.size()>5){
-                for(int i=0;i<5;i++){
-                    String scoreString = String.valueOf(lvlOneScoresFromFile.get(i));
-                    displayScore.append(" ").append(scoreString).append("<br>");
-                }
-            }else{
-                for (Integer integer : lvlOneScoresFromFile){
-                    displayScore.append(" ").append(integer).append("<br>");
-                }
-            }
-            //System.out.println(displayScore);
-            JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
+            getLevelScoreFromFile(pathOne, lvlOneScoresFromFile);
+            createScoreMessagePopUp(lvlOneScoresFromFile);
         }else if(gamePlay.getLevel()==2){
-            Scanner inputLevelScore = new Scanner(new File("src/test/levelTwoScore.txt"));
-
-            while(inputLevelScore.hasNext()){
-                lvlTwoScoresFromFile.add(Integer.parseInt(inputLevelScore.next()));
-            }
-            lvlTwoScoresFromFile.sort(Collections.reverseOrder());
-
-            if(lvlTwoScoresFromFile.size()>5){
-                lvlTwoScoresFromFile = lvlTwoScoresFromFile.subList(0,6);
-            }
-
-            StringBuilder displayScore = new StringBuilder("<html>");
-
-            if(lvlTwoScoresFromFile.size()>5){
-                for(int i=0;i<5;i++){
-                    String scoreString = String.valueOf(lvlTwoScoresFromFile.get(i));
-                    displayScore.append(" ").append(scoreString).append("<br>");
-                }
-            }else{
-                for (Integer integer : lvlTwoScoresFromFile){
-                    displayScore.append(" ").append(integer).append("<br>");
-                }
-            }
-            //System.out.println(displayScore);
-            JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
+            getLevelScoreFromFile(pathTwo, lvlTwoScoresFromFile);
+            createScoreMessagePopUp(lvlTwoScoresFromFile);
         }else if(gamePlay.getLevel()==3){
-            Scanner inputLevelScore = new Scanner(new File("src/test/levelThreeScore.txt"));
-
-            while(inputLevelScore.hasNext()){
-                lvlThreeScoresFromFile.add(Integer.parseInt(inputLevelScore.next()));
-            }
-            lvlThreeScoresFromFile.sort(Collections.reverseOrder());
-
-            if(lvlThreeScoresFromFile.size()>5){
-                lvlThreeScoresFromFile = lvlThreeScoresFromFile.subList(0,6);
-            }
-
-            StringBuilder displayScore = new StringBuilder("<html>");
-
-            if(lvlThreeScoresFromFile.size()>5){
-                for(int i=0;i<5;i++){
-                    String scoreString = String.valueOf(lvlThreeScoresFromFile.get(i));
-                    displayScore.append(" ").append(scoreString).append("<br>");
-                }
-            }else{
-                for (Integer integer : lvlThreeScoresFromFile){
-                    displayScore.append(" ").append(integer).append("<br>");
-                }
-            }
-            //System.out.println(displayScore);
-            JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
+            getLevelScoreFromFile(pathThree, lvlThreeScoresFromFile);
+            createScoreMessagePopUp(lvlThreeScoresFromFile);
         }else if(gamePlay.getLevel()==4){
-            Scanner inputLevelScore = new Scanner(new File("src/test/levelFourScore.txt"));
-
-            while(inputLevelScore.hasNext()){
-                lvlFourScoresFromFile.add(Integer.parseInt(inputLevelScore.next()));
-            }
-            lvlFourScoresFromFile.sort(Collections.reverseOrder());
-
-            if(lvlFourScoresFromFile.size()>5){
-                lvlFourScoresFromFile = lvlFourScoresFromFile.subList(0,6);
-            }
-
-            StringBuilder displayScore = new StringBuilder("<html>");
-
-            if(lvlFourScoresFromFile.size()>5){
-                for(int i=0;i<5;i++){
-                    String scoreString = String.valueOf(lvlFourScoresFromFile.get(i));
-                    displayScore.append(" ").append(scoreString).append("<br>");
-                }
-            }else{
-                for (Integer integer : lvlFourScoresFromFile){
-                    displayScore.append(" ").append(integer).append("<br>");
-                }
-            }
-            //System.out.println(displayScore);
-            JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
+            getLevelScoreFromFile(pathFour, lvlFourScoresFromFile);
+            createScoreMessagePopUp(lvlFourScoresFromFile);
         }else if(gamePlay.getLevel()==5){
-            Scanner inputLevelScore = new Scanner(new File("src/test/levelFiveScore.txt"));
-
-            while(inputLevelScore.hasNext()){
-                lvlFiveScoresFromFile.add(Integer.parseInt(inputLevelScore.next()));
-            }
-            lvlFiveScoresFromFile.sort(Collections.reverseOrder());
-
-            if(lvlFiveScoresFromFile.size()>5){
-                lvlFiveScoresFromFile = lvlFiveScoresFromFile.subList(0,6);
-            }
-
-            StringBuilder displayScore = new StringBuilder("<html>");
-
-            if(lvlFiveScoresFromFile.size()>5){
-                for(int i=0;i<5;i++){
-                    String scoreString = String.valueOf(lvlFiveScoresFromFile.get(i));
-                    displayScore.append(" ").append(scoreString).append("<br>");
-                }
-            }else{
-                for (Integer integer : lvlFiveScoresFromFile){
-                    displayScore.append(" ").append(integer).append("<br>");
-                }
-            }
-            JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
+            getLevelScoreFromFile(pathFive, lvlFiveScoresFromFile);
+            createScoreMessagePopUp(lvlFiveScoresFromFile);
         }
     }
 
@@ -299,47 +234,27 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         writer.close();
     }
 
+    private void saveLevelScoreToFile(Writer writer, int scoreForLevel) throws IOException{
+        if(writer==null){
+            assert false;
+            writer.write(scoreForLevel + " ");
+        }else{
+            writer.write(" " + scoreForLevel + " ");
+        }
+        writer.close();
+    }
+
     private void saveLevelScores() throws IOException{
         if(gamePlay.getLevel()==1){
-            if(writerLvlOne==null){
-                assert false;
-                writerLvlOne.write(gamePlay.getScore() + " ");
-            }else{
-                writerLvlOne.write(" " + gamePlay.getScore() + " ");
-            }
-            writerLvlOne.close();
+            saveLevelScoreToFile(writerLvlOne, gamePlay.getScoreLvlOne());
         }else if(gamePlay.getLevel()==2){
-            if(writerLvlTwo==null){
-                assert false;
-                writerLvlTwo.write(gamePlay.getScore() + " ");
-            }else{
-                writerLvlTwo.write(" " + gamePlay.getScore() + " ");
-            }
-            writerLvlTwo.close();
+            saveLevelScoreToFile(writerLvlTwo, gamePlay.getScoreLvlTwo());
         }else if(gamePlay.getLevel()==3){
-            if(writerLvlThree==null){
-                assert false;
-                writerLvlThree.write(gamePlay.getScore() + " ");
-            }else{
-                writerLvlThree.write(" " + gamePlay.getScore() + " ");
-            }
-            writerLvlThree.close();
+            saveLevelScoreToFile(writerLvlThree, gamePlay.getScoreLvlThree());
         }else if(gamePlay.getLevel()==4){
-            if(writerLvlFour==null){
-                assert false;
-                writerLvlFour.write(gamePlay.getScore() + " ");
-            }else{
-                writerLvlFour.write(" " + gamePlay.getScore() + " ");
-            }
-            writerLvlFour.close();
+            saveLevelScoreToFile(writerLvlFour, gamePlay.getScoreLvlFour());
         }else if(gamePlay.getLevel()==5){
-            if(writerLvlFive==null){
-                assert false;
-                writerLvlFive.write(gamePlay.getScore() + " ");
-            }else{
-                writerLvlFive.write(" " + gamePlay.getScore() + " ");
-            }
-            writerLvlFive.close();
+            saveLevelScoreToFile(writerLvlFive, gamePlay.getScoreLvlFive());
         }
     }
 

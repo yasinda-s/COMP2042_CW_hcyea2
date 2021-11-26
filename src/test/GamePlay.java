@@ -344,4 +344,25 @@ public class GamePlay {
     public int getLevel() {
         return level;
     }
+
+    public int getScoreLvlOne() {
+        return scoreLvlOne;
+    }
+
+    public int getScoreLvlTwo() {
+        return scoreLvlTwo;
+    }
+
+    public int getScoreLvlThree() {
+        return scoreLvlThree;
+    }
+
+    public int getScoreLvlFour() {
+        return scoreLvlFour;
+    }
+
+    public int getScoreLvlFive() {
+        return scoreLvlFive;
+    }
+
 }
