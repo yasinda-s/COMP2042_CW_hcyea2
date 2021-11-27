@@ -5,9 +5,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Point2D;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
 
 /**
  * This class draws all of the 2d Components required to load the home screen and to play the game.
@@ -33,19 +30,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private DebugConsole debugConsole;
     private PauseMenu pauseMenu;
     private HighScore highScore;
-    private DrawBall drawBall;
-    private DrawBrick drawBrick;
-    private DrawPlayer drawPlayer;
-
-    private String message;
+    private LevelScore levelScore;
     private String detailMessage;
-
-    Writer writer;
-    Writer writerLvlOne;
-    Writer writerLvlTwo;
-    Writer writerLvlThree;
-    Writer writerLvlFour;
-    Writer writerLvlFive;
 
     private boolean showPauseMenu;
     private boolean scoreExitClicked;
@@ -55,12 +41,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private Rectangle exitButtonRect;
     private Rectangle restartButtonRect;
     private Rectangle scoreExitButtonRect;
-
-    private java.util.List<Integer> lvlOneScoresFromFile;
-    private java.util.List<Integer> lvlTwoScoresFromFile;
-    private java.util.List<Integer> lvlThreeScoresFromFile;
-    private java.util.List<Integer> lvlFourScoresFromFile;
-    private java.util.List<Integer> lvlFiveScoresFromFile;
 
     /**
      * This is the constructor for the GameBoard.
@@ -74,27 +54,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         this.initialize(); //set dimension, focus, and listeners from Component
 
-        message = "";
         detailMessage = "";
         gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2);
         gamePlay.makeComponents(new Point(300,430)); //gamePlay sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
-
-        writer = new BufferedWriter(new FileWriter("src/test/highscore.txt", true));
-
-        writerLvlOne = new BufferedWriter(new FileWriter("src/test/levelOneScore.txt", true));
-        lvlOneScoresFromFile = new ArrayList<Integer>();
-
-        writerLvlTwo = new BufferedWriter(new FileWriter("src/test/levelTwoScore.txt", true));
-        lvlTwoScoresFromFile = new ArrayList<Integer>();
-
-        writerLvlThree = new BufferedWriter(new FileWriter("src/test/levelThreeScore.txt", true));
-        lvlThreeScoresFromFile = new ArrayList<Integer>();
-
-        writerLvlFour = new BufferedWriter(new FileWriter("src/test/levelFourScore.txt", true));
-        lvlFourScoresFromFile = new ArrayList<Integer>();
-
-        writerLvlFive = new BufferedWriter(new FileWriter("src/test/levelFiveScore.txt", true));
-        lvlFiveScoresFromFile = new ArrayList<Integer>();
+        levelScore = new LevelScore(gamePlay);
 
         pauseMenu = new PauseMenu(this);
         debugConsole = new DebugConsole(owner, gamePlay,this); //setup debug console
@@ -112,7 +75,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             if(gamePlay.isBallLost()){
                 if(gamePlay.ballEnd()){
                     gamePlay.wallReset();
-                    message = "Game over, your final score is " + gamePlay.getScore(); //if all balls lost XXXX add this to the high score screen
                     try {
                         saveLevelScores(); //save final score for that level only
                         saveTotalScore(); //save total final score
@@ -120,7 +82,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                         ex.printStackTrace();
                     }
                     try {
-                        popUpLevelScore(); //trigger pop up score for that level only
+                        levelScore.popUpLevelScore(); //trigger pop up score for that level only
                     } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }
@@ -131,7 +93,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             }
             else if(gamePlay.isDone()){ //if all bricks broken
                 if(gamePlay.hasLevel()){ //if user has more levels left
-                    message = "Go to Next Level";
                     gameTimer.stop();
                     try {
                         saveLevelScores(); //save score for that level as its completed
@@ -139,7 +100,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                         ex.printStackTrace();
                     }
                     try {
-                        popUpLevelScore(); //trigger pop up score for that level only
+                        levelScore.popUpLevelScore(); //trigger pop up score for that level only
                     } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }
@@ -148,7 +109,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     gamePlay.nextLevel();
                 }
                 else{ //if no more levels
-                    message = "ALL WALLS DESTROYED";
                     try {
                         saveTotalScore();  //save total final score
                         saveLevelScores(); //save score for that level as its completed
@@ -156,7 +116,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                         ex.printStackTrace();
                     }
                     try {
-                        popUpLevelScore(); //trigger pop up score for that level only
+                        levelScore.popUpLevelScore(); //trigger pop up score for that level only
                     } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }
@@ -166,96 +126,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             }
             repaint();
         });
-    }
-
-    private void getLevelScoreFromFile(String filePath, java.util.List<Integer> lvlScoresFromFile) throws FileNotFoundException{
-        Scanner inputLevelScore = new Scanner(new File(filePath));
-        while(inputLevelScore.hasNext()){
-            lvlScoresFromFile.add(Integer.parseInt(inputLevelScore.next()));
-        }
-        lvlScoresFromFile.sort(Collections.reverseOrder());
-
-        if(lvlScoresFromFile.size()>5){
-            lvlScoresFromFile = lvlScoresFromFile.subList(0,6);
-        }
-    }
-
-    private void createScoreMessagePopUp(java.util.List<Integer> lvlScoresFromFile){
-        StringBuilder displayScore = new StringBuilder("<html>");
-        if(lvlScoresFromFile.size()>5){
-            for(int i=0;i<5;i++){
-                String scoreString = String.valueOf(lvlScoresFromFile.get(i));
-                displayScore.append(" ").append(scoreString).append("<br>");
-            }
-        }else{
-            for (Integer integer : lvlScoresFromFile){
-                displayScore.append(" ").append(integer).append("<br>");
-            }
-        }
-        JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
-    }
-
-    private void popUpLevelScore() throws FileNotFoundException { //make function for this
-        String pathOne = "src/test/levelOneScore.txt";
-        String pathTwo = "src/test/levelTwoScore.txt";
-        String pathThree = "src/test/levelThreeScore.txt";
-        String pathFour = "src/test/levelFourScore.txt";
-        String pathFive = "src/test/levelFiveScore.txt";
-
-        if(gamePlay.getLevel()==1){
-            getLevelScoreFromFile(pathOne, lvlOneScoresFromFile);
-            createScoreMessagePopUp(lvlOneScoresFromFile);
-        }else if(gamePlay.getLevel()==2){
-            getLevelScoreFromFile(pathTwo, lvlTwoScoresFromFile);
-            createScoreMessagePopUp(lvlTwoScoresFromFile);
-        }else if(gamePlay.getLevel()==3){
-            getLevelScoreFromFile(pathThree, lvlThreeScoresFromFile);
-            createScoreMessagePopUp(lvlThreeScoresFromFile);
-        }else if(gamePlay.getLevel()==4){
-            getLevelScoreFromFile(pathFour, lvlFourScoresFromFile);
-            createScoreMessagePopUp(lvlFourScoresFromFile);
-        }else if(gamePlay.getLevel()==5){
-            getLevelScoreFromFile(pathFive, lvlFiveScoresFromFile);
-            createScoreMessagePopUp(lvlFiveScoresFromFile);
-        }
-    }
-
-    /**
-     * This method is used to save the scores permanently into the text file.
-     * @throws IOException In case the file cannot be found in the directory.
-     */
-    private void saveTotalScore() throws IOException {
-        if(writer==null){
-            assert false;
-            writer.write(gamePlay.getScore() + " ");
-        }else{
-            writer.write(" " + gamePlay.getScore() + " ");
-        }
-        writer.close();
-    }
-
-    private void saveLevelScoreToFile(Writer writer, int scoreForLevel) throws IOException{
-        if(writer==null){
-            assert false;
-            writer.write(scoreForLevel + " ");
-        }else{
-            writer.write(" " + scoreForLevel + " ");
-        }
-        writer.close();
-    }
-
-    private void saveLevelScores() throws IOException{
-        if(gamePlay.getLevel()==1){
-            saveLevelScoreToFile(writerLvlOne, gamePlay.getScoreLvlOne());
-        }else if(gamePlay.getLevel()==2){
-            saveLevelScoreToFile(writerLvlTwo, gamePlay.getScoreLvlTwo());
-        }else if(gamePlay.getLevel()==3){
-            saveLevelScoreToFile(writerLvlThree, gamePlay.getScoreLvlThree());
-        }else if(gamePlay.getLevel()==4){
-            saveLevelScoreToFile(writerLvlFour, gamePlay.getScoreLvlFour());
-        }else if(gamePlay.getLevel()==5){
-            saveLevelScoreToFile(writerLvlFive, gamePlay.getScoreLvlFive());
-        }
     }
 
     /**
@@ -271,6 +141,47 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     }
 
     /**
+     * This method is used to save the scores permanently into the text file.
+     * @throws IOException In case the file cannot be found in the directory.
+     */
+    public void saveTotalScore() throws IOException {
+        if(highScore.getWriter()==null){
+            assert false;
+            highScore.getWriter().write(gamePlay.getScore() + " ");
+        }else{
+            highScore.getWriter().write(" " + gamePlay.getScore() + " ");
+        }
+        highScore.getWriter().close();
+    }
+
+    private void saveLevelScores() throws IOException{
+        if(gamePlay.getLevel()==1){
+//            System.out.println(gamePlay.getScoreLvlOne()); -> 100
+            saveLevelScoreToFile(levelScore.getWriterLvlOne(), gamePlay.getScoreLvlOne());
+        }else if(gamePlay.getLevel()==2){
+            saveLevelScoreToFile(levelScore.getWriterLvlTwo(), gamePlay.getScoreLvlTwo());
+        }else if(gamePlay.getLevel()==3){
+            saveLevelScoreToFile(levelScore.getWriterLvlThree(), gamePlay.getScoreLvlThree());
+        }else if(gamePlay.getLevel()==4){
+            saveLevelScoreToFile(levelScore.getWriterLvlFour(), gamePlay.getScoreLvlFour());
+        }else if(gamePlay.getLevel()==5){
+            saveLevelScoreToFile(levelScore.getWriterLvlFive(), gamePlay.getScoreLvlFive());
+        }
+    }
+
+    private void saveLevelScoreToFile(Writer writer, int scoreForLevel) throws IOException{
+        if(writer==null){
+            assert false;
+            writer.write(scoreForLevel + " ");
+        }else{
+            writer.write(" " + scoreForLevel + " ");
+        }
+        writer.close();
+    }
+
+
+
+    /**
      * Overriding method to paint the 2d Components onto the screen. We use this to draw the ball, wall and player.
      * @param g The Graphics frame in which we want to draw the game components.
      */
@@ -279,14 +190,13 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         Point2D p = gamePlay.ball.getPosition();
 
         DrawFactory drawFactory = new DrawFactory();
-        drawBall = (DrawBall) drawFactory.getDraw(gamePlay.ball, level, p); //must be new ball
-        drawBrick = (DrawBrick) drawFactory.getDraw();
-        drawPlayer = (DrawPlayer) drawFactory.getDraw(gamePlay.player);
+        DrawBall drawBall = (DrawBall) drawFactory.getDraw(gamePlay.ball, level, p); //must be new ball
+        DrawBrick drawBrick = (DrawBrick) drawFactory.getDraw();
+        DrawPlayer drawPlayer = (DrawPlayer) drawFactory.getDraw(gamePlay.player);
 
         Graphics2D g2d = (Graphics2D) g; //get more control over geometry, coordinate transformations, color management, and text
         clear(g2d);
         g2d.setColor(Color.BLUE);
-        g2d.drawString(message,250,225); //whenever we print something on screen, we use this with the color we set earlier
         g2d.drawString(detailMessage,180,200); //for score things
 
         drawBall.draw(g2d,level);

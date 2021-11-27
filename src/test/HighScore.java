@@ -3,15 +3,12 @@ package test;
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class HighScore {
-
-    private static final Color MENU_COLOR = new Color(0,255,0);
     private Font menuFont;
     private Font headFont;
     private Font buttonFont;
@@ -21,16 +18,21 @@ public class HighScore {
 
     private static final int TOP_SCORES = 5;
 
+    public Writer getWriter() {
+        return writer;
+    }
+
+    Writer writer;
     private java.util.List<Integer> scoresFromFile;
     private GameBoard gameBoard;
-
     private Rectangle scoreExitButtonRect;
 
-    public HighScore(GameBoard gameBoard){
+    public HighScore(GameBoard gameBoard) throws IOException {
         headFont = new Font("Noto Mono", Font.BOLD, 40);
         menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
         buttonFont = new Font("Noto Mono", Font.BOLD, 20);
         scoresFromFile = new ArrayList<Integer>();
+        writer = new BufferedWriter(new FileWriter("src/test/highscore.txt", true));
         this.gameBoard = gameBoard;
         Dimension btnDim = new Dimension(gameBoard.getWidth()/3, gameBoard.getHeight()/12); //XXXX
         scoreExitButtonRect = new Rectangle(btnDim); //button draws when it is inside method

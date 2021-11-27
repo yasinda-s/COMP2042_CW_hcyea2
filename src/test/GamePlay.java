@@ -64,7 +64,7 @@ public class GamePlay {
         level = 0; //original level is 0
 
         score = 0;
-        scoreLvlOne = 0;
+        scoreLvlOne = 0; //takes this for gp.getLevelOneScore()
         scoreLvlTwo = 0;
         scoreLvlThree = 0;
         scoreLvlFour = 0;
@@ -135,6 +135,7 @@ public class GamePlay {
             case 1:
                 scoreLvlOne += 100;
                 score+=100;
+                //System.out.println(scoreLvlOne);
                 break;
             case 2:
                 scoreLvlTwo += 200;
@@ -143,6 +144,7 @@ public class GamePlay {
             case 3:
                 scoreLvlThree += 300;
                 score+=300;
+                //System.out.println(scoreLvlThree);
                 break;
             case 4:
                 scoreLvlFour += 400;
@@ -289,7 +291,7 @@ public class GamePlay {
      * This method is used to reset the ball count for a given level back to its original value.
      */
     public void resetBallCount(){
-        ballCount = 3;
+        ballCount = 1;
     }
 
     /**
