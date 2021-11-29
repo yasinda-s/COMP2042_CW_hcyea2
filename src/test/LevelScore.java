@@ -14,12 +14,14 @@ public class LevelScore {
     Writer writerLvlThree;
     Writer writerLvlFour;
     Writer writerLvlFive;
+    Writer writerLvlSix;
 
     private List<Integer> lvlOneScoresFromFile;
     private List<Integer> lvlTwoScoresFromFile;
     private List<Integer> lvlThreeScoresFromFile;
     private List<Integer> lvlFourScoresFromFile;
     private List<Integer> lvlFiveScoresFromFile;
+    private List<Integer> lvlSixScoresFromFile;
 
     private GamePlay gamePlay;
 
@@ -39,6 +41,9 @@ public class LevelScore {
 
         writerLvlFive = new BufferedWriter(new FileWriter("src/test/levelFiveScore.txt", true));
         lvlFiveScoresFromFile = new ArrayList<>();
+
+        writerLvlSix = new BufferedWriter(new FileWriter("src/test/levelSixScore.txt", true));
+        lvlSixScoresFromFile = new ArrayList<>();
     }
 
     public void popUpLevelScore() throws FileNotFoundException {
@@ -47,6 +52,7 @@ public class LevelScore {
         String pathThree = "src/test/levelThreeScore.txt";
         String pathFour = "src/test/levelFourScore.txt";
         String pathFive = "src/test/levelFiveScore.txt";
+        String pathSix = "src/test/levelSixScore.txt";
 
         if(gamePlay.getLevel()==1){
             getLevelScoreFromFile(pathOne, lvlOneScoresFromFile);
@@ -63,6 +69,9 @@ public class LevelScore {
         }else if(gamePlay.getLevel()==5){
             getLevelScoreFromFile(pathFive, lvlFiveScoresFromFile);
             createScoreMessagePopUp(lvlFiveScoresFromFile);
+        }else if(gamePlay.getLevel()==6){
+            getLevelScoreFromFile(pathSix, lvlSixScoresFromFile);
+            createScoreMessagePopUp(lvlSixScoresFromFile);
         }
     }
 
@@ -124,5 +133,9 @@ public class LevelScore {
 
     public Writer getWriterLvlFive() {
         return writerLvlFive;
+    }
+
+    public Writer getWriterLvlSix() {
+        return writerLvlSix;
     }
 }

@@ -46,6 +46,7 @@ public class GamePlay {
     private int scoreLvlThree;
     private int scoreLvlFour;
     private int scoreLvlFive;
+    private int scoreLvlSix;
     private int timePlayed;
 
     /**
@@ -69,6 +70,7 @@ public class GamePlay {
         scoreLvlThree = 0;
         scoreLvlFour = 0;
         scoreLvlFive = 0;
+        scoreLvlSix = 0;
 
         ballCount = 1; //we get 3 lives
         ballLost = false; //originally no balls are lost
@@ -135,7 +137,6 @@ public class GamePlay {
             case 1:
                 scoreLvlOne += 100;
                 score+=100;
-                //System.out.println(scoreLvlOne);
                 break;
             case 2:
                 scoreLvlTwo += 200;
@@ -144,7 +145,6 @@ public class GamePlay {
             case 3:
                 scoreLvlThree += 300;
                 score+=300;
-                //System.out.println(scoreLvlThree);
                 break;
             case 4:
                 scoreLvlFour += 400;
@@ -153,6 +153,10 @@ public class GamePlay {
             case 5:
                 scoreLvlFive += 500;
                 score+=500;
+                break;
+            case 6:
+                scoreLvlSix += 600;
+                score += 600;
                 break;
         }
     }
@@ -366,5 +370,7 @@ public class GamePlay {
     public int getScoreLvlFive() {
         return scoreLvlFive;
     }
+
+    public int getScoreLvlSix() {return scoreLvlSix;}
 
 }

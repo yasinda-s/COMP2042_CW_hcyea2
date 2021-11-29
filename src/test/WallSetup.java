@@ -13,7 +13,7 @@ public class WallSetup {
     private static final int CLAY = 1;
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
-    private static final int WOOD = 4;
+    private static final int COLOR = 4;
 
     Brick[][] levelsMade;
 
@@ -75,7 +75,7 @@ public class WallSetup {
             if(type == 1){
                 tmp[i] = new ClayBrick(p,brickSize); //set this brick to clay
             }else if(type == 4){
-                tmp[i] = new WoodBrick(p,brickSize); //set this brick to clay
+                tmp[i] = new ColorBrick(p,brickSize); //set this brick to clay
             }
 
         }
@@ -164,7 +164,7 @@ public class WallSetup {
         tmp[2] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
         tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
         tmp[4] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio,CLAY);
-        tmp[5] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, WOOD);
+        tmp[5] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, COLOR);
         tmp[6] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, CLAY);
         return tmp;
     }
@@ -188,8 +188,8 @@ public class WallSetup {
             case CEMENT:
                 out = new CementBrick(point, size);
                 break;
-            case WOOD:
-                out = new WoodBrick(point, size);
+            case COLOR:
+                out = new ColorBrick(point, size);
                 break;
             default:
                 throw new IllegalArgumentException(String.format("Unknown Type:%d\n",type));

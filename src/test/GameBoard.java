@@ -156,7 +156,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private void saveLevelScores() throws IOException{
         if(gamePlay.getLevel()==1){
-//            System.out.println(gamePlay.getScoreLvlOne()); -> 100
             saveLevelScoreToFile(levelScore.getWriterLvlOne(), gamePlay.getScoreLvlOne());
         }else if(gamePlay.getLevel()==2){
             saveLevelScoreToFile(levelScore.getWriterLvlTwo(), gamePlay.getScoreLvlTwo());
@@ -166,6 +165,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             saveLevelScoreToFile(levelScore.getWriterLvlFour(), gamePlay.getScoreLvlFour());
         }else if(gamePlay.getLevel()==5){
             saveLevelScoreToFile(levelScore.getWriterLvlFive(), gamePlay.getScoreLvlFive());
+        }else if(gamePlay.getLevel()==6){
+            saveLevelScoreToFile(levelScore.getWriterLvlSix(), gamePlay.getScoreLvlSix());
         }
     }
 
