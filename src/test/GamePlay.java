@@ -41,6 +41,7 @@ public class GamePlay {
     private boolean ballLost;
 
     private int score;
+    private int scoreToAdd;
     private int scoreLvlOne;
     private int scoreLvlTwo;
     private int scoreLvlThree;
@@ -65,7 +66,8 @@ public class GamePlay {
         level = 0; //original level is 0
 
         score = 0;
-        scoreLvlOne = 0; //takes this for gp.getLevelOneScore()
+        scoreToAdd = 0;
+        scoreLvlOne = 0;
         scoreLvlTwo = 0;
         scoreLvlThree = 0;
         scoreLvlFour = 0;
@@ -135,29 +137,47 @@ public class GamePlay {
     public void calculateScore(int level){
         switch (level){
             case 1:
-                scoreLvlOne += 100;
-                score+=100;
+                scoreToAdd = 100 / checkScoreDenominator(getTimePlayed());
+                scoreLvlOne += scoreToAdd; //based on how soon you break the bricks in that level as sooner means higher points
+                score+=100; //based on how many solid points you gain for each brick in a level (cumulative)
                 break;
             case 2:
-                scoreLvlTwo += 200;
+                scoreToAdd = 200 / checkScoreDenominator(getTimePlayed());
+                scoreLvlTwo += scoreToAdd;
                 score+=200;
                 break;
             case 3:
-                scoreLvlThree += 300;
+                scoreToAdd = 300 / checkScoreDenominator(getTimePlayed());
+                scoreLvlThree += scoreToAdd;
                 score+=300;
                 break;
             case 4:
-                scoreLvlFour += 400;
+                scoreToAdd = 400 / checkScoreDenominator(getTimePlayed());
+                scoreLvlFour += scoreToAdd;
                 score+=400;
                 break;
             case 5:
-                scoreLvlFive += 500;
+                scoreToAdd = 500 / checkScoreDenominator(getTimePlayed());
+                scoreLvlFive += scoreToAdd;
                 score+=500;
                 break;
             case 6:
-                scoreLvlSix += 600;
+                scoreToAdd = 600 / checkScoreDenominator(getTimePlayed());
+                scoreLvlSix += scoreToAdd;
                 score += 600;
                 break;
+        }
+    }
+
+    private int checkScoreDenominator(int timePlayed){
+        if(timePlayed<10){
+            return 1;
+        }else if(timePlayed>10 && timePlayed<30){
+            return 2;
+        }else if(timePlayed>30 && timePlayed<50){
+            return 3;
+        }else{
+            return 4;
         }
     }
 
