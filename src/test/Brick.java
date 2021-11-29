@@ -32,12 +32,12 @@ abstract public class Brick  { //this represents one of the bricks we see on top
     Shape brickFace;
 
     private Color border;
-    private Color inner;
+    protected Color inner;
 
     private int fullStrength;
-    private int strength;
+    protected int strength;
 
-    private boolean broken;
+    protected boolean broken;
 
     /**
      * This is the constructor for Brick Object.
@@ -72,7 +72,7 @@ abstract public class Brick  { //this represents one of the bricks we see on top
      * @param dir Refers to the direction (edge) of the brick that is making contact with the ball.
      * @return Returns boolean value based on whether the brick makes or not.
      */
-    public  boolean setImpact(Point2D point , int dir){
+    public boolean setImpact(Point2D point , int dir){
         if(broken)
             return false;
         impact(); //if impact, then reduce strength
@@ -107,7 +107,7 @@ abstract public class Brick  { //this represents one of the bricks we see on top
      * @param b Refers to a ball object.
      * @return Returns Int Type, which corresponds to the direction of impact.
      */
-    public final int findImpact(Ball b){ //see how the ball hit the brick (direction)
+    public int findImpact(Ball b){ //see how the ball hit the brick (direction)
         if(broken)
             return 0;
         int out  = 0;

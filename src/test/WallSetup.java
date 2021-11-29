@@ -8,11 +8,12 @@ import java.awt.*;
 
 public class WallSetup {
 
-    private static final int LEVELS_COUNT = 5; //number of levels in the game
+    private static final int LEVELS_COUNT = 7; //number of levels in the game
 
     private static final int CLAY = 1;
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
+    private static final int WOOD = 4;
 
     Brick[][] levelsMade;
 
@@ -68,10 +69,15 @@ public class WallSetup {
             tmp[i] = makeBrick(p,brickSize,type); //then we pass the p, size of brick, and type of brick to make the brick at the point p
         }
 
-        for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){  //setting bricks to clay type
+        for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){  //setting bricks to clay or wood type
             double x = (brickOnLine * brickLen) - (brickLen / 2);
             p.setLocation(x,y);
-            tmp[i] = new ClayBrick(p,brickSize); //set this brick to clay
+            if(type == 1){
+                tmp[i] = new ClayBrick(p,brickSize); //set this brick to clay
+            }else if(type == 4){
+                tmp[i] = new WoodBrick(p,brickSize); //set this brick to clay
+            }
+
         }
         return tmp;
     }
@@ -158,6 +164,8 @@ public class WallSetup {
         tmp[2] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
         tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
         tmp[4] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio,CLAY);
+        tmp[5] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, WOOD);
+        tmp[6] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, CLAY);
         return tmp;
     }
 
@@ -180,9 +188,12 @@ public class WallSetup {
             case CEMENT:
                 out = new CementBrick(point, size);
                 break;
+            case WOOD:
+                out = new WoodBrick(point, size);
+                break;
             default:
                 throw new IllegalArgumentException(String.format("Unknown Type:%d\n",type));
         }
-        return  out;
+        return out;
     }
 }

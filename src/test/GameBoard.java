@@ -179,8 +179,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         writer.close();
     }
 
-
-
     /**
      * Overriding method to paint the 2d Components onto the screen. We use this to draw the ball, wall and player.
      * @param g The Graphics frame in which we want to draw the game components.
@@ -190,9 +188,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         Point2D p = gamePlay.ball.getPosition();
 
         DrawFactory drawFactory = new DrawFactory();
-        DrawBall drawBall = (DrawBall) drawFactory.getDraw(gamePlay.ball, level, p); //must be new ball
+        DrawBall drawBall = (DrawBall) drawFactory.getDraw(gamePlay.ball, level, p);
         DrawBrick drawBrick = (DrawBrick) drawFactory.getDraw();
-        DrawPlayer drawPlayer = (DrawPlayer) drawFactory.getDraw(gamePlay.player);
+        DrawPlayer drawPlayer = (DrawPlayer) drawFactory.getDraw(gamePlay.player, level, p);
 
         Graphics2D g2d = (Graphics2D) g; //get more control over geometry, coordinate transformations, color management, and text
         clear(g2d);
@@ -206,6 +204,11 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 drawBrick.draw(b,g2d);
 
         drawPlayer.draw(g2d, level); //draws the player bar using 2dgraphics
+
+//        if(gamePlay.getLevel()==7){
+//            Rectangle fire = new Rectangle(280, 225, 20, 20);
+//            g2d.drawRect(fire.x, fire.y, (int)fire.getWidth(), (int)fire.getHeight());
+//        }
 
         if(showPauseMenu) { //if user presses esc
             pauseMenu.drawMenu(g2d);

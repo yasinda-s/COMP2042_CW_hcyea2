@@ -78,7 +78,7 @@ abstract public class Ball implements BallInterface {
         speedY = speedsXY[1];
     }
 
-    /** XXXX
+    /** XXXX moved to interface
      * Abstract class to make the Shape of the ball (Circle).
      *
      * @param center Point2D type, consists of the x, y coordinate of the center of the ball.

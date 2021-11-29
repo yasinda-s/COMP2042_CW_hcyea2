@@ -5,7 +5,7 @@ import java.awt.*;
 /**
  * This class represents the Player's bar (Rectangle) which he/she controls.
  */
-public class Player { //refers to the player brick
+public class Player implements PlayerInterface{ //refers to the player brick
 
     public static final Color BORDER_COLOR = Color.GREEN.darker().darker(); //outer border
     public static final Color INNER_COLOR = Color.GREEN; //inner border
@@ -28,6 +28,7 @@ public class Player { //refers to the player brick
     public Player(Point ballPoint,int width,int height,Rectangle container){
         //container refers to the whole box used for the game
         this.ballPoint = ballPoint; //random point object for now, later initial pos of ball
+        //System.out.println(ballPoint);
         moveAmount = 0;
         playerFace = makeRectangle(width, height); //face of the player is made after this method which takes in w, h
         //ballPoint refers to the coordinates of the ball
@@ -43,7 +44,7 @@ public class Player { //refers to the player brick
      * @param height The height of the rectangle.
      * @return Returns the Rectangle object of the player bar.
      */
-    private Rectangle makeRectangle(int width,int height){
+    public Rectangle makeRectangle(int width, int height){
         Point p = new Point((int)(ballPoint.getX() - (width / 2)),(int)ballPoint.getY());
         return new Rectangle(p,new Dimension(width,height)); //return top left coordinate of point P with w and h passed.
     }
@@ -74,6 +75,7 @@ public class Player { //refers to the player brick
      * This method is used to invert the DEF_MOVE_AMOUNT in order to make the player bar move left.
      */
     public void moveLeft(){
+        System.out.println("Player moved left");
         moveAmount = -DEF_MOVE_AMOUNT;
     }
 

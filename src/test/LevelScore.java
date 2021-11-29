@@ -82,6 +82,7 @@ public class LevelScore {
         String message = "";
         if(gamePlay.isBallLost()) {
             if (gamePlay.ballEnd()) {
+                //System.out.println("Test");
                 message = "Game over!";
             }
         }else if(gamePlay.isDone()){ //if all bricks broken
@@ -91,6 +92,7 @@ public class LevelScore {
                 message = "You completed the game!";}
         }
 
+        //System.out.println(message);
         StringBuilder displayScore = new StringBuilder("<html>");
         displayScore.append(message).append("<br>").append("Here are the high scores for this level - ").append("<br>").append("<br>");
         if(lvlScoresFromFile.size()>5){
