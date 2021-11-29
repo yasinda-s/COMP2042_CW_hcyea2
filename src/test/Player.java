@@ -5,7 +5,7 @@ import java.awt.*;
 /**
  * This class represents the Player's bar (Rectangle) which he/she controls.
  */
-public class Player implements PlayerInterface{ //refers to the player brick
+class Player implements PlayerInterface{ //refers to the player brick
 
     public static final Color BORDER_COLOR = Color.GREEN.darker().darker(); //outer border
     public static final Color INNER_COLOR = Color.GREEN; //inner border

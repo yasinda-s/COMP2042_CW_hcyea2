@@ -5,7 +5,7 @@ import java.awt.*;
 public class SmallPlayer extends Player{
 
     private static final int DEF_WIDTH = 30;
-    private static final int DEF_HEIGHT = 40;
+    private static final int DEF_HEIGHT = 20;
 
     /**
      * This is the constructor for the Player object which refers to the bar he/she controls in-game.

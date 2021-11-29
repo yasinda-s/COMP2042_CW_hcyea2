@@ -74,7 +74,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             detailMessage = String.format("Bricks: %d Balls: %d Time Played: %d Score: %d", gamePlay.getBrickCount(), gamePlay.getBallCount(), gamePlay.getTimePlayed(), gamePlay.getScore());
             if(gamePlay.isBallLost()){
                 if(gamePlay.ballEnd()){
-                    gamePlay.wallReset();
                     try {
                         saveLevelScores(); //save final score for that level only
                         saveTotalScore(); //save total final score
@@ -86,6 +85,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }
+                    gamePlay.wallReset();
                     gameOver = true; //this will trigger final high score screen
                 }
                 gamePlay.ballReset(); //if user hasnt used all 3 balls

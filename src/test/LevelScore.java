@@ -80,9 +80,8 @@ public class LevelScore {
 
     public void createScoreMessagePopUp(java.util.List<Integer> lvlScoresFromFile) {
         String message = "";
-        if(gamePlay.isBallLost()) {
-            if (gamePlay.ballEnd()) {
-                //System.out.println("Test");
+        if(gamePlay.isBallLost()) { //works for this
+            if (gamePlay.ballEnd()) { //not for this
                 message = "Game over!";
             }
         }else if(gamePlay.isDone()){ //if all bricks broken
@@ -92,7 +91,6 @@ public class LevelScore {
                 message = "You completed the game!";}
         }
 
-        //System.out.println(message);
         StringBuilder displayScore = new StringBuilder("<html>");
         displayScore.append(message).append("<br>").append("Here are the high scores for this level - ").append("<br>").append("<br>");
         if(lvlScoresFromFile.size()>5){
