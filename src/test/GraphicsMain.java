@@ -1,5 +1,7 @@
 package test;
 
+import test.game.GameFrame;
+
 import java.awt.*;
 import java.io.IOException;
 
