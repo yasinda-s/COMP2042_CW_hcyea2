@@ -16,8 +16,8 @@ public class DrawBall implements Drawable{
     public DrawBall(Ball ball, int level, Point2D center) {
         if(level==5) {
             this.ball = new BigBall(center);
-//        }else if(level==6){
-//            this.ball = new BigBall(center);
+//        }else if(level==6){ //gives error in draw()
+//            this.ball = new FireBall(center);
         }else{
             this.ball = ball;
         }

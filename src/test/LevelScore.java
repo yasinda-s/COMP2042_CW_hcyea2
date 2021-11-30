@@ -89,8 +89,8 @@ public class LevelScore {
 
     public void createScoreMessagePopUp(java.util.List<Integer> lvlScoresFromFile) {
         String message = "";
-        if(gamePlay.isBallLost()) { //works for this
-            if (gamePlay.ballEnd()) { //not for this
+        if(gamePlay.isBallLost()) {
+            if (gamePlay.ballEnd()) {
                 message = "Game over!";
             }
         }else if(gamePlay.isDone()){ //if all bricks broken
@@ -101,7 +101,9 @@ public class LevelScore {
         }
 
         StringBuilder displayScore = new StringBuilder("<html>");
-        displayScore.append(message).append("<br>").append("Here are the high scores for this level - ").append("<br>").append("<br>");
+        displayScore.append(message).append("<br>");
+        displayScore.append("Your score for this level was : ").append(getLevelScore()).append("<br>");
+        displayScore.append("<br>").append("Here are the high scores for this level - ").append("<br>").append("<br>");
         if(lvlScoresFromFile.size()>5){
             for(int i=0;i<5;i++){
                 String scoreString = String.valueOf(lvlScoresFromFile.get(i));
@@ -113,6 +115,25 @@ public class LevelScore {
             }
         }
         JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    private int getLevelScore(){
+            int currentLevel = gamePlay.getLevel();
+        int levelScore = 0;
+        if (currentLevel == 1) {
+            levelScore = gamePlay.getScoreLvlOne();
+        } else if (currentLevel == 2){
+            levelScore = gamePlay.getScoreLvlTwo();
+        } else if (currentLevel == 3){
+            levelScore = gamePlay.getScoreLvlThree();
+        } else if (currentLevel == 4){
+            levelScore = gamePlay.getScoreLvlFour();
+        } else if (currentLevel == 5) {
+            levelScore = gamePlay.getScoreLvlFive();
+        } else if (currentLevel == 6) {
+            levelScore = gamePlay.getScoreLvlSix();
+        }
+        return levelScore;
     }
 
     public Writer getWriterLvlOne() {

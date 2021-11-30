@@ -32,6 +32,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private HighScore highScore;
     private LevelScore levelScore;
     private String detailMessage;
+    private String scoreMessage;
 
     private boolean showPauseMenu;
     private boolean scoreExitClicked;
@@ -55,6 +56,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         this.initialize(); //set dimension, focus, and listeners from Component
 
         detailMessage = "";
+        scoreMessage = "";
         gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2);
         gamePlay.makeComponents(new Point(300,430)); //gamePlay sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
         levelScore = new LevelScore(gamePlay);
@@ -71,7 +73,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             gamePlay.move(); //moving of player and ball from GamePlay
             gamePlay.findImpacts(); //look for impacts from GamePlay
             gamePlay.incrementTime();
-            detailMessage = String.format("Bricks: %d Balls: %d Time Played: %d Score: %d", gamePlay.getBrickCount(), gamePlay.getBallCount(), gamePlay.getTimePlayed(), gamePlay.getScore());
+            detailMessage = String.format("Bricks: %d Balls: %d Time Played: %d", gamePlay.getBrickCount(), gamePlay.getBallCount(), gamePlay.getTimePlayed());
+            scoreMessage = String.format("Score from a Brick : %d Total Score : %d", gamePlay.getScoreToAdd(), gamePlay.getScore());
             if(gamePlay.isBallLost()){
                 if(gamePlay.ballEnd()){
                     try {
@@ -196,7 +199,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         Graphics2D g2d = (Graphics2D) g; //get more control over geometry, coordinate transformations, color management, and text
         clear(g2d);
         g2d.setColor(Color.BLUE);
-        g2d.drawString(detailMessage,180,200); //for score things
+        g2d.drawString(detailMessage,220,200); //for score things
+        g2d.drawString(scoreMessage, 200, 230);
 
         drawBall.draw(g2d,level);
 

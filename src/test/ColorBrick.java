@@ -8,10 +8,10 @@ public class ColorBrick extends Brick{ //make interface and change how the brick
     private static final String NAME = "Color Brick";
     private static final Color DEF_INNER = new Color(0, 0, 0);
     private static final Color DEF_BORDER = Color.WHITE;
-    private static final int WOOD_STRENGTH = 3; //breaks in one impact with the ball
+    private static final int COLOR_STRENGTH = 3; //breaks in one impact with the ball
 
     public ColorBrick(Point point, Dimension size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,WOOD_STRENGTH);
+        super(NAME,point,size,DEF_BORDER,DEF_INNER,COLOR_STRENGTH);
     }
 
     @Override

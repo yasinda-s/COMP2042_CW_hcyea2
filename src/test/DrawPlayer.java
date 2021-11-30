@@ -19,6 +19,7 @@ public class DrawPlayer implements Drawable {
     public DrawPlayer(Player player, int level, Point2D center) {
         if(level==5){
             this.player = new SmallPlayer((Point) center, new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT)); //player and bar go tgt
+            //this.player = new Player((Point) center, 20, 20, new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT));
             //this.player = player;
         }else{
             this.player = player;

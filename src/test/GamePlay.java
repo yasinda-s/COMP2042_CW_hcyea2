@@ -87,9 +87,12 @@ public class GamePlay {
     public void makeComponents(Point2D ballPos){
         this.startPoint = new Point((Point) ballPos); //takes in the position of the ball to begin with (the player bar is based on this too)
         this.ballPos = (Point) ballPos;
-        if(level==5){ //when player plays the game properly and reaches level 5, we change the looks of player and ball, but to get with debug panel it should not be edited here
+        if(level==5) { //when player plays the game properly and reaches level 5, we change the looks of player and ball, but to get with debug panel it should not be edited here
             player = new SmallPlayer((Point) ballPos.clone(), area);
             ball = new BigBall(ballPos);
+//        }else if(level==7){
+//            player = new Player((Point) ballPos.clone(),150,10, area);
+//            ball = new FireBall(ballPos);
         }else{
             player = new Player((Point) ballPos.clone(),150,10, area);
             ball = new RubberBall(ballPos); //use the position of the ball to make a rubber ball object
@@ -198,7 +201,7 @@ public class GamePlay {
 
                 //Horizontal Impact
                 case Brick.LEFT_IMPACT:
-                    ball.reverseX();
+                    ball.reverseX(); //fireball must have this but not being reversed X or Y for all cases
                     return b.setImpact(ball.right, Crack.RIGHT);
                 case Brick.RIGHT_IMPACT:
                     ball.reverseX();
@@ -392,5 +395,9 @@ public class GamePlay {
     }
 
     public int getScoreLvlSix() {return scoreLvlSix;}
+
+    public int getScoreToAdd() {
+        return scoreToAdd;
+    }
 
 }

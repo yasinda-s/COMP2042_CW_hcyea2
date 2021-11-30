@@ -7,6 +7,19 @@ import java.util.Random;
 
 /**
  * This is the class used to represent the ball object in the Brick Game.
+ *
+ * Refactoring -
+ *
+ * The original code consisted of passing in two radii (radiusA and radiusB) for the makeBall method, however this is redundant and makes the
+ * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs
+ * the same functionality as the the ball will be having one radius only.
+ *
+ * A new method "getSpeedsXY" has been added so that this method can be called whenever the ball speed has to re-allocated randomly in any Class
+ * rather than repeating the same lines of code as we saw in the original.
+ *
+ * The ball class now implements the BallInterface.
+ *
+ * The makeBall() method has been moved to BallInterface. -> XXXX Explain why later
  */
 
 abstract public class Ball implements BallInterface {
@@ -32,14 +45,6 @@ abstract public class Ball implements BallInterface {
      * The face of the ball is set here.
      * The color (inner and border) of the ball is set here.
      *
-     * Refactoring -
-     *
-     * The original code consisted of passing in two radii (radiusA and radiusB) for the makeBall method, however this is redundant and makes the
-     * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs
-     * the same functionality as the the ball will be having one radius only.
-     *
-     * A new method "getSpeedsXY" has been added so that this method can be called whenever the ball speed has to re-allocated randomly in any Class
-     * rather than repeating the same lines of code as we saw in the original.
      *
      * @param center Point2D type, center holds the x and y coordinate of the ball's center.
      * @param radius Integer type, radiusA holds the radius of the ball.
@@ -77,15 +82,6 @@ abstract public class Ball implements BallInterface {
         speedX = speedsXY[0];
         speedY = speedsXY[1];
     }
-
-    /** XXXX moved to interface
-     * Abstract class to make the Shape of the ball (Circle).
-     *
-     * @param center Point2D type, consists of the x, y coordinate of the center of the ball.
-     * @param radius Int type, radius of ball.
-     * @return Returns type Shape of of a ball.
-     */
-
 
     /**
      * This method is focused on having the ball move freely as the game begins.
