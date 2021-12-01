@@ -52,6 +52,5 @@ public class DrawPlayer implements Drawable {
 
     @Override
     public void draw(Brick brick, Graphics2D g2d) {
-
     }
 }

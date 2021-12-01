@@ -1,7 +1,6 @@
 package test.drawcomponents;
 
 import test.brick.Brick;
-import test.drawcomponents.Drawable;
 
 import java.awt.*;
 

@@ -1,12 +1,14 @@
 package test.game;
 
-import test.game.GameBoard;
-
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 
+/**
+ * This class is responsible for displaying the pause menu in screen when Esc is pressed mid game.
+ *
+ * Addition - Changed the look of the pause menu to make it look more appealing whilst holding back the same functionality.
+ */
 public class PauseMenu{
-
     private static final String CONTINUE = "CONTINUE";
     private static final String RESTART = "RESTART";
     private static final String EXIT = "EXIT";
@@ -23,6 +25,10 @@ public class PauseMenu{
 
     private GameBoard gameBoard;
 
+    /**
+     * Constructor for PauseMenu.
+     * @param gameBoard Takes in gameboard object where the pause menu will be set up.
+     */
     public PauseMenu(GameBoard gameBoard){
         strLen = 0;
         this.gameBoard = gameBoard;

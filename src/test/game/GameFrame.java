@@ -1,14 +1,11 @@
 package test.game;
-
 import test.homemenu.HomeMenu;
 import test.homemenu.InfoScreen;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.io.IOException;
-
 
 /**
  * This class is what holds the whole frame of the Game to be displayed.
@@ -16,7 +13,6 @@ import java.io.IOException;
 public class GameFrame extends JFrame implements WindowFocusListener { //need to add javadocs
 
     private static final String DEF_TITLE = "Brick Destroy"; //name on the game frame header
-
     private GameBoard gameBoard;
     private HomeMenu homeMenu;
     private InfoScreen infoScreen;

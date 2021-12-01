@@ -19,16 +19,17 @@ import java.io.*;
  * This class draws all of the 2d Components required to load the home screen and to play the game.
  *
  * Additions -
- * This class is responsible for opening up the text file and reading in the previous high scores by the user. It then refers to this text file
- * and updates it when the user has achieved a new high score! The txt file is then referred to display a leader board when the game is completed.
- * It shows the top 5 permanent high scores in descending order.
- * Added a method that draws the permanent leader board of the high scores when the game is ended.
+ * Added a method that saves the final high score onto a text file for permanent record tracking. This is later used by HighScore class to
+ * show the leaderboard in descending order at the end of game (either game over or victory).
+ * Added a method that saves the individual level scores onto text files for permanent record tracking. This is later used by LevelScore class to
+ * show the leaderboard in descending order at the end of each level (either level complete or defeat).
  *
  * Refactoring -
- * Removed the methods that painted the Screen for the Pause Menu when Esc is pressed and gave it a new Class called PauseMenu.
- * Removed the methods that painted the High Score Screen when the game is done (either game over or completed) and moved it to a new class called HighScore.
  * Removed the draw() methods - drawBall(), drawPlayer() and drawBrick() from this class and created a factory design to generate these components when needed.
+ * Removed the methods and variables that painted the Screen for the Pause Menu when Esc is pressed and gave it a new Class called PauseMenu.
+ * Removed the methods that painted the High Score Screen when the game is done (either game over or completed) and moved it to a new class called HighScore.
  */
+
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
     private static final int DEF_WIDTH = 600;
     private static final int DEF_HEIGHT = 450;
@@ -153,10 +154,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     }
 
     /**
-     * This method is used to save the scores permanently into the text file.
+     * This method is used to save the final scores permanently into the text file.
      * @throws IOException In case the file cannot be found in the directory.
      */
-    public void saveTotalScore() throws IOException {
+    public void saveTotalScore() throws IOException { //XXXX -> move to high score?
         if(highScore.getWriter()==null){
             assert false;
             highScore.getWriter().write(gamePlay.getScore() + " ");
@@ -166,7 +167,11 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         highScore.getWriter().close();
     }
 
-    private void saveLevelScores() throws IOException{
+    /**
+     * This method is responsible for saving the individual level scores onto text files so that a permanent list of high scores can be made.
+     * @throws IOException In case the file is not accessible.
+     */
+    private void saveLevelScores() throws IOException{ //XXXX -> move to level score?
         if(gamePlay.getLevel()==1){
             saveLevelScoreToFile(levelScore.getWriterLvlOne(), gamePlay.getScoreLvlOne());
         }else if(gamePlay.getLevel()==2){
@@ -182,6 +187,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
     }
 
+    /**
+     * Method used to save the score of one level to text file.
+     * @param writer The writer of the specific level.
+     * @param scoreForLevel The score to be saved in that file.
+     * @throws IOException In case the file is not accessible.
+     */
     private void saveLevelScoreToFile(Writer writer, int scoreForLevel) throws IOException{
         if(writer==null){
             assert false;
@@ -218,11 +229,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 drawBrick.draw(b,g2d);
 
         drawPlayer.draw(g2d, level); //draws the player bar using 2dgraphics
-
-//        if(gamePlay.getLevel()==7){
-//            Rectangle fire = new Rectangle(280, 225, 20, 20);
-//            g2d.drawRect(fire.x, fire.y, (int)fire.getWidth(), (int)fire.getHeight());
-//        }
 
         if(showPauseMenu) { //if user presses esc
             pauseMenu.drawMenu(g2d);

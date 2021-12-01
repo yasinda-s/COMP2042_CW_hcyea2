@@ -1,6 +1,6 @@
 package test.ball;
 
-import test.ball.Ball;
+import test.brick.Brick;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
@@ -38,4 +38,10 @@ public class RubberBall extends Ball {
 
         return new Ellipse2D.Double(x,y,radius, radius);
     }
+
+//    public void impactSpeed(Brick brick){
+//        if(brick.isBroken()){
+//
+//        }
+//    }
 }

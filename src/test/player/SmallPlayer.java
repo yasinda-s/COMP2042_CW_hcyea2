@@ -1,7 +1,5 @@
 package test.player;
 
-import test.player.Player;
-
 import java.awt.*;
 
 public class SmallPlayer extends Player {

@@ -17,20 +17,24 @@ import java.awt.geom.Point2D;
  *
  * Addition -
  *
- * Added methods and variables which are used to calculate the user's score for the ongoing game. Higher levels give more points for each brick that is broken.
+ * Added methods and variables which are used to calculate the user's total score and high score for the ongoing game.
+ * This method consists of a reward penalty system so that the user's performance matters.
+ * For each level, if the user takes a longer time to break the bricks, he/she will receive lesser
+ * points for each brick broken. This is done to reward users that break bricks faster and to penalize when they take too long to break bricks.
  *
  * Refactoring -
  *
- * The methods that formed the formation of bricks for each level has been removed from this class and created in LevelSetup Class.
- * To set up the wall formation will be the single responsibility of WallSetup.
- *
+ * The methods that formed the formation of bricks in the wall for each level has been removed from this class and created in WallSetup Class so that
+ * the only responsibility of WallSetup is to create the formation of bricks on the wall.
  * Instead of setting the speed of the ball (for both axes) in the GamePlay constructor, it has been moved to the Ball class's constructor so
  * that the initial speed is randomly assigned from the parent class.
- *
- * In addition, the original code had the same lines of code repeating when the ball was to be reset in the "ballReset" method, I have refactored
+ * The original code had the same lines of code repeating when the ball was to be reset in the "ballReset" method, I have refactored
  * the code by replacing those lines with one method call "getSpeedsXY" which reassigned the x, y speed of the ball randomly.
- *
  * rnd variable has been removed as the speed of the ball is randomized within the Ball class itself.
+ * Change method from nextLevel() to skipLevel() and added more resets for the game as changing the wall structure doesnt resemble the start of a new level.
+ * The method now calls balls to reset and to set the score to 0.
+ * Added getters for the scores so that other classes can access them, this improves encapsulation and hides data that do not need to be seen from other classes.
+ * Added getters for the ball object created to promote encapsulation.
  */
 
 public class GamePlay {
@@ -38,11 +42,6 @@ public class GamePlay {
     private Point ballPos;
 
     Brick[] bricks; //array of bricks
-
-    public Ball getBall() { //used encapsualtion
-        return ball;
-    }
-
     private Ball ball;
     Player player;
 
@@ -95,7 +94,7 @@ public class GamePlay {
     }
 
     /**
-     * This method is used to make the rubber ball object.
+     * This method is used to make the ball and player object.
      * @param ballPos Represents the Point2D position of the ball.
      */
     public void makeComponents(Point2D ballPos){
@@ -104,9 +103,6 @@ public class GamePlay {
         if(level==5) { //when player plays the game properly and reaches level 5, we change the looks of player and ball, but to get with debug panel it should not be edited here
             player = new SmallPlayer((Point) ballPos.clone(), area);
             ball = new BigBall(ballPos);
-//        }else if(level==7){
-//            player = new Player((Point) ballPos.clone(),150,10, area);
-//            ball = new FireBall(ballPos);
         }else{
             player = new Player((Point) ballPos.clone(),150,10, area);
             ball = new RubberBall(ballPos); //use the position of the ball to make a rubber ball object
@@ -148,7 +144,7 @@ public class GamePlay {
     }
 
     /**
-     * This method is used to calculate the ongoing score of the player for one game.
+     * This method is used to calculate the ongoing final score and level score of the player for one game.
      * @param level Takes in the level which the users is playing currently.
      */
     public void calculateScore(int level){
@@ -186,6 +182,11 @@ public class GamePlay {
         }
     }
 
+    /**
+     * This method determines the denominator in which users raw score will be divided by.
+     * @param timePlayed The current ongoing timer for the gameplay.
+     * @return Returns an integer which is the denominator.
+     */
     private int checkScoreDenominator(int timePlayed){
         if(timePlayed<10){
             return 1;
@@ -375,43 +376,77 @@ public class GamePlay {
         this.score = score;
     }
 
+    /**
+     * This method ensures that all the in-game components reset when the level is skipped.
+     */
     public void skipLevel(){
         ballReset();
         wallReset();
         nextLevel();
-        ballReset();
         setScore(0);
         System.out.println("Current Level - " + level);
     }
 
+    /**
+     * Method to access current level number from other classes.
+     * @return return level number.
+     */
     public int getLevel() {
         return level;
     }
 
+    /**
+     * Method to return score for level one.
+     * @return return level one score.
+     */
     public int getScoreLvlOne() {
         return scoreLvlOne;
     }
 
+    /**
+     * Method to return score for level two.
+     * @return return level two score.
+     */
     public int getScoreLvlTwo() {
         return scoreLvlTwo;
     }
 
+    /**
+     * Method to return score for level three.
+     * @return return level three score.
+     */
     public int getScoreLvlThree() {
         return scoreLvlThree;
     }
 
+    /**
+     * Method to return score for level four.
+     * @return return level four score.
+     */
     public int getScoreLvlFour() {
         return scoreLvlFour;
     }
 
+    /**
+     * Method to return score for level five.
+     * @return return level five score.
+     */
     public int getScoreLvlFive() {
         return scoreLvlFive;
     }
 
+    /**
+     * Method to return score for level six.
+     * @return return level six score.
+     */
     public int getScoreLvlSix() {return scoreLvlSix;}
 
-    public int getScoreToAdd() {
-        return scoreToAdd;
+    /**
+     * Method to get the ball object from other classes.
+     * @return returns the ball object.
+     */
+    public Ball getBall() {
+        return ball;
     }
 
 }

@@ -1,10 +1,9 @@
 package test.brick;
 
-import test.brick.Brick;
-
 import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
+import java.util.Random;
 
 /**
  *  The Crack Class focuses on the cracks that are placed on the bricks (Cement)
@@ -30,6 +29,7 @@ public class Crack {
     private GeneralPath crack; //generalPath type called crack
     private int crackDepth;
     private int steps;
+    private static Random rnd;
 
     /**
      * This is a constructor that represents a singular crack we see in a brick after the ball hits it.
@@ -37,6 +37,7 @@ public class Crack {
      * @param steps This refers to the number of steps that are formed in a singular crack on a brick.
      */
     public Crack(Brick brick, int crackDepth, int steps){
+        rnd = new Random();
         this.brick = brick; //constructor of Crack class
         crack = new GeneralPath(); //crack assigned generalpath object
         this.crackDepth = crackDepth;
@@ -65,7 +66,6 @@ public class Crack {
      */
     protected void makeCrack(Point2D point, int direction){ //makes random point to form the crack
         Rectangle bounds = brick.getBrickFace().getBounds(); //top left coordinate of brick it knocked with w and h
-
         Point impact = new Point((int)point.getX(),(int)point.getY()); //x, y coordinates on where the ball hit the brick
         Point start = new Point(); //start is LB for crack
         Point end = new Point(); //end is UB for crack
@@ -138,7 +138,7 @@ public class Crack {
      */
     private int randomInBounds(int bound){
         int n = (bound * 2) + 1;
-        return Brick.getRnd().nextInt(n) - bound;
+        return rnd.nextInt(n) - bound;
     }
 
     /**
@@ -155,11 +155,11 @@ public class Crack {
 
         switch(direction){
             case HORIZONTAL:
-                pos = Brick.getRnd().nextInt(to.x - from.x) + from.x;
+                pos = rnd.nextInt(to.x - from.x) + from.x;
                 out.setLocation(pos,to.y);
                 break;
             case VERTICAL:
-                pos = Brick.getRnd().nextInt(to.y - from.y) + from.y;
+                pos = rnd.nextInt(to.y - from.y) + from.y;
                 out.setLocation(to.x,pos);
                 break;
         }

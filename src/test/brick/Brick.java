@@ -5,7 +5,6 @@ import test.ball.Ball;
 import java.awt.*;
 import java.awt.Point;
 import java.awt.geom.Point2D;
-import java.util.Random;
 
 /**
  * The Brick Class refers to a singular brick we see above the game.
@@ -16,6 +15,12 @@ import java.util.Random;
  * Added a getter method for the rnd variable (in order to build on encapsulation) so that it can be accessed from the Crack class.
  * The Brick Class consisted of an unused variable called MIN_CRACK, this has been removed to increase understanding and readability
  * of the code.
+ *
+ * The private static variable Random rnd has been moved to Crack class as there is no point using a getter for this variable in order to access it
+ * from Crack class since it is not being used here at all. Moving it to Crack removes the need to use a getter here or there.
+ *
+ * The Shape brickFace variable has been made private and encapsulation has been used to get the shape of the brick
+ * face using a getter method called getBrickFace() to access from other classes.
  *
  */
 abstract public class Brick  { //this represents one of the bricks we see on top of the wall in the game
@@ -28,15 +33,8 @@ abstract public class Brick  { //this represents one of the bricks we see on top
     public static final int LEFT_IMPACT = 300;
     public static final int RIGHT_IMPACT = 400;
 
-    private static Random rnd;
-
     private String name;
-
-    public Shape getBrickFace() { //used getter here again
-        return brickFace;
-    }
-
-    Shape brickFace;
+    private Shape brickFace;
 
     private Color border;
     protected Color inner;
@@ -56,7 +54,7 @@ abstract public class Brick  { //this represents one of the bricks we see on top
      * @param strength The strength of the brick (How many impacts it can handle).
      */
     public Brick(String name, Point pos,Dimension size,Color border,Color inner,int strength){
-        rnd = new Random();
+
         broken = false;
         this.name = name;
         brickFace = makeBrickFace(pos,size);
@@ -154,10 +152,10 @@ abstract public class Brick  { //this represents one of the bricks we see on top
     }
 
     /**
-     * Method used to get the value of rnd for other classes like Crack
-     * @return Returns the Random object rnd.
+     * Getter method to get the shape of the brick face from another class.
+     * @return Returns the rectangle shape of brick.
      */
-    public static Random getRnd() {
-        return rnd;
+    public Shape getBrickFace() { //used getter here again
+        return brickFace;
     }
 }

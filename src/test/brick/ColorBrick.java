@@ -1,10 +1,11 @@
 package test.brick;
 
-import test.brick.Brick;
-
 import java.awt.*;
 import java.util.Random;
 
+/**
+ * Color brick extends the Brick class directly. This represents the bricks that change color for every impact with the ball.
+ */
 public class ColorBrick extends Brick { //make interface and change how the brick only breaks from below or above impact
     Random rand = new Random();
     private static final String NAME = "Color Brick";
@@ -27,7 +28,7 @@ public class ColorBrick extends Brick { //make interface and change how the bric
     }
 
     /**
-     * Method used to decrease the strength of a brick on impact.
+     * Method used to decrease the strength of a brick on impact and to change the color of the brick for each impact with the ball.
      */
     public void impact(){
         strength--;
