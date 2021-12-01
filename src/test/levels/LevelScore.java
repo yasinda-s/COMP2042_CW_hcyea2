@@ -119,8 +119,8 @@ public class LevelScore {
         JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
     }
 
-    private int getLevelScore(){
-            int currentLevel = gamePlay.getLevel();
+    public int getLevelScore(){
+        int currentLevel = gamePlay.getLevel();
         int levelScore = 0;
         if (currentLevel == 1) {
             levelScore = gamePlay.getScoreLvlOne();

@@ -83,7 +83,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             gamePlay.findImpacts(); //look for impacts from GamePlay
             gamePlay.incrementTime();
             detailMessage = String.format("Bricks: %d Balls: %d Time Played: %d", gamePlay.getBrickCount(), gamePlay.getBallCount(), gamePlay.getTimePlayed());
-            scoreMessage = String.format("Score from a Brick : %d Total Score : %d", gamePlay.getScoreToAdd(), gamePlay.getScore());
+            scoreMessage = String.format("Level Score : %d Total Score : %d", levelScore.getLevelScore(), gamePlay.getScore());
             if(gamePlay.isBallLost()){
                 if(gamePlay.ballEnd()){
                     try {
@@ -209,7 +209,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         clear(g2d);
         g2d.setColor(Color.BLUE);
         g2d.drawString(detailMessage,220,200); //for score things
-        g2d.drawString(scoreMessage, 200, 230);
+        g2d.drawString(scoreMessage, 220, 230);
 
         drawBall.draw(g2d,level);
 
