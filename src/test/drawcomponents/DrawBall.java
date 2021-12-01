@@ -3,8 +3,6 @@ package test.drawcomponents;
 import test.ball.Ball;
 import test.ball.BigBall;
 import test.brick.Brick;
-import test.drawcomponents.Drawable;
-
 import java.awt.*;
 import java.awt.geom.Point2D;
 

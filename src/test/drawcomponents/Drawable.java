@@ -1,7 +1,6 @@
 package test.drawcomponents;
 
 import test.brick.Brick;
-
 import java.awt.*;
 
 /**
@@ -9,7 +8,7 @@ import java.awt.*;
  */
 interface Drawable{
     /**
-     * This draw method takes in one parameter (Graphics2d) which will later be used to draw the Ball and Player objects.
+     * This draw method takes in two parameters (Graphics2d) and drawing obkect (Ball or Player) which will later be used to draw the Ball and Player objects.
      * @param g2d Graphics2d frame where the ball or Player will be drawn.
      */
     void draw(Graphics2D g2d, int level);

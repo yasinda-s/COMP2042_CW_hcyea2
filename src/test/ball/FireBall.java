@@ -1,7 +1,5 @@
 package test.ball;
 
-import test.ball.Ball;
-
 import java.awt.*;
 import java.awt.geom.Point2D;
 

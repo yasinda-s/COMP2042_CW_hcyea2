@@ -17,6 +17,11 @@ import java.awt.event.ActionListener;
  * to the constructor, hence it has been removed.
  * The private Jbuttons for skipLevel and resetBalls are also refactored to be created in the constructor itself.
  * Refactored the panel so that the skip level will cause the player score, time played, ball position and player position to reset.
+ *
+ * Additions -
+ *
+ * Added a new method called skipLevel() which ensures that skipping a level will cause the ball position, wall structure, score to reset too. It did
+ * not make sense to have the game running as the level change. Now as the skip level button is clicked, a new level can start fresh.
  */
 
 public class DebugPanel extends JPanel { //Jpanel is used to organize components, layouts
@@ -48,6 +53,10 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
         this.add(ballYSpeed);
     }
 
+    /**
+     * This method replicates the method skipLevel() in GamePlay class.
+     * @param gamePlay The GamePlay to be passed in.
+     */
     private void skipLevel(GamePlay gamePlay){
         gamePlay.skipLevel();
     }
@@ -57,7 +66,7 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
      */
     private void initialize(){
         this.setBackground(DEF_BKG); //set background to white
-        this.setLayout(new GridLayout(2,2)); //?
+        this.setLayout(new GridLayout(2,2));
     }
 
     /**

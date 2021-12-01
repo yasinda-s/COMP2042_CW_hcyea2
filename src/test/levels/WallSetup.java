@@ -39,27 +39,18 @@ public class WallSetup {
     private Brick[] makeSingleTypeLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int type){
 
         brickCnt -= brickCnt % lineCnt; //see how many bricks we can use
-
         int brickOnLine = brickCnt / lineCnt; //how many bricks on one line
-
         double brickLen = drawArea.getWidth() / brickOnLine; //length of one brick
         //divide width of whole frame by 10 to get size of one brick
-
         double brickHgt = brickLen / brickSizeRatio; //height of one brick
-
         brickCnt += lineCnt / 2; //30 += 3/2 => 31
-
         Brick[] tmp  = new Brick[brickCnt]; //make array to store brick objects, stores 31 bricks in array
 
         Dimension brickSize = new Dimension((int) brickLen,(int) brickHgt); //width and height
         //dimension encapsulates width and height of object in one object
-
         Point p = new Point();
-
         int i;
-
         //below is to see if we lay full size bricks or half size bricks
-
         for(i = 0; i < tmp.length; i++){ //going from 0 to number of bricks in array
             int line = i / brickOnLine;
             if(line == lineCnt) //if line == 3 (so when i = 30) which is the last iteration
@@ -111,17 +102,13 @@ public class WallSetup {
         brickCnt -= brickCnt % lineCnt;
 
         int brickOnLine = brickCnt / lineCnt;
-
         int centerLeft = brickOnLine / 2 - 1;
         int centerRight = brickOnLine / 2 + 1;
-
         double brickLen = drawArea.getWidth() / brickOnLine;
         double brickHgt = brickLen / brickSizeRatio;
 
         brickCnt += lineCnt / 2;
-
         Brick[] tmp  = new Brick[brickCnt];
-
         Dimension brickSize = new Dimension((int) brickLen,(int) brickHgt);
         Point p = new Point();
 
@@ -171,7 +158,6 @@ public class WallSetup {
         tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
         tmp[4] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio,CLAY);
         tmp[5] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,COLOR);
-        //tmp[5] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, COLOR);
         return tmp;
     }
 

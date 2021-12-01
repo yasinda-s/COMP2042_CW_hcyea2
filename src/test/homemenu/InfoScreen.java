@@ -12,18 +12,16 @@ import java.awt.geom.Rectangle2D;
  * This Class is responsible for displaying the How to Play screen when user clicks on Info in Main Menu.
  *
  * Additions -
- *
- * Added an Info button to the home screen so that the user can see the controls of the game. This screen also has a button to return back to main
- * menu so that the user can start the game.
+ * Consists of the background image which is available in the home screen.
  */
 
 public class InfoScreen extends JComponent implements MouseListener, MouseMotionListener{
 
     private static final String INFO_TEXT = "HOW TO PLAY";
     private static final String MENU_TEXT = "RETURN TO MENU";
-    private static final String HOW_TO_PLAY1 = "Use A to move to the Left.";
-    private static final String HOW_TO_PLAY2 = "Press D to move to the Right.";
-    private static final String HOW_TO_PLAY3 = "Press Esc to Pause the Game.";
+    private static final String MOVE_LEFT = "Use A to move to the Left.";
+    private static final String MOVE_RIGHT = "Press D to move to the Right.";
+    private static final String ESCAPE = "Press Esc to Pause the Game.";
 
     private GameFrame owner;
     private Rectangle infoFace;
@@ -46,6 +44,11 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
 
     private BasicStroke borderStoke_noDashes;
 
+    /**
+     * This is the constructor for the info screen.
+     * @param owner The game frame where the info screen will be setup.
+     * @param area The dimension in which the info screen will be setup.
+     */
     public InfoScreen(GameFrame owner, Dimension area){
 
         this.setFocusable(true);
@@ -76,22 +79,17 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
      * @param g The Graphics frame in which we want to draw the game components.
      */
     public void paint(Graphics g){
-        drawMenu((Graphics2D)g); //type cast graphics object to 2d and pass to drawMenu
+        drawInfoScreen((Graphics2D)g); //type cast graphics object to 2d and pass to drawMenu
     }
 
     /**
-     * This method is used to call the methods that draw the components in the Menu Screen.
+     * This method is used to call the methods that draw the components in the Info Screen.
      * @param g2d Graphics2D type frame to allow more control over coloring and drawing on the screen.
      */
-    public void drawMenu(Graphics2D g2d){
+    public void drawInfoScreen(Graphics2D g2d){
 
         drawContainer(g2d);
 
-        /*
-        all the following method calls need a relative
-        painting directly into the HomeMenu rectangle,
-        so the translation is made here so the other methods do not do that.
-         */
         Color prevColor = g2d.getColor();
         Font prevFont = g2d.getFont();
 
@@ -100,10 +98,8 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
 
         g2d.translate(x,y);
 
-        //methods calls
         drawText(g2d);
         drawButton(g2d);
-        //end of methods calls
 
         g2d.translate(-x,-y);
         g2d.setFont(prevFont);
@@ -111,7 +107,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
     }
 
     /**
-     * This method is used to draw the background and border (container) of the Home Menu.
+     * This method is used to draw the background and border (container) of the Info Screen.
      * @param g2d Graphics2D type frame to allow more control over coloring and drawing.
      */
     private void drawContainer(Graphics2D g2d){ //drawing the background of container
@@ -135,15 +131,13 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
     }
 
     /**
-     * This method is used to draw the Text we show in the Menu Screen.
+     * This method is used to draw the Text we show in the Info screen.
      * @param g2d Graphics2D type frame to allow more control over coloring and drawing the text.
      */
     private void drawText(Graphics2D g2d){
         g2d.setColor(Color.BLACK); //assign text color in home screen
 
         FontRenderContext frc = g2d.getFontRenderContext();
-
-        //set fonts to the 2d rectangles used for the text
 
         Rectangle2D headingRect = headFont.getStringBounds(INFO_TEXT,frc);
 
@@ -156,19 +150,19 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         g2d.drawString(INFO_TEXT,sX,sY); //draw the greetings font (string) in the coordinates we found
 
         g2d.setColor(TEXT_COLOR);
-        Rectangle2D textBodyRect = menuFont.getStringBounds(HOW_TO_PLAY1,frc);
+        Rectangle2D textBodyRect = menuFont.getStringBounds(MOVE_LEFT,frc);
 
         sX = (int)(infoFace.getWidth() - textBodyRect.getWidth()) / 2; //x coordinate of where we want the box to be in
         sY = (int)(infoFace.getHeight() / 3); //y coordinate of where we want the box to be in
 
         g2d.setFont(menuFont);
-        g2d.drawString(HOW_TO_PLAY1, sX, sY);
+        g2d.drawString(MOVE_LEFT, sX, sY);
 
         g2d.setFont(menuFont);
-        g2d.drawString(HOW_TO_PLAY2, sX-12, sY+50);
+        g2d.drawString(MOVE_RIGHT, sX-12, sY+50);
 
         g2d.setFont(menuFont);
-        g2d.drawString(HOW_TO_PLAY3, sX-14, sY+100);
+        g2d.drawString(ESCAPE, sX-14, sY+100);
     }
 
     /**
@@ -212,6 +206,10 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         }
     }
 
+    /**
+     * This method is used to enable the menu screen when the user clicks return to menu button.
+     * @param e MouseEvent to do the action for mouse click.
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
         Point p = e.getPoint();
@@ -220,6 +218,10 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         }
     }
 
+    /**
+     * This method is used to repaint the menu button to give a flashy look when clicked.
+     * @param e MouseEvent to do the action for the mouse press.
+     */
     @Override
     public void mousePressed(MouseEvent e) {
         Point p = e.getPoint();
@@ -229,6 +231,10 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         }
     }
 
+    /**
+     * This method is used to repaint the menu button when the click is released to completed the flashy look.
+     * @param e MouseEvent to do the action after the mouse is released.
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
         if(infoMenuClicked ){

@@ -1,5 +1,7 @@
 package test.ball;
 
+import test.brick.Brick;
+
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
@@ -86,15 +88,26 @@ abstract public class Ball implements BallInterface {
     /**
      * This method is focused on having the ball move freely as the game begins.
      */
-    public void move(){
+    public void move(){ //XXXX -> Similar to moveTo
         RectangularShape tmp = (RectangularShape) ballFace;
         center.setLocation((center.getX() + speedX),(center.getY() + speedY));
         double w = tmp.getWidth(); //get width of rectangle/ball
         double h = tmp.getHeight(); //get height
-
         tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h); //to set frame of square (rect)
         setPoints(w,h); //use this to set the coordinates of the ball with found width and height
+        ballFace = tmp;
+    }
 
+    /**
+     * This method is used to move the ball back to the spawn point after ball is lost or when new level is begun.
+     * @param p The Point is the location we want the ball to be spawned from on reset.
+     */
+    public void moveTo(Point p){
+        center.setLocation(p); //this is when you lose ball to spawn center again
+        RectangularShape tmp = (RectangularShape) ballFace;
+        double w = tmp.getWidth();
+        double h = tmp.getHeight();
+        tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h); //set frame around rectangle in ball spawn point again
         ballFace = tmp;
     }
 
@@ -168,21 +181,6 @@ abstract public class Ball implements BallInterface {
      */
     public Shape getBallFace(){
         return ballFace;
-    }
-
-    /**
-     * This method is used to move the ball back to the spawn point after ball is lost or when new level is begun.
-     * @param p The Point is the location we want the ball to be spawned from on reset.
-     */
-    public void moveTo(Point p){
-        center.setLocation(p); //this is when you lose ball to spawn center again
-
-        RectangularShape tmp = (RectangularShape) ballFace;
-        double w = tmp.getWidth();
-        double h = tmp.getHeight();
-
-        tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h); //set frame around rectangle in ball spawn point again
-        ballFace = tmp;
     }
 
     /**

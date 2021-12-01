@@ -15,10 +15,12 @@ import java.awt.geom.Rectangle2D;
  *
  * Additions -
  * Added a background image to the home screen to make it look more pleasant to the eye.
+ * Added a new button which shows the How to Play screen which explains to the user how to play the game.
  *
  * Refactoring -
  * Changed the variable name from MENU_TEXT to EXIT_TEXT because it represents the String we place on the EXIT button in the Menu Screen.
  * Changed the variable name from "menubutton" to "exitbutton" as it refers to the Exit button on the screen.
+ * The content of the info screen (How to play screen) has been moved to its own class called Info Screen to promote single responsibility.
  */
 public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener { //need to add javadocs
 
@@ -182,7 +184,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     }
 
     /**
-     * This method is used to add the text and buttons for the Start and Exit on the Home Menu.
+     * This method is used to add the text and buttons for the Start, Info and Exit on the Home Menu.
      * @param g2d Graphics2D to draw the 2d components.
      */
     private void drawButton(Graphics2D g2d){
@@ -279,7 +281,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     }
 
     /**
-     * This method either starts the game when user presses START or exits the game when user presses EXIT.
+     * This method either starts the game when user clicks START, shows info screen when user clicks HOW TO PLAY and exits the game when user presses EXIT.
      * @param mouseEvent MouseEvent object used to see if the button is being clicked.
      */
     @Override
