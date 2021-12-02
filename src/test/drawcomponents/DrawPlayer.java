@@ -1,31 +1,24 @@
 package test.drawcomponents;
 
 import test.player.Player;
-import test.player.PlayerInterface;
-import test.player.SmallPlayer;
 import test.brick.Brick;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
 
 /**
  * DrawPlayer class which implements the Drawable interface. This is used to override the draw(Graphics g2d) method to draw the Player bar used in game.
  */
 public class DrawPlayer implements Drawable {
-    private static final int DEF_WIDTH = 600;
-    private static final int DEF_HEIGHT = 450;
-
-    private PlayerInterface player;
+    private Player player;
 
     /**
      * This is the constructor for DrawPlayer class.
      * @param player We pass in Player object to assign to player.
      */
-    public DrawPlayer(Player player, int level, Point2D center) {
+    public DrawPlayer(Player player, int level) {
         if(level==5){
-            this.player = new SmallPlayer((Point) center, new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT)); //player and bar go tgt
-            //this.player = new Player((Point) center, 20, 20, new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT));
-            //this.player = player;
+            this.player =  player;
+            this.player.changeWidth();
         }else{
             this.player = player;
         }

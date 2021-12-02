@@ -97,16 +97,18 @@ public class GamePlay {
      * This method is used to make the ball and player object.
      * @param ballPos Represents the Point2D position of the ball.
      */
-    public void makeComponents(Point2D ballPos){
+    public void makeComponents(Point2D ballPos){ //XXX -> Redundant?
         this.startPoint = new Point((Point) ballPos); //takes in the position of the ball to begin with (the player bar is based on this too)
         this.ballPos = (Point) ballPos;
-        if(level==5) { //when player plays the game properly and reaches level 5, we change the looks of player and ball, but to get with debug panel it should not be edited here
-            player = new SmallPlayer((Point) ballPos.clone(), area);
-            ball = new BigBall(ballPos);
-        }else{
-            player = new Player((Point) ballPos.clone(),150,10, area);
-            ball = new RubberBall(ballPos); //use the position of the ball to make a rubber ball object
-        }
+        //use the position of the ball to make a rubber ball object
+//        if(level==5) { //when player plays the game properly and reaches level 5, we change the looks of player and ball, but to get with debug panel it should not be edited here
+//            player = new SmallPlayer((Point) ballPos.clone(), area);
+//            //ball = new BigBall(ballPos);
+//        }else{
+//
+//        }
+        player = new Player((Point) ballPos.clone(),150,10, area);
+        ball = new RubberBall(ballPos);
     }
 
     /**

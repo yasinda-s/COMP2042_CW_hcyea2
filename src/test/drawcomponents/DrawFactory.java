@@ -22,11 +22,10 @@ public class DrawFactory {
      * This method is used to draw the player bar if the parameter passed is Player object.
      * @param player Player object.
      * @param level The level being played currently.
-     * @param center center point to allign player bar with.
      * @return returns a new DrawPlayer(player) object which implements the Drawable interface to draw the player bar.
      */
-    public Drawable getDraw(Player player, int level, Point2D center){
-        return new DrawPlayer(player,level,center);
+    public Drawable getDraw(Player player, int level){
+        return new DrawPlayer(player,level);
     }
 
     /**
@@ -36,4 +35,7 @@ public class DrawFactory {
     public Drawable getDraw(){
         return new DrawBrick();
     }
+
+
 }
+

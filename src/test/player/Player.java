@@ -19,6 +19,7 @@ public class Player implements PlayerInterface { //refers to the player brick
     private int moveAmount;
     private int min;
     private int max;
+    private Rectangle container;
 
     /**
      * This is the constructor for the Player object which refers to the bar he/she controls in-game.
@@ -38,6 +39,7 @@ public class Player implements PlayerInterface { //refers to the player brick
         min = container.x + (width / 2);
         //container.x refers to the top left of the whole box
         max = min + container.width - width;
+        this.container = container;
     }
 
     /**
@@ -71,6 +73,13 @@ public class Player implements PlayerInterface { //refers to the player brick
         //ballPoint refers to top mid
         playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
         //top left of player brick
+    }
+
+    public void changeWidth(){
+        this.playerFace = new Rectangle((int)(ballPoint.getX() - (playerFace.width / 2)),(int)ballPoint.getY(), 10, 30);
+        this.min = container.x + (playerFace.width / 2);
+        //container.x refers to the top left of the whole box
+        this.max = min + container.width - playerFace.width;
     }
 
     /**

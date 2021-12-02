@@ -17,10 +17,9 @@ public class DrawBall implements Drawable {
      * @param ball Ball object that will be assigned to ball.
      */
     public DrawBall(Ball ball, int level, Point2D center) {
-        if(level==5) {
+
+        if(level==5){
             this.ball = new BigBall(center);
-//        }else if(level==6){ //gives error in draw()
-//            this.ball = new FireBall(center);
         }else{
             this.ball = ball;
         }

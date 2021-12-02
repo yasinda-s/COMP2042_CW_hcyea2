@@ -214,7 +214,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         DrawFactory drawFactory = new DrawFactory();
         DrawBall drawBall = (DrawBall) drawFactory.getDraw(gamePlay.getBall(), level, p);
         DrawBrick drawBrick = (DrawBrick) drawFactory.getDraw();
-        DrawPlayer drawPlayer = (DrawPlayer) drawFactory.getDraw(gamePlay.player, level, p);
+        DrawPlayer drawPlayer = (DrawPlayer) drawFactory.getDraw(gamePlay.player, level);
 
         Graphics2D g2d = (Graphics2D) g; //get more control over geometry, coordinate transformations, color management, and text
         clear(g2d);
