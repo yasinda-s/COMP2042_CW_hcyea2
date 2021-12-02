@@ -77,13 +77,13 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         //initialize the first level
         gamePlay.nextLevel();
-        gamePlay.setTimePlayed(0);
+        gamePlay.setLevelTimePlayed(0);
 
         gameTimer = new Timer(10,e ->{
             gamePlay.move(); //moving of player and ball from GamePlay
             gamePlay.findImpacts(); //look for impacts from GamePlay
             gamePlay.incrementTime();
-            detailMessage = String.format("Bricks: %d Balls: %d Time Played: %d", gamePlay.getBrickCount(), gamePlay.getBallCount(), gamePlay.getTimePlayed());
+            detailMessage = String.format("Bricks: %d Balls: %d Time Played: %d", gamePlay.getBrickCount(), gamePlay.getBallCount(), gamePlay.getLevelTimePlayed());
             scoreMessage = String.format("Level Score : %d Total Score : %d", levelScore.getLevelScore(), gamePlay.getScore());
             if(gamePlay.isBallLost()){
                 if(gamePlay.ballEnd()){
@@ -105,6 +105,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 gameTimer.stop();
             }
             else if(gamePlay.isDone()){ //if all bricks broken
+                gamePlay.setLevelTimePlayed(0);
                 if(gamePlay.hasLevel()){ //if user has more levels left
                     gameTimer.stop();
                     try {
@@ -319,7 +320,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             repaint();
         }
         else if(restartButtonRect.contains(p)){
-            gamePlay.setTimePlayed(0);
+            gamePlay.setLevelTimePlayed(0);
             gamePlay.ballReset();
             gamePlay.wallReset();
             gamePlay.setScore(0);

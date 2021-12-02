@@ -61,7 +61,7 @@ public class GamePlay {
     private int scoreLvlFour;
     private int scoreLvlFive;
     private int scoreLvlSix;
-    private int timePlayed;
+    private int levelTimePlayed;
 
     /**
      * This is the constructor for the GamePlay class.
@@ -98,6 +98,7 @@ public class GamePlay {
      * @param ballPos Represents the Point2D position of the ball.
      */
     public void makeComponents(Point2D ballPos){ //XXX -> Redundant?
+        levelTimePlayed = 0;
         this.startPoint = new Point((Point) ballPos); //takes in the position of the ball to begin with (the player bar is based on this too)
         this.ballPos = (Point) ballPos;
         //use the position of the ball to make a rubber ball object
@@ -160,32 +161,32 @@ public class GamePlay {
     public void calculateScore(int level){
         switch (level){
             case 1:
-                scoreToAdd = 100 / checkScoreDenominator(getTimePlayed());
+                scoreToAdd = 100 / checkScoreDenominator(getLevelTimePlayed());
                 scoreLvlOne += scoreToAdd; //based on how soon you break the bricks in that level as sooner means higher points
                 score+=100; //based on how many solid points you gain for each brick in a level (cumulative)
                 break;
             case 2:
-                scoreToAdd = 200 / checkScoreDenominator(getTimePlayed());
+                scoreToAdd = 200 / checkScoreDenominator(getLevelTimePlayed());
                 scoreLvlTwo += scoreToAdd;
                 score+=200;
                 break;
             case 3:
-                scoreToAdd = 300 / checkScoreDenominator(getTimePlayed());
+                scoreToAdd = 300 / checkScoreDenominator(getLevelTimePlayed());
                 scoreLvlThree += scoreToAdd;
                 score+=300;
                 break;
             case 4:
-                scoreToAdd = 400 / checkScoreDenominator(getTimePlayed());
+                scoreToAdd = 400 / checkScoreDenominator(getLevelTimePlayed());
                 scoreLvlFour += scoreToAdd;
                 score+=400;
                 break;
             case 5:
-                scoreToAdd = 500 / checkScoreDenominator(getTimePlayed());
+                scoreToAdd = 500 / checkScoreDenominator(getLevelTimePlayed());
                 scoreLvlFive += scoreToAdd;
                 score+=500;
                 break;
             case 6:
-                scoreToAdd = 600 / checkScoreDenominator(getTimePlayed());
+                scoreToAdd = 600 / checkScoreDenominator(getLevelTimePlayed());
                 scoreLvlSix += scoreToAdd;
                 score += 600;
                 break;
@@ -198,11 +199,11 @@ public class GamePlay {
      * @return Returns an integer which is the denominator.
      */
     private int checkScoreDenominator(int timePlayed){
-        if(timePlayed<10){
+        if(timePlayed>0 && timePlayed<10){
             return 1;
-        }else if(timePlayed>10 && timePlayed<30){
+        }else if(timePlayed>=10 && timePlayed<30){
             return 2;
-        }else if(timePlayed>30 && timePlayed<50){
+        }else if(timePlayed>=30 && timePlayed<50){
             return 3;
         }else{
             return 4;
@@ -350,15 +351,15 @@ public class GamePlay {
      * This method is used to increment the time the user had played the game.
      */
     public void incrementTime(){
-        timePlayed++;
+        levelTimePlayed++;
     }
 
     /**
      * This method is used to access the user's time played from any class.
      * @return Returns the time in seconds.
      */
-    public int getTimePlayed() {
-        int seconds = timePlayed/100;
+    public int getLevelTimePlayed() {
+        int seconds = levelTimePlayed/100;
         return seconds;
     }
 
@@ -366,8 +367,8 @@ public class GamePlay {
      * This method is used as a setter to set the time the user had played the game.
      * @param timePlayed The time the user had played the game.
      */
-    public void setTimePlayed(int timePlayed) {
-        this.timePlayed = timePlayed;
+    public void setLevelTimePlayed(int timePlayed) {
+        this.levelTimePlayed = timePlayed;
     }
 
     /**

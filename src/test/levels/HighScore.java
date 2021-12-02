@@ -58,6 +58,8 @@ public class HighScore {
 
         g2d.drawString(HIGH_SCORE_TEXT,sX-50,sY); //draw the string "High Score"
 
+        //g2d.drawString("Your score was " + score);
+
         //displaying high scores
         int score_x, score_y;
 
