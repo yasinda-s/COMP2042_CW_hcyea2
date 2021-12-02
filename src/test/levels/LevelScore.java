@@ -10,14 +10,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class LevelScore {
-
-    Writer writerLvlOne;
-    Writer writerLvlTwo;
-    Writer writerLvlThree;
-    Writer writerLvlFour;
-    Writer writerLvlFive;
-    Writer writerLvlSix;
-
     private List<Integer> lvlOneScoresFromFile;
     private List<Integer> lvlTwoScoresFromFile;
     private List<Integer> lvlThreeScoresFromFile;
@@ -29,22 +21,12 @@ public class LevelScore {
 
     public LevelScore(GamePlay gamePlay) throws IOException {
         this.gamePlay = gamePlay;
-        writerLvlOne = new BufferedWriter(new FileWriter("src/test/levelOneScore.txt", true));
+
         lvlOneScoresFromFile = new ArrayList<>();
-
-        writerLvlTwo = new BufferedWriter(new FileWriter("src/test/levelTwoScore.txt", true));
         lvlTwoScoresFromFile = new ArrayList<>();
-
-        writerLvlThree = new BufferedWriter(new FileWriter("src/test/levelThreeScore.txt", true));
         lvlThreeScoresFromFile = new ArrayList<>();
-
-        writerLvlFour = new BufferedWriter(new FileWriter("src/test/levelFourScore.txt", true));
         lvlFourScoresFromFile = new ArrayList<>();
-
-        writerLvlFive = new BufferedWriter(new FileWriter("src/test/levelFiveScore.txt", true));
         lvlFiveScoresFromFile = new ArrayList<>();
-
-        writerLvlSix = new BufferedWriter(new FileWriter("src/test/levelSixScore.txt", true));
         lvlSixScoresFromFile = new ArrayList<>();
     }
 
@@ -136,29 +118,5 @@ public class LevelScore {
             levelScore = gamePlay.getScoreLvlSix();
         }
         return levelScore;
-    }
-
-    public Writer getWriterLvlOne() {
-        return writerLvlOne;
-    }
-
-    public Writer getWriterLvlTwo() {
-        return writerLvlTwo;
-    }
-
-    public Writer getWriterLvlThree() {
-        return writerLvlThree;
-    }
-
-    public Writer getWriterLvlFour() {
-        return writerLvlFour;
-    }
-
-    public Writer getWriterLvlFive() {
-        return writerLvlFive;
-    }
-
-    public Writer getWriterLvlSix() {
-        return writerLvlSix;
     }
 }

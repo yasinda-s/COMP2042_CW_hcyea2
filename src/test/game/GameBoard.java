@@ -8,6 +8,7 @@ import test.drawcomponents.DrawBall;
 import test.drawcomponents.DrawBrick;
 import test.drawcomponents.DrawFactory;
 import test.drawcomponents.DrawPlayer;
+import test.levels.SaveScores;
 
 import javax.swing.*;
 import java.awt.*;
@@ -41,6 +42,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private PauseMenu pauseMenu;
     private HighScore highScore;
     private LevelScore levelScore;
+    private SaveScores saveScores;
     private String detailMessage;
     private String scoreMessage;
 
@@ -74,6 +76,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         pauseMenu = new PauseMenu(this);
         debugConsole = new DebugConsole(owner, gamePlay,this); //setup debug console
         highScore = new HighScore(this);
+        saveScores = new SaveScores(gamePlay, highScore);
 
         //initialize the first level
         gamePlay.nextLevel();
@@ -88,8 +91,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             if(gamePlay.isBallLost()){
                 if(gamePlay.ballEnd()){
                     try {
-                        saveLevelScores(); //save final score for that level only
-                        saveTotalScore(); //save total final score
+                        saveScores.saveLevelScores(); //save final score for that level only
+                        saveScores.saveTotalScore(); //save total final score
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -109,7 +112,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 if(gamePlay.hasLevel()){ //if user has more levels left
                     gameTimer.stop();
                     try {
-                        saveLevelScores(); //save score for that level as its completed
+                        saveScores.saveLevelScores(); //save score for that level as its completed
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -124,8 +127,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 }
                 else{ //if no more levels
                     try {
-                        saveTotalScore();  //save total final score
-                        saveLevelScores(); //save score for that level as its completed
+                        saveScores.saveTotalScore();  //save total final score
+                        saveScores.saveLevelScores(); //save score for that level as its completed
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -152,56 +155,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         this.addKeyListener(this);
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
-    }
-
-    /**
-     * This method is used to save the final scores permanently into the text file.
-     * @throws IOException In case the file cannot be found in the directory.
-     */
-    public void saveTotalScore() throws IOException { //XXXX -> move to high score?
-        if(highScore.getWriter()==null){
-            assert false;
-            highScore.getWriter().write(gamePlay.getScore() + " ");
-        }else{
-            highScore.getWriter().write(" " + gamePlay.getScore() + " ");
-        }
-        highScore.getWriter().close();
-    }
-
-    /**
-     * This method is responsible for saving the individual level scores onto text files so that a permanent list of high scores can be made.
-     * @throws IOException In case the file is not accessible.
-     */
-    private void saveLevelScores() throws IOException{ //XXXX -> move to level score?
-        if(gamePlay.getLevel()==1){
-            saveLevelScoreToFile(levelScore.getWriterLvlOne(), gamePlay.getScoreLvlOne());
-        }else if(gamePlay.getLevel()==2){
-            saveLevelScoreToFile(levelScore.getWriterLvlTwo(), gamePlay.getScoreLvlTwo());
-        }else if(gamePlay.getLevel()==3){
-            saveLevelScoreToFile(levelScore.getWriterLvlThree(), gamePlay.getScoreLvlThree());
-        }else if(gamePlay.getLevel()==4){
-            saveLevelScoreToFile(levelScore.getWriterLvlFour(), gamePlay.getScoreLvlFour());
-        }else if(gamePlay.getLevel()==5){
-            saveLevelScoreToFile(levelScore.getWriterLvlFive(), gamePlay.getScoreLvlFive());
-        }else if(gamePlay.getLevel()==6){
-            saveLevelScoreToFile(levelScore.getWriterLvlSix(), gamePlay.getScoreLvlSix());
-        }
-    }
-
-    /**
-     * Method used to save the score of one level to text file.
-     * @param writer The writer of the specific level.
-     * @param scoreForLevel The score to be saved in that file.
-     * @throws IOException In case the file is not accessible.
-     */
-    private void saveLevelScoreToFile(Writer writer, int scoreForLevel) throws IOException{
-        if(writer==null){
-            assert false;
-            writer.write(scoreForLevel + " ");
-        }else{
-            writer.write(" " + scoreForLevel + " ");
-        }
-        writer.close();
     }
 
     /**
