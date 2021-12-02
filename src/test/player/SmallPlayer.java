@@ -2,7 +2,7 @@ package test.player;
 
 import java.awt.*;
 
-public class SmallPlayer extends Player {
+public class SmallPlayer extends Player { //XXXX -> not being used anymore
 
     private static final int DEF_WIDTH = 30;
     private static final int DEF_HEIGHT = 20;

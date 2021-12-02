@@ -10,7 +10,7 @@ import java.awt.*;
 public class Player implements PlayerInterface { //refers to the player brick
 
     public static final Color BORDER_COLOR = Color.GREEN.darker().darker(); //outer border
-    public static final Color INNER_COLOR = Color.GREEN; //inner border
+    public static final Color INNER_COLOR = Color.ORANGE; //inner border
 
     private static final int DEF_MOVE_AMOUNT = 5;
 
@@ -76,7 +76,14 @@ public class Player implements PlayerInterface { //refers to the player brick
     }
 
     public void changeWidth(){
-        this.playerFace = new Rectangle((int)(ballPoint.getX() - (playerFace.width / 2)),(int)ballPoint.getY(), 10, 30);
+        this.playerFace = new Rectangle((int)(ballPoint.getX() - (playerFace.width / 2)),(int)ballPoint.getY(), 40, 10);
+        this.min = container.x + (playerFace.width / 2);
+        //container.x refers to the top left of the whole box
+        this.max = min + container.width - playerFace.width;
+    }
+
+    public void increaseWidth(){
+        this.playerFace.width += 50;
         this.min = container.x + (playerFace.width / 2);
         //container.x refers to the top left of the whole box
         this.max = min + container.width - playerFace.width;
@@ -86,7 +93,6 @@ public class Player implements PlayerInterface { //refers to the player brick
      * This method is used to invert the DEF_MOVE_AMOUNT in order to make the player bar move left.
      */
     public void moveLeft(){
-        System.out.println("Player moved left");
         moveAmount = -DEF_MOVE_AMOUNT;
     }
 

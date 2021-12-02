@@ -4,7 +4,7 @@ import test.ball.Ball;
 
 import java.awt.*;
 
-public interface PlayerInterface {
+public interface PlayerInterface { //XXXX -> can remove since small player not used
     Rectangle makeRectangle(int width, int height);
     boolean impact(Ball b);
     void move();

@@ -132,6 +132,10 @@ public class GamePlay {
              */
             brickCount--;
             calculateScore(level);
+
+//            if (level==5){ XXXX -> not getting implemented
+//                player.increaseWidth();
+//            }
         }
         else if(impactBorder()) { //if the ball hits the corner walls (left and right)
             ball.reverseX();
@@ -143,6 +147,10 @@ public class GamePlay {
             ballCount--;
             ballLost = true;
         }
+
+//        if (player.impact(ball)){ //works to change color of ball when impacted with player bar
+//            ball.setInner(Color.WHITE);
+//        }
     }
 
     /**

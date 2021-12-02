@@ -36,6 +36,11 @@ abstract public class Ball implements BallInterface {
     private Point2D right;
 
     private Color border;
+
+    public void setInner(Color inner) {
+        this.inner = inner;
+    }
+
     private Color inner;
 
     private int speedX;
