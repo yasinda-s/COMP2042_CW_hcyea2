@@ -98,7 +98,6 @@ public class GamePlay {
      * @param ballPos Represents the Point2D position of the ball.
      */
     public void makeComponents(Point2D ballPos){ //XXX -> Redundant?
-        levelTimePlayed = 0;
         this.startPoint = new Point((Point) ballPos); //takes in the position of the ball to begin with (the player bar is based on this too)
         this.ballPos = (Point) ballPos;
         //use the position of the ball to make a rubber ball object
@@ -395,6 +394,7 @@ public class GamePlay {
         wallReset();
         nextLevel();
         setScore(0);
+        setLevelTimePlayed(0);
         System.out.println("Current Level - " + level);
     }
 
