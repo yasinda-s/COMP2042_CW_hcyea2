@@ -11,6 +11,7 @@ import test.player.SmallPlayer;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.util.Random;
 
 /**
  * This class is responsible for the general game play of the Brick Game (interactions between components and it keeps track of in game scores).
@@ -52,6 +53,7 @@ public class GamePlay {
     private int brickCount;
     private int ballCount;
     private boolean ballLost;
+    private Random rand;
 
     private int score;
     private int scoreToAdd;
@@ -87,10 +89,11 @@ public class GamePlay {
         scoreLvlFive = 0;
         scoreLvlSix = 0;
 
-        ballCount = 1; //we get 3 lives
+        ballCount = 3; //we get 3 lives
         ballLost = false; //originally no balls are lost
 
         area = drawArea;
+        rand = new Random();
     }
 
     /**
@@ -101,12 +104,7 @@ public class GamePlay {
         this.startPoint = new Point((Point) ballPos); //takes in the position of the ball to begin with (the player bar is based on this too)
         this.ballPos = (Point) ballPos;
         //use the position of the ball to make a rubber ball object
-//        if(level==5) { //when player plays the game properly and reaches level 5, we change the looks of player and ball, but to get with debug panel it should not be edited here
-//            player = new SmallPlayer((Point) ballPos.clone(), area);
-//            //ball = new BigBall(ballPos);
-//        }else{
-//
-//        }
+
         player = new Player((Point) ballPos.clone(),150,10, area);
         ball = new RubberBall(ballPos);
     }
@@ -126,16 +124,13 @@ public class GamePlay {
         if(player.impact(ball)){
             ball.reverseY(); //change direction of ball when it hits player bar to go back up -reflection along Y axis
         }
-        else if(impactWall()){ //how ball reacts and causes cracks on the wall
-            /*for efficiency reverse is done into method impactWall
-             * because for every brick program checks for horizontal and vertical impacts
-             */
+        else if(impactWall()){
             brickCount--;
             calculateScore(level);
-
-//            if (level==5){ XXXX -> not getting implemented
+//            if (level==5){ //Lvl5 -> not getting implemented, works for other levels
 //                player.increaseWidth();
 //            }
+            player.increaseWidth();
         }
         else if(impactBorder()) { //if the ball hits the corner walls (left and right)
             ball.reverseX();
@@ -148,8 +143,8 @@ public class GamePlay {
             ballLost = true;
         }
 
-//        if (player.impact(ball)){ //works to change color of ball when impacted with player bar
-//            ball.setInner(Color.WHITE);
+//        if (player.impact(ball)){ //Lvl5 -> works to change color of ball when impacted with player bar
+//            ball.setInner(new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)));
 //        }
     }
 
@@ -276,8 +271,17 @@ public class GamePlay {
         player.moveTo(startPoint);
         ball.moveTo(startPoint);
         //same function called from ball, not efficient to rewrite the same LOC, so we recall the method in Ball class.
-        int[] speedsXY = ball.getSpeedsXY();
-        ball.setSpeed(speedsXY[0],speedsXY[1]);
+        //int[] speedsXY = ball.getSpeedsXY();
+        if(level==5){
+            if(ballCount==2){
+                ball.setSpeed(2,-2);
+            }else if(ballCount==1){
+                ball.setSpeed(3,-3);
+            }
+        }else{
+            ball.setSpeed(1,-1);
+        }
+
         ballLost = false;
     }
 
@@ -386,6 +390,15 @@ public class GamePlay {
         this.score = score;
     }
 
+    public void resetLevelScores(){
+        this.scoreLvlOne = 0;
+        this.scoreLvlTwo = 0;
+        this.scoreLvlThree = 0;
+        this.scoreLvlFour = 0;
+        this.scoreLvlFive = 0;
+        this.scoreLvlSix = 0;
+    }
+
     /**
      * This method ensures that all the in-game components reset when the level is skipped.
      */
@@ -394,6 +407,7 @@ public class GamePlay {
         wallReset();
         nextLevel();
         setScore(0);
+        resetLevelScores();
         setLevelTimePlayed(0);
         System.out.println("Current Level - " + level);
     }

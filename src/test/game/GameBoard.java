@@ -277,6 +277,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             gamePlay.ballReset();
             gamePlay.wallReset();
             gamePlay.setScore(0);
+            gamePlay.resetLevelScores();
             showPauseMenu = false;
             repaint();
         }

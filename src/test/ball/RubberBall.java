@@ -1,7 +1,4 @@
 package test.ball;
-
-import test.brick.Brick;
-
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;

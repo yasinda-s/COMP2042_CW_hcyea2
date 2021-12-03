@@ -80,14 +80,11 @@ abstract public class Ball implements BallInterface {
         this.border = border;
         this.inner  = inner;
 
-        speedX = 0;
-        speedY = 0;
+        speedX = 1;
+        speedY = -1;
 
         //Set speed of the ball for the initial time
-        int[] speedsXY =  getSpeedsXY();
-
-        speedX = speedsXY[0];
-        speedY = speedsXY[1];
+        //int[] speedsXY =  getSpeedsXY();
     }
 
     /**
@@ -222,18 +219,18 @@ abstract public class Ball implements BallInterface {
      * This method is used to generate two speeds for X and Y axes respectively.
      * @return Returns an Int array where the zeroth index refers to speedX and first index refers to speedY.
      */
-    public int[] getSpeedsXY(){
-        Random rnd = new Random();
-
-        do{
-            this.speedX = rnd.nextInt(5) -2;
-        } while (this.speedX == 0);
-        do{
-            this.speedY = -rnd.nextInt(3);
-        } while (this.speedY == 0);
-
-        return new int[] {this.speedX, this.speedY};
-    }
+//    public int[] getSpeedsXY(){
+//        Random rnd = new Random();
+//
+//        do{
+//            this.speedX = rnd.nextInt(5) -2;
+//        } while (this.speedX == 0);
+//        do{
+//            this.speedY = -rnd.nextInt(3);
+//        } while (this.speedY == 0);
+//
+//        return new int[] {this.speedX, this.speedY};
+//    }
 
     //Added encapuslation
     public Point2D getCenter() {

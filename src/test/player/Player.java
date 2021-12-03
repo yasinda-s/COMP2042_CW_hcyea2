@@ -82,11 +82,10 @@ public class Player implements PlayerInterface { //refers to the player brick
         this.max = min + container.width - playerFace.width;
     }
 
-    public void increaseWidth(){
-        this.playerFace.width += 50;
-        this.min = container.x + (playerFace.width / 2);
-        //container.x refers to the top left of the whole box
-        this.max = min + container.width - playerFace.width;
+    public void increaseWidth(){ //XXXX -> should be for level 5 only
+        if(playerFace.width<400){
+            this.playerFace.width += 50;
+        }
     }
 
     /**
@@ -115,7 +114,7 @@ public class Player implements PlayerInterface { //refers to the player brick
      * @return Returns shape of the playerFace.
      */
     public Shape getPlayerFace(){
-        return  playerFace;
+        return playerFace;
     }
 
     /**
