@@ -10,13 +10,15 @@ import java.awt.*;
  */
 public class DrawPlayer implements Drawable {
     private Player player;
+    private int currentLevel;
 
     /**
      * This is the constructor for DrawPlayer class.
      * @param player We pass in Player object to assign to player.
      */
     public DrawPlayer(Player player, int level) {
-        if(level==5){
+        if(level==5 && player.getWidth()==150){
+            this.currentLevel = level;
             this.player =  player;
             this.player.changeWidth();
         }else{

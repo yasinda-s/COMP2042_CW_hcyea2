@@ -2,12 +2,10 @@ package test.game;
 
 import test.levels.WallSetup;
 import test.ball.Ball;
-import test.ball.BigBall;
 import test.ball.RubberBall;
 import test.brick.Brick;
 import test.brick.Crack;
 import test.player.Player;
-import test.player.SmallPlayer;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
@@ -127,9 +125,6 @@ public class GamePlay {
         else if(impactWall()){
             brickCount--;
             calculateScore(level);
-//            if (level==5){ //Lvl5 -> not getting implemented, works for other levels
-//                player.increaseWidth();
-//            }
             player.increaseWidth();
         }
         else if(impactBorder()) { //if the ball hits the corner walls (left and right)
@@ -142,10 +137,6 @@ public class GamePlay {
             ballCount--;
             ballLost = true;
         }
-
-//        if (player.impact(ball)){ //Lvl5 -> works to change color of ball when impacted with player bar
-//            ball.setInner(new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)));
-//        }
     }
 
     /**
@@ -293,6 +284,10 @@ public class GamePlay {
             b.repair();
         brickCount = bricks.length;
         ballCount = 3;
+    }
+
+    public void playerReset(){
+        player.setWidth();
     }
 
     /**

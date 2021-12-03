@@ -28,7 +28,6 @@ public class SaveScores {
         writerLvlFour = new BufferedWriter(new FileWriter("src/test/levelFourScore.txt", true));
         writerLvlFive = new BufferedWriter(new FileWriter("src/test/levelFiveScore.txt", true));
         writerLvlSix = new BufferedWriter(new FileWriter("src/test/levelSixScore.txt", true));
-
     }
 
     /**

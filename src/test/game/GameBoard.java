@@ -122,6 +122,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                         ex.printStackTrace();
                     }
                     gamePlay.ballReset();
+                    gamePlay.playerReset();
                     gamePlay.wallReset();
                     gamePlay.nextLevel();
                 }

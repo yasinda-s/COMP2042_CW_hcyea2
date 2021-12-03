@@ -76,16 +76,28 @@ public class Player implements PlayerInterface { //refers to the player brick
     }
 
     public void changeWidth(){
-        this.playerFace = new Rectangle((int)(ballPoint.getX() - (playerFace.width / 2)),(int)ballPoint.getY(), 40, 10);
+        this.playerFace.width = 40;
         this.min = container.x + (playerFace.width / 2);
         //container.x refers to the top left of the whole box
         this.max = min + container.width - playerFace.width;
+        System.out.println("changeWidth");
+    }
+
+    public void setWidth(){
+        playerFace.width=150;
+    }
+
+    public double getWidth(){
+        return playerFace.getWidth();
     }
 
     public void increaseWidth(){ //XXXX -> should be for level 5 only
+        System.out.println("increaseWidth");
         if(playerFace.width<400){
             this.playerFace.width += 50;
         }
+//        System.out.println(this.playerFace.width); //width changes but doesnt show in level 5 bar
+
     }
 
     /**
