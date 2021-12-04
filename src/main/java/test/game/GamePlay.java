@@ -43,7 +43,8 @@ public class GamePlay {
     Brick[] bricks; //array of bricks
     private Ball ball;
     Player player;
-    private SpeedSlowBox speedSlowBox;
+    private IncreaseSpeedDrop increaseSpeedDrop;
+    private HalvePlayerDrop halvePlayerDrop;
 
     private Brick[][] levels;
     private int level;
@@ -71,8 +72,9 @@ public class GamePlay {
      * @param lineCount this represents the number of brick lines on the wall.
      * @param brickDimensionRatio this represents the height to width ratio of a singular brick.
      */
-    public GamePlay(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, SpeedSlowBox speedSlowBox){
-        this.speedSlowBox = speedSlowBox;
+    public GamePlay(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, IncreaseSpeedDrop increaseSpeedDrop, HalvePlayerDrop halvePlayerDrop){
+        this.increaseSpeedDrop = increaseSpeedDrop;
+        this.halvePlayerDrop = halvePlayerDrop;
 
         WallSetup wallsetup = new WallSetup(drawArea,brickCount,lineCount,brickDimensionRatio);
         //returns a brick[][] object which can be indexed to get one of the 4 levels
@@ -140,9 +142,12 @@ public class GamePlay {
         else if(ball.getPosition().getY() > area.getY() + area.getHeight()){ //if ball goes out (below)
             ballCount--;
             ballLost = true;
-        }else if(level==5 && speedSlowBox.impact(ball) && !speedSlowBox.isImpactOnce()){
-            speedSlowBox.setImpactOnce(true);
+        }else if(level==5 && increaseSpeedDrop.impact(ball) && !increaseSpeedDrop.isImpactOnce()){
+            increaseSpeedDrop.setImpactOnce(true);
             ball.setSpeed(5, -5);
+        }else if(level==5 && halvePlayerDrop.impact(ball) && !halvePlayerDrop.isImpactOnce()) {
+            halvePlayerDrop.setImpactOnce(true);
+            player.halveWidth();
         }
     }
 

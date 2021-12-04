@@ -97,6 +97,10 @@ public class Player implements PlayerInterface { //refers to the player brick
         }
     }
 
+    public void halveWidth(){
+        this.playerFace.width /= 2;
+    }
+
     /**
      * This method is used to invert the DEF_MOVE_AMOUNT in order to make the player bar move left.
      */

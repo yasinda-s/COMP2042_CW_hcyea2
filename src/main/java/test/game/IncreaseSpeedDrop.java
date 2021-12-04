@@ -4,16 +4,19 @@ import test.ball.Ball;
 
 import java.awt.*;
 
-public class SpeedSlowBox {
-    private Rectangle boxFace = new Rectangle(300, 150, 20, 20);
+public class IncreaseSpeedDrop {
+    private Rectangle boxFace = new Rectangle(400, 150, 20, 20);
+
     private boolean impactOnce;
 
-    public SpeedSlowBox(){
+    public IncreaseSpeedDrop(){
         impactOnce = false;
     }
 
     public void showBox(Graphics2D g2d, int level){
         if(level==5 && !this.impactOnce){
+            g2d.setColor(Color.RED);
+            g2d.fillRect(400, 150, 20, 20);
             g2d.draw(boxFace);
         }
     }

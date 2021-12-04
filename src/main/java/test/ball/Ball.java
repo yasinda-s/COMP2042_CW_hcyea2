@@ -215,23 +215,6 @@ abstract public class Ball implements BallInterface {
         return speedY;
     }
 
-    /**
-     * This method is used to generate two speeds for X and Y axes respectively.
-     * @return Returns an Int array where the zeroth index refers to speedX and first index refers to speedY.
-     */
-//    public int[] getSpeedsXY(){
-//        Random rnd = new Random();
-//
-//        do{
-//            this.speedX = rnd.nextInt(5) -2;
-//        } while (this.speedX == 0);
-//        do{
-//            this.speedY = -rnd.nextInt(3);
-//        } while (this.speedY == 0);
-//
-//        return new int[] {this.speedX, this.speedY};
-//    }
-
     //Added encapuslation
     public Point2D getCenter() {
         return center;

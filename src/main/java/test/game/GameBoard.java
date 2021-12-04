@@ -43,7 +43,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private HighScore highScore;
     private LevelScore levelScore;
     private SaveScores saveScores;
-    private SpeedSlowBox speedSlowBox;
+    private IncreaseSpeedDrop increaseSpeedDrop;
+    private HalvePlayerDrop halvePlayerDrop;
     private String detailMessage;
     private String scoreMessage;
 
@@ -68,8 +69,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         this.initialize(); //set dimension, focus, and listeners from Component
         detailMessage = "";
         scoreMessage = "";
-        speedSlowBox = new SpeedSlowBox();
-        gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2, speedSlowBox);
+        increaseSpeedDrop = new IncreaseSpeedDrop();
+        halvePlayerDrop = new HalvePlayerDrop();
+        gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2, increaseSpeedDrop, halvePlayerDrop);
         gamePlay.makeComponents(new Point(300,430)); //gamePlay sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
         levelScore = new LevelScore(gamePlay);
 
@@ -185,9 +187,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         drawPlayer.draw(g2d, level); //draws the player bar using 2dgraphics
 
-        speedSlowBox.showBox(g2d, level);
-        //powerUp.setLocation(220, 220);
-        //g2d.draw(powerUp);
+        increaseSpeedDrop.showBox(g2d, level);
+        halvePlayerDrop.showBox(g2d, level);
 
         if(showPauseMenu) { //if user presses esc
             pauseMenu.drawMenu(g2d);
