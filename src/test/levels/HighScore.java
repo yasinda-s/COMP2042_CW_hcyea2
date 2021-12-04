@@ -48,7 +48,7 @@ public class HighScore {
         //high score title
         g2d.setColor(Color.BLACK);
         FontRenderContext frc = g2d.getFontRenderContext();
-        g2d.setFont(headFont); //set the font
+        g2d.setFont(buttonFont); //set the font
 
         Rectangle2D headingRect = menuFont.getStringBounds(HIGH_SCORE_TEXT,frc);
 
@@ -56,9 +56,11 @@ public class HighScore {
         sX = (int)(gameBoard.getWidth() - headingRect.getWidth()) / 2; //x coordinate of where we want the box to be in
         sY = gameBoard.getHeight() / 6; //y coordinate of where we want the box to be in
 
-        g2d.drawString(HIGH_SCORE_TEXT,sX-50,sY); //draw the string "High Score"
+        g2d.drawString("Your high score was " + gameBoard.getScoreFromGameplay() + "!", sX+40, sY-40);
 
-        //g2d.drawString("Your score was " + score);
+        g2d.setFont(headFont);
+
+        g2d.drawString(HIGH_SCORE_TEXT,sX-50,sY+20); //draw the string "High Score"
 
         //displaying high scores
         int score_x, score_y;

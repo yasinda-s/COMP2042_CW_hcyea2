@@ -359,4 +359,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     public boolean isScoreExitClicked() {
         return scoreExitClicked;
     }
+
+    public int getScoreFromGameplay(){
+        return gamePlay.getScore();
+    }
 }

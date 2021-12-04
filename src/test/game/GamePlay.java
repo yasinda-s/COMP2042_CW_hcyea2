@@ -87,7 +87,7 @@ public class GamePlay {
         scoreLvlFive = 0;
         scoreLvlSix = 0;
 
-        ballCount = 3; //we get 3 lives
+        ballCount = 1; //we get 3 lives
         ballLost = false; //originally no balls are lost
 
         area = drawArea;
@@ -125,7 +125,9 @@ public class GamePlay {
         else if(impactWall()){
             brickCount--;
             calculateScore(level);
-            player.increaseWidth();
+            if(level==5){
+                player.increaseWidth();
+            }
         }
         else if(impactBorder()) { //if the ball hits the corner walls (left and right)
             ball.reverseX();

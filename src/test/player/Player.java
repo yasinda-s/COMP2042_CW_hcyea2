@@ -91,13 +91,10 @@ public class Player implements PlayerInterface { //refers to the player brick
         return playerFace.getWidth();
     }
 
-    public void increaseWidth(){ //XXXX -> should be for level 5 only
-        System.out.println("increaseWidth");
+    public void increaseWidth(){
         if(playerFace.width<400){
             this.playerFace.width += 50;
         }
-//        System.out.println(this.playerFace.width); //width changes but doesnt show in level 5 bar
-
     }
 
     /**
