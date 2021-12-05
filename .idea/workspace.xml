@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a221ebbd-3883-47fb-9d28-b9e261748d5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick_Destroy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Brick_Destroy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/ball/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/ball/BigBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/ball/BigBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/ball/RubberBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/ball/RubberBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/brick/Brick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/brick/ClayBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/brick/ClayBrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/ball/BallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/ball/BallTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/brick/BrickTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/test/ball/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/ball/Ball.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/brick/Brick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/brick/Brick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/ball/BigBall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/ball/BigBall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/ball/BallTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/ball/BallTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/brick/BrickTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
@@ -68,82 +68,95 @@
       <recent name="D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BallTest.getCenter">
-    <configuration name="BallTest.getCenter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.GraphicsMain">
+    <configuration name="GraphicsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.GraphicsMain" />
       <module name="Brick_Destroy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.ball.*" />
+          <option name="PATTERN" value="test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.ball" />
-      <option name="MAIN_CLASS_NAME" value="test.ball.BallTest" />
-      <option name="METHOD_NAME" value="getCenter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClayBrickTest.findImpact" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Brick_Destroy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.brick.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.brick" />
+      <option name="MAIN_CLASS_NAME" value="test.brick.ClayBrickTest" />
+      <option name="METHOD_NAME" value="findImpact" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BallTest.getPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ColorBrickTest.getInnerColor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Brick_Destroy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.ball.*" />
+          <option name="PATTERN" value="test.brick.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.ball" />
-      <option name="MAIN_CLASS_NAME" value="test.ball.BallTest" />
-      <option name="METHOD_NAME" value="getPosition" />
+      <option name="PACKAGE_NAME" value="test.brick" />
+      <option name="MAIN_CLASS_NAME" value="test.brick.ColorBrickTest" />
+      <option name="METHOD_NAME" value="getInnerColor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BallTest.getSpeedX" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ColorBrickTest.impact" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Brick_Destroy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.ball.*" />
+          <option name="PATTERN" value="test.brick.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.ball" />
-      <option name="MAIN_CLASS_NAME" value="test.ball.BallTest" />
-      <option name="METHOD_NAME" value="getSpeedX" />
+      <option name="PACKAGE_NAME" value="test.brick" />
+      <option name="MAIN_CLASS_NAME" value="test.brick.ColorBrickTest" />
+      <option name="METHOD_NAME" value="impact" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BallTest.reverseX" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ColorBrickTest.isBroken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Brick_Destroy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.ball.*" />
+          <option name="PATTERN" value="test.brick.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.ball" />
-      <option name="MAIN_CLASS_NAME" value="test.ball.BallTest" />
-      <option name="METHOD_NAME" value="reverseX" />
+      <option name="PACKAGE_NAME" value="test.brick" />
+      <option name="MAIN_CLASS_NAME" value="test.brick.ColorBrickTest" />
+      <option name="METHOD_NAME" value="isBroken" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BallTest.setSpeed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CrackTest.reset" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Brick_Destroy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.ball.*" />
+          <option name="PATTERN" value="test.brick.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.ball" />
-      <option name="MAIN_CLASS_NAME" value="test.ball.BallTest" />
-      <option name="METHOD_NAME" value="setSpeed" />
+      <option name="PACKAGE_NAME" value="test.brick" />
+      <option name="MAIN_CLASS_NAME" value="test.brick.CrackTest" />
+      <option name="METHOD_NAME" value="reset" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BallTest.getCenter" />
-        <item itemvalue="JUnit.BallTest.getSpeedX" />
-        <item itemvalue="JUnit.BallTest.getPosition" />
-        <item itemvalue="JUnit.BallTest.reverseX" />
-        <item itemvalue="JUnit.BallTest.setSpeed" />
+        <item itemvalue="Application.GraphicsMain" />
+        <item itemvalue="JUnit.CrackTest.reset" />
+        <item itemvalue="JUnit.ColorBrickTest.getInnerColor" />
+        <item itemvalue="JUnit.ColorBrickTest.impact" />
+        <item itemvalue="JUnit.ColorBrickTest.isBroken" />
       </list>
     </recent_temporary>
   </component>
@@ -200,11 +213,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637551354898" />
-    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser" timestamp="1638615637952">
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1638703604059">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638703604059" />
+    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser" timestamp="1638693225941">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637036632815" />
-    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638615637952" />
+    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638693225941" />
     <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1638287422062" />
     <state x="499" y="192" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1638671974293">
       <screen x="0" y="0" width="1536" height="824" />
@@ -251,54 +268,54 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057117370" />
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638157229034" />
-    <state width="1493" height="128" key="GridCell.Tab.0.bottom" timestamp="1638688722579">
+    <state width="1493" height="128" key="GridCell.Tab.0.bottom" timestamp="1638720774169">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
-    <state width="1493" height="128" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638688722579" />
+    <state width="1493" height="128" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638720774169" />
     <state width="1493" height="128" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="128" key="GridCell.Tab.0.center" timestamp="1638688722579">
+    <state width="1493" height="128" key="GridCell.Tab.0.center" timestamp="1638720774168">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
-    <state width="1493" height="128" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638688722579" />
+    <state width="1493" height="128" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638720774168" />
     <state width="1493" height="128" key="GridCell.Tab.0.center/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="128" key="GridCell.Tab.0.left" timestamp="1638688722579">
+    <state width="1493" height="128" key="GridCell.Tab.0.left" timestamp="1638720774168">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
-    <state width="1493" height="128" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638688722579" />
+    <state width="1493" height="128" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638720774168" />
     <state width="1493" height="128" key="GridCell.Tab.0.left/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="128" key="GridCell.Tab.0.right" timestamp="1638688722579">
+    <state width="1493" height="128" key="GridCell.Tab.0.right" timestamp="1638720774169">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
-    <state width="1493" height="128" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638688722579" />
+    <state width="1493" height="128" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638720774169" />
     <state width="1493" height="128" key="GridCell.Tab.0.right/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1638684463593">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1638695438652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638684463593" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1638684463593">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638695438652" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1638695438652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638684463593" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1638684463593">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638695438652" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1638695438652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638684463593" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1638684463593">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638695438652" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1638695438652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638684463593" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638695438652" />
     <state x="647" y="134" key="RollbackChangesDialog" timestamp="1637557992583">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -315,21 +332,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637812211888" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1638684778971">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1638713494176">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057083233" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638684778971" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638713494176" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638671427391" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1638286603277" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1638600649162">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638600649162" />
-    <state x="533" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1638679054310">
+    <state x="533" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1638719583623">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="533" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638679054310" />
+    <state x="533" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638719583623" />
     <state x="533" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638671996578" />
     <state x="-1830" y="-6" width="1116" height="655" maximized="true" key="dock-window-1" timestamp="1638178960074">
       <screen x="-1920" y="5" width="1536" height="824" />

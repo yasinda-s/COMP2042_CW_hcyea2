@@ -1,7 +1,6 @@
 package test.ball;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,8 +9,6 @@ class BallTest {
     Point ballPos = new Point(300,430);
     Ball ball = new RubberBall(ballPos);
 
-    int speedX = 1;
-    int speedY = -1;
     Color DEF_INNER_COLOR = new Color(255, 219, 88);
     Color DEF_BORDER_COLOR = DEF_INNER_COLOR.darker().darker();
 
@@ -24,8 +21,6 @@ class BallTest {
 
     @org.junit.jupiter.api.Test
     void move() {
-//        ball.move();
-//        assertEquals(ball.getCenter(), (ball.getCenter().getX() + speedX,ball.getCenter().getY() + speedY));
     }
 
     @org.junit.jupiter.api.Test
