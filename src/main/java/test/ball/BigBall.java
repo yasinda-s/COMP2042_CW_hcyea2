@@ -21,7 +21,6 @@ public class BigBall extends Ball {
         super(center, DEF_RADIUS, DEF_INNER_COLOR, DEF_BORDER_COLOR);
     }
 
-
     /**
      * Used to make the shape of the Big Ball.
      * @param center Point2D type, consists of the x, y coordinate of the center of the ball.

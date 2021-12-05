@@ -35,10 +35,4 @@ public class RubberBall extends Ball {
 
         return new Ellipse2D.Double(x,y,radius, radius);
     }
-
-//    public void impactSpeed(Brick brick){
-//        if(brick.isBroken()){
-//
-//        }
-//    }
 }

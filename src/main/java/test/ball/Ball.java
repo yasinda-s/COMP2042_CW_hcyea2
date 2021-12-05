@@ -1,11 +1,8 @@
 package test.ball;
 
-import test.brick.Brick;
-
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
-import java.util.Random;
 
 /**
  * This is the class used to represent the ball object in the Brick Game.
@@ -36,11 +33,6 @@ abstract public class Ball implements BallInterface {
     private Point2D right;
 
     private Color border;
-
-    public void setInner(Color inner) {
-        this.inner = inner;
-    }
-
     private Color inner;
 
     private int speedX;
@@ -82,9 +74,6 @@ abstract public class Ball implements BallInterface {
 
         speedX = 1;
         speedY = -1;
-
-        //Set speed of the ball for the initial time
-        //int[] speedsXY =  getSpeedsXY();
     }
 
     /**
@@ -167,6 +156,11 @@ abstract public class Ball implements BallInterface {
      */
     public Color getInnerColor(){
         return inner;
+    }
+
+
+    public void setInner(Color inner) {
+        this.inner = inner;
     }
 
     /**

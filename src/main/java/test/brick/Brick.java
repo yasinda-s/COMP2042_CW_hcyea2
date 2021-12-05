@@ -54,7 +54,6 @@ abstract public class Brick  { //this represents one of the bricks we see on top
      * @param strength The strength of the brick (How many impacts it can handle).
      */
     public Brick(String name, Point pos,Dimension size,Color border,Color inner,int strength){
-
         broken = false;
         this.name = name;
         brickFace = makeBrickFace(pos,size);
@@ -105,7 +104,6 @@ abstract public class Brick  { //this represents one of the bricks we see on top
     public Color getInnerColor(){
         return inner;
     }
-
 
     /**
      * This method is used to find in which direction the ball hit the brick.
