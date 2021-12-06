@@ -19,7 +19,7 @@ public class LevelScore {
 
     private GamePlay gamePlay;
 
-    public LevelScore(GamePlay gamePlay) throws IOException {
+    public LevelScore(GamePlay gamePlay) {
         this.gamePlay = gamePlay;
 
         lvlOneScoresFromFile = new ArrayList<>();

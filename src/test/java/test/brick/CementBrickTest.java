@@ -1,5 +1,6 @@
 package test.brick;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import test.ball.Ball;
 import test.ball.RubberBall;
@@ -10,13 +11,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CementBrickTest {
 
-    CementBrick cementBrick = new CementBrick(new Point(300, 420), new Dimension(60, 20));
-    Point ballPos = new Point(295,425);
+    private static CementBrick cementBrick;
+    private static Ball ball1;
+    private static Ball ball2;
+    private static Ball ball3;
+    private static Ball ball4;
 
-    Ball ball1 = new RubberBall(ballPos);
-    Ball ball2 = new RubberBall(new Point(360, 425));
-    Ball ball3 = new RubberBall(new Point(330, 415));
-    Ball ball4 = new RubberBall(new Point(330, 440));
+    @BeforeAll
+    static void setup(){
+        cementBrick = new CementBrick(new Point(300, 420), new Dimension(60, 20));
+        Point ballPos = new Point(295,425);
+
+        ball1 = new RubberBall(ballPos);
+        ball2 = new RubberBall(new Point(360, 425));
+        ball3 = new RubberBall(new Point(330, 415));
+        ball4 = new RubberBall(new Point(330, 440));
+    }
 
     @Test
     void setImpact() {

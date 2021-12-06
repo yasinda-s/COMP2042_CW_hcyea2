@@ -1,14 +1,12 @@
 package test.game;
 
-import test.levels.HighScore;
-import test.levels.LevelScore;
+import test.levels.*;
 import test.brick.Brick;
 import test.debug.DebugConsole;
 import test.drawcomponents.DrawBall;
 import test.drawcomponents.DrawBrick;
 import test.drawcomponents.DrawFactory;
 import test.drawcomponents.DrawPlayer;
-import test.levels.SaveScores;
 
 import javax.swing.*;
 import java.awt.*;

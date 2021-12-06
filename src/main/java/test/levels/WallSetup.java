@@ -17,10 +17,6 @@ public class WallSetup {
     private static final int CEMENT = 3;
     private static final int COLOR = 4;
 
-    public Brick[][] getLevelsMade() { //encapsulation
-        return levelsMade;
-    }
-
     private Brick[][] levelsMade;
 
     public WallSetup(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio){
@@ -187,5 +183,9 @@ public class WallSetup {
                 throw new IllegalArgumentException(String.format("Unknown Type:%d\n",type));
         }
         return out;
+    }
+
+    public Brick[][] getLevelsMade() { //encapsulation
+        return levelsMade;
     }
 }

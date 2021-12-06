@@ -17,12 +17,7 @@ public class HighScore {
     private static final String HIGH_SCORE_TEXT = "HIGH SCORE BOARD";
     private static final String SCORE_EXIT_TEXT = "Exit Game";
     private static final int TEXT_SIZE = 30;
-
     private static final int TOP_SCORES = 5;
-
-    public Writer getWriter() {
-        return writer;
-    }
 
     Writer writer;
     private java.util.List<Integer> scoresFromFile;
@@ -135,5 +130,9 @@ public class HighScore {
 
     public Rectangle getScoreExitButtonRect() {
         return scoreExitButtonRect;
+    }
+
+    public Writer getWriter() {
+        return writer;
     }
 }

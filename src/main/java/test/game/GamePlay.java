@@ -1,5 +1,7 @@
 package test.game;
 
+import test.levels.HalvePlayerDrop;
+import test.levels.IncreaseSpeedDrop;
 import test.levels.WallSetup;
 import test.ball.Ball;
 import test.ball.RubberBall;
