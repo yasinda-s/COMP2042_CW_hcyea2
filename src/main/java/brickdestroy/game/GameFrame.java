@@ -9,8 +9,13 @@ import java.io.IOException;
 
 /**
  * This class is what holds the whole frame of the Game to be displayed.
+ *
+ * Additions -
+ *
+ * Added a method called enableInfoScreen() which allows the info screen to be displayed by removing the home menu screen.
+ * Added a method called enableHomeScreen() which allows the home menu screen to be displayed when the menu button is clicked from info screen.
  */
-public class GameFrame extends JFrame implements WindowFocusListener { //need to add javadocs
+public class GameFrame extends JFrame implements WindowFocusListener {
 
     private static final String DEF_TITLE = "Brick Destroy"; //name on the game frame header
     private GameBoard gameBoard;
@@ -19,9 +24,9 @@ public class GameFrame extends JFrame implements WindowFocusListener { //need to
     private boolean gaming;
 
     /**
-     * This is the constructor for the GameFrame class. It uses gameBoard and homeMenu to get the layout setup.
+     * This is the constructor for the GameFrame class. It sets the border layout and initiates the home menu, gameboard and info screen.
      */
-    public GameFrame() throws IOException { //constructor
+    public GameFrame() throws IOException {
         super(); //JFrame
         gaming = false; //originally set to false
         this.setLayout(new BorderLayout());

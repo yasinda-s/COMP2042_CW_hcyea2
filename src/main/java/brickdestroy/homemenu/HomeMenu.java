@@ -14,8 +14,8 @@ import java.awt.geom.Rectangle2D;
  * HomeMenu class is used to design the Home Screen we see when we first load the game.
  *
  * Additions -
- * Added a background image to the home screen to make it look more pleasant to the eye.
- * Added a new button which shows the How to Play screen which explains to the user how to play the game.
+ * Added a background image to the home screen to make it look more pleasant.
+ * Added a new button which shows the Info (How to Play) screen which explains to the user how to play the game.
  *
  * Refactoring -
  * Changed the variable name from MENU_TEXT to EXIT_TEXT because it represents the String we place on the EXIT button in the Menu Screen.

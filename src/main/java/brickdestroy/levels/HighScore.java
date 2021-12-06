@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+/**
+ * This class is responsible for the handling and displaying of the permanent high scores to the game frame. It also displays the ending total high score of the user (even if it is not in the high score leader board).
+ */
+
 public class HighScore {
     private Font menuFont;
     private Font headFont;
@@ -24,6 +28,11 @@ public class HighScore {
     private GameBoard gameBoard;
     private Rectangle scoreExitButtonRect;
 
+    /**
+     * This is the constructor for the HighScore class.
+     * @param gameBoard The GameBoard object where the game is setup,
+     * @throws IOException Incase the highscore.txt file cannot be found.
+     */
     public HighScore(GameBoard gameBoard) throws IOException {
         headFont = new Font("Noto Mono", Font.BOLD, 40);
         menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
@@ -112,7 +121,7 @@ public class HighScore {
     }
 
     /**
-     * This method is used to find the top 5 permanent high scores in the game.
+     * This method is used to find the top 5 permanent high scores for the game.
      * @throws FileNotFoundException This is incase the method is unable to access the file highscore.txt which records the scores.
      */
     public void findHighScore() throws FileNotFoundException { //read values, save on array/list and then sort, then print
@@ -128,10 +137,18 @@ public class HighScore {
         }
     }
 
+    /**
+     * This method returns the exit button rectangle used in the high score screen.
+     * @return Returns the exit button in high score screen.
+     */
     public Rectangle getScoreExitButtonRect() {
         return scoreExitButtonRect;
     }
 
+    /**
+     * This method is used to return the writer which writes data into the highscore.txt file.
+     * @return Returns the writer.
+     */
     public Writer getWriter() {
         return writer;
     }

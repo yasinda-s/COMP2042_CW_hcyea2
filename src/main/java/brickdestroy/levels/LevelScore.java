@@ -9,6 +9,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * This class is responsible for accessing the permanent level high scores and displaying them when a level is completed or if player loses.
+ */
 public class LevelScore {
     private List<Integer> lvlOneScoresFromFile;
     private List<Integer> lvlTwoScoresFromFile;
@@ -19,6 +22,10 @@ public class LevelScore {
 
     private GamePlay gamePlay;
 
+    /**
+     * This is the constructor for the LevelScore class.
+     * @param gamePlay GamePlay object.
+     */
     public LevelScore(GamePlay gamePlay) {
         this.gamePlay = gamePlay;
 
@@ -30,6 +37,10 @@ public class LevelScore {
         lvlSixScoresFromFile = new ArrayList<>();
     }
 
+    /**
+     * This method is responsible in getting the permanent level scores from files and displaying them onto the JOptionPane.
+     * @throws FileNotFoundException In case the files cannot be found.
+     */
     public void popUpLevelScore() throws FileNotFoundException {
         String pathOne = "src/main/resources/levelOneScore.txt";
         String pathTwo = "src/main/resources/levelTwoScore.txt";
@@ -59,6 +70,12 @@ public class LevelScore {
         }
     }
 
+    /**
+     * This method is responsible for getting the level scores from the file and saving them into an array list.
+     * @param filePath The file path of the level scores in form of a string.
+     * @param lvlScoresFromFile The array list in which the level's scores will be saved.
+     * @throws FileNotFoundException In case the files cannot be found.
+     */
     private void getLevelScoreFromFile(String filePath, java.util.List<Integer> lvlScoresFromFile) throws FileNotFoundException{
         Scanner inputLevelScore = new Scanner(new File(filePath));
         while(inputLevelScore.hasNext()){
@@ -71,6 +88,10 @@ public class LevelScore {
         }
     }
 
+    /**
+     * This method is responsible for using a JOptionPane for displaying the user's level score and the permanent level score at the end of each round.
+     * @param lvlScoresFromFile The array list that contains the level's scores.
+     */
     public void createScoreMessagePopUp(java.util.List<Integer> lvlScoresFromFile) {
         String message = "";
         if(gamePlay.isBallLost()) {
@@ -101,6 +122,10 @@ public class LevelScore {
         JOptionPane.showMessageDialog(null, displayScore, "Level " + gamePlay.getLevel() + " High Scores", JOptionPane.PLAIN_MESSAGE);
     }
 
+    /**
+     * This method is responsible in accessing the current level score from gameplay object.
+     * @return Returns the level score of ongoing game.
+     */
     public int getLevelScore(){
         int currentLevel = gamePlay.getLevel();
         int levelScore = 0;

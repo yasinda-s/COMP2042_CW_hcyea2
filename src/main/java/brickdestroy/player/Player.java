@@ -6,8 +6,15 @@ import java.awt.*;
 
 /**
  * This class represents the Player's bar (Rectangle) which he/she controls.
+ *
+ * Additions -
+ * Added "changeWidth" method which is used in level 5 after drop box is picked.
+ * Added "resetWidth" method which is used on reset.
+ * Added "increaseWidth" method which is used level 5 as a reward system.
+ * Added "halveWidth" method which is used in level 5 as a penalty system.
+ * Added getter methods to improve encapsulation.
  */
-public class Player implements PlayerInterface { //refers to the player brick
+public class Player implements PlayerInterface { //refers to the player bar
 
     public static final Color BORDER_COLOR = Color.GREEN.darker().darker(); //outer border
     public static final Color INNER_COLOR = Color.ORANGE; //inner border
@@ -75,6 +82,9 @@ public class Player implements PlayerInterface { //refers to the player brick
         //top left of player brick
     }
 
+    /**
+     * This method is used to change the width of the player bar to 40.
+     */
     public void changeWidth(){
         this.playerFace.width = 40;
         this.min = container.x + (playerFace.width / 2);
@@ -82,20 +92,33 @@ public class Player implements PlayerInterface { //refers to the player brick
         this.max = min + container.width - playerFace.width;
     }
 
+    /**
+     * This method is used to reset the width of the player bar to 150.
+     */
     public void resetWidth(){
         playerFace.width=150;
     }
 
+    /**
+     * This method is used to get the width of the player bar.
+     * @return returns the width of the player bar.
+     */
     public double getWidth(){
         return playerFace.getWidth();
     }
 
+    /**
+     * This method is used to increase the width of the player bar.
+     */
     public void increaseWidth(){
         if(playerFace.width<400){
             this.playerFace.width += 50;
         }
     }
 
+    /**
+     * This method is used to halve the width of the player bar.
+     */
     public void halveWidth(){
         this.playerFace.width /= 2;
     }

@@ -29,7 +29,7 @@ public class DrawBall implements Drawable {
      * @param g2d Graphics 2d Frame where the ball will be drawn.
      */
     @Override
-    public void draw(Graphics2D g2d, int level) { //XXXX
+    public void draw(Graphics2D g2d, int level) {
             Color tmp = g2d.getColor(); //set tmp color to color in g2d
 
             Shape s = ball.getBallFace(); //set face of ball as shape

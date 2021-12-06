@@ -18,10 +18,11 @@ import java.io.*;
  * This class draws all of the 2d Components required to load the home screen and to play the game.
  *
  * Additions -
- * Added a method that saves the final high score onto a text file for permanent record tracking. This is later used by HighScore class to
- * show the leaderboard in descending order at the end of game (either game over or victory).
- * Added a method that saves the individual level scores onto text files for permanent record tracking. This is later used by LevelScore class to
- * show the leaderboard in descending order at the end of each level (either level complete or defeat).
+ * Creates an object of HighScore class to call a method that saves the final high score onto a text file for permanent record tracking. This is later used by HighScore class to show the leader board in descending order at the end of game (either game over or victory).
+ * Creates an object of LevelScore class to call a method that saves the individual level scores onto text files for permanent record tracking. This is later used by LevelScore class to show the leader board in descending order at the end of each level (either level complete or defeat).
+ * Added a method getScoreFromGameplay() so that the current ongoing score can be accessed from other classes.
+ * Creates an object of class IncreaseSpeedDrop to display the box that increases ball speed in additional level (Level 5).
+ * Creates an object of class HalvePlayerDrop to display the box that halves the width of the player bar (Level 5).
  *
  * Refactoring -
  * Removed the draw() methods - drawBall(), drawPlayer() and drawBrick() from this class and created a factory design to generate these components when needed.
@@ -208,7 +209,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     }
 
     /**
-     * This method is used to clear the gameboard.
+     * This method is used to clear the game board.
      * @param g2d Graphics2D frame type to allow more control over coloring and drawing over 2d components.
      */
     public void clear(Graphics2D g2d){
@@ -363,6 +364,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         return scoreExitClicked;
     }
 
+    /**
+     * This method is used as a getter in order to access the score from other classes.
+     * @return Returns the current ongoing score.
+     */
     public int getScoreFromGameplay(){
         return gamePlay.getScore();
     }

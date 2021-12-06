@@ -1,6 +1,5 @@
 package brickdestroy.debug;
 
-import brickdestroy.game.GameBoard;
 import brickdestroy.game.GamePlay;
 
 import javax.swing.*;
@@ -34,7 +33,7 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
      * This is the constructor for the DebugPanel.
      * @param gamePlay Takes in GamePlay object.
      */
-    public DebugPanel(GamePlay gamePlay, GameBoard gameBoard){ //pass in gamePlay object
+    public DebugPanel(GamePlay gamePlay){ //pass in gamePlay object
 
         initialize();
 

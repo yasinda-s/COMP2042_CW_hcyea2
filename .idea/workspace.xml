@@ -2,13 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a221ebbd-3883-47fb-9d28-b9e261748d5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/brickdestroy/player/PlayerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/allclasses-index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/GraphicsMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/GraphicsMain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/Ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/Ball.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BallInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BallInterface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BallTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BallTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BigBall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BigBall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/RubberBall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/RubberBall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/Brick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/Brick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/CementBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/CementBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/CementBrickTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/CementBrickTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ClayBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ClayBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ClayBrickTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ClayBrickTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ColorBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ColorBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ColorBrickTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ColorBrickTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/Crack.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/Crack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/SteelBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/SteelBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/SteelBrickTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/SteelBrickTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/DebugConsole.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/DebugConsole.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/DebugPanel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/DebugPanel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawBall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawBall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawFactory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawFactory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawPlayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawPlayer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/Drawable.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/Drawable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GameBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GameBoard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GameFrame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GameFrame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GamePlay.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GamePlay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GamePlayTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GamePlayTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/PauseMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/PauseMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/HomeMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/HomeMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/InfoScreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/InfoScreen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HalvePlayerDrop.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HalvePlayerDrop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HalvePlayerDropTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HalvePlayerDropTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HighScore.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HighScore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/IncreaseSpeedDrop.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/IncreaseSpeedDrop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/IncreaseSpeedDropTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/IncreaseSpeedDropTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/LevelScore.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/LevelScore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/SaveScores.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/SaveScores.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/WallSetup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/WallSetup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/player/Player.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/player/Player.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/player/PlayerInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/player/PlayerInterface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/player/PlayerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/player/PlayerTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/player/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/player/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/player/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/player/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/constant-values.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/element-list" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/help-doc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-10.html" afterDir="false" />
@@ -32,184 +89,40 @@
       <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-8.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-9.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/jquery-ui.overrides.css" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/jquery-ui.overrides.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/member-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/overview-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/package-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Ball.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Brick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/CementBrick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/ClayBrick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Crack.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/DebugConsole.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/DebugPanel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/DrawBall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/DrawBrick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/DrawFactory.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/DrawPlayer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Drawable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/GameBoard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/GameFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/GamePlay.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/GraphicsMain.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/HighScore.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/HomeMenu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/InfoScreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/PauseMenu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/Player.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/RubberBall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/SteelBrick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/WallSetup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/ball/Ball.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/ball/BallInterface.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/ball/BigBall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/ball/FireBall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/ball/RubberBall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/ball/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/ball/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/brick/Brick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/brick/CementBrick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/brick/ClayBrick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/brick/ColorBrick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/brick/Crack.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/brick/SteelBrick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/brick/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/brick/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/debug/DebugConsole.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/debug/DebugPanel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/debug/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/debug/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/drawcomponents/DrawBall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/drawcomponents/DrawBrick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/drawcomponents/DrawFactory.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/drawcomponents/DrawPlayer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/drawcomponents/Drawable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/drawcomponents/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/drawcomponents/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/game/GameBoard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/game/GameFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/game/GamePlay.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/game/PauseMenu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/game/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/game/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/homemenu/HomeMenu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/homemenu/InfoScreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/homemenu/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/homemenu/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/levels/HighScore.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/levels/LevelScore.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/levels/WallSetup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/levels/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/levels/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/player/Player.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/player/PlayerInterface.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/player/SmallPlayer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/player/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/test/player/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadocs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/GraphicsMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/GraphicsMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/ball/BallInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/BallInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/ball/BigBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/BigBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/ball/RubberBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/RubberBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Brick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/brick/CementBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/CementBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/brick/ClayBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/ClayBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/brick/ColorBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/ColorBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/brick/Crack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Crack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/brick/SteelBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/SteelBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/debug/DebugConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/debug/DebugPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/drawcomponents/DrawBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/drawcomponents/DrawBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/drawcomponents/DrawBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/drawcomponents/DrawBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/drawcomponents/DrawFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/drawcomponents/DrawFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/drawcomponents/DrawPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/drawcomponents/DrawPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/drawcomponents/Drawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/drawcomponents/Drawable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/game/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/game/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/game/GamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GamePlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/game/PauseMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/PauseMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/homemenu/HomeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/HomeMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/homemenu/InfoScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/InfoScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/levels/HalvePlayerDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/HalvePlayerDrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/levels/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/HighScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/levels/IncreaseSpeedDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/IncreaseSpeedDrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/levels/LevelScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/LevelScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/levels/SaveScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/SaveScores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/levels/WallSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/WallSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/player/PlayerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/player/PlayerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/Ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Brick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/ColorBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/ColorBrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/drawcomponents/DrawBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/drawcomponents/DrawBall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/drawcomponents/Drawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/drawcomponents/Drawable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GamePlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/PauseMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/PauseMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/HomeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/HomeMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/InfoScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/InfoScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/HalvePlayerDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/HalvePlayerDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/HighScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/IncreaseSpeedDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/IncreaseSpeedDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/LevelScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/LevelScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/SaveScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/SaveScores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/WallSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/WallSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/highscore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/levelFiveScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levelFiveScore.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/levelOneScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levelOneScore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/ball/BallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/brickdestroy/ball/BallTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/brick/CementBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/brickdestroy/brick/CementBrickTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/brick/ClayBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/brickdestroy/brick/ClayBrickTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/brick/ColorBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/brickdestroy/brick/ColorBrickTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/brick/SteelBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/brickdestroy/brick/SteelBrickTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/game/GamePlayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/brickdestroy/game/GamePlayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/levels/HalvePlayerDropTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/brickdestroy/levels/HalvePlayerDropTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/levels/IncreaseSpeedDropTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/brickdestroy/levels/IncreaseSpeedDropTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/player/PlayerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Brick_Destroy-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Brick_Destroy-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Brick_Destroy.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/levelTwoScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levelTwoScore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/ball/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/ball/Ball.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/brick/Brick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/brick/Brick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/brick/ColorBrick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/brick/ColorBrick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/game/GamePlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/game/GamePlay.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/highscore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelFiveScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelFiveScore.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/levelOneScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelOneScore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/GraphicsMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/ball/Ball.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/ball/BallInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/ball/BigBall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/ball/RubberBall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/brick/Brick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/brick/CementBrick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/brick/ClayBrick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/brick/ColorBrick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/brick/Crack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/brick/SteelBrick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/debug/DebugConsole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/debug/DebugPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/drawcomponents/DrawBall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/drawcomponents/DrawBrick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/drawcomponents/DrawFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/drawcomponents/DrawPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/drawcomponents/Drawable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/game/GameBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/game/GameFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/game/GamePlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/game/PauseMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/homemenu/HomeMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/homemenu/InfoScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/levels/HalvePlayerDrop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/levels/HighScore.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/levels/IncreaseSpeedDrop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/levels/LevelScore.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/levels/SaveScores.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/levels/WallSetup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/player/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/player/PlayerInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/Brick_Destroy.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/ball/BallTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/brick/CementBrickTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/brick/ClayBrickTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/brick/ColorBrickTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/brick/SteelBrickTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/game/GamePlayTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/levels/HalvePlayerDropTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/levels/IncreaseSpeedDropTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levelTwoScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTwoScore.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +191,7 @@
       <recent name="D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.Brick_Destroy-1.0-SNAPSHOT.jar">
+  <component name="RunManager" selected="JUnit.brickdestroy in Brick_Destroy">
     <configuration name="GraphicsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="brickdestroy.GraphicsMain" />
       <module name="Brick_Destroy" />
@@ -335,9 +248,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.Brick_Destroy-1.0-SNAPSHOT.jar" />
-        <item itemvalue="Application.GraphicsMain" />
         <item itemvalue="JUnit.brickdestroy in Brick_Destroy" />
+        <item itemvalue="Application.GraphicsMain" />
+        <item itemvalue="JAR Application.Brick_Destroy-1.0-SNAPSHOT.jar" />
         <item itemvalue="JUnit.All in Brick_Destroy" />
         <item itemvalue="JUnit.BallTest" />
       </list>
@@ -388,11 +301,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638703604059" />
-    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser" timestamp="1638693225941">
+    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser" timestamp="1638789754666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637036632815" />
-    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638693225941" />
+    <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638789754666" />
     <state x="854" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1638287422062" />
     <state x="499" y="192" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1638671974293">
       <screen x="0" y="0" width="1536" height="824" />
@@ -426,11 +339,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="593" y="154" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637473020467" />
-    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1638784667454">
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1638808701338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971712922" />
-    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638784667454" />
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638808701338" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1638373479015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -440,36 +353,36 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057117370" />
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638784285182" />
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom" timestamp="1638784828856">
+    <state width="1493" height="166" key="GridCell.Tab.0.bottom" timestamp="1638808904705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638784828856" />
+    <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638808904705" />
     <state width="1493" height="128" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="166" key="GridCell.Tab.0.center" timestamp="1638784828856">
+    <state width="1493" height="166" key="GridCell.Tab.0.center" timestamp="1638808904705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
-    <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638784828856" />
+    <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638808904705" />
     <state width="1493" height="128" key="GridCell.Tab.0.center/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="166" key="GridCell.Tab.0.left" timestamp="1638784828856">
+    <state width="1493" height="166" key="GridCell.Tab.0.left" timestamp="1638808904705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
-    <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638784828856" />
+    <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638808904705" />
     <state width="1493" height="128" key="GridCell.Tab.0.left/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="166" key="GridCell.Tab.0.right" timestamp="1638784828856">
+    <state width="1493" height="166" key="GridCell.Tab.0.right" timestamp="1638808904705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1637123096551" />
-    <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638784828856" />
+    <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638808904705" />
     <state width="1493" height="128" key="GridCell.Tab.0.right/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1638695438652">
@@ -504,13 +417,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637812211888" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1638784813748">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1638802248404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057083233" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638784813748" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638789352311" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638671427391" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1638286603277" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1638802248404" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1638600649162">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

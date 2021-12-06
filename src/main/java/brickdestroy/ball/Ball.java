@@ -12,12 +12,10 @@ import java.awt.geom.RectangularShape;
  * The original code consisted of passing in two radii (radiusA and radiusB) for the makeBall method, however this is redundant and makes the
  * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs
  * the same functionality as the the ball will be having one radius only.
- *
  * A new method "getSpeedsXY" has been added so that this method can be called whenever the ball speed has to re-allocated randomly in any Class
  * rather than repeating the same lines of code as we saw in the original.
- *
  * The ball class now implements the BallInterface.
- *
+ * The center, up, down, left and right points of the ball are now accessible via getters in order to improve encapsulation within the class.
  * The makeBall() method has been moved to BallInterface. -> XXXX Explain why later
  */
 
@@ -43,7 +41,6 @@ abstract public class Ball implements BallInterface {
      * The 4 coordinates of the edges of the ball are assigned here (up, down, left and right).
      * The face of the ball is set here.
      * The color (inner and border) of the ball is set here.
-     *
      *
      * @param center Point2D type, center holds the x and y coordinate of the ball's center.
      * @param radius Integer type, radiusA holds the radius of the ball.
@@ -79,7 +76,7 @@ abstract public class Ball implements BallInterface {
     /**
      * This method is focused on having the ball move freely as the game begins.
      */
-    public void move(){ //XXXX -> Similar to moveTo
+    public void move(){
         RectangularShape tmp = (RectangularShape) ballFace;
         center.setLocation((center.getX() + speedX),(center.getY() + speedY));
         double w = tmp.getWidth(); //get width of rectangle/ball
@@ -209,23 +206,42 @@ abstract public class Ball implements BallInterface {
         return speedY;
     }
 
-    //Added encapuslation
+    /**
+     * Method to get the center of the ball.
+     * @return Returns the center point of the ball.
+     */
     public Point2D getCenter() {
         return center;
     }
 
+    /**
+     * Method to get the upper point of the ball.
+     * @return Returns the upper point of the ball.
+     */
     public Point2D getUp() {
         return up;
     }
 
+    /**
+     * Method to get the lower point of the ball.
+     * @return Returns the lower point of the ball.
+     */
     public Point2D getDown() {
         return down;
     }
 
+    /**
+     * Method to get the left point of the ball.
+     * @return Returns the left point of the ball.
+     */
     public Point2D getLeft() {
         return left;
     }
 
+    /**
+     * Method to get the right point of the ball.
+     * @return Returns the right point of the ball.
+     */
     public Point2D getRight() {
         return right;
     }

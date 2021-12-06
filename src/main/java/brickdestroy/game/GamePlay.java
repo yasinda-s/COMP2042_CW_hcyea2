@@ -18,24 +18,23 @@ import java.util.Random;
  *
  * Addition -
  *
- * Added methods and variables which are used to calculate the user's total score and high score for the ongoing game.
+ * Added a method called "calculateScore" which is used to calculate the user's level score and total score for the ongoing game.
  * This method consists of a reward penalty system so that the user's performance matters.
- * For each level, if the user takes a longer time to break the bricks, he/she will receive lesser
- * points for each brick broken. This is done to reward users that break bricks faster and to penalize when they take too long to break bricks.
+ * For each level, if the user takes a longer time to break the bricks, he/she will receive lesser points for each brick broken. This is done to reward users that break bricks faster and to penalize when they take too long to break bricks.
+ * The method which keeps track of the points lost with increasing time is called "checkScoreDenominator".
+ * The "findImpacts" method is extended to take into account the ball movement when it impacts with one of the power drops that appear in level 5.
+ * The "playerReset" is used to reset the length of player bar.
+ * The "resetLevelScores" is added to reset the scores of all levels played by user.
  *
  * Refactoring -
  *
- * The methods that formed the formation of bricks in the wall for each level has been removed from this class and created in WallSetup Class so that
- * the only responsibility of WallSetup is to create the formation of bricks on the wall.
- * Instead of setting the speed of the ball (for both axes) in the GamePlay constructor, it has been moved to the Ball class's constructor so
- * that the initial speed is randomly assigned from the parent class.
- * The original code had the same lines of code repeating when the ball was to be reset in the "ballReset" method, I have refactored
- * the code by replacing those lines with one method call "getSpeedsXY" which reassigned the x, y speed of the ball randomly.
- * rnd variable has been removed as the speed of the ball is randomized within the Ball class itself.
- * Change method from nextLevel() to skipLevel() and added more resets for the game as changing the wall structure doesnt resemble the start of a new level.
- * The method now calls balls to reset and to set the score to 0.
+ * The methods that formed the formation of bricks in the wall for each level has been removed from this class and created in WallSetup Class so that the only responsibility of WallSetup is to create the formation of bricks on the wall.
+ * Instead of setting the speed of the ball (for both axes) in the GamePlay constructor, it has been moved to the Ball class's constructor so that the initial speed is randomly assigned from the parent class.
+ * The original code had the same lines of code repeating when the ball was to be reset in the "ballReset" method, I have refactored the code by simplifying the method.
+ * Change method from nextLevel() to skipLevel() and added more resets for the game as changing the wall structure does not resemble the start of a new level. The method now calls balls, score and timer to reset to 0.
  * Added getters for the scores so that other classes can access them, this improves encapsulation and hides data that do not need to be seen from other classes.
  * Added getters for the ball object created to promote encapsulation.
+ * "impactWall" method stores the values taken from Brick class so that its easier to read the values we use in the if-condition.
  */
 
 public class GamePlay {
@@ -122,7 +121,7 @@ public class GamePlay {
     }
 
     /**
-     * This method is used to identify where the ball makes an impact (The player bar, wall, Frame Borders) and how the ball's movement is affected.
+     * This method is used to identify where the ball makes an impact (The player bar, wall, power drops and Frame Borders) and how the ball's movement is affected.
      */
     public void findImpacts(){
         if(player.impact(ball)){
@@ -193,7 +192,7 @@ public class GamePlay {
     }
 
     /**
-     * This method determines the denominator in which users raw score will be divided by.
+     * This method determines the denominator in which users level score will be divided by.
      * @param timePlayed The current ongoing timer for the gameplay.
      * @return Returns an integer which is the denominator.
      */
@@ -215,22 +214,23 @@ public class GamePlay {
      */
     private boolean impactWall(){ //to handle how ball moves and causes cracks on impact with brick wall
         for(Brick b : bricks){
-            switch(b.findImpact(ball)) {
-                //Vertical Impact
-                case Brick.UP_IMPACT:
-                    ball.reverseY(); //reverse Y movement
-                    return b.setImpact(ball.getDown(), Crack.UP);
-                case Brick.DOWN_IMPACT:
-                    ball.reverseY(); //reverse Y movement
-                    return b.setImpact(ball.getUp(), Crack.DOWN);
+            int UP_IMPACT = Brick.getUpImpact();
+            int DOWN_IMPACT = Brick.getDownImpact();
+            int LEFT_IMPACT = Brick.getLeftImpact();
+            int RIGHT_IMPACT = Brick.getRightImpact();
 
-                //Horizontal Impact
-                case Brick.LEFT_IMPACT:
-                    ball.reverseX(); //fireball must have this but not being reversed X or Y for all cases
-                    return b.setImpact(ball.getRight(), Crack.RIGHT);
-                case Brick.RIGHT_IMPACT:
-                    ball.reverseX();
-                    return b.setImpact(ball.getLeft(), Crack.LEFT);
+            if (b.findImpact(ball)==UP_IMPACT){
+                ball.reverseY(); //reverse Y movement
+                return b.setImpact(ball.getDown(), Crack.UP);
+            }else if(b.findImpact(ball)==DOWN_IMPACT){
+                ball.reverseY(); //reverse Y movement
+                return b.setImpact(ball.getUp(), Crack.DOWN);
+            }else if(b.findImpact(ball)==LEFT_IMPACT){
+                ball.reverseX(); //fireball must have this but not being reversed X or Y for all cases
+                return b.setImpact(ball.getRight(), Crack.RIGHT);
+            }else if(b.findImpact(ball)==RIGHT_IMPACT){
+                ball.reverseX();
+                return b.setImpact(ball.getLeft(), Crack.LEFT);
             }
         }
         return false;
@@ -270,13 +270,11 @@ public class GamePlay {
     }
 
     /**
-     * This method is used to respawn a ball and re-randomize the balls speed when a ball is lost.
+     * This method is used to respawn a ball and set their speed when a ball is lost.
      */
     public void ballReset(){ //what happens when ball is lost
         player.moveTo(startPoint);
         ball.moveTo(startPoint);
-        //same function called from ball, not efficient to rewrite the same LOC, so we recall the method in Ball class.
-        //int[] speedsXY = ball.getSpeedsXY();
         if(level==5){
             if(ballCount==2){
                 ball.setSpeed(2,-2);
@@ -286,7 +284,6 @@ public class GamePlay {
         }else{
             ball.setSpeed(1,-1);
         }
-
         ballLost = false;
     }
 
@@ -300,6 +297,9 @@ public class GamePlay {
         ballCount = 3;
     }
 
+    /**
+     * This method is used to ensure that the length of the player bar is being reset on method call.
+     */
     public void playerReset(){
         player.resetWidth();
     }
@@ -399,6 +399,9 @@ public class GamePlay {
         this.score = score;
     }
 
+    /**
+     * This method is called to reset the scores of all levels played by user.
+     */
     public void resetLevelScores(){
         this.scoreLvlOne = 0;
         this.scoreLvlTwo = 0;

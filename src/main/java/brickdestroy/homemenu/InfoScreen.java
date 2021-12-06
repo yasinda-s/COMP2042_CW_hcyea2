@@ -166,7 +166,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
     }
 
     /**
-     * This method is used to add the text and buttons for the Start and Exit on the Home Menu.
+     * This method is used to add the return to menu button in the info screen.
      * @param g2d Graphics2D to draw the 2d components.
      */
     private void drawButton(Graphics2D g2d){

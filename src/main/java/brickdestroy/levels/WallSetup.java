@@ -6,12 +6,14 @@ import java.awt.*;
 
 /**
  * This class is responsible for setting up the different brick formations (Wall setup) and types of bricks for each Level in the game.
+ *
+ * Addition -
+ * Added new type of brick (ColorBrick) for the "makeBrick" method.
+ * Added new level for the "makeLevels" method which uses Color Bricks and Steel Bricks.
  */
-
 public class WallSetup {
 
     private static final int LEVELS_COUNT = 5; //number of levels in the game
-
     private static final int CLAY = 1;
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
@@ -19,6 +21,13 @@ public class WallSetup {
 
     private Brick[][] levelsMade;
 
+    /**
+     * This is the constructor for WallSetup class.
+     * @param drawArea The area in which the game will be played.
+     * @param brickCount The number of bricks on the wall.
+     * @param lineCount The number of lines of bricks in the game.
+     * @param brickDimensionRatio The dimension ratio of a single brick.
+     */
     public WallSetup(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio){
         levelsMade = makeLevels(drawArea, brickCount, lineCount, brickDimensionRatio); //returns Brick[][]
     }
@@ -153,7 +162,6 @@ public class WallSetup {
         tmp[2] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
         tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
         tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,COLOR);
-        //tmp[5] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,COLOR);
         return tmp;
     }
 
@@ -185,6 +193,10 @@ public class WallSetup {
         return out;
     }
 
+    /**
+     * This method is used to get the levels created in the form of Brick[][]
+     * @return returns Brick[][] of the levels created.
+     */
     public Brick[][] getLevelsMade() { //encapsulation
         return levelsMade;
     }

@@ -7,6 +7,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
+/**
+ * This class is responsible for saving both level scores and high scores into files so that they can be stored permanently.
+ */
 public class SaveScores {
     Writer writerLvlOne;
     Writer writerLvlTwo;
@@ -18,6 +21,12 @@ public class SaveScores {
     private GamePlay gamePlay;
     private HighScore highScore;
 
+    /**
+     * This is the constructor for the SaveScores class.
+     * @param gamePlay GamePlay object.
+     * @param highScore HighScore object.
+     * @throws IOException In case the level score files cannot be found.
+     */
     public SaveScores(GamePlay gamePlay, HighScore highScore) throws IOException {
         this.gamePlay = gamePlay;
         this.highScore = highScore;
@@ -31,7 +40,7 @@ public class SaveScores {
     }
 
     /**
-     * This method is used to save the final scores permanently into the text file.
+     * This method is used to save the final scores permanently into the text file so that a permanent list of high scores can be made.
      * @throws IOException In case the file cannot be found in the directory.
      */
     public void saveTotalScore() throws IOException { //this works properly!!
@@ -45,7 +54,7 @@ public class SaveScores {
     }
 
     /**
-     * This method is responsible for saving the individual level scores onto text files so that a permanent list of high scores can be made.
+     * This method is responsible for saving the individual level scores onto text files so that a permanent list of level scores can be made.
      * @throws IOException In case the file is not accessible.
      */
     public void saveLevelScores() throws IOException{

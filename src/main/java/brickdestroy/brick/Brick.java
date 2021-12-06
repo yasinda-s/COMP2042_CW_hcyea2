@@ -15,23 +15,21 @@ import java.awt.geom.Point2D;
  * Added a getter method for the rnd variable (in order to build on encapsulation) so that it can be accessed from the Crack class.
  * The Brick Class consisted of an unused variable called MIN_CRACK, this has been removed to increase understanding and readability
  * of the code.
- *
  * The private static variable Random rnd has been moved to Crack class as there is no point using a getter for this variable in order to access it
  * from Crack class since it is not being used here at all. Moving it to Crack removes the need to use a getter here or there.
- *
  * The Shape brickFace variable has been made private and encapsulation has been used to get the shape of the brick
  * face using a getter method called getBrickFace() to access from other classes.
- *
+ * Converted the IMPACT variables to private and used getters to access for the Gameplay class to promote encapsulation.
  */
 abstract public class Brick  { //this represents one of the bricks we see on top of the wall in the game
 
     public static final int DEF_CRACK_DEPTH = 1; //the thickness of the crack on the cement
     public static final int DEF_STEPS = 35;
 
-    public static final int UP_IMPACT = 100;
-    public static final int DOWN_IMPACT = 200;
-    public static final int LEFT_IMPACT = 300;
-    public static final int RIGHT_IMPACT = 400;
+    private static int upImpact = 100;
+    private static int downImpact = 200;
+    private static int leftImpact = 300;
+    private static int rightImpact = 400;
 
     private String name;
     private Shape brickFace;
@@ -115,13 +113,13 @@ abstract public class Brick  { //this represents one of the bricks we see on top
             return 0;
         int out  = 0;
         if(brickFace.contains(b.getRight())) //ball hit from left
-            out = LEFT_IMPACT;
+            out = leftImpact;
         else if(brickFace.contains(b.getLeft())) //if ball hit from right
-            out = RIGHT_IMPACT;
+            out = rightImpact;
         else if(brickFace.contains(b.getUp())) //if ball hit from down
-            out = DOWN_IMPACT;
+            out = downImpact;
         else if(brickFace.contains(b.getDown())) //if ball hit from up
-            out = UP_IMPACT;
+            out = upImpact;
         return out;
     }
 
@@ -155,5 +153,37 @@ abstract public class Brick  { //this represents one of the bricks we see on top
      */
     public Shape getBrickFace() { //used getter here again
         return brickFace;
+    }
+
+    /**
+     * Getter method to get the corresponding integer that represents an impact to the brick from above.
+     * @return Returns 100 signalling brick had been broken from above.
+     */
+    public static int getUpImpact() {
+        return upImpact;
+    }
+
+    /**
+     * Getter method to get the corresponding integer that represents an impact to the brick from below.
+     * @return Returns 200 signalling brick had been broken from below.
+     */
+    public static int getDownImpact() {
+        return downImpact;
+    }
+
+    /**
+     * Getter method to get the corresponding integer that represents an impact to the brick from the left side.
+     * @return Returns 300 signalling brick had been broken from the left side.
+     */
+    public static int getLeftImpact() {
+        return leftImpact;
+    }
+
+    /**
+     * Getter method to get the corresponding integer that represents an impact to the brick from the right side.
+     * @return Returns 400 signalling brick had been broken from the right side.
+     */
+    public static int getRightImpact() {
+        return rightImpact;
     }
 }
