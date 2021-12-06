@@ -1,3 +1,9 @@
-D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\test\brick\CementBrickTest.java
-D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\test\brick\ClayBrickTest.java
-D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\test\ball\BallTest.java
+D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\brickdestroy\ball\BallTest.java
+D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\brickdestroy\game\GamePlayTest.java
+D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\brickdestroy\levels\IncreaseSpeedDropTest.java
+D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\brickdestroy\brick\CementBrickTest.java
+D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\brickdestroy\levels\HalvePlayerDropTest.java
+D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\brickdestroy\brick\ColorBrickTest.java
+D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\brickdestroy\brick\ClayBrickTest.java
+D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\brickdestroy\player\PlayerTest.java
+D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test\java\brickdestroy\brick\SteelBrickTest.java

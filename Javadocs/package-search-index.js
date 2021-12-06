@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"test"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"brickdestroy"},{"l":"brickdestroy.ball"},{"l":"brickdestroy.brick"},{"l":"brickdestroy.debug"},{"l":"brickdestroy.drawcomponents"},{"l":"brickdestroy.game"},{"l":"brickdestroy.homemenu"},{"l":"brickdestroy.levels"},{"l":"brickdestroy.player"}];updateSearchResults();
