@@ -28,6 +28,7 @@ import java.util.Random;
  *
  * Refactoring -
  *
+ * Changed name from "Wall" to "GamePlay" as this is not solely responsible for the Wall above in the game.
  * The methods that formed the formation of bricks in the wall for each level has been removed from this class and created in WallSetup Class so that the only responsibility of WallSetup is to create the formation of bricks on the wall.
  * Instead of setting the speed of the ball (for both axes) in the GamePlay constructor, it has been moved to the Ball class's constructor so that the initial speed is randomly assigned from the parent class.
  * The original code had the same lines of code repeating when the ball was to be reset in the "ballReset" method, I have refactored the code by simplifying the method.
@@ -272,7 +273,7 @@ public class GamePlay {
     /**
      * This method is used to respawn a ball and set their speed when a ball is lost.
      */
-    public void ballReset(){ //what happens when ball is lost
+    public void ballReset(){
         player.moveTo(startPoint);
         ball.moveTo(startPoint);
         if(level==5){

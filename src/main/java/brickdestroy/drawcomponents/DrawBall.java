@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 /**
- * DrawBall class which implements the Drawable interface. This is used to override the draw(Graphics g2d) method to draw the Ball used in game.
+ * DrawBall class which implements the Drawable interface. This is used to override the draw(Graphics2D g2d, int level) method to make the Ball used in game.
  */
 public class DrawBall implements Drawable {
     private Ball ball;

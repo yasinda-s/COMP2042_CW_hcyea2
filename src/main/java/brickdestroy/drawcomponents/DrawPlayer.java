@@ -6,7 +6,7 @@ import brickdestroy.brick.Brick;
 import java.awt.*;
 
 /**
- * DrawPlayer class which implements the Drawable interface. This is used to override the draw(Graphics g2d) method to draw the Player bar used in game.
+ * DrawPlayer class which implements the Drawable interface. This is used to override the draw(Graphics g2d, int level) method to create the Player bar used in game.
  */
 public class DrawPlayer implements Drawable {
     private Player player;

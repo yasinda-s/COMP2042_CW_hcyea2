@@ -5,7 +5,7 @@ import brickdestroy.brick.Brick;
 import java.awt.*;
 
 /**
- * DrawBrick class which implements the Drawable interface. This is used to override the draw(Brick brick, Graphics g2d) method to draw the Brick used in game.
+ * DrawBrick class which implements the Drawable interface. This is used to override the draw(Brick brick, Graphics2D g2d) method to create the Brick used in game.
  */
 public class DrawBrick implements Drawable {
 

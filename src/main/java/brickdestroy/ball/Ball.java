@@ -9,14 +9,11 @@ import java.awt.geom.RectangularShape;
  *
  * Refactoring -
  *
- * The original code consisted of passing in two radii (radiusA and radiusB) for the makeBall method, however this is redundant and makes the
- * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs
- * the same functionality as the the ball will be having one radius only.
- * A new method "getSpeedsXY" has been added so that this method can be called whenever the ball speed has to re-allocated randomly in any Class
- * rather than repeating the same lines of code as we saw in the original.
- * The ball class now implements the BallInterface.
- * The center, up, down, left and right points of the ball are now accessible via getters in order to improve encapsulation within the class.
+ * The original code consisted of passing in two radii (radiusA and radiusB) for the "makeBall" method, however this is redundant and makes the
+ * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs the same functionality as the the ball will be having one radius only.
  * The makeBall() method has been moved to BallInterface. -> XXXX Explain why later
+ * The ball class now implements the BallInterface.
+ * The "center", "up", "down", "left" and "right" variables of the ball are made private and accessible via getters in order to improve encapsulation within the class.
  */
 
 abstract public class Ball implements BallInterface {

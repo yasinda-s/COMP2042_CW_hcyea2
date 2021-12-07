@@ -4,7 +4,7 @@ import brickdestroy.brick.Brick;
 import java.awt.*;
 
 /**
- * This interface is used to draw the different in-game objects. Other classes implements this interface to draw in-game objects.
+ * This interface is used to draw the different in-game objects. Other classes implements this interface to draw in-game objects based on parameters passed in.
  */
 interface Drawable{
     /**

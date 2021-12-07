@@ -71,7 +71,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         increaseSpeedDrop = new IncreaseSpeedDrop();
         halvePlayerDrop = new HalvePlayerDrop();
         gamePlay = new GamePlay(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2, increaseSpeedDrop, halvePlayerDrop);
-        gamePlay.makeComponents(new Point(300,430)); //gamePlay sets up the whole game frame with the game layout (bricks, ballpos (300x430)...)
+        gamePlay.makeComponents(new Point(300,430));
         levelScore = new LevelScore(gamePlay);
 
         pauseMenu = new PauseMenu(this);

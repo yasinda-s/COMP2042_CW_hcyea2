@@ -46,7 +46,6 @@ public class WallSetup {
         brickCnt -= brickCnt % lineCnt; //see how many bricks we can use
         int brickOnLine = brickCnt / lineCnt; //how many bricks on one line
         double brickLen = drawArea.getWidth() / brickOnLine; //length of one brick
-        //divide width of whole frame by 10 to get size of one brick
         double brickHgt = brickLen / brickSizeRatio; //height of one brick
         brickCnt += lineCnt / 2; //30 += 3/2 => 31
         Brick[] tmp  = new Brick[brickCnt]; //make array to store brick objects, stores 31 bricks in array
@@ -55,18 +54,13 @@ public class WallSetup {
         //dimension encapsulates width and height of object in one object
         Point p = new Point();
         int i;
-        //below is to see if we lay full size bricks or half size bricks
         for(i = 0; i < tmp.length; i++){ //going from 0 to number of bricks in array
             int line = i / brickOnLine;
             if(line == lineCnt) //if line == 3 (so when i = 30) which is the last iteration
                 break;
             double x = (i % brickOnLine) * brickLen; //before i==30, do all these
-            //x will have a value until i>=11 (then multiply by length of brick)
-            //brickLen is length of one brick
             x =(line % 2 == 0) ? x : (x - (brickLen / 2));
-            //x only holds x (true) if i == 20 so that 20/10 is 2, else it holds x - (bricklen/2)
             double y = (line) * brickHgt;
-            //y will only have a value as long as i>=11, else its 0
             p.setLocation(x,y); //use x, y to set coordinates to point p
             tmp[i] = makeBrick(p,brickSize,type); //then we pass the p, size of brick, and type of brick to make the brick at the point p
         }
@@ -95,15 +89,6 @@ public class WallSetup {
      * @return Returns an array of Bricks with the different types of bricks to be set up as the Wall above.
      */
     private Brick[] makeChessboardLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
-        //return Brick[] type
-        //called when you have more than one type of brick
-
-        /*
-          if brickCount is not divisible by line count,brickCount is adjusted to the biggest
-          multiple of lineCount smaller then brickCount
-         */
-
-        //same definitions as for first level
         brickCnt -= brickCnt % lineCnt;
 
         int brickOnLine = brickCnt / lineCnt;
@@ -129,16 +114,13 @@ public class WallSetup {
             p.setLocation(x,y);
 
             boolean b = ((line % 2 == 0 && i % 2 == 0) || (line % 2 != 0 && posX > centerLeft && posX <= centerRight));
-            //based on above condition, set the brick types
             tmp[i] = b ?  makeBrick(p,brickSize,typeA) : makeBrick(p,brickSize,typeB);
-            //typeA refers to first type passed and B refers to second
         }
 
         for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){
             double x = (brickOnLine * brickLen) - (brickLen / 2);
             p.setLocation(x,y);
             tmp[i] = makeBrick(p,brickSize,typeA);
-            //by default have first passed bricks as default
         }
         return tmp;
     }
@@ -154,9 +136,6 @@ public class WallSetup {
     private Brick[][] makeLevels(Rectangle drawArea,int brickCount,int lineCount,double brickDimensionRatio){
         //this returns a Brick[][]
         Brick[][] tmp = new Brick[LEVELS_COUNT][];
-        //tmp is Brick[][]
-        //tmp[0] is (Brick[][])[0]
-        //for each level we set a different set of params based on what we want to edit (the brick type)
         tmp[0] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY);
         tmp[1] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,CEMENT);
         tmp[2] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);

@@ -12,15 +12,13 @@ import java.awt.event.ActionListener;
  *
  * Refactoring -
  *
- * GamePlay which is a public class is already being passed into the Constructor as a parameter so we do not need to create an instance of it prior
- * to the constructor, hence it has been removed.
+ * GamePlay which is a public class is already being passed into the Constructor as a parameter so we do not need to create an instance of it prior to the constructor, hence it has been removed.
  * The private Jbuttons for skipLevel and resetBalls are also refactored to be created in the constructor itself.
  * Refactored the panel so that the skip level will cause the player score, time played, ball position and player position to reset.
  *
  * Additions -
  *
- * Added a new method called skipLevel() which ensures that skipping a level will cause the ball position, wall structure, score to reset too. It did
- * not make sense to have the game running as the level change. Now as the skip level button is clicked, a new level can start fresh.
+ * Added a new method called skipLevel() which ensures that skipping a level will cause the ball position, wall structure, score to reset too. It did not make sense to have the game running as the level change. Now as the skip level button is clicked, a new level can start fresh.
  */
 
 public class DebugPanel extends JPanel { //Jpanel is used to organize components, layouts

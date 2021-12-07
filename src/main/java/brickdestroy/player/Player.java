@@ -14,7 +14,7 @@ import java.awt.*;
  * Added "halveWidth" method which is used in level 5 as a penalty system.
  * Added getter methods to improve encapsulation.
  */
-public class Player implements PlayerInterface { //refers to the player bar
+public class Player{ //refers to the player bar
 
     public static final Color BORDER_COLOR = Color.GREEN.darker().darker(); //outer border
     public static final Color INNER_COLOR = Color.ORANGE; //inner border
