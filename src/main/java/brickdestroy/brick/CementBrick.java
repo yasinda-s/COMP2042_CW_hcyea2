@@ -10,7 +10,6 @@ import java.awt.geom.Point2D;
 public class CementBrick extends Brick {
 
     //properties of cement brick shown below - has cracks before it breaks
-    private static final String NAME = "Cement Brick";
     private static final Color DEF_INNER = new Color(147, 147, 147);
     private static final Color DEF_BORDER = new Color(217, 199, 175);
     private static final int CEMENT_STRENGTH = 2;
@@ -24,7 +23,7 @@ public class CementBrick extends Brick {
      * @param size Refers to the dimension of the brick - width and height.
      */
     public CementBrick(Point point, Dimension size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,CEMENT_STRENGTH); //set all the super constructor variables
+        super(point,size,DEF_BORDER,DEF_INNER,CEMENT_STRENGTH); //set all the super constructor variables
         crack = new Crack(CementBrick.this, DEF_CRACK_DEPTH,DEF_STEPS);
         brickFace = super.getBrickFace();
     }

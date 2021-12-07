@@ -8,7 +8,6 @@ import java.util.Random;
  */
 public class ColorBrick extends Brick {
     Random rand = new Random();
-    private static final String NAME = "Color Brick";
     private static final Color DEF_INNER = new Color(0, 0, 0);
     private static final Color DEF_BORDER = Color.WHITE;
     private static final int COLOR_STRENGTH = 2; //breaks in one impact with the ball
@@ -19,7 +18,7 @@ public class ColorBrick extends Brick {
      * @param size Refers to the dimension of the brick - width and height.
      */
     public ColorBrick(Point point, Dimension size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,COLOR_STRENGTH);
+        super(point,size,DEF_BORDER,DEF_INNER,COLOR_STRENGTH);
     }
 
     /**
