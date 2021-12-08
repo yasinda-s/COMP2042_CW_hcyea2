@@ -5,6 +5,8 @@ import java.awt.Point;
 
 /**
  * The ClayBrick class refers to the default brick we see in game. It is inheriting from the Brick class directly.
+ *
+ * Created by filippo on 04/09/16.
  */
 public class ClayBrick extends Brick {
 

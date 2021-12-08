@@ -15,6 +15,8 @@ import java.awt.geom.RectangularShape;
  * The ball class now implements the BallInterface.
  * The "center", "up", "down", "left" and "right" variables of the ball are made private and accessible via getters in order to improve encapsulation within the class.
  * The initial speed of the ball is now set in the constructor itself than from another class.
+ *
+ * Created by filippo on 04/09/16.
  */
 
 abstract public class Ball implements BallInterface {

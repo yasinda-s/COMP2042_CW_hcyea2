@@ -17,6 +17,8 @@ import java.awt.geom.Point2D;
  * Removed "name" variable from Brick as it is not being used since it has no contribution towards the project.
  * The Shape "brickFace" variable has been made private and encapsulation has been used to get the shape of the brick face using a getter method called getBrickFace() to access from other classes.
  * Converted the IMPACT variables to private and used getters to access for the GamePlay class to promote encapsulation.
+ *
+ * Created by filippo on 04/09/16.
  */
 abstract public class Brick  { //this represents one of the bricks we see on top of the wall in the game
 
