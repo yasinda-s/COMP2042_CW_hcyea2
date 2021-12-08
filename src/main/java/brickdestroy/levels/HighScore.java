@@ -31,7 +31,7 @@ public class HighScore {
     /**
      * This is the constructor for the HighScore class.
      * @param gameBoard The GameBoard object where the game is setup,
-     * @throws IOException Incase the highscore.txt file cannot be found.
+     * @throws IOException In case the highscore.txt file cannot be found.
      */
     public HighScore(GameBoard gameBoard) throws IOException {
         headFont = new Font("Noto Mono", Font.BOLD, 40);
@@ -122,9 +122,9 @@ public class HighScore {
 
     /**
      * This method is used to find the top 5 permanent high scores for the game.
-     * @throws FileNotFoundException This is incase the method is unable to access the file highscore.txt which records the scores.
+     * @throws FileNotFoundException This is in case the method is unable to access the file highscore.txt which records the scores.
      */
-    public void findHighScore() throws FileNotFoundException { //read values, save on array/list and then sort, then print
+    public void findHighScore() throws FileNotFoundException {
         Scanner inputScore = new Scanner(new File("src/main/resources/highscore.txt"));
 
         while(inputScore.hasNext()){

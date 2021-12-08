@@ -43,7 +43,7 @@ public class SaveScores {
      * This method is used to save the final scores permanently into the text file so that a permanent list of high scores can be made.
      * @throws IOException In case the file cannot be found in the directory.
      */
-    public void saveTotalScore() throws IOException { //this works properly!!
+    public void saveTotalScore() throws IOException {
         if(highScore.getWriter()==null){
             assert false;
             highScore.getWriter().write(gamePlay.getScore() + " ");

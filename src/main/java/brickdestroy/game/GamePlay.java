@@ -11,7 +11,6 @@ import brickdestroy.player.Player;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.util.Random;
 
 /**
  * This class is responsible for the general game play of the Brick Game (interactions between components and it keeps track of in game scores).
@@ -55,7 +54,6 @@ public class GamePlay {
     private int brickCount;
     private int ballCount;
     private boolean ballLost;
-    private Random rand;
 
     private int score;
     private int scoreToAdd;
@@ -93,18 +91,17 @@ public class GamePlay {
         scoreLvlFive = 0;
         scoreLvlSix = 0;
 
-        ballCount = 1; //we get 3 lives
+        ballCount = 3; //we get 3 lives
         ballLost = false; //originally no balls are lost
 
         area = drawArea;
-        rand = new Random();
     }
 
     /**
-     * This method is used to make the ball and player object.
+     * This method is used to make the ball and player object for the first time.
      * @param ballPos Represents the Point2D position of the ball.
      */
-    public void makeComponents(Point2D ballPos){ //XXX -> Redundant?
+    public void makeComponents(Point2D ballPos){
         this.startPoint = new Point((Point) ballPos); //takes in the position of the ball to begin with (the player bar is based on this too)
         this.ballPos = (Point) ballPos;
         //use the position of the ball to make a rubber ball object
@@ -198,11 +195,11 @@ public class GamePlay {
      * @return Returns an integer which is the denominator.
      */
     private int checkScoreDenominator(int timePlayed){
-        if(timePlayed>0 && timePlayed<10){
+        if(timePlayed>0 && timePlayed<30){
             return 1;
-        }else if(timePlayed>=10 && timePlayed<30){
+        }else if(timePlayed>=30 && timePlayed<60){
             return 2;
-        }else if(timePlayed>=30 && timePlayed<50){
+        }else if(timePlayed>=60 && timePlayed<100){
             return 3;
         }else{
             return 4;
@@ -222,16 +219,16 @@ public class GamePlay {
 
             if (b.findImpact(ball)==UP_IMPACT){
                 ball.reverseY(); //reverse Y movement
-                return b.setImpact(ball.getDown(), Crack.UP);
+                return b.setImpact(ball.getDown(), Crack.getUP());
             }else if(b.findImpact(ball)==DOWN_IMPACT){
                 ball.reverseY(); //reverse Y movement
-                return b.setImpact(ball.getUp(), Crack.DOWN);
+                return b.setImpact(ball.getUp(), Crack.getDOWN());
             }else if(b.findImpact(ball)==LEFT_IMPACT){
                 ball.reverseX(); //fireball must have this but not being reversed X or Y for all cases
-                return b.setImpact(ball.getRight(), Crack.RIGHT);
+                return b.setImpact(ball.getRight(), Crack.getRIGHT());
             }else if(b.findImpact(ball)==RIGHT_IMPACT){
                 ball.reverseX();
-                return b.setImpact(ball.getLeft(), Crack.LEFT);
+                return b.setImpact(ball.getLeft(), Crack.getLEFT());
             }
         }
         return false;
@@ -241,7 +238,7 @@ public class GamePlay {
      * This is to see if the ball had gone beyond the range of the border.
      * @return Returns true if the ball had gone beyond the range of the border.
      */
-    private boolean impactBorder(){ //to handle how ball moves and causes cracks on impact with surrounding wall
+    private boolean impactBorder(){
         Point2D p = ball.getPosition();
         return ((p.getX() < area.getX()) ||(p.getX() > (area.getX() + area.getWidth())));
     }
@@ -278,12 +275,12 @@ public class GamePlay {
         ball.moveTo(startPoint);
         if(level==5){
             if(ballCount==2){
-                ball.setSpeed(2,-2);
-            }else if(ballCount==1){
                 ball.setSpeed(3,-3);
+            }else if(ballCount==1){
+                ball.setSpeed(4,-4);
             }
         }else{
-            ball.setSpeed(1,-1);
+            ball.setSpeed(2,-2);
         }
         ballLost = false;
     }

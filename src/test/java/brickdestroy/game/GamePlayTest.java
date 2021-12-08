@@ -66,7 +66,7 @@ class GamePlayTest {
 
     @Test
     void wallReset() { //set one for now to make testing game easier
-        assertEquals(1, gamePlay.getBallCount());
+        assertEquals(3, gamePlay.getBallCount());
     }
 
     @Test

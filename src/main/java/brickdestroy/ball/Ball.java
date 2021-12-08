@@ -11,9 +11,10 @@ import java.awt.geom.RectangularShape;
  *
  * The original code consisted of passing in two radii (radiusA and radiusB) for the "makeBall" method, however this is redundant and makes the
  * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs the same functionality as the the ball will be having one radius only.
- * The makeBall() method has been moved to BallInterface. -> XXXX Explain why later
+ * The makeBall() method has been moved to BallInterface in order to make the implementation of makeBall() method easier to read.
  * The ball class now implements the BallInterface.
  * The "center", "up", "down", "left" and "right" variables of the ball are made private and accessible via getters in order to improve encapsulation within the class.
+ * The initial speed of the ball is now set in the constructor itself than from another class.
  */
 
 abstract public class Ball implements BallInterface {
@@ -66,8 +67,8 @@ abstract public class Ball implements BallInterface {
         this.border = border;
         this.inner  = inner;
 
-        speedX = 1;
-        speedY = -1;
+        speedX = 2;
+        speedY = -2;
     }
 
     /**

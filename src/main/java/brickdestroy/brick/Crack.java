@@ -12,16 +12,16 @@ import java.util.Random;
  *
  *  Removed "inMiddle" and "jumps" method. Both these methods do not contribute significantly towards the path or design of the crack and it makes the understanding of the crack pattern much more confusing.
  *  By removing these two methods and the variables CRACK_SECTIONS and JUMP_PROBABILITY (which were used by the deleted methods) the class is now more concise and holds the similar functionality that is easier to understand.
+ *  Converted "LEFT, "RIGHT", "UP, "DOWN", "VERTICAL" and "HORIZONTAL" variables into private and added getter methods to promote encapsulation as using constants directly from another class is not good practice.
  */
 
 public class Crack {
-
-    public static final int LEFT = 10;
-    public static final int RIGHT = 20;
-    public static final int UP = 30;
-    public static final int DOWN = 40;
-    public static final int VERTICAL = 100;
-    public static final int HORIZONTAL = 200;
+    private static final int LEFT = 10;
+    private static final int RIGHT = 20;
+    private static final int UP = 30;
+    private static final int DOWN = 40;
+    private static final int VERTICAL = 100;
+    private static final int HORIZONTAL = 200;
 
     private final Brick brick;
     private GeneralPath crack; //generalPath type called crack
@@ -162,6 +162,38 @@ public class Crack {
                 break;
         }
         return out;
+    }
+
+    /**
+     * Returns the constant corresponding to where the ball hit the brick.
+     * @return Returns 10 if hit from the left.
+     */
+    public static int getLEFT() {
+        return LEFT;
+    }
+
+    /**
+     * Returns the constant corresponding to where the ball hit the brick.
+     * @return Returns 20 if hit from the right.
+     */
+    public static int getRIGHT() {
+        return RIGHT;
+    }
+
+    /**
+     * Returns the constant corresponding to where the ball hit the brick.
+     * @return Returns 30 if hit from above.
+     */
+    public static int getUP() {
+        return UP;
+    }
+
+    /**
+     * Returns the constant corresponding to where the ball hit the brick.
+     * @return Returns 40 if hit from below.
+     */
+    public static int getDOWN() {
+        return DOWN;
     }
 
 }

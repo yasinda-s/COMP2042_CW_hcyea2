@@ -22,7 +22,7 @@ import java.awt.geom.Rectangle2D;
  * Changed the variable name from "menubutton" to "exitbutton" as it refers to the Exit button on the screen.
  * The content of the info screen (How to play screen) has been moved to its own class called Info Screen to promote single responsibility.
  */
-public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener { //need to add javadocs
+public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener {
 
     private static final String GREETINGS = "Welcome to";
     private static final String GAME_TITLE = "BRICK DESTROY";

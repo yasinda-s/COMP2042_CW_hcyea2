@@ -8,7 +8,6 @@ import java.awt.geom.Point2D;
  * The Cement Brick refers to bricks that are grey in color and from cracks on impact. It inherits from the Brick Class directly.
  */
 public class CementBrick extends Brick {
-
     //properties of cement brick shown below - has cracks before it breaks
     private static final Color DEF_INNER = new Color(147, 147, 147);
     private static final Color DEF_BORDER = new Color(217, 199, 175);
@@ -79,7 +78,7 @@ public class CementBrick extends Brick {
     }
 
     /**
-     * Resets the strength of a brick to its full state.
+     * Resets the strength of a brick to its full state and to remove any cracks drawn on it.
      */
     public void repair(){
         super.repair();

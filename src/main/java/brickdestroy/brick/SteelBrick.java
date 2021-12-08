@@ -19,7 +19,7 @@ public class SteelBrick extends Brick {
 
     /**
      * This is the constructor for the SteelBrick, it inherits most from the super constructor.
-     * @param point Refers to the top left coordinates of the Clay Brick.
+     * @param point Refers to the top left coordinates of the Steel Brick.
      * @param size Refers to the dimension of the brick - width and height.
      */
     public SteelBrick(Point point, Dimension size){
@@ -29,7 +29,7 @@ public class SteelBrick extends Brick {
     }
 
     /**
-     * Method to make the Cement Brick's Face (Rectangle Shape)
+     * Method to make the Steel Brick's Face (Rectangle Shape)
      * @param pos The top left position (coordinates) of the brick.
      * @param size The width and height of the brick (Dimension).
      * @return Returns a Rectangular Shape of the brick face.

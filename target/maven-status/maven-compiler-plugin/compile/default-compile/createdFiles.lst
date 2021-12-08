@@ -1,5 +1,4 @@
 brickdestroy\debug\DebugConsole.class
-brickdestroy\player\PlayerInterface.class
 brickdestroy\brick\CementBrick.class
 brickdestroy\drawcomponents\DrawFactory.class
 brickdestroy\ball\BigBall.class

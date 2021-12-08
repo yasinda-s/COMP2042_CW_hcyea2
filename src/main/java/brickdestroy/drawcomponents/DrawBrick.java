@@ -15,6 +15,7 @@ public class DrawBrick implements Drawable {
 
     /**
      * Overridden method in which the brick will be drawn in the g2d Frame.
+     * @param brick the brick object to be created and drawn.
      * @param g2d Graphics 2d Frame where the brick will be drawn.
      */
     @Override

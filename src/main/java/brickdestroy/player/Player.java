@@ -38,11 +38,9 @@ public class Player{ //refers to the player bar
     public Player(Point ballPoint,int width,int height,Rectangle container){
         //container refers to the whole box used for the game
         this.ballPoint = ballPoint; //random point object for now, later initial pos of ball
-        //System.out.println(ballPoint);
         moveAmount = 0;
         playerFace = makeRectangle(width, height); //face of the player is made after this method which takes in w, h
         //ballPoint refers to the coordinates of the ball
-
         min = container.x + (width / 2);
         //container.x refers to the top left of the whole box
         max = min + container.width - width;

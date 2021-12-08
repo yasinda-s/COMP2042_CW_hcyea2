@@ -6,7 +6,7 @@ import brickdestroy.ball.Ball;
 import java.awt.geom.Point2D;
 
 /**
- * Factory method design used to generate an in-game object and to draw it onto the screen.
+ * Factory method design pattern used to create an in-game object and to draw it onto the screen.
  */
 public class DrawFactory {
     /**

@@ -17,7 +17,6 @@ import java.awt.event.ActionListener;
  * Refactored the panel so that the skip level will cause the player score, time played, ball position and player position to reset.
  *
  * Additions -
- *
  * Added a new method called skipLevel() which ensures that skipping a level will cause the ball position, wall structure, score to reset too. It did not make sense to have the game running as the level change. Now as the skip level button is clicked, a new level can start fresh.
  */
 

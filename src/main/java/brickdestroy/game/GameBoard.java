@@ -20,14 +20,17 @@ import java.io.*;
  * Additions -
  * Creates an object of HighScore class to call a method that saves the final high score onto a text file for permanent record tracking. This is later used by HighScore class to show the leader board in descending order at the end of game (either game over or victory).
  * Creates an object of LevelScore class to call a method that saves the individual level scores onto text files for permanent record tracking. This is later used by LevelScore class to show the leader board in descending order at the end of each level (either level complete or defeat).
- * Added a method getScoreFromGameplay() so that the current ongoing score can be accessed from other classes.
- * Creates an object of class IncreaseSpeedDrop to display the box that increases ball speed in additional level (Level 5).
- * Creates an object of class HalvePlayerDrop to display the box that halves the width of the player bar (Level 5).
+ * Added a method getScoreFromGamePlay() so that the current ongoing score can be accessed from other classes.
+ * Creates an object of class IncreaseSpeedDrop to display the box that increases ball speed in additional level (Level 5) - Penalty Drop.
+ * Creates an object of class HalvePlayerDrop to display the box that halves the width of the player bar (Level 5) - Penalty Drop.
+ * Added the time played to be shown on screen as an extra exciting features, this is used to reward the players for score.
+ * High score and level score are also displayed in the game screen via GameBoard.
  *
  * Refactoring -
- * Removed the draw() methods - drawBall(), drawPlayer() and drawBrick() from this class and created a factory design to generate these components when needed.
- * Removed the methods and variables that painted the Screen for the Pause Menu when Esc is pressed and gave it a new Class called PauseMenu.
- * Removed the methods that painted the High Score Screen when the game is done (either game over or completed) and moved it to a new class called HighScore.
+ * Removed the draw() methods - drawBall(), drawPlayer() and drawBrick() from this class and created a factory design pattern to generate these components when needed (drawcomponents package).
+ * Removed the methods and variables that painted the Screen for the Pause Menu when Esc is pressed and gave it a new Class called PauseMenu to break down large class into smaller class and to promote single responsibility.
+ * Removed the methods that painted the High Score Screen when the game is done (either game over or completed) and moved it to a new class called HighScore to break down large class into smaller class and to promote single responsibility.
+ * Added getters and used encapsulation to promote data hiding from other classes.
  */
 
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
@@ -160,7 +163,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     }
 
     /**
-     * Overriding method to paint the 2d Components onto the screen. We use this to draw the ball, wall and player.
+     * Overriding method to paint the 2d Components onto the screen. We use this to draw the ball, wall and player whilst inside the game loop.
      * @param g The Graphics frame in which we want to draw the game components.
      */
     public void paint(Graphics g){
@@ -357,7 +360,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     }
 
     /**
-     * This method is used to checked if the exit button pressed from other classes.
+     * This method is used to checked if the exit button pressed in high score screen from other classes.
      * @return Returns the current boolean value if the button is pressed.
      */
     public boolean isScoreExitClicked() {

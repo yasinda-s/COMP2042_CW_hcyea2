@@ -5,7 +5,7 @@ import brickdestroy.ball.Ball;
 import java.awt.*;
 
 /**
- * This class is responsible for the level 5 power drop that drastically increases the speed of the ball.
+ * This class is responsible for the level 5 power drop that drastically increases the speed of the ball - Penalty to game more challenging and exciting.
  */
 public class IncreaseSpeedDrop {
     private Rectangle boxFace = new Rectangle(400, 150, 20, 20);

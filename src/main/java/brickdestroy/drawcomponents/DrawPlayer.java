@@ -13,7 +13,8 @@ public class DrawPlayer implements Drawable {
 
     /**
      * This is the constructor for DrawPlayer class.
-     * @param player We pass in Player object to assign to player.
+     * @param player pass in Player object to assign to player.
+     * @param level pass in the level being played currently.
      */
     public DrawPlayer(Player player, int level) {
         if(level==5 && player.getWidth()==150){
@@ -26,20 +27,18 @@ public class DrawPlayer implements Drawable {
 
     /**
      * Overridden method in which the Player bar will be drawn in the g2d Frame.
-     * @param g2d Graphics 2d Frame where the player bar will be drawn. XXXX
+     * @param g2d Graphics 2d Frame where the player bar will be drawn.
+     * @param level the current level being played.
      */
     @Override
     public void draw(Graphics2D g2d, int level) {
         //to draw player bar
         Color tmp = g2d.getColor();
-
         Shape s = player.getPlayerFace();
         g2d.setColor(Player.INNER_COLOR); //set inner color of bar
         g2d.fill(s); //fill color using that color
-
         g2d.setColor(Player.BORDER_COLOR); //set outer color of bar
         g2d.draw(s); //fill outline using that color
-
         g2d.setColor(tmp);
     }
 

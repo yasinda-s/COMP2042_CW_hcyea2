@@ -5,7 +5,7 @@ import brickdestroy.ball.Ball;
 import java.awt.*;
 
 /**
- * This class is responsible for the level 5 power drop that halves the width of the player bar.
+ * This class is responsible for the level 5 power drop that halves the width of the player bar - Penalty to game more challenging and exciting.
  */
 
 public class HalvePlayerDrop {

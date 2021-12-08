@@ -11,16 +11,16 @@ import java.awt.geom.Point2D;
  *
  * Refactoring -
  *
- * The "Crack" class that was nested into the Brick Class has been refactored to a singular Class outside of Brick so that its purpose is more clear.
+ * The "Crack" class that was nested into the Brick Class has been refactored to a singular Class outside of Brick to break down this large class into a smaller one and so that its purpose is more clear.
  * The private static variable Random rnd has been moved to Crack class as there is no point using a getter for this variable in order to access it from Crack class since it is not being used here at all. Moving it to Crack removes the need to use a getter here or there.
  * The Brick Class consisted of an unused variable called MIN_CRACK, this has been removed to increase understanding and readability of the code.
  * Removed "name" variable from Brick as it is not being used since it has no contribution towards the project.
  * The Shape "brickFace" variable has been made private and encapsulation has been used to get the shape of the brick face using a getter method called getBrickFace() to access from other classes.
- * Converted the IMPACT variables to private and used getters to access for the Gameplay class to promote encapsulation.
+ * Converted the IMPACT variables to private and used getters to access for the GamePlay class to promote encapsulation.
  */
 abstract public class Brick  { //this represents one of the bricks we see on top of the wall in the game
 
-    public static final int DEF_CRACK_DEPTH = 1; //the thickness of the crack on the cement
+    public static final int DEF_CRACK_DEPTH = 1;
     public static final int DEF_STEPS = 35;
 
     private static int upImpact = 100;
