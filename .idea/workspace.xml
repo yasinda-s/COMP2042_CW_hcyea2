@@ -3,20 +3,94 @@
   <component name="ChangeListManager">
     <list default="true" id="a221ebbd-3883-47fb-9d28-b9e261748d5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/GraphicsMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/GraphicsMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/RubberBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/RubberBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Brick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/ClayBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/ClayBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/SteelBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/SteelBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GamePlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/HomeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/HomeMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/GraphicsMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/GraphicsMain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/Ball.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/Ball.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BallInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BallInterface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BallTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BallTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BigBall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/BigBall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/RubberBall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/RubberBall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/ball/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/Brick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/Brick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/CementBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/CementBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/CementBrickTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/CementBrickTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ClayBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ClayBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ClayBrickTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ClayBrickTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ColorBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ColorBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ColorBrickTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/ColorBrickTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/Crack.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/Crack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/SteelBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/SteelBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/SteelBrickTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/SteelBrickTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/brick/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/DebugConsole.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/DebugConsole.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/DebugPanel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/DebugPanel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/debug/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawBall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawBall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawBrick.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawBrick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawFactory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawFactory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawPlayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/DrawPlayer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/Drawable.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/Drawable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/drawcomponents/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GameBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GameBoard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GameFrame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GameFrame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GamePlay.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GamePlay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GamePlayTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/GamePlayTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/PauseMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/PauseMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/game/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/game/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/HomeMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/HomeMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/InfoScreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/InfoScreen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/homemenu/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HalvePlayerDrop.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HalvePlayerDrop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HalvePlayerDropTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HalvePlayerDropTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HighScore.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/HighScore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/IncreaseSpeedDrop.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/IncreaseSpeedDrop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/IncreaseSpeedDropTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/IncreaseSpeedDropTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/LevelScore.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/LevelScore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/SaveScores.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/SaveScores.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/WallSetup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/WallSetup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/levels/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/player/Player.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/player/Player.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/player/PlayerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/player/PlayerTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/player/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/player/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/brickdestroy/player/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/brickdestroy/player/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-16.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-17.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-18.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-19.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-20.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-21.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/serialized-form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,11 +308,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="593" y="154" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637473020467" />
-    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1638942577461">
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1638959525783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971712922" />
-    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638942577461" />
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638959525783" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1638373479015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -248,36 +322,36 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057117370" />
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638784285182" />
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom" timestamp="1638944275717">
+    <state width="1493" height="166" key="GridCell.Tab.0.bottom" timestamp="1638959542918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1638855525056" />
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638944275717" />
+    <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638959542918" />
     <state width="1493" height="128" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="166" key="GridCell.Tab.0.center" timestamp="1638944275717">
+    <state width="1493" height="166" key="GridCell.Tab.0.center" timestamp="1638959542918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1638855525056" />
-    <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638944275717" />
+    <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638959542918" />
     <state width="1493" height="128" key="GridCell.Tab.0.center/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="166" key="GridCell.Tab.0.left" timestamp="1638944275717">
+    <state width="1493" height="166" key="GridCell.Tab.0.left" timestamp="1638959542918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1638855525055" />
-    <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638944275717" />
+    <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638959542918" />
     <state width="1493" height="128" key="GridCell.Tab.0.left/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
-    <state width="1493" height="166" key="GridCell.Tab.0.right" timestamp="1638944275717">
+    <state width="1493" height="166" key="GridCell.Tab.0.right" timestamp="1638959542918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1638855525056" />
-    <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638944275717" />
+    <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638959542918" />
     <state width="1493" height="128" key="GridCell.Tab.0.right/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="128" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1638287550273" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1638695438652">
@@ -312,12 +386,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637812211888" />
-    <state x="-1455" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1638958864530">
-      <screen x="-1920" y="5" width="1536" height="824" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1638959513966">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057083233" />
     <state x="-1455" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1638958864530" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638954069583" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638959513966" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638671427391" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1638891593245" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1638600649162">
