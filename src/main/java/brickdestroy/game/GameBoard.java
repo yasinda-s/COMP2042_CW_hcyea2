@@ -23,7 +23,7 @@ import java.io.*;
  * Added a method getScoreFromGamePlay() so that the current ongoing score can be accessed from other classes.
  * Creates an object of class IncreaseSpeedDrop to display the box that increases ball speed in additional level (Level 5) - Penalty Drop.
  * Creates an object of class HalvePlayerDrop to display the box that halves the width of the player bar (Level 5) - Penalty Drop.
- * Added the time played to be shown on screen as an extra exciting features, this is used to reward the players for score.
+ * Added the time played to be shown on screen as an extra exciting feature, this is used to reward the players for score.
  * High score and level score are also displayed in the game screen via GameBoard.
  *
  * Refactoring -
