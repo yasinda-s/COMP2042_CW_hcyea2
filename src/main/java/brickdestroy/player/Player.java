@@ -10,7 +10,7 @@ import java.awt.*;
  * Additions -
  * Added "changeWidth" method which is used in level 5 after drop box is picked.
  * Added "resetWidth" method which is used on reset.
- * Added "increaseWidth" method which is used level 5 as a reward system.
+ * Added "increaseWidth" method which is used by all levels as a reward system.
  * Added "halveWidth" method which is used in level 5 as a penalty system.
  * Added getter methods to improve encapsulation.
  */
@@ -109,7 +109,7 @@ public class Player{ //refers to the player bar
      * This method is used to increase the width of the player bar.
      */
     public void increaseWidth(){
-        if(playerFace.width<400){
+        if(playerFace.width<300){
             this.playerFace.width += 50;
         }
     }

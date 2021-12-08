@@ -128,9 +128,7 @@ public class GamePlay {
         else if(impactWall()){
             brickCount--;
             calculateScore(level);
-            if(level==5){
-                player.increaseWidth();
-            }
+            player.increaseWidth();
         }
         else if(impactBorder()) { //if the ball hits the corner walls (left and right)
             ball.reverseX();
