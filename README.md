@@ -43,7 +43,7 @@ New classes
 
 # _New features and Reward/Penalty System_
 
-Added background images and How to Play Screen.
+Added background images - Home Menu, Info and High Score Screens.
 
 Permanent high score with screen and level score with popup.
 

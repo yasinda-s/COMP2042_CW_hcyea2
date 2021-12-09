@@ -2,6 +2,7 @@ package brickdestroy.levels;
 
 import brickdestroy.game.GameBoard;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
@@ -12,6 +13,7 @@ import java.util.Scanner;
 
 /**
  * This class is responsible for the handling and displaying of the permanent high scores to the game frame. It also displays the ending total high score of the user (even if it is not in the high score leader board).
+ * Additions - Added a background image for the leader board.
  */
 
 public class HighScore {
@@ -27,6 +29,7 @@ public class HighScore {
     private java.util.List<Integer> scoresFromFile;
     private GameBoard gameBoard;
     private Rectangle scoreExitButtonRect;
+    private Image backGroundImage;
 
     /**
      * This is the constructor for the HighScore class.
@@ -40,8 +43,9 @@ public class HighScore {
         scoresFromFile = new ArrayList<Integer>();
         writer = new BufferedWriter(new FileWriter("src/main/resources/highscore.txt", true));
         this.gameBoard = gameBoard;
-        Dimension btnDim = new Dimension(gameBoard.getWidth()/3, gameBoard.getHeight()/12); //XXXX
-        scoreExitButtonRect = new Rectangle(btnDim); //button draws when it is inside method
+        Dimension btnDim = new Dimension(gameBoard.getWidth()/3, gameBoard.getHeight()/12);
+        scoreExitButtonRect = new Rectangle(btnDim);
+        backGroundImage = new ImageIcon("src/main/resources/backGroundImage.jpg").getImage();
     }
 
     /**
@@ -49,10 +53,11 @@ public class HighScore {
      * @param g2d The Graphics 2d frame in which we want to draw the game components.
      */
     public void drawHighScoreScreen(Graphics2D g2d) {
-        //high score title
         g2d.setColor(Color.BLACK);
         FontRenderContext frc = g2d.getFontRenderContext();
         g2d.setFont(buttonFont); //set the font
+
+        g2d.drawImage(backGroundImage, 0, 0, null);
 
         Rectangle2D headingRect = menuFont.getStringBounds(HIGH_SCORE_TEXT,frc);
 
@@ -60,7 +65,7 @@ public class HighScore {
         sX = (int)(gameBoard.getWidth() - headingRect.getWidth()) / 2; //x coordinate of where we want the box to be in
         sY = gameBoard.getHeight() / 6; //y coordinate of where we want the box to be in
 
-        g2d.drawString("Your high score was " + gameBoard.getScoreFromGameplay() + "!", sX+40, sY-40);
+        g2d.drawString("Your high score was " + gameBoard.getScoreFromGameplay() + "!", sX+30, sY-40);
 
         g2d.setFont(headFont);
 
