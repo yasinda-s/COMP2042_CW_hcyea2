@@ -18,7 +18,7 @@ class ClayBrickTest {
     Ball ball4 = new RubberBall(new Point(330, 440));
 
     @Test
-    void setImpact() { //XXXX
+    void setImpact() {
     }
 
     @Test

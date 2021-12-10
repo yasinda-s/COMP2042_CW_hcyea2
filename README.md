@@ -21,7 +21,7 @@ Interfaces - BallInterface.java, Drawable.java
 >“BallInterface” interface has been created to make the implementation of methods flexible and maintainable for the children classes of “Ball”.
 “Drawable” interface has been created to support the factory design pattern mentioned above.
 
-Renaming classes - Wall.java has been renamed to GamePlay.java to make it more meaningful.
+Renaming classes - Wall.java has been renamed to GamePlay.java as it holds the gameplay.
 
 Encapsulation - Ball.java, Brick.java, Player.java, Crack.java, GamePlay.java, Gameboard.java, WallSetup.java, LevelScore.java and more.
 >Many public variables and methods in above classes have been converted to private and provided with getter methods in order to promote encapsulation within the project.
@@ -43,7 +43,7 @@ New classes
 
 # _New features and Reward/Penalty System_
 
-Added background images - Home Menu, Info and High Score Screens.
+Added background images - Home Menu, Info and High Score Screens with new look.
 
 Permanent high score with screen and level score with popup.
 
@@ -54,6 +54,8 @@ Two scoring systems are added to the game. One score is the total score the user
 There is a timer added to each level, the longer the player takes to break bricks in a level, the lesser he will score for that individual level. The total score will increment irrespective of the time. 
 
 For every brick the user breaks, the player bar will extend until a certain width as a reward.
+
+Score for one brick increases with level.
 
 Successfully completing level gives back 3 lives.
 
