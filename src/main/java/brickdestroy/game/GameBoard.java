@@ -289,7 +289,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
      * @param mouseEvent MouseEvent object used to get Point to see if it is on any of the buttons.
      */
     @Override
-    public void mouseClicked(MouseEvent mouseEvent) {  //in charge of reacting to mouse commands
+    public void mouseClicked(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
         if(!showPauseMenu)
             return;

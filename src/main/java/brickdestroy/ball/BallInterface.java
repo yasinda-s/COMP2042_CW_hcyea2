@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 /**
- * BallInterface is an interface used to make the creation of different types of balls easier and flexible. Having this enables us to decide which methods
+ * BallInterface is an interface used to make the creation of different types of balls more maintainable. Having this enables us to decide which methods
  * are to be implemented by the children of the Ball class.
  */
 public interface BallInterface {

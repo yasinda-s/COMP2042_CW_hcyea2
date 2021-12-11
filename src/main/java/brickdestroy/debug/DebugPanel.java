@@ -59,7 +59,7 @@ public class DebugPanel extends JPanel { //Jpanel is used to organize components
         ballXSpeed = makeSlider(-4,4,e -> gamePlay.setBallXSpeed(ballXSpeed.getValue())); //slider to adjust x speed of ball
         ballYSpeed = makeSlider(-4,4,e -> gamePlay.setBallYSpeed(ballYSpeed.getValue())); //slider to adjust y speed of ball
 
-        this.add(skipLevel); //add features mentioned above
+        this.add(skipLevel);
         this.add(resetBalls);
 
         this.add(ballXSpeed);

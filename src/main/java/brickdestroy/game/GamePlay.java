@@ -88,6 +88,8 @@ public class GamePlay {
      * @param brickCount this represents the total number of bricks on the brick wall.
      * @param lineCount this represents the number of brick lines on the wall.
      * @param brickDimensionRatio this represents the height to width ratio of a singular brick.
+     * @param increaseSpeedDrop this represents the additional power drop in level 5.
+     * @param halvePlayerDrop this represents the additional power drop in level 5.
      */
     public GamePlay(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, IncreaseSpeedDrop increaseSpeedDrop, HalvePlayerDrop halvePlayerDrop){
         this.increaseSpeedDrop = increaseSpeedDrop;

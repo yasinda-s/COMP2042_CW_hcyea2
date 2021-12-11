@@ -33,6 +33,7 @@ import java.awt.geom.Rectangle2D;
  * Additions -
  * Added a background image to the home screen to make it look more pleasant.
  * Added a new button which shows the Info (How to Play) screen which explains to the user how to play the game.
+ * Changed the look of the original home screen to a new theme.
  *
  * Refactoring -
  * Changed the variable name from MENU_TEXT to EXIT_TEXT because it represents the String we place on the EXIT button in the Menu Screen.

@@ -12,7 +12,8 @@ import java.util.Collections;
 import java.util.Scanner;
 
 /**
- * This class is responsible for the handling and displaying of the permanent high scores to the game frame. It also displays the ending total high score of the user (even if it is not in the high score leader board).
+ * This class is responsible for the handling and displaying of the permanent high scores to the game frame.
+ * It also displays the ending total high score of the user (even if it is not in the high score leader board).
  * Additions - Added a background image for the leader board.
  */
 
@@ -55,15 +56,15 @@ public class HighScore {
     public void drawHighScoreScreen(Graphics2D g2d) {
         g2d.setColor(Color.BLACK);
         FontRenderContext frc = g2d.getFontRenderContext();
-        g2d.setFont(buttonFont); //set the font
+        g2d.setFont(buttonFont);
 
         g2d.drawImage(backGroundImage, 0, 0, null);
 
         Rectangle2D headingRect = menuFont.getStringBounds(HIGH_SCORE_TEXT,frc);
 
         int sX,sY;
-        sX = (int)(gameBoard.getWidth() - headingRect.getWidth()) / 2; //x coordinate of where we want the box to be in
-        sY = gameBoard.getHeight() / 6; //y coordinate of where we want the box to be in
+        sX = (int)(gameBoard.getWidth() - headingRect.getWidth()) / 2;
+        sY = gameBoard.getHeight() / 6;
 
         g2d.drawString("Your high score was " + gameBoard.getScoreFromGameplay() + "!", sX+30, sY-40);
 

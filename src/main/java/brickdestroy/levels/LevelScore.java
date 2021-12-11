@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 /**
  * This class is responsible for accessing the permanent level high scores and displaying them when a level is completed or if player loses.
+ * It also shows the player's score with the permanent high scores.
  */
 public class LevelScore {
     private List<Integer> lvlOneScoresFromFile;

@@ -54,24 +54,24 @@ public class WallSetup {
         //dimension encapsulates width and height of object in one object
         Point p = new Point();
         int i;
-        for(i = 0; i < tmp.length; i++){ //going from 0 to number of bricks in array
+        for(i = 0; i < tmp.length; i++){
             int line = i / brickOnLine;
-            if(line == lineCnt) //if line == 3 (so when i = 30) which is the last iteration
+            if(line == lineCnt)
                 break;
-            double x = (i % brickOnLine) * brickLen; //before i==30, do all these
+            double x = (i % brickOnLine) * brickLen;
             x =(line % 2 == 0) ? x : (x - (brickLen / 2));
             double y = (line) * brickHgt;
-            p.setLocation(x,y); //use x, y to set coordinates to point p
-            tmp[i] = makeBrick(p,brickSize,type); //then we pass the p, size of brick, and type of brick to make the brick at the point p
+            p.setLocation(x,y);
+            tmp[i] = makeBrick(p,brickSize,type);
         }
 
-        for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){  //setting bricks to clay or wood type
+        for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){
             double x = (brickOnLine * brickLen) - (brickLen / 2);
             p.setLocation(x,y);
             if(type == 1){
                 tmp[i] = new ClayBrick(p,brickSize); //set this brick to clay
             }else if(type == 4){
-                tmp[i] = new ColorBrick(p,brickSize); //set this brick to clay
+                tmp[i] = new ColorBrick(p,brickSize); //set this brick to color brick
             }
 
         }
@@ -147,7 +147,7 @@ public class WallSetup {
      * This method is used to make any type of brick for the levels.
      * @param point Represents the top left coordinate of the rectangle (Brick).
      * @param size Represents the width and height of the Brick.
-     * @param type Represents the type of brick being used (Clay, Cement, SteeL).
+     * @param type Represents the type of brick being used (Clay, Cement, SteeL, Color).
      * @return Returns a Brick type to be created.
      */
     private Brick makeBrick(Point point, Dimension size, int type){ //for making new bricks/brick types

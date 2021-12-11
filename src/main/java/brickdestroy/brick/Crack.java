@@ -43,7 +43,7 @@ public class Crack {
     }
 
     /**
-     * This method draws the cracks in each brick.
+     * This method returns the general path type crack.
      * @return GeneralPath crack to be drawn.
      */
     public GeneralPath draw(){ //returns object generalpath (crack initialized before)

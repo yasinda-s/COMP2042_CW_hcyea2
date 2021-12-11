@@ -10,11 +10,11 @@ public class ColorBrick extends Brick {
     Random rand = new Random();
     private static final Color DEF_INNER = new Color(0, 0, 0);
     private static final Color DEF_BORDER = Color.WHITE;
-    private static final int COLOR_STRENGTH = 2; //breaks in one impact with the ball
+    private static final int COLOR_STRENGTH = 2;
 
     /**
      * This is the constructor for the ColorBrick, it inherits most from the super constructor.
-     * @param point Refers to the top left coordinates of the Clay Brick.
+     * @param point Refers to the top left coordinates of the Color Brick.
      * @param size Refers to the dimension of the brick - width and height.
      */
     public ColorBrick(Point point, Dimension size){

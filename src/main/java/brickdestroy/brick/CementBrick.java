@@ -18,7 +18,7 @@ public class CementBrick extends Brick {
 
     /**
      * This is the constructor for the CementBrick, it inherits most from the super constructor.
-     * @param point Refers to the top left coordinates of the Clay Brick.
+     * @param point Refers to the top left coordinates of the Cement Brick.
      * @param size Refers to the dimension of the brick - width and height.
      */
     public CementBrick(Point point, Dimension size){
@@ -36,7 +36,7 @@ public class CementBrick extends Brick {
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
-    } //make a brick face instantly with the pos and dimension of brick passed
+    }
 
     /**
      * This method handles strength reduction of Cement Bricks on impact. It also checks whether the cement brick is going to crack or break completely.

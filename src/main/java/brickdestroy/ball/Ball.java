@@ -155,7 +155,10 @@ abstract public class Ball implements BallInterface {
         return inner;
     }
 
-
+    /**
+     * This method is used to set the inner color of the ball.
+     * @param inner The color we want the ball to be.
+     */
     public void setInner(Color inner) {
         this.inner = inner;
     }

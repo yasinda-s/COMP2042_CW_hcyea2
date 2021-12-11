@@ -111,21 +111,21 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
      * This method is used to draw the background and border (container) of the Info Screen.
      * @param g2d Graphics2D type frame to allow more control over coloring and drawing.
      */
-    private void drawContainer(Graphics2D g2d){ //drawing the background of container
+    private void drawContainer(Graphics2D g2d){
         Color prev = g2d.getColor();
 
-        g2d.setColor(BG_COLOR); //set bg color
-        g2d.fill(infoFace); //draw interior of passed in rectangle (menu frame)
+        g2d.setColor(BG_COLOR);
+        g2d.fill(infoFace);
 
         g2d.drawImage(backGroundImage, 0, 0, null);
 
         Stroke tmp = g2d.getStroke();
 
-        g2d.setStroke(borderStoke_noDashes); //set border of of whole container
-        g2d.draw(infoFace); //draw outline of passed rectangle (menu frame)
+        g2d.setStroke(borderStoke_noDashes);
+        g2d.draw(infoFace);
 
-        g2d.setColor(BORDER_COLOR); //set red
-        g2d.draw(infoFace); //rerun to apply 2nd border
+        g2d.setColor(BORDER_COLOR);
+        g2d.draw(infoFace);
 
         g2d.setStroke(tmp);
         g2d.setColor(prev);
@@ -136,7 +136,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
      * @param g2d Graphics2D type frame to allow more control over coloring and drawing the text.
      */
     private void drawText(Graphics2D g2d){
-        g2d.setColor(Color.BLACK); //assign text color in home screen
+        g2d.setColor(Color.BLACK);
 
         FontRenderContext frc = g2d.getFontRenderContext();
 
@@ -144,17 +144,17 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
 
         int sX,sY;
 
-        sX = (int)(infoFace.getWidth() - headingRect.getWidth()) / 2; //x coordinate of where we want the box to be in
-        sY = (int)(infoFace.getHeight() / 6); //y coordinate of where we want the box to be in
+        sX = (int)(infoFace.getWidth() - headingRect.getWidth()) / 2;
+        sY = (int)(infoFace.getHeight() / 6);
 
-        g2d.setFont(headFont); //set the font
-        g2d.drawString(INFO_TEXT,sX,sY); //draw the greetings font (string) in the coordinates we found
+        g2d.setFont(headFont);
+        g2d.drawString(INFO_TEXT,sX,sY);
 
         g2d.setColor(TEXT_COLOR);
         Rectangle2D textBodyRect = menuFont.getStringBounds(MOVE_LEFT,frc);
 
-        sX = (int)(infoFace.getWidth() - textBodyRect.getWidth()) / 2; //x coordinate of where we want the box to be in
-        sY = (int)(infoFace.getHeight() / 3); //y coordinate of where we want the box to be in
+        sX = (int)(infoFace.getWidth() - textBodyRect.getWidth()) / 2;
+        sY = (int)(infoFace.getHeight() / 3);
 
         g2d.setFont(menuFont);
 
@@ -176,18 +176,15 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
         FontRenderContext frc = g2d.getFontRenderContext();
         g2d.setColor(Color.BLACK);
 
-        //make rectangles for menu text
         Rectangle2D menuTxtRect = menuFont.getStringBounds(MENU_TEXT,frc);
 
         g2d.setFont(menuFont); //set font for buttons
 
-        //coordinates for menu button
         int x = (infoFace.width - infoMenuButton.width) / 2;
         int y =(int) ((infoFace.height - infoMenuButton.height) * 0.8);
 
         infoMenuButton.setLocation(x,y); //set the button rectangle to above coordinates
 
-        //get the location of the string for start button
         x = (int)(infoMenuButton.getWidth() - menuTxtRect.getWidth()) / 2;
         y = (int)(infoMenuButton.getHeight() - menuTxtRect.getHeight() - 40) / 2;
 
