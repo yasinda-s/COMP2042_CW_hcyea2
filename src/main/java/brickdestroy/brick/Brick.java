@@ -9,7 +9,7 @@ import java.awt.geom.Point2D;
 /**
  * The Brick Class refers to a singular brick we see above the game.
  *
- * Refactoring -
+ * Maintenance and Refactoring Activities -
  *
  * The "Crack" class that was nested into the Brick Class has been refactored to a singular Class outside of Brick to break down this large class into a smaller one and so that its purpose is more clear.
  * The private static variable Random rnd has been moved to Crack class as there is no point using a getter for this variable in order to access it from Crack class since it is not being used here at all. Moving it to Crack removes the need to use a getter here or there.

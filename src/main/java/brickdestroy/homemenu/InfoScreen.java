@@ -11,7 +11,7 @@ import java.awt.geom.Rectangle2D;
 /**
  * This Class is responsible for displaying the How to Play screen when user clicks on Info in Main Menu.
  *
- * Additions -
+ * Extensions -
  * Consists of the background image which is available in the home screen.
  */
 

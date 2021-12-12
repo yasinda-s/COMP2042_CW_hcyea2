@@ -7,7 +7,7 @@ import java.awt.geom.RectangularShape;
 /**
  * This is the class used to represent the ball object in the Brick Game.
  *
- * Refactoring -
+ * Maintenance and Refactoring Activities -
  *
  * The original code consisted of passing in two radii (radiusA and radiusB) for the "makeBall" method, however this is redundant and makes the
  * code harder to understand. I have refactored the code by creating one single parameter called 'radius'. This performs the same functionality as the the ball will be having one radius only.

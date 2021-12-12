@@ -6,7 +6,7 @@ A to move left, D to move right, Esc to pause game, Alt+Shift+F1 to open debug.
 
 - To read all of the refactoring and additions done, please refer to the Class description section of the javadocs. Changes shown below are limited due to word count.
 
-# _Main refactoring done_
+# _Maintenance Done_
 
 Large classes broken down - Brick.java, GameBoard.java, GamePlay.java, HomeMenu.java
 
@@ -41,7 +41,7 @@ Package Naming/Organization
 New classes 
 >Crack.java, ColorBrick.java, PauseMenu.java, HighScore.java, LevelScore.java, InfoScreen.java, HalvePlayerDrop.java, IncreaseSpeedDrop.java, WallSetup.java
 
-# _New features and Reward/Penalty System_
+# _Extension - New features and Reward/Penalty System_
 
 Added background images - Home Menu, Info and High Score Screens with new look.
 

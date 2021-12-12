@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * This class is responsible for setting up the different brick formations (Wall setup) and types of bricks for each Level in the game.
  *
- * Addition -
+ * Extensions  -
  * Added new type of brick (ColorBrick) for the "makeBrick" method.
  * Added new level for the "makeLevels" method which uses Color Bricks and Steel Bricks.
  */

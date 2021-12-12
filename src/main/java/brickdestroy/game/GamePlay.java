@@ -32,17 +32,7 @@ import java.awt.geom.Point2D;
 /**
  * This class is responsible for the general game play of the Brick Game (interactions between components and it keeps track of in game scores).
  *
- * Addition -
- *
- * Added a method called "calculateScore" which is used to calculate the user's level score and total score for the ongoing game.
- * This method consists of a reward penalty system so that the user's performance matters.
- * For each level, if the user takes a longer time to break the bricks, he/she will receive lesser points for each brick broken. This is done to reward users that break bricks faster and to penalize when they take too long to break bricks.
- * The method which keeps track of the points lost with increasing time is called "checkScoreDenominator".
- * The "findImpacts" method is extended to take into account the ball movement when it impacts with one of the power drops that appear in level 5.
- * The "playerReset" is used to reset the length of player bar.
- * The "resetLevelScores" is added to reset the scores of all levels played by user.
- *
- * Refactoring -
+ * Maintenance and Refactoring activities -
  *
  * Changed name from "Wall" to "GamePlay" as this is not solely responsible for the Wall above in the game, its more about the game play of the game.
  * The methods that formed the formation of bricks in the wall for each level has been removed from this class and created in WallSetup Class so that the only responsibility of WallSetup is to create the formation of bricks on the wall.
@@ -52,6 +42,15 @@ import java.awt.geom.Point2D;
  * Added getters for the scores so that other classes can access them, this improves encapsulation and hides data that do not need to be seen from other classes.
  * Added getters for the ball object created to promote encapsulation.
  * "impactWall" method stores the values taken from Brick class so that its easier to read the values we use in the if-condition.
+ *
+ * Extensions -
+ * Added a method called "calculateScore" which is used to calculate the user's level score and total score for the ongoing game.
+ * This method consists of a reward penalty system so that the user's performance matters.
+ * For each level, if the user takes a longer time to break the bricks, he/she will receive lesser points for each brick broken. This is done to reward users that break bricks faster and to penalize when they take too long to break bricks.
+ * The method which keeps track of the points lost with increasing time is called "checkScoreDenominator".
+ * The "findImpacts" method is extended to take into account the ball movement when it impacts with one of the power drops that appear in level 5.
+ * The "playerReset" is used to reset the length of player bar.
+ * The "resetLevelScores" is added to reset the scores of all levels played by user.
  */
 
 public class GamePlay {

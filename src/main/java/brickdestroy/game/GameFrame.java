@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * This class is what holds the whole frame of the Game to be displayed.
  *
- * Additions -
+ * Extensions -
  *
  * Added a method called enableInfoScreen() which allows the info screen to be displayed by removing the home menu screen.
  * Added a method called enableHomeScreen() which allows the home menu screen to be displayed when the menu button is clicked from info screen.

@@ -6,7 +6,7 @@ import java.awt.font.FontRenderContext;
 /**
  * This class is responsible for displaying the pause menu in screen when Esc is pressed mid game.
  *
- * Additions -
+ * Extensions -
  * Changed the look of the pause menu to make it look more appealing whilst holding back the same functionality (Font changes and borders for the buttons).
  */
 public class PauseMenu{

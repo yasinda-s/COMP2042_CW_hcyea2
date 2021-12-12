@@ -8,7 +8,7 @@ import java.util.Random;
 /**
  *  The Crack Class focuses on the cracks that are placed on the bricks (Cement)
  *
- *  Refactoring -
+ *  Maintenance and Refactoring Activities -
  *
  *  Removed "inMiddle" and "jumps" method. Both these methods do not contribute significantly towards the path or design of the crack and it makes the understanding of the crack pattern much more confusing.
  *  By removing these two methods and the variables CRACK_SECTIONS and JUMP_PROBABILITY (which were used by the deleted methods) the class is now more concise and holds the similar functionality that is easier to understand.

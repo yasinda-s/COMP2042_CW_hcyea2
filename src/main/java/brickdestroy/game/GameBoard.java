@@ -34,7 +34,13 @@ import java.io.*;
 /**
  * This class draws all of the 2d Components required to load the home screen and to play the game.
  *
- * Additions -
+ * Maintenance and Refactoring Activities -
+ * Removed the draw() methods - drawBall(), drawPlayer() and drawBrick() from this class and created a factory design pattern to generate these components when needed (drawcomponents package).
+ * Removed the methods and variables that painted the Screen for the Pause Menu when Esc is pressed and gave it a new Class called PauseMenu to break down large class into smaller class and to promote single responsibility.
+ * Removed the methods that painted the High Score Screen when the game is done (either game over or completed) and moved it to a new class called HighScore to break down large class into smaller class and to promote single responsibility.
+ * Added getters and used encapsulation to promote data hiding from other classes.
+ *
+ * Extensions -
  * Creates an object of HighScore class to call a method that saves the final high score onto a text file for permanent record tracking. This is later used by HighScore class to show the leader board in descending order at the end of game (either game over or victory).
  * Creates an object of LevelScore class to call a method that saves the individual level scores onto text files for permanent record tracking. This is later used by LevelScore class to show the leader board in descending order at the end of each level (either level complete or defeat).
  * Added a method getScoreFromGamePlay() so that the current ongoing score can be accessed from other classes.
@@ -43,11 +49,6 @@ import java.io.*;
  * Added the time played to be shown on screen as an extra exciting feature, this is used to reward the players for score.
  * High score and level score are also displayed in the game screen via GameBoard.
  *
- * Refactoring -
- * Removed the draw() methods - drawBall(), drawPlayer() and drawBrick() from this class and created a factory design pattern to generate these components when needed (drawcomponents package).
- * Removed the methods and variables that painted the Screen for the Pause Menu when Esc is pressed and gave it a new Class called PauseMenu to break down large class into smaller class and to promote single responsibility.
- * Removed the methods that painted the High Score Screen when the game is done (either game over or completed) and moved it to a new class called HighScore to break down large class into smaller class and to promote single responsibility.
- * Added getters and used encapsulation to promote data hiding from other classes.
  */
 
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {

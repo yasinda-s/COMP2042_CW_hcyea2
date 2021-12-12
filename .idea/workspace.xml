@@ -91,33 +91,29 @@
       <change beforePath="$PROJECT_DIR$/Javadocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/overview-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/overview-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javadocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadocs/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/BallInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/ball/BallInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/CementBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/CementBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/ColorBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/ColorBrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Brick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Crack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/brick/Crack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/debug/DebugPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/GamePlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/game/PauseMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/game/PauseMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/HomeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/HomeMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/InfoScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/homemenu/InfoScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/HighScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/LevelScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/LevelScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/WallSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/levels/WallSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/brickdestroy/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/brickdestroy/player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/highscore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/levelFiveScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levelFiveScore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/levelOneScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levelOneScore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/levelTwoScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levelTwoScore.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Brick_Destroy-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Brick_Destroy-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/ball/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/ball/Ball.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/game/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/game/GameBoard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/game/GamePlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/game/GamePlay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/homemenu/HomeMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/homemenu/HomeMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/homemenu/InfoScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/homemenu/InfoScreen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/levels/HighScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/levels/HighScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/brickdestroy/levels/LevelScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/brickdestroy/levels/LevelScore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/highscore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelFiveScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelFiveScore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levelOneScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelOneScore.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +152,9 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -186,7 +185,7 @@
       <recent name="D:\1NOTTINGHAM\Software Maintenance\CW\Brick_Destroy\src\test" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.Brick_Destroy-1.0-SNAPSHOT.jar">
+  <component name="RunManager" selected="Application.GraphicsMain">
     <configuration name="GraphicsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="brickdestroy.GraphicsMain" />
       <module name="Brick_Destroy" />
@@ -244,8 +243,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.Brick_Destroy-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.GraphicsMain" />
+        <item itemvalue="JAR Application.Brick_Destroy-1.0-SNAPSHOT.jar" />
         <item itemvalue="JUnit.All in Brick_Destroy" />
         <item itemvalue="JUnit.brickdestroy in Brick_Destroy" />
         <item itemvalue="JUnit.GamePlayTest.wallReset" />
@@ -335,11 +334,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="593" y="154" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637473020467" />
-    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1639218513585">
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1639287023587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1636971712922" />
-    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639218513585" />
+    <state x="516" y="154" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639287023587" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1638373479015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -349,36 +348,36 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057117370" />
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639203145708" />
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom" timestamp="1639218713368">
+    <state width="1493" height="166" key="GridCell.Tab.0.bottom" timestamp="1639287126320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1639026539700" />
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639218713368" />
+    <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639287126320" />
     <state width="1493" height="128" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1639152301119" />
-    <state width="1493" height="166" key="GridCell.Tab.0.center" timestamp="1639218713368">
+    <state width="1493" height="166" key="GridCell.Tab.0.center" timestamp="1639287126320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1639026539700" />
-    <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639218713368" />
+    <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639287126320" />
     <state width="1493" height="128" key="GridCell.Tab.0.center/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1639152301118" />
-    <state width="1493" height="166" key="GridCell.Tab.0.left" timestamp="1639218713368">
+    <state width="1493" height="166" key="GridCell.Tab.0.left" timestamp="1639287126319">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1639026539700" />
-    <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639218713368" />
+    <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639287126319" />
     <state width="1493" height="128" key="GridCell.Tab.0.left/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1639152301118" />
-    <state width="1493" height="166" key="GridCell.Tab.0.right" timestamp="1639218713368">
+    <state width="1493" height="166" key="GridCell.Tab.0.right" timestamp="1639287126320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637056931198" />
     <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1639026539700" />
-    <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639218713368" />
+    <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639287126320" />
     <state width="1493" height="128" key="GridCell.Tab.0.right/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638675200483" />
     <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1639152301118" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1638695438652">
@@ -401,10 +400,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="647" y="134" key="RollbackChangesDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637557992583" />
-    <state x="277" y="54" key="SettingsEditor" timestamp="1638782619564">
+    <state x="277" y="0" key="SettingsEditor" timestamp="1639220617335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="54" key="SettingsEditor/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1638782619564" />
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639220617335" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638373536464">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -413,14 +412,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1637812211888" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1639216370906">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1639287043293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1280.0.1280.984@0.0.1536.824" timestamp="1637057083233" />
     <state x="-1455" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@-1920.5.1536.824" timestamp="1639102138780" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639205637661" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.5.1536.824@0.0.1536.824" timestamp="1639287043293" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.52.1536.824@0.0.1536.824" timestamp="1638671427391" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1639216370906" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1639239635794" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1638600649162">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

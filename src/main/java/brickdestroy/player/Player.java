@@ -24,7 +24,7 @@ import java.awt.*;
 /**
  * This class represents the Player's bar (Rectangle) which he/she controls.
  *
- * Additions -
+ * Extensions  -
  * Added "changeWidth" method which is used in level 5 after drop box is picked.
  * Added "resetWidth" method which is used on reset.
  * Added "increaseWidth" method which is used by all levels as a reward system.

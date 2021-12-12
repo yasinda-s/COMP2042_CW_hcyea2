@@ -14,7 +14,8 @@ import java.util.Scanner;
 /**
  * This class is responsible for the handling and displaying of the permanent high scores to the game frame.
  * It also displays the ending total high score of the user (even if it is not in the high score leader board).
- * Additions - Added a background image for the leader board.
+ *
+ * Extensions - Added a background image for the leader board.
  */
 
 public class HighScore {
