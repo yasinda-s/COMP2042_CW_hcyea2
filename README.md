@@ -2,7 +2,7 @@
 
 # _Instructions_ 
 
-A to move left, D to move right, Esc to pause game, Alt+Shift+F1 to open debug.
+Space to Start/Pause game, A to move left, D to move right, Esc to pause game, Alt+Shift+F1 to open debug.
 
 - To read all of the refactoring and additions done, please refer to the Class description section of the javadocs. Changes shown below are limited due to word count.
 
@@ -42,6 +42,8 @@ New classes
 >Crack.java, ColorBrick.java, PauseMenu.java, HighScore.java, LevelScore.java, InfoScreen.java, HalvePlayerDrop.java, IncreaseSpeedDrop.java, WallSetup.java
 
 # _Extension - New features and Reward/Penalty System_
+
+Added How to Play Screen (Info). 
 
 Added background images - Home Menu, Info and High Score Screens with new look.
 

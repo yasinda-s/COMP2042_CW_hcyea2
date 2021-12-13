@@ -19,6 +19,7 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
 
     private static final String INFO_TEXT = "HOW TO PLAY";
     private static final String MENU_TEXT = "RETURN TO MENU";
+    private static final String START = "Press Space to Start/Pause.";
     private static final String MOVE_LEFT = "Use A to move to the Left.";
     private static final String MOVE_RIGHT = "Press D to move to the Right.";
     private static final String DEBUG_PANEL = "Press Alt + Shift + F1 to Open Debug Panel";
@@ -158,13 +159,15 @@ public class InfoScreen extends JComponent implements MouseListener, MouseMotion
 
         g2d.setFont(menuFont);
 
-        g2d.drawString(MOVE_LEFT, sX, sY);
+        g2d.drawString(START, sX, sY);
 
-        g2d.drawString(MOVE_RIGHT, sX-12, sY+50);
+        g2d.drawString(MOVE_LEFT, sX, sY+30);
 
-        g2d.drawString(DEBUG_PANEL, sX - 75, sY+100);
+        g2d.drawString(MOVE_RIGHT, sX-12, sY+60);
 
-        g2d.drawString(ESCAPE, sX-14, sY+150);
+        g2d.drawString(DEBUG_PANEL, sX - 75, sY+90);
+
+        g2d.drawString(ESCAPE, sX-14, sY+120);
     }
 
     /**
